@@ -2,7 +2,7 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-lg-10">
-    <h2>{!!trans('admin/tag.title')!!}</h2>
+    <h2>{!!trans('admin/breadcrumb.media.list')!!}</h2>
     <ol class="breadcrumb">
         <li>
             <a href="{{url('admin/dash')}}">{!!trans('admin/breadcrumb.home')!!}</a>
@@ -17,7 +17,6 @@
 
   <div class="row">
       <div class="col-lg-12">
-
           <div class="ibox">
               <div class="ibox-content">
                   <h2>
@@ -28,8 +27,6 @@
                   </p>
               </div>
           </div>
-
-
       </div>
   </div>
   <div class="row" >

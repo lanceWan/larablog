@@ -209,6 +209,15 @@ class BlogPermissionsTableSeeder extends Seeder
             'description' => '博客配置修改'
         ]);
 
+        /**
+         * 七牛图片管理
+         */
+        Permission::create([
+            'name' => '七牛图片管理',
+            'slug' => 'blog.media',
+            'description' => '七牛图片管理'
+        ]);
+
 
     }
 }
