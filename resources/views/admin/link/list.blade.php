@@ -1,0 +1,88 @@
+@extends('layouts.admin')
+@section('css')
+<link href="{{asset('vendors/dataTables/datatables.min.css')}}" rel="stylesheet">
+<link href="{{asset('vendors/dataTables/buttons.bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{asset('vendors/dataTables/select.bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{asset('vendors/dataTables/editor.bootstrap.min.css')}}" rel="stylesheet">
+@endsection
+@section('content')
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2>{!!trans('admin/link.title')!!}</h2>
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{url('admin/dash')}}">{!!trans('admin/breadcrumb.home')!!}</a>
+        </li>
+        <li class="active">
+            <strong>{!!trans('admin/breadcrumb.link.list')!!}</strong>
+        </li>
+    </ol>
+  </div>
+  @permission(config('admin.permissions.link.create'))
+  <div class="col-lg-2">
+    <div class="title-action">
+      <a href="{{url('admin/link/create')}}" class="btn btn-info">{!!trans('admin/link.action.create')!!}</a>
+    </div>
+  </div>
+  @endpermission
+</div>
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>{!!trans('admin/link.desc')!!}</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+        <div class="ibox-content">
+          @include('flash::message')
+          <div class="table-responsive">
+	          <table class="table table-striped table-bordered table-hover dataTablesAjax" >
+		          <thead>
+			          <tr>
+			            <th>{{trans('admin/link.model.id')}}</th>
+                  <th>{{trans('admin/link.model.name')}}</th>
+                  <th>{{trans('admin/link.model.url')}}</th>
+			            <th>{{trans('admin/link.model.description')}}</th>
+			          </tr>
+		          </thead>
+		          <tbody>
+		          </tbody>
+	          </table>
+          </div>
+        </div>
+      </div>
+  	</div>
+  </div>
+</div>
+@endsection
+@section('js')
+<script src="{{asset('vendors/dataTables/datatables.min.js')}}"></script>
+<script src="{{asset('vendors/dataTables/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('vendors/dataTables/buttons.bootstrap.min.js')}}"></script>
+<script src="{{asset('vendors/dataTables/dataTables.select.min.js')}}"></script>
+<script src="{{asset('vendors/dataTables/dataTables.editor.min.js')}}"></script>
+<script src="{{asset('vendors/dataTables/editor.bootstrap.min.js')}}"></script>
+<script src="{{asset('vendors/layer/layer.js')}}"></script>
+<script src="{{asset('admin/js/link/link-datatable.js')}}"></script>
+<script type="text/javascript">
+  $(document).on('click','.destroy_item',function() {
+    var _item = $(this);
+    var title = "{{trans('admin/alert.deleteTitle')}}";
+    layer.confirm(title, {
+      btn: ['{{trans('admin/action.actionButton.destroy')}}', '{{trans('admin/action.actionButton.no')}}'],
+      icon: 5
+    },function(index){
+      _item.children('form').submit();
+      layer.close(index);
+    });
+  });
+</script>
+@endsection
