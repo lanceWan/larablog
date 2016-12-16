@@ -15,6 +15,10 @@ class MediaController extends Controller
     public function index()
     {
         $images = $this->allFiles(config('admin.global.imagePath'));
+        if ($images) {
+            $length = count($images) % 4 == 0 ? count($images) / 4 : (count($images) / 4) + 1;
+            $images = collect($images)->chunk($length);
+        }
         return view('admin.media.list')->with(compact('images'));
     }
 

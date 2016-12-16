@@ -1,16 +1,4 @@
 @extends('layouts.admin')
-@section('css')
-<style>
-  .grid .ibox {
-      margin-bottom: 0;
-  }
-  .grid-sizer,.grid-item { width: 20%; }
-  .grid-item{
-    padding: 10px 0;
-    margin-bottom: 20px;
-  }
-</style>
-@endsection
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-lg-10">
@@ -31,7 +19,7 @@
       <div class="col-lg-12">
 
           <div class="ibox">
-              <div class="ibox-content ">
+              <div class="ibox-content">
                   <h2>
                       {!!trans('admin/breadcrumb.media.list')!!}
                   </h2>
@@ -44,29 +32,40 @@
 
       </div>
   </div>
-  <div class="grid" >
-    <div class="grid-sizer"></div>
+  <div class="row" >
     @if($images)
-    @foreach($images as $k => $image)
-    <div class="grid-item">
-        <div class="ibox">
-            <div class="ibox-content">
-                <h4 class="font-bold">
-                    Example masonary box
-                </h4>
-                <img src="{{'http://'.env('QINIU_DOMAINS_DEFAULT').'/'.$image}}" class="img-responsive" alt="Responsive image">
-                <p>sdfasdf</p>
-            </div>
-        </div>
+    @foreach($images as $image)
+    <div class="col-md-3">
+      @foreach($image as $k => $v)
+      <div class="ibox">
+          <div class="ibox-content product-box">
+
+              <div class="product-imitation " style="padding: 5px">
+                <img src="{{'http://'.env('QINIU_DOMAINS_DEFAULT').'/'.$v}}" class="img-responsive" alt="Responsive image">
+              </div>
+              <div class="product-desc">
+                  <p class="font-bold">图片地址：</p>
+
+                  <p class="bg-info b-r-sm p-xs" id="copytext_{{$k}}" style="word-wrap:break-word;">
+                      {{'http://'.env('QINIU_DOMAINS_DEFAULT').'/'.$v}}
+                  </p>
+                  <div class="hr-line-dashed"></div>
+                  <div class="m-t text-righ">
+                      <button data-clipboard-target="#copytext_{{$k}}" class="btn btn-xs btn-outline btn-info copytext"><i class="fa fa-copy"></i> Copy</button>
+                      <button data-clipboard-text="![]({{'http://'.env('QINIU_DOMAINS_DEFAULT').'/'.$v}})" class="btn btn-xs btn-outline btn-warning copytext"><i class="fa fa-copy"></i> Copy As Markdown</button>
+                      <button data-clipboard-target="#copytext_{{$k}}" class="btn btn-xs btn-outline btn-danger"><i class="fa fa-trash"></i> delete</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      @endforeach
     </div>
     @endforeach
     @endif
-</div>
-  
-
+  </div>
 </div>
 @endsection
 @section('js')
-<script type="text/javascript" src="{{asset('vendors/masonary/masonry.pkgd.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('admin/js/media/media.js')}}"></script>
+<script src="{{asset('vendors/clipboard/clipboard.min.js')}}"></script>
+<script src="{{asset('admin/js/media/media.js')}}"></script>
 @endsection
