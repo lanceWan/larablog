@@ -63,6 +63,8 @@ return [
 		'edit_error' 		=> '修改文章失败',
 		'destroy_success' 	=> '删除文章成功',
 		'destroy_error' 	=> '删除文章失败',
+		'upload_success' 	=> '上传图片成功',
+		'upload_error' 		=> '上传图片失败',
 	],
 	'setting' => [
 		'update_success' 	=> '保存配置成功',

@@ -46,8 +46,8 @@ $(function () {
 		autoFocus:false,
 		saveHTMLToTextarea:true,
 		path    : "/vendors/editor/lib/",
-		// imageUpload : true,
-		// imageUploadURL : '/admin/article/upload'
+		imageUpload : true,
+		imageUploadURL : '/admin/article/upload'
     });
 
     $('.col-sm-offset-2').on('click','.submit-article',function () {

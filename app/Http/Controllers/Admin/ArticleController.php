@@ -135,4 +135,15 @@ class ArticleController extends Controller
         $this->article->mark($id,config('admin.global.status.active'));
         return redirect('admin/article');
     }
+    /**
+     * markdown上传图片
+     * @author 晚黎
+     * @date   2016-12-16T12:34:19+0800
+     * @return [type]                   [description]
+     */
+    public function upload(Request $request)
+    {
+        $responseData = $this->article->upload($request);
+        return response()->json($responseData);
+    }
 }

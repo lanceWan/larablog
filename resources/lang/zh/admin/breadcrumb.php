@@ -44,4 +44,7 @@ return [
 	'setting' => [
 		'list' 		=> '<i class="fa fa-link"></i> 博客配置',
 	],
+	'media' => [
+		'list' 		=> '<i class="fa fa-image"></i> 七牛图片管理',
+	],
 ];

@@ -224,4 +224,27 @@ class ArticleService{
 			return false;
 		}
 	}
+
+	/**
+	 * markdown 图片上传
+	 * @author 晚黎
+	 * @date   2016-12-16T12:31:14+0800
+	 * @param  [type]                   $request [description]
+	 * @return [type]                            [description]
+	 * /*
+     上传的后台只需要返回一个 JSON 数据，结构如下：
+     {
+        success : 0 | 1,           // 0 表示上传失败，1 表示上传成功
+        message : "提示的信息，上传成功或上传失败及错误信息等。",
+        url     : "图片地址"        // 上传成功时才返回
+     }
+	 */
+	public function upload($request)
+	{
+		if ($request->hasFile('editormd-image-file')) {
+			$path = $this->upload($request->file('editormd-image-file'));
+			return ['success'=> 1,'message' => trans('alert.article.upload_success'),'url' => $path];
+		}
+		return ['success'=> 0,'message' => trans('alert.article.upload_error')];
+	}
 }

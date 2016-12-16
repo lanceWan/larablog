@@ -22,4 +22,16 @@ trait QiniuTrait{
 		}
 		return '';
 	}
+	/**
+	 * 获取目录下所有图片
+	 * @author 晚黎
+	 * @date   2016-12-16T12:25:35+0800
+	 * @param  [type]                   $directory [description]
+	 * @return [type]                              [description]
+	 */
+	public function allFiles($directory)
+	{
+		$disk = QiniuStorage::disk('qiniu');
+		return $disk->files($directory);
+	}
 }
