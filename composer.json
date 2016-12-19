@@ -16,7 +16,8 @@
         "league/fractal": "^0.14.0",
         "zgldh/qiniu-laravel-storage": "^0.6.1",
         "vinkla/hashids": "^3.0",
-        "edvinaskrucas/settings": "^2.0"
+        "edvinaskrucas/settings": "^2.0",
+        "baum/baum": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
