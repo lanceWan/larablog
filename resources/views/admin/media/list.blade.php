@@ -50,7 +50,7 @@
                   <div class="m-t text-righ">
                       <button data-clipboard-target="#copytext_{{$k}}" class="btn btn-xs btn-outline btn-info copytext"><i class="fa fa-copy"></i> Copy</button>
                       <button data-clipboard-text="![]({{'http://'.env('QINIU_DOMAINS_DEFAULT').'/'.$v}})" class="btn btn-xs btn-outline btn-warning copytext"><i class="fa fa-copy"></i> Copy As Markdown</button>
-                      <button data-clipboard-target="#copytext_{{$k}}" class="btn btn-xs btn-outline btn-danger"><i class="fa fa-trash"></i> delete</button>
+                      <button class="btn btn-xs btn-outline btn-danger deleteFile" data-name="{{$v}}"><i class="fa fa-trash"></i> delete</button>
                   </div>
               </div>
           </div>
@@ -64,5 +64,6 @@
 @endsection
 @section('js')
 <script src="{{asset('vendors/clipboard/clipboard.min.js')}}"></script>
+<script src="{{asset('vendors/layer/layer.js')}}"></script>
 <script src="{{asset('admin/js/media/media.js')}}"></script>
 @endsection

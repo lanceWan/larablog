@@ -72,6 +72,9 @@ return [
 	'blog' => [
 		'list' 		=> 'blog.list',
 		'edit' 		=> 'blog.edit',
-		'media' 	=> 'blog.media',
+	],
+	'media' => [
+		'list' 		=> 'media.list',
+		'edit' 		=> 'media.destroy',
 	],
 ];

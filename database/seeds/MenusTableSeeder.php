@@ -98,7 +98,7 @@ class MenusTableSeeder extends Seeder
             'icon' => 'fa fa-diamond',
             'slug' => 'system.blog',
             'url' => 'admin/article*,admin/category*,admin/tag*,admin/link*,admin/setting*',
-            'active' => 'admin/article*,admin/category*,admin/tag*,admin/link*,admin/setting*',
+            'active' => 'admin/article*,admin/category*,admin/tag*,admin/link*,admin/setting*,admin/media*',
             'description' => '博客管理',
         ]);
 
@@ -150,6 +150,16 @@ class MenusTableSeeder extends Seeder
             'url' => 'admin/setting',
             'active' => 'admin/setting*',
             'description' => '博客配置',
+        ]);
+
+        Menu::create([
+            'name' => '七牛图片',
+            'pid' => $blogManager->id,
+            'icon' => 'fa fa-image',
+            'slug' => 'media.list',
+            'url' => 'admin/media',
+            'active' => 'admin/media*',
+            'description' => '七牛图片',
         ]);
     }
 }
