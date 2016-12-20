@@ -16,11 +16,11 @@ class CreateCommentsTable extends Migration
 		Schema::create('comments', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->default(0)->comment('评论人ID');
-            $table->integer('parent_id')->default(0)->comment('层级关系');
+            $table->integer('pid')->default(0)->comment('层级关系');
             $table->text('content')->comment('评论内容');
-            $table->integer('lidx')->default(0)->comment('左侧索引');
-            $table->integer('ridx')->default(0)->comment('右侧索引');
-            $table->integer('nesting')->default(0)->comment('层级');
+            $table->integer('lidx')->default(0)->index()->comment('左侧索引');
+            $table->integer('ridx')->default(0)->index()->comment('右侧索引');
+            $table->integer('depth')->default(0)->comment('层级');
             $table->timestamps();
 		});
 	}

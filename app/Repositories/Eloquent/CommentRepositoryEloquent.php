@@ -1,12 +1,8 @@
 <?php
-
 namespace App\Repositories\Eloquent;
-
 use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\Contracts\CommentRepository;
 use App\Models\Comment;
-use App\Repositories\Validators\CommentValidator;
 
 /**
  * Class CommentRepositoryEloquent
@@ -31,6 +27,6 @@ class CommentRepositoryEloquent extends BaseRepository implements CommentReposit
      */
     public function boot()
     {
-        $this->pushCriteria(app(RequestCriteria::class));
+        
     }
 }

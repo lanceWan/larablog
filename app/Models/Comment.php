@@ -1,15 +1,27 @@
 <?php
-
 namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
-
-class Comment extends Model implements Transformable
+use Baum\Node;
+class Comment extends Node implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = [];
+    protected $table = 'category';
+    // 'parent_id' column name
+    protected $parentColumn = 'pid';
+ 
+    // 'lft' column name
+    protected $leftColumn = 'lidx';
+ 
+    // 'rgt' column name
+    protected $rightColumn = 'ridx';
+ 
+    // 'depth' column name
+    protected $depthColumn = 'depth';
+
+    protected $fillable = ['user_id','content'];
+
+    protected $guarded = array('pid', 'lidx', 'ridx', 'depth');
 
 }
