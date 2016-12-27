@@ -1,0 +1,92 @@
+/*--------------------------------------------------
+    [Language v1 Dropdown]
+----------------------------------------------------*/
+
+.language-v1 {
+    position: relative;
+    @include font($size: $font-size-13);
+    color: $color-dark;
+    padding-left: 15px;
+
+    .language-v1-toggle {
+        color: $color-dark;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-base;
+        }
+    }
+    
+    .language-v1-img {
+        @include position(relative, $top: -1px);
+        @include size(20px, 100%);
+        margin-right: 3px;
+    }
+
+    .language-v1-dropdown {
+        @include position(absolute, $top: 100%, $right: 0);
+        display: none;
+        min-width: 120px;
+        z-index: 1;
+        background: $color-white;
+        padding: 10px 0;
+        line-height: 20px;
+    }
+
+    .language-v1-dropdown-item {
+        @include font($size: $font-size-13);
+        color: $color-dark;
+        padding: 0;
+    }
+
+    .language-v1-dropdown-link {
+        display: block;
+        @include font($size: $font-size-13);
+        color: $color-dark;
+        padding: 5px 15px;
+
+        &:focus,
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: $color-white;
+            background: $color-base;
+        }
+    }
+}
+
+/*------------------------------------------------------------------
+    [Language Push White]
+------------------------------------------------------------------*/
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    .language-v1 {
+        &.language-v1-style-white {
+            .language-v1-toggle {
+                color: $color-white;
+
+                &:hover {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+
+    /* Header Shrink */
+    .header-shrink {
+        .language-v1 {
+            &.language-v1-style-white {
+                .language-v1-toggle {
+                    color: $color-dark;
+
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+}

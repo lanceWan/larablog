@@ -1,0 +1,472 @@
+/*--------------------------------------------------
+    [Timeline Current Date]
+----------------------------------------------------*/
+
+.timeline-v1-current-date {
+    padding-top: 100px;
+
+    .timeline-v1-current-day {
+        @include font($size: $font-size-30, $weight: $font-weight-400);
+        color: $color-base;
+        margin: 0;
+    }
+
+    .timeline-v1-current-time {
+        display: block;
+        @include font($size: $font-size-11, $weight: $font-weight-400);
+        color: $color-base;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Timeline v1]
+----------------------------------------------------*/
+
+.timeline-v1 {
+    position: relative;
+    list-style: none;
+    padding: 10px 0 0;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 20px, $bottom: 0);
+        width: 1px;
+        background: darken($color-sky-light, 5%);
+        content: " ";
+    }
+
+    .timeline-v1-list-item {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 15px;
+        @include clearfix;
+
+        .color-one { border-color: $color-base; }
+        .color-two { border-color: $color-purple; }
+        .color-three { border-color: $color-blue; }
+        .color-four { border-color: $color-green; }
+        .color-five { border-color: $color-blue-grey; }
+        .color-six { border-color: $color-gold; }
+        .color-seven { border-color: $color-red; }
+
+        .timeline-v1-badge-icon {
+            @include position(absolute, $top: 5px, $left: 15.5px);
+            display: block;
+            @include size(10px);
+            background: $color-white;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        .timeline-v1-news-label {
+            @include font($size: $font-size-13, $weight: $font-weight-400);
+            color: $color-red-light;
+            padding-right: 15px;
+        }
+
+        .timeline-v1-news-time {
+            @include font($size: $font-size-12);
+            color: darken($color-subtitle, 4%);
+        }
+
+        .timeline-v1-news-title {
+            @include font($size: $font-size-13, $weight: $font-weight-400);
+            color: darken($color-subtitle, 15%);
+            letter-spacing: 0;
+            text-transform: inherit;
+            margin: 0;
+
+            > a {
+                @include font($size: $font-size-13);
+                color: darken($color-subtitle, 15%);
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Timeline v2]
+----------------------------------------------------*/
+
+.timeline-v2 {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    padding: 10px 0 0;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 20px, $bottom: 0);
+        width: 1px;
+        background: darken($color-sky-light, 5%);
+        content: " ";
+    }
+
+    .timeline-v2-list-item {
+        position: relative;
+        padding-left: 45px;
+        margin-bottom: 25px;
+        @include clearfix;
+    }
+
+    .timeline-v2-current-date {
+        position: relative;
+        border-top: 1px solid darken($color-sky-light, 5%);
+        padding: 15px 0 0 40px;
+        margin: 20px 0 25px;
+        @include clearfix;
+    }
+
+    .timeline-v2-badge-icon {
+        @include position(absolute, $top: 0, $left: 5px);
+        display: block;
+        @include size(30px);
+        @include font($size: $font-size-13);
+        color: lighten($color-grey, 2%);
+        background: $color-white;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .timeline-v2-news-date {
+        display: block;
+        @include font($size: $font-size-13, $weight: $font-weight-400);
+        color: $color-red-light;
+    }
+
+    .timeline-v2-news-title {
+        @include font($size: $font-size-12, $weight: $font-weight-400);
+        color: darken($color-subtitle, 15%);
+        letter-spacing: 0;
+        text-transform: inherit;
+        margin: 0;
+
+        > a {
+            @include font($size: $font-size-13);
+            color: darken($color-subtitle, 15%);
+
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .timeline-v2-current-day {
+        @include font($size: $font-size-26, $weight: $font-weight-400);
+        color: $color-base;
+        margin: 0;
+    }
+
+    .timeline-v2-current-time {
+        display: block;
+        @include font($size: $font-size-12, $weight: $font-weight-400);
+        color: $color-base;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Timeline v3]
+----------------------------------------------------*/
+
+.timeline-v3 {
+    position: relative;
+    list-style: none;
+    padding: 20px 0 20px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 50%, $bottom: 0);
+        width: 2px;
+        background: lighten($color-dark-light, 20%);
+        margin-left: -1px;
+        content: " ";
+    }
+
+    .timeline-v3-list-item {
+        position: relative;
+        width: 50%;
+        float: left;
+        clear: left;
+        padding-right: 30px;
+        margin-top: 50px;
+        @include clearfix;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:nth-child(2) {
+            margin-top: 50px;
+        }
+
+        .timeline-v3-badge-icon {
+            @include position(absolute, $top: 25px, $right: 0);
+            display: block;
+            @include size(12px);
+            background: $color-base;
+            border: 2px solid $color-white;
+            margin-right: -6px;
+        }
+
+        .timeline-v3-badge {
+            position: relative;
+
+            &:before {
+                @include position(absolute, $top: 30px, $right: -23px);
+                width: 19px;
+                border-top: 2px dotted lighten($color-dark-light, 25%);
+                content: " ";
+            }
+        }
+    }
+
+    .timeline-v3-right-wing {
+        float: right;
+        clear: right;
+        padding: 0 0 0 30px;
+
+        .timeline-v3-badge-icon {
+            left: 0;
+            right: auto;
+            margin-left: -6px;
+        }
+
+        .timeline-v3-badge {
+            &:before {
+                @include position(absolute, $top: 31px, $left: auto, $right: 100.4%);
+            }
+        }
+
+        .timeline-v3-panel {
+            float: right;
+        }
+    }
+
+    .timeline-v3-panel {
+        float: left;
+        width: 100%;
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .timeline-v3 {
+        &:before {
+            left: 15px;
+        }
+
+        .timeline-v3-list-item {
+            position: relative;
+            width: 100%;
+            float: left;
+            clear: left;
+            padding: 0 0 0 50px;
+
+            .timeline-v3-badge-icon {
+                @include position(absolute, $top: 25px, $left: 9px, $right: auto);
+            }
+
+            .timeline-v3-badge {
+                &:before {
+                    @include position(absolute, $top: 30px, $left: -24px, $right: auto);
+                }
+            }
+        }
+
+        .timeline-v3-right-wing {
+            padding: 0 0 0 50px;
+
+            .timeline-v3-badge-icon {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Timeline v4]
+----------------------------------------------------*/
+
+.timeline-v4 {
+    position: relative;
+    list-style: none;
+    padding: 20px 0 20px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 50%, $bottom: 0);
+        width: 2px;
+        background: $color-base;
+        margin-left: -1px;
+        content: " ";
+    }
+
+    &:after {
+        @include position(absolute, $top: 0, $left: 50%);
+        @include size(30px);
+        display: inline-block;
+        @include font($size: $font-size-18, $family: $font-family-font-awesome);
+        background: $color-base;
+        border-radius: 50%;
+        content: "\f107";
+        color: $color-white;
+        line-height: .8;
+        padding: 9px;
+        margin-left: -15px;
+    }
+
+    .timeline-v4-list-item {
+        position: relative;
+        width: 50%;
+        float: left;
+        clear: left;
+        padding-right: 50px;
+        margin-top: 50px;
+        @include clearfix;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:nth-child(2) {
+            margin-top: 50px;
+        }
+
+        .timeline-v4-badge-icon {
+            @include position(absolute, $top: 59px, $right: 0);
+            display: block;
+            @include size(15px);
+            background: $color-base;
+            border: 2px solid $color-white;
+            margin-right: -7.5px;
+        }
+    }
+
+    .timeline-v4-right-wing {
+        float: right;
+        clear: right;
+        padding: 0 0 0 50px;
+
+        .timeline-v4-badge-icon {
+            left: 0;
+            right: auto;
+            margin-left: -7.5px;
+        }
+
+        .timeline-v4-badge {
+            &:before {
+                @include position(absolute, $top: 31px, $left: auto, $right: 100.4%);
+            }
+        }
+
+        .timeline-v4-panel {
+            float: right;
+
+            &.timeline-v4-panel-right {
+                position: relative;
+                
+                &:before {
+                    @include position(absolute, $top: 50px, $right: 100%);
+                    @include size(0);
+                    border-style: solid;
+                    border-width: 15px 20px 15px 0;
+                    border-color: transparent $color-white transparent transparent;
+                    content: " ";
+                    margin-right: -3px;
+                }
+            }
+        }
+    }
+
+    .timeline-v4-panel {
+        float: left;
+        width: 100%;
+        background: $color-white;
+        padding: 20px;
+
+        &.timeline-v4-panel-left {
+            position: relative;
+
+            &:after {
+                @include position(absolute, $top: 50px, $left: 100%);
+                @include size(0);
+                border-style: solid;
+                border-width: 15px 0 15px 20px;
+                border-color: transparent transparent transparent $color-white;
+                content: " ";
+                margin-left: -3px;
+            }
+        }
+    }
+
+    .timeline-v4-subtitle {
+        display: block;
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        color: $color-base;
+        margin-bottom: 5px;
+    }
+
+    .timeline-v4-title {
+        @include font($size: $font-size-24);
+
+        .timeline-v4-title-link {
+            @include font($size: $font-size-24);
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .timeline-v4 {
+        &:before {
+            left: 15px;
+        }
+
+        &:after {
+            left: 15px;
+        }
+
+        .timeline-v4-list-item {
+            position: relative;
+            width: 100%;
+            float: left;
+            clear: left;
+            padding: 0 0 0 50px;
+
+            .timeline-v4-badge-icon {
+                @include position(absolute, $top: 59px, $left: 8px, $right: auto);
+            }
+
+            .timeline-v4-badge {
+                &:before {
+                    @include position(absolute, $top: 30px, $left: -24px, $right: auto);
+                }
+            }
+        }
+
+        .timeline-v4-right-wing {
+            .timeline-v4-badge-icon {
+                margin-left: 0;
+            }
+        }
+        
+        .timeline-v4-panel {
+            &.timeline-v4-panel-left {
+                &:after {
+                    @include position(absolute, $top: 50px, $left: auto, $right: 100%);
+                    border-width: 15px 20px 15px 0;
+                    border-color: transparent $color-white transparent transparent;
+                    margin-left: -3px;
+                }
+            }
+        }
+    }
+}
+
+

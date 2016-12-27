@@ -1,0 +1,62 @@
+/*------------------------------------------------------------------
+    [Comment Form Error]
+------------------------------------------------------------------*/
+
+.comment-form-error {
+    .form-control {
+        &.error {
+            border-color: $color-red;
+            margin-bottom: 5px;
+        }
+    }
+
+    label {
+        &.error {
+            display: block;
+            @include font($size: $font-size-12, $weight: $font-weight-400, $style: italic);
+            color: $color-red;
+            text-align: left;
+        }
+    }
+}
+
+/*------------------------------------------------------------------
+    [Comment Form v1]
+------------------------------------------------------------------*/
+
+.comment-form-v1 {
+    .comment-form-v1-input {
+        color: $color-dark;
+        @include placeholder($color-dark);
+        background: $color-sky-light;
+        border-color: $color-sky-light;
+
+        &:focus {
+            color: $color-dark;
+            @include placeholder($color-dark);
+            background: $color-sky-light;
+            border-color: lighten($color-tint-light, 1%);
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Comment Form v2]
+------------------------------------------------------------------*/
+
+.comment-form-v2 {
+    .comment-form-v2-input {
+        color: $color-white;
+        @include placeholder($color-white);
+        @include bg-opacity($color-white, .3%);
+        border-color: rgba(255,255,255,.3);
+
+        &:focus {
+            color: $color-white;
+            @include placeholder($color-white);
+            @include bg-opacity($color-white, .4%);
+            border-color: $color-white;
+        }
+    }
+}

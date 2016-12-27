@@ -1,0 +1,147 @@
+/*------------------------------------------------------------------
+	[Interactive Banner v1]
+------------------------------------------------------------------*/
+
+.i-banner-v1 {
+    .i-banner-v1-heading {
+        @include position(absolute, $bottom: 0, $left: 0);
+        @include size(100%, auto);
+        display: block;
+        padding: 40px;
+        @include gradient(rgba(52,52,60,0), rgba(52,52,60,.9));
+
+        .i-banner-v1-member {
+            @include font($size: $font-size-36);
+            color: $color-white;
+            margin: 0;
+        }
+
+        .i-banner-v1-member-position {
+            display: block;
+            @include font($size: $font-size-20, $style: italic, $family: $font-family-droid);
+            color: $color-white;
+        }
+    }
+
+    .i-banner-v1-text {
+        @include font($size: $font-size-18, $style: italic);
+        line-height: $line-height-2;
+    }
+
+    .i-banner-v1-quote {
+        @include position(relative, $top: 25px);
+        margin-bottom: 0;
+
+        &:before {
+            @include font($size: $font-size-100, $style: italic, $family: $font-family-droid);
+            content: "“";
+            color: lighten($color-subtitle, 20%);
+            line-height: .1;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Interactive Banner v2]
+------------------------------------------------------------------*/
+
+.i-banner-v2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        @include bg-opacity($color-dark, .3);
+        content: " ";
+    }
+
+    .i-banner-v2-center-align {
+        @include position(absolute, $top: 50%, $left: 50%);
+        @include translate3d(-50%,-50%,0);
+    }
+    
+    .i-banner-v2-title {
+        @include font($size: $font-size-50);
+        color: $color-white;
+        margin-bottom: 5px;
+    }
+
+    .i-banner-v2-text {
+        @include font($size: $font-size-20);
+        color: $color-white;
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .i-banner-v2 {
+        .i-banner-v2-title {
+            @include font($size: $font-size-36);
+        }
+
+        .i-banner-v2-text {
+            @include font($size: $font-size-15);
+        }
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .i-banner-v2 {
+        .i-banner-v2-title {
+            @include font($size: $font-size-26);
+        }
+
+        .i-banner-v2-text {
+            display: none;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Interactive Banner v3]
+------------------------------------------------------------------*/
+
+.i-banner-v3 {
+    position: relative;
+    min-height: 600px;
+    background: url(../../assets/img/1920x1080/01.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .i-banner-v3-wrap {
+        @include position(absolute, $bottom: 0, $left: 0, $right: 0);
+        @include size(100%, auto);
+        padding: 20px 20px 40px;
+        @include gradient(rgba(52,52,60,0), rgba(52,52,60,1));
+    }
+
+    .i-banner-v3-content {
+        max-width: 500px;
+    }
+
+    .i-banner-v3-subtitle {
+        display: block;
+        @include font($size: $font-size-22, $style: italic, $family: $font-family-droid);
+        color: $color-white;
+        margin-bottom: 5px;
+    }
+
+    .i-banner-v3-title {
+        @include font($size: $font-size-34);
+        color: $color-white;
+    }
+
+    .i-banner-v3-text {
+        @include font($size: $font-size-16);
+        color: $color-white;
+        line-height: 1.6;
+        opacity: 0.8;
+    }
+}
+

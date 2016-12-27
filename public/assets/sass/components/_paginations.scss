@@ -1,0 +1,412 @@
+/*--------------------------------------------------
+    [Paginations v1]
+----------------------------------------------------*/
+
+.paginations-v1 {
+    position: relative;
+    margin: 20px 0;
+}
+
+.paginations-v1-list {
+    display: inline-block;
+    padding-left: 0;
+
+    > li {
+        display: inline-block;
+
+        > a,
+        > span {
+            position: relative;
+            min-width: 35px;
+            min-height: 35px;
+            float: left;
+            @include font($size: $font-size-14);
+            color: $color-dark;
+            background: transparent;
+            border-radius: 50%;
+            text-decoration: none;
+            padding: 7px 12.5px;
+            margin-left: -1px;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+            &:hover {
+                color: $color-white;
+                @include bg-opacity($color-base, .5);
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+        }
+
+        &.next,
+        &.previous {
+            position: absolute;
+
+            > a,
+            > span {
+                @include font($size: $font-size-20);
+                color: lighten($color-subtitle, 10%);
+                background: 0;
+                padding: 1px 5px;
+
+                &:hover {
+                    color: $color-base;
+                    background: 0;
+                }
+            }
+        }
+
+        &.previous {
+            top: 0;
+            left: 0;
+        }
+        &.next {
+            top: 0;
+            right: 0;
+        }
+
+        &.active {
+            > a,
+            > span {
+                z-index: 2;
+                color: $color-white;
+                background: $color-base;
+                cursor: default;
+
+                &:hover {
+                    color: $color-white;
+                }
+            }
+        }
+
+        &.disabled {
+            > a,
+            > a:hover,
+            > a:focus,
+            > span,
+            > span:hover,
+            > span:focus {
+                color: darken($color-grey-light, 3%);
+                cursor: not-allowed;
+                background: transparent;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Paginations v2]
+----------------------------------------------------*/
+
+.paginations-v2 {
+    position: relative;
+    margin: 20px 0;
+}
+
+.paginations-v2-list {
+    display: inline-block;
+    padding-left: 0;
+
+    > li {
+        display: inline-block;
+
+        > a,
+        > span {
+            position: relative;
+            min-width: 30px;
+            min-height: 30px;
+            float: left;
+            @include font($size: $font-size-14);
+            color: $color-dark;
+            border-bottom: 2px solid transparent;
+            text-decoration: none;
+            padding: 7px 9px;
+            margin-left: -1px;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+            &:hover {
+                color: $color-base;
+                border-bottom-color: $color-base;
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+        }
+
+        &.next,
+        &.previous {
+            position: absolute;
+        }
+
+        &.previous {
+            top: 0;
+            left: 0;
+        }
+        &.next {
+            top: 0;
+            right: 0;
+        }
+
+        &.active {
+            > a,
+            > span {
+                z-index: 2;
+                color: $color-base;
+                border-bottom-color: $color-base;
+                cursor: default;
+
+                &:hover {
+                    color: $color-base;
+                }
+            }
+        }
+
+        &.disabled {
+            > a,
+            > a:hover,
+            > a:focus,
+            > span,
+            > span:hover,
+            > span:focus {
+                color: darken($color-grey-light, 3%);
+                cursor: not-allowed;
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Paginations v3]
+----------------------------------------------------*/
+
+.paginations-v3 {
+    position: relative;
+    margin: 20px 0;
+}
+
+.paginations-v3-list {
+    display: inline-block;
+    padding-left: 0;
+
+    > li {
+        display: inline-block;
+
+        > a,
+        > span {
+            position: relative;
+            float: left;
+            @include font($size: $font-size-16);
+            color: $color-dark;
+            background: $color-white;
+            text-decoration: none;
+            padding: 10px 16px;
+            margin-left: 2px;
+
+            &:hover {
+                color: $color-base;
+                background: $color-white;
+            }
+        }
+
+        &.previous {
+            > a {
+                &:hover {
+                    i {
+                        @include animation(toLeftFromRight .3s forwards);
+                    }
+                }
+            }
+        }
+        &.next {
+            > a {
+                &:hover {
+                    i {
+                        @include animation(toRightFromLeft .3s forwards);
+                    }
+                }
+            }
+        }
+
+        &.active {
+            > a,
+            > span {
+                z-index: 2;
+                color: $color-white;
+                background: $color-base;
+                cursor: default;
+
+                &:hover {
+                    color: $color-white;
+                    background: $color-base;
+                }
+            }
+        }
+
+        &.disabled {
+            > a,
+            > a:hover,
+            > a:focus,
+            > span,
+            > span:hover,
+            > span:focus {
+                color: darken($color-grey-light, 3%);
+                cursor: not-allowed;
+                background: transparent;
+            }
+        }
+    }
+}
+
+@include keyframes(toLeftFromRight) {
+    49% {
+        @include translate3d(100%,0,0);
+    }
+    50% {
+        opacity: 0;
+        @include translate3d(-100%,0,0);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+
+@include keyframes(toRightFromLeft) {
+    49% {
+        @include translate3d(100%,0,0);
+    }
+    50% {
+        opacity: 0;
+        @include translate3d(-100%,0,0);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Pagers v1]
+----------------------------------------------------*/
+
+.pagers-v1 {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    background: $color-sky-light;
+    border: 1px solid $color-tint-light;
+    text-decoration: none;
+    padding: 60px;
+    @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+    .previous {
+        float: left;
+    }
+    .next {
+        float: right;
+    }
+
+    .pagers-v1-title {
+        display: block;
+        @include font($size: $font-size-20, $weight: $font-weight-700);
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    .pagers-v1-subtitle {
+        display: block;
+        @include font($size: $font-size-15, $weight: $font-weight-300);
+        color: $color-subtitle;
+    }
+
+    &.disabled {
+        color: darken($color-grey-light, 3%);
+        cursor: not-allowed;
+        border-color: darken($color-grey-light, 3%);
+    }
+
+    &:hover {
+        background: $color-base;
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+        .pagers-v1-title,
+        .pagers-v1-subtitle {
+            color: $color-white;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .pagers-v1 {
+        width: 100%;
+
+        .next {
+            float: left;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Pagers v2]
+----------------------------------------------------*/
+
+.pagers-v2 {
+    text-align: center;
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0;
+
+    li {
+        display: inline;
+        padding: 0 2px;
+
+        > a,
+        > span {
+            display: inline-block;
+            min-width: 130px;
+            @include font($size: $font-size-15);
+            color: $color-dark;
+            background: $color-white;
+            text-decoration: none;
+            padding: 12px 23px;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+            &:hover {
+                color: $color-white;
+                background: $color-base;
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+        }
+
+        &.previous {
+            > a,
+            > span {
+                float: left;
+            }
+        }
+
+        &.next {
+            > a,
+            > span {
+                float: right;
+            }
+        }
+
+        &.disabled {
+            > a,
+            > a:hover,
+            > a:focus,
+            > span,
+            > span:hover,
+            > span:focus {
+                color: lighten($color-subtitle, 20%);
+                cursor: not-allowed;
+                background: darken($color-sky-light, 2%);
+            }
+        }
+    }
+}
+
+
+

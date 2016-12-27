@@ -1,0 +1,62 @@
+/*------------------------------------------------------------------
+  	[Diagonal Content Left v1]
+------------------------------------------------------------------*/
+
+.diagonal-content-left-v1 {
+    position: relative;
+    background: $color-sky-light;
+    
+    &:after {
+        @include position(absolute, $left: 100%, $bottom: 0);
+        @include size(0);
+        display: block;
+        border-top: 0 solid transparent;
+        border-bottom: 700px solid transparent;
+        border-left: 70px solid $color-sky-light;
+        content: " ";
+        margin-left: -1px;
+    }
+}
+
+/* White Version */
+.diagonal-content-left-v1 {
+    &.diagonal-content-left-v1-white {
+        background: $color-white;
+
+        &:after {
+            border-left: 70px solid $color-white;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Diagonal Content Right v1]
+------------------------------------------------------------------*/
+
+.diagonal-content-right-v1 {
+    position: relative;
+    background: $color-sky-light;
+
+    &:after {
+        @include position(absolute, $right: 100%, $bottom: 0);
+        @include size(0);
+        display: block;
+        border-top: 700px solid transparent;
+        border-bottom: 0 solid transparent;
+        border-right: 70px solid $color-sky-light;
+        content: " ";
+        margin-right: -1px;
+    }
+}
+
+/* White Version */
+.diagonal-content-right-v1 {
+    &.diagonal-content-right-v1-white {
+        background: $color-white;
+
+        &:after {
+            border-right: 70px solid $color-white;
+        }
+    }
+}

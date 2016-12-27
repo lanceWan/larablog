@@ -1,0 +1,157 @@
+/*--------------------------------------------------
+    [Lists]
+----------------------------------------------------*/
+
+%lists {
+
+    > li {
+        @include font($size: $font-size-14, $weight: $font-weight-300);
+        margin-bottom: 5px;
+        color: $color-subtitle;
+
+        > a {
+            @include font($size: $font-size-14, $weight: $font-weight-300);
+            color: $color-subtitle;
+            
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+
+        %lists-item-element {
+            min-width: 15px;
+            color: $color-base;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        %lists-item-element-brd {
+            @include size(15px);
+            @include font($size: $font-size-11);
+            line-height: 3px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        %lists-item-element-bg {
+            @include size(15px);
+            @include font($size: $font-size-11);
+            color: $color-white;
+            line-height: 3px;
+            padding: 6px;
+            margin-right: 10px;
+        }
+    }
+}
+
+
+/* Lists Base */
+.lists-base {
+    @extend %lists;
+
+    .lists-item-element {
+        @extend %lists-item-element;
+    }
+
+    .lists-item-element-brd {
+        @extend %lists-item-element-brd;
+        color: $color-base;
+        border: 1px solid $color-base;
+    }
+
+    .lists-item-element-bg {
+        @extend %lists-item-element-bg;
+        background: $color-base;
+    }
+}
+
+/* Lists Dark */
+.lists-dark {
+    @extend %lists;
+
+    .lists-item-element {
+        margin-right: 10px;
+    }
+
+    .lists-item-element-brd {
+        @extend %lists-item-element-brd;
+        color: $color-dark;
+        border: 1px solid $color-dark;
+    }
+
+    .lists-item-element-bg {
+        @extend %lists-item-element-bg;
+        background: $color-dark;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Lists Base White Color]
+----------------------------------------------------*/
+
+.lists-base-white {
+    > li {
+        color: $color-white;
+
+        > a {
+            color: $color-white;
+
+            &:hover {
+                color: $color-white;
+                text-decoration: underline;
+            }
+        }
+
+        .lists-item-element,
+        .lists-item-element-brd,
+        .lists-item-element-bg {
+            color: $color-white;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Numeric Lists]
+----------------------------------------------------*/
+
+%numeric-lists {
+    counter-reset: li;
+    list-style: decimal;
+    padding-left: 14px;
+
+    > li {
+        @include font($size: $font-size-14, $weight: $font-weight-300);
+        margin-bottom: 5px;
+        color: $color-subtitle;
+
+        > a {
+            @include font($size: $font-size-14, $weight: $font-weight-300);
+            color: $color-subtitle;
+            
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* Numeric Base Lists */
+.numeric-base-lists {
+    @extend %numeric-lists;
+    > li {
+        color: $color-base;
+    }
+}
+
+
+/* Numeric Dark Lists */
+.numeric-dark-lists {
+    @extend %numeric-lists;
+    > li {
+        color: $color-dark;
+    }
+}

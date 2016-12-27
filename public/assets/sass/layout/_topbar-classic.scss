@@ -1,0 +1,177 @@
+/*------------------------------------------------------------------
+    [Topbar Classic]
+------------------------------------------------------------------*/
+
+.topbar-c {
+    background: $color-sky-light;
+    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+}
+
+/* Topbar v1 Contacts */
+.topbar-c {
+    .topbar-c-contacts {
+        margin-bottom: 0;
+
+        .topbar-c-contacts-item {
+            position: relative;
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            padding: 15px;
+
+            &:before {
+                @include position(absolute, $top: 18px, $right: -3px);
+                @include size(1px, 12px);
+                background: $color-subtitle;
+                content: " ";
+            }
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        .topbar-c-contacts-link {
+            @include font($size: $font-size-13);
+            color: $color-dark;
+
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+
+        .topbar-c-contacts-icon {
+            @include position(relative, $top: 1px);
+            padding-right: 5px;
+        }
+    }
+}
+
+/* Topbar v1 Actions */
+.topbar-c {
+    .topbar-c-actions {
+        float: right;
+        margin-bottom: 0;
+
+        .topbar-c-actions-item {
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            padding: 15px 5px;
+            margin-left: -4px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        .topbar-c-actions-item-divider {
+            @include font($size: $font-size-13);
+            color: $color-subtitle;
+            padding: 15px 5px 15px 0;
+            margin-left: -4px;
+        }
+
+        .topbar-c-actions-link {
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            padding: 5px;
+
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+
+        .topbar-c-actions-icon {
+            @include position(relative, $top: 1px);
+            padding-right: 3px;
+        }
+
+        .topbar-c-actions-link-border {
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            border: 1px solid $color-subtitle;
+            padding: 5px 15px;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $color-white;
+                background: $color-base;
+                border-color: $color-base;
+            }
+        }
+    }
+}
+
+/* Media Queries below 767px */
+@media (max-width: $screen-xs-max) {
+    .topbar-c {
+        .topbar-c-contacts {
+            margin-bottom: 0;
+
+            .topbar-c-contacts-item {
+                display: block;
+                padding: 5px;
+
+                &:before {
+                    display: none;
+                }
+
+                &:first-child {
+                    padding: 10px 5px;
+                }
+            }
+        }
+    }
+
+    /* Topbar v1 Actions */
+    .topbar-c {
+        .topbar-c-actions {
+            float: none;
+
+            .topbar-c-actions-item {
+                display: block;
+                padding: 10px 5px;
+
+                &:last-child {
+                    padding: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .topbar-c-actions-item-divider {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    .header-shrink {
+        .topbar-c {
+            margin-top: -48px;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+}
+

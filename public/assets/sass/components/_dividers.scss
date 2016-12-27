@@ -1,0 +1,699 @@
+/*--------------------------------------------------
+    [Divider]
+----------------------------------------------------*/
+
+%divider {
+    position: relative;
+    width: 100%;
+    @include font($size: $font-size-18);
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin: 30px auto;
+
+    %divider-element {
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after {
+            @include position(absolute, $top: 50%);
+            display: block;
+            @include size(2000px, 0);
+            border-top-style: solid;
+            border-top-width: 1px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    }
+
+    %divider-element-bg {
+        @include font($size: $font-size-14);
+        color: $color-white;
+        background: $color-base;
+        padding: 3px 10px;
+    }
+
+    %divider-icon {
+        @include font($size: $font-size-30);
+        color: $color-base;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Divider v1]
+----------------------------------------------------*/
+
+.divider-v1 {
+    @extend %divider;
+
+    .divider-v1-element {
+        @extend %divider-element;
+    }
+
+    .divider-v1-element-bg {
+        @extend %divider-element-bg;
+    }
+
+    .divider-v1-icon {
+        @extend %divider-icon;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Divider v2]
+----------------------------------------------------*/
+
+.divider-v2 {
+    @extend %divider;
+
+    .divider-v2-element {
+        @extend %divider-element;
+
+        &:before,
+        &:after {
+            border-top-style: dashed;
+            border-top-width: 1px;
+        }
+    }
+
+    .divider-v2-element-bg {
+        @extend %divider-element-bg;
+    }
+
+    .divider-v2-icon {
+        @extend %divider-icon;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Divider v3]
+----------------------------------------------------*/
+
+.divider-v3 {
+    @extend %divider;
+
+    .divider-v3-element {
+        @extend %divider-element;
+
+        &:before,
+        &:after {
+            border-top-style: double;
+            border-top-width: 3px;
+        }
+    }
+
+    .divider-v3-element-bg {
+        @extend %divider-element-bg;
+    }
+
+    .divider-v3-icon {
+        @extend %divider-icon;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Divider v4]
+------------------------------------------------------------------*/
+
+.divider-v4 {
+    .divider-v4-title {
+        position: relative;
+        font-size: $font-size-22;
+        margin: 0 0 30px;
+    }
+}
+
+/* Divider Center V4 */
+.divider-v4 {
+    &.divider-v4-center-single,
+    &.divider-v4-center-double {
+        .divider-v4-title {
+            &:after {
+                @include position(absolute, $bottom: -10px, $left: 50%);
+                @include size(15%, 1px);
+                margin-left: -9%;
+            }
+
+            &:after,
+            &:before {
+                background: $color-dark;
+                content: " ";
+            }
+        }
+    }
+}
+
+/* White Divider Center V4 */
+.divider-v4-white {
+    &.divider-v4-center-single,
+    &.divider-v4-center-double {
+        .divider-v4-title {
+            &:before,
+            &:after {
+                background: $color-white;
+            }
+        }
+    }
+}
+
+/* Divider Center V4 :before; */
+.divider-v4 {
+    &.divider-v4-center-double {
+        .divider-v4-title {
+            &:before {
+                @include position(absolute, $bottom: -15px, $left: 50%);
+                @include size(11%, 1px);
+                margin-left: -7%;
+            }
+        }
+    }
+}
+
+/* Divider Left V4 */
+.divider-v4 {
+    &.divider-v4-left-single,
+    &.divider-v4-left-double {
+        .divider-v4-title {
+            &:after {
+                @include position(absolute, $bottom: -10px, $left: 0);
+                @include size(15%, 1px);
+            }
+
+            &:after,
+            &:before {
+                background: $color-dark;
+                content: " ";
+            }
+        }
+    }
+}
+
+/* White Divider Left V4 */
+.divider-v4-white {
+    &.divider-v4-left-single,
+    &.divider-v4-left-double {
+        .divider-v4-title {
+            &:before,
+            &:after {
+                background: $color-white;
+            }
+        }
+    }
+}
+
+/* Divider V4 Left Double :before */
+.divider-v4 {
+    &.divider-v4-left-double {
+        .divider-v4-title {
+            &:before {
+                @include position(absolute, $bottom: -15px, $left: 0);
+                @include size(10%, 1px);
+            }
+        }
+    }
+}
+
+/* Divider Right V4 */
+.divider-v4 {
+    &.divider-v4-right-single,
+    &.divider-v4-right-double {
+        .divider-v4-title {
+            &:after {
+                @include position(absolute, $bottom: -10px, $right: 0);
+                @include size(15%, 1px);
+            }
+
+            &:after,
+            &:before {
+                background: $color-dark;
+                content: " ";
+            }
+        }
+    }
+}
+
+/* White Divider Right V4 */
+.divider-v4-white {
+    &.divider-v4-right-single,
+    &.divider-v4-right-double {
+        .divider-v4-title {
+            &:before,
+            &:after {
+                background: $color-white;
+            }
+        }
+    }
+}
+
+
+/* Tittle Divider V4 Right Double Before */
+.divider-v4 {
+    &.divider-v4-right-double {
+        .divider-v4-title {
+            &:before {
+                @include position(absolute, $bottom: -15px, $right: 0);
+                @include size(10%, 1px);
+            }
+        }
+    }
+}
+
+/* White Version */
+.divider-v4-white {
+    .divider-v4-title,
+    .divider-v4-text {
+        color: $color-white;
+    }
+}
+
+/*------------------------------------------------------------------
+    [Divider v5]
+------------------------------------------------------------------*/
+
+.divider-v5 {
+    overflow: hidden;
+
+    .divider-v5-title {
+        font-size: $font-size-22;
+        margin: 0 0 10px;
+    }
+
+    .divider-v5-element {
+        position: relative;
+        display: inline-block;
+
+        .divider-v5-element-icon {
+            @include position(relative, $top: -1px);
+            font-size: 18px;
+        }
+    }
+}
+
+/* Divider Center Element V5 */
+.divider-v5 {
+    .divider-v5-element-center {
+        &:before,
+        &:after {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            background: $color-grey;
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+    }
+}
+
+/* Divider Center Element Wrap V5 */
+.divider-v5 {
+    .center-wrap {
+        &:before,
+        &:after {
+            @include size(2000px, 1px);
+        }
+    }
+}
+
+/* Divider Center Element Dashed V5 */
+.divider-v5 {
+    .divider-v5-element-center-dashed {
+        &:before,
+        &:after {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            border-top-style: dashed;
+            border-top-width: 2px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+    }
+}
+
+/* Divider Center Element Dotted V5 */
+.divider-v5 {
+    .divider-v5-element-center-dotted {
+        &:before,
+        &:after {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            border-top-style: dotted;
+            border-top-width: 2px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+    }
+}
+
+/* Divider Left Element V5 */
+.divider-v5 {
+    .divider-v5-element-left {
+        &:after {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            background: $color-grey;
+            content: " ";
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+    }
+}
+
+/* Divider Left Element Wrap V5 */
+.divider-v5 {
+    .left-wrap {
+        &:after {
+            @include size(2000px, 1px);
+        }
+    }
+}
+
+/* Divider Left Element Dashed V5 */
+.divider-v5 {
+    .divider-v5-element-left-dashed {
+        &:after {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            border-top-style: dashed;
+            border-top-width: 2px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+    }
+}
+
+/* Divider Left Element Dotted V5 */
+.divider-v5 {
+    .divider-v5-element-left-dotted {
+        &:after {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            border-top-style: dotted;
+            border-top-width: 2px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+    }
+}
+
+/* Divider Right Element V5*/
+.divider-v5 {
+    .divider-v5-element-right {
+        &:before {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            background: $color-grey;
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
+    }
+}
+
+/* Divider Right Element Wrap V5*/
+.divider-v5 {
+    .right-wrap {
+        &:before {
+            @include size(2000px, 1px);
+        }
+    }
+}
+
+/* Divider Right Element Dashed V5*/
+.divider-v5 {
+    .divider-v5-element-right-dashed {
+        &:before {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            border-top-style: dashed;
+            border-top-width: 2px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
+    }
+}
+
+/* Divider Right Element Dotted V5*/
+.divider-v5 {
+    .divider-v5-element-right-dotted {
+        &:before {
+            @include position(absolute, $top: 8px);
+            @include size(50px, 1px);
+            border-top-style: dotted;
+            border-top-width: 2px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
+    }
+}
+
+/* White Version */
+.divider-v5-white {
+    .divider-v5-title,
+    .divider-v5-element,
+    .divider-v5-text {
+        color: $color-white;
+    }
+
+    .divider-v5-element {
+        &:before,
+        &:after {
+            border-bottom-color: $color-white;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Divider v6]
+------------------------------------------------------------------*/
+
+.divider-v6 {
+    overflow: hidden;
+
+    .divider-v6-element {
+        position: relative;
+        display: inline-block;
+    }
+
+    .divider-v6-element-title {
+        font-size: 22px;
+        padding: 5px 15px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Divider Center Element V6 */
+.divider-v6 {
+    .divider-v6-element-center {
+        &:before,
+        &:after {
+            @include position(absolute, $top: 20px);
+            @include size(2000px, 1px);
+            background: lighten($color-grey, 20%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+        }
+
+        &:after {
+            left: 100%;
+        }
+    }
+}
+
+/* Divider Left Element V6 */
+.divider-v6 {
+    .divider-v6-element-left {
+        .divider-v6-element-title {
+            padding-left: 0;
+        }
+
+        &:after {
+            @include position(absolute, $top: 20px);
+            @include size(2000px, 1px);
+            background: lighten($color-grey, 20%);
+            content: " ";
+        }
+
+        &:after {
+            left: 100%;
+        }
+    }
+}
+
+/* Divider Right Element V6 */
+.divider-v6 {
+    .divider-v6-element-right {
+        .divider-v6-element-title {
+            padding-right: 0;
+        }
+
+        &:before {
+            @include position(absolute, $top: 20px);
+            @include size(2000px, 1px);
+            background: lighten($color-grey, 20%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+        }
+    }
+}
+
+/* Divider Element Title Border V6 */
+.divider-v6 {
+    .divider-v6-element-title {
+        &.divider-v6-element-title-brd {
+            border: 1px solid lighten($color-grey, 20%);
+            padding: 5px 15px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+/* White Version */
+.divider-v6-white {
+    .divider-v6-element-title,
+    .divider-v6-text {
+        color: $color-white;
+    }
+
+    .divider-v6-element-title-brd {
+        border-color: $color-sky-light;
+    }
+
+    .divider-v6-element {
+        &:before,
+        &:after {
+            border-bottom-color: $color-white;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Divider v7]
+------------------------------------------------------------------*/
+
+.divider-v7 {
+    text-align: center;
+
+    .divider-v7-title {
+        position: relative;
+        font-size: $font-size-22;
+        margin-bottom: 30px;
+
+        &:after {
+            @include position(absolute, $bottom: -14px, $left: 35%);
+            width: 30%;
+            border-top-width: 2px;
+            border-color: lighten($color-grey, 15%);
+            content: " ";
+        }
+    }
+}
+
+/* Divider Title Dashed V7 */
+.divider-v7 {
+    .divider-v7-title-dashed {
+        &:after {
+            border-top-style: dashed;
+        }
+    }
+}
+
+/* Divider Title Dotted V7 */
+.divider-v7 {
+    .divider-v7-title-dotted {
+        &:after {
+            border-top-style: dotted;
+            border-color: $color-gold;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [:before, :after Divider Bold]
+—----------------------------------------------------------------*/
+
+/* :before, :after Divider Bold */
+.before-after-brd-bold {
+    &:before,
+    &:after {
+        height: 2px !important;
+    }
+}
+

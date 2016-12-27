@@ -1,0 +1,159 @@
+/*------------------------------------------------------------------
+    [Banner Image v1]
+------------------------------------------------------------------*/
+
+.banner-img-v1 {
+    background: url(../../assets/img/1920x1080/17.jpg) no-repeat;
+    background-size: cover;
+	background-position: center center;
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v2]
+------------------------------------------------------------------*/
+
+.banner-img-v2 {
+    position: relative;
+    z-index: 1;
+    background: url(../../assets/img/1920x1080/40.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 0;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .9);
+        content: " ";
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v3]
+------------------------------------------------------------------*/
+
+.banner-img-v3 {
+    position: relative;
+    z-index: 1;
+    background: url(../../assets/img/1920x1080/04.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 0;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .3);
+        content: " ";
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v4]
+------------------------------------------------------------------*/
+
+.banner-img-v4 {
+    position: relative;
+    z-index: 1;
+    background: url(../../assets/img/1920x1080/12.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 0;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .8);
+        content: " ";
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v5]
+------------------------------------------------------------------*/
+
+.banner-img-v5 {
+    background: url(../../assets/img/1920x1080/17.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v6]
+------------------------------------------------------------------*/
+
+.banner-img-v6 {
+    background: url(../../assets/img/1920x1080/42.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v7]
+------------------------------------------------------------------*/
+
+.banner-img-v7 {
+    background: url(../../assets/img/1920x1080/46.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v8]
+------------------------------------------------------------------*/
+
+.banner-img-v8 {
+    background: url(../../assets/img/1920x1080/56.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v9]
+------------------------------------------------------------------*/
+
+.banner-img-v9 {
+    background: url(../../assets/img/1920x1080/57.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v10]
+------------------------------------------------------------------*/
+
+.banner-img-v10 {
+    background: url(../../assets/img/1920x1080/58.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/*------------------------------------------------------------------
+    [Banner Image v11]
+------------------------------------------------------------------*/
+
+.banner-img-v11 {
+    position: relative;
+    z-index: 1;
+    background: url(../../assets/img/1920x1080/40.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .97);
+        content: " ";
+    }
+}

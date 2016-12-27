@@ -1,0 +1,12 @@
+/*--------------------------------------------------
+    [Noty]
+----------------------------------------------------*/
+
+#noty_topRight_layout_container {
+    > li {
+        background: transparent !important;
+        border: none !important;
+        @include border-radius(3px !important);
+        margin-bottom: 10px;
+    }
+}

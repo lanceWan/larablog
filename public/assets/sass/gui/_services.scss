@@ -1,0 +1,985 @@
+/*--------------------------------------------------
+    [Serviecs v1]
+----------------------------------------------------*/
+
+.services-v1 {
+    text-align: center;
+    background: $color-white;
+    box-shadow: 0 2px 5px 3px lighten($color-tint-light, 1%);
+    padding: 60px 40px;
+
+    .services-v1-icon-wrap {
+        @include size(150px);
+        padding: 22px;
+        margin: 0 auto 50px;
+        box-shadow: 0 5px 10px 0 lighten($color-tint-light, 3%);
+
+        .services-v1-icon {
+            @include size(90px, auto);
+        }
+    }
+
+    .services-v1-subtitle {
+        display: block;
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        margin-bottom: 5px;
+    }
+
+    .services-v1-title {
+        @include font($size: $font-size-26);
+    }
+
+    .services-v1-text {
+        margin-bottom: 0;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Serviecs v2]
+----------------------------------------------------*/
+
+.services-v2 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 30px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .7);
+        content: " ";
+    }
+
+    &.services-v2-step-one {
+        background: url(../../assets/img/970x647/32.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &.services-v2-step-two {
+        background: url(../../assets/img/970x647/33.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &.services-v2-step-three {
+        background: url(../../assets/img/970x647/34.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .services-v2-header {
+        margin-bottom: 20px;
+
+        .services-v2-header-subtitle {
+            display: block;
+            @include font($size: $font-size-18, $style: italic);
+            color: $color-white;
+        }
+
+        .services-v2-header-title {
+            @include font($size: $font-size-30, $weight: $font-weight-400);
+            color: $color-white;
+            text-transform: inherit;
+            line-height: 1.1;
+            margin: 0;
+        }
+    }
+
+    .services-v2-list {
+        padding-left: 8px;
+        margin-bottom: 0;
+
+        .services-v2-list-item {
+            position: relative;
+            width: 100%;
+            color: $color-white;
+            padding: 7px 0;
+            @include clearfix;
+
+            &:after {
+                @include position(absolute, $top: 0, $left: 0);
+                @include size(100%, 1px);
+                @include bg-opacity($color-white, .3);
+                content: " ";
+            }
+
+            &:first-child {
+                &:after {
+                    display: none;
+                }
+            }
+
+            .services-v2-list-subtitle {
+                @include font($size: $font-size-14);
+                float: right;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .services-v2-testimonials {
+        overflow: hidden;
+
+        .services-v2-testimonials-quote {
+            @include font($style: italic);
+            color: $color-white;
+            margin-bottom: 20px;
+        }
+
+        .services-v2-testimonials-body {
+            width: 40px;
+        }
+
+        .services-v2-testimonials-user-picture {
+            @include size(40px);
+            border: 3px solid $color-white;
+            margin-left: 5px;
+        }
+
+        .services-v2-testimonials-author {
+            @include font($size: $font-size-15);
+            color: $color-white;
+            margin: 0;
+        }
+
+        .services-v2-testimonials-author-comp {
+            display: block;
+            @include font($size: $font-size-13);
+            color: $color-white;
+        }
+    }
+
+    .services-v2-form {
+        height: 30px;
+        color: $color-white;
+        background: 0;
+        border: none;
+        border-bottom: 1px solid rgba(255,255,255,.3);
+        @include placeholder ($color-white);
+        padding: 0;
+
+        &:focus {
+            color: $color-white;
+            border-bottom-color: rgba(255,255,255,.5);
+            @include placeholder ($color-white);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Serviecs v3]
+----------------------------------------------------*/
+
+.services-v3 {
+    position: relative;
+    padding: 25px;
+
+    &.services-v3-color-one {
+        position: relative;
+        z-index: 1;
+        background: url(../../assets/img/970x647/60.jpg) no-repeat;
+        background-size: cover;
+        background-position: center top;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            z-index: -1;
+            @include bg-opacity($color-teal, .8);
+            content: " ";
+        }
+    }
+
+    &.services-v3-color-two {
+        position: relative;
+        z-index: 1;
+        background: url(../../assets/img/970x647/22.jpg) no-repeat;
+        background-size: cover;
+        background-position: center top;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            z-index: -1;
+            @include bg-opacity($color-red, .8);
+            content: " ";
+        }
+    }
+
+    &.services-v3-color-three {
+        position: relative;
+        z-index: 1;
+        background: url(../../assets/img/970x970/27.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            z-index: -1;
+            @include bg-opacity($color-base, .8);
+            content: " ";
+        }
+    }
+
+    &.services-v3-color-four {
+        position: relative;
+        z-index: 1;
+        background: url(../../assets/img/970x647/48.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            z-index: -1;
+            @include bg-opacity($color-purple, .8);
+            content: " ";
+        }
+    }
+
+    &.services-v3-color-five {
+        position: relative;
+        z-index: 1;
+        background: url(../../assets/img/970x647/44.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            z-index: -1;
+            @include bg-opacity($color-dark, .8);
+            content: " ";
+        }
+    }
+
+    .services-v3-header {
+        padding-bottom: 50px;
+
+        .services-v3-title {
+            @include font($size: $font-size-26);
+            color: $color-white;
+            margin: 0 0 10px;
+        }
+
+        .services-v3-text {
+            color: $color-white;
+        }
+    }
+
+    .services-v3-content {
+        .services-v3-content-element {
+            @include position(absolute, $left: 25px, $bottom: 25px);
+            @include font($size: $font-size-36);
+            color: $color-white;
+            margin-right: 10px;
+        }
+
+        .services-v3-content-link {
+            @include position(absolute, $right: 25px, $bottom: 25px);
+            @include font($size: $font-size-13);
+            @include bg-opacity($color-dark, .3);
+            color: $color-white;
+            padding: 3px 8px;
+            @include cubic-transition($delay: 0, $duration: 250ms, $property: (all));
+
+            &:hover {
+                color: $color-dark;
+                @include bg-opacity($color-white, 1);
+                text-decoration: none;
+                @include cubic-transition($delay: 0, $duration: 250ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Serviecs v4]
+----------------------------------------------------*/
+
+.services-v4 {
+    position: relative;
+    padding: 20px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        @include bg-opacity($color-white, .15);
+        @include transform-scale(1,1);
+        content: " ";
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    .services-v4-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 2;
+        text-decoration: none;
+    }
+
+    .services-v4-media {
+        max-width: 90px;
+        min-width: 90px;
+
+        .services-v4-icon {
+            @include size(70px);
+        }
+    }
+
+    .services-v4-body {
+        position: relative;
+        z-index: 1;
+
+        .services-v4-content {
+            overflow: hidden;
+        }
+
+        .services-v4-title,
+        .services-v4-text,
+        .services-v4-learn {
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+
+        .services-v4-title {
+            @include font($size: $font-size-24);
+            color: $color-white;
+            margin: 0 0 10px;
+            @include translate3d(0,0,0);
+        }
+
+        .services-v4-text {
+            color: $color-white;
+            opacity: 1;
+            margin-bottom: 5px;
+            @include translate3d(0,0,0);
+        }
+
+        .services-v4-learn {
+            @include font($weight: $font-weight-500);
+            display: block;
+            color: $color-dark;
+            opacity: 0;
+            @include translate3d(0,0,0);
+        }
+    }
+
+    &:hover {
+        &:before {
+            @include bg-opacity($color-white, 1);
+            @include transform-scale(1.075,1.075);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        .services-v4-title,
+        .services-v4-text,
+        .services-v4-learn {
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+
+        .services-v4-title {
+            color: $color-dark;
+            opacity: 0;
+            @include translate3d(0,-100%,0);
+        }
+
+        .services-v4-text {
+            color: $color-subtitle;
+            @include translate3d(0,-50%,0);
+        }
+
+        .services-v4-learn {
+            margin-bottom: 0;
+            opacity: 1;
+            @include translate3d(0,-100%,0);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Service Block v5]
+----------------------------------------------------*/
+
+.services-v5 {
+    .services-v5-wrap {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        .services-v5-no {
+            position: relative;
+            display: inline-block;
+            @include font($size: $font-size-36, $weight: $font-weight-700, $style: italic);
+            color: $color-dark;
+            padding-right: 20px;
+
+            &:after {
+                @include position(absolute, $top: 12px, $right: 8px);
+                @include size(1px, 28px);
+                display: inline-block;
+                background: $color-dark;
+                content: " ";
+                @include rotate(30deg);
+            }
+        }
+
+        .services-v5-body-title {
+            display: inline-block;
+            @include font($size: $font-size-16, $style: italic);
+            line-height: 1;
+            text-transform: inherit;
+            margin: 0;
+        }
+    }
+
+    .services-v5-text {
+        @include font($size: $font-size-14);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Serviecs v6]
+----------------------------------------------------*/
+
+.services-v6 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 80px 40px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        z-index: -1;
+        @include bg-opacity($color-dark, .4);
+        content: " ";
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+
+    &.services-v6-bg-img-one {
+        background: url(../../assets/img/970x970/10.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &.services-v6-bg-img-two {
+        background: url(../../assets/img/970x970/12.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &.services-v6-bg-img-three {
+        background: url(../../assets/img/970x970/09.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &.services-v6-bg-img-four {
+        background: url(../../assets/img/970x970/13.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .services-v6-icon {
+        display: inline-block;
+        @include size(130px);
+        @include font($size: 65px);
+        color: $color-white;
+        line-height: 1.2;
+        text-align: center;
+        border: 2px solid $color-white;
+        vertical-align: middle;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .services-v6-title {
+        @include font($size: $font-size-24);
+        color: $color-white;
+    }
+
+    .services-v6-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 3;
+        text-decoration: none;
+    }
+
+    &:hover {
+        &:before {
+            @include bg-opacity($color-base, .8);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Service Block v7]
+------------------------------------------------------------------*/
+
+.services-v7 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        @include bg-opacity($color-dark, .7);
+        content: " ";
+    }
+
+    &.services-v7-img-one,
+    &.services-v7-img-two,
+    &.services-v7-img-three {
+        @include size(100%, 450px);
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+
+    &.services-v7-img-one {
+        background: url(../../assets/img/970x970/19.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &.services-v7-img-two {
+        background: url(../../assets/img/970x970/21.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    &.services-v7-img-three {
+        background: url(../../assets/img/970x970/23.jpg) no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .services-v7-body {
+        @include position(relative, $top: 50%);
+        padding: 40px;
+        @include translate3d(0,-50%,0);
+    }
+
+    .services-v7-title {
+        @include font($size: $font-size-28);
+        color: $color-white;
+    }
+
+    .services-v7-text {
+        color: $color-white;
+    }
+
+    .services-v7-more {
+        overflow: hidden;
+    }
+
+    .services-v7-link {
+        display: block;
+        text-decoration: none;
+    }
+
+    .services-v7-link-title {
+        opacity: 0;
+        color: $color-white;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+
+    .services-v7-link-icon {
+        position: relative;
+        display: inline-block;
+        @include size(40px);
+        @include font($size: $font-size-24, $style: inherit, $family: $font-family-font-awesome);
+        color: $color-white;
+        text-align: center;
+        border: 1px solid $color-white;
+        vertical-align: middle;
+        padding: 3px;
+        margin-right: 10px;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+        &:before {
+            content: "\f107";
+        }
+
+        &:hover {
+            background: $color-base;
+            border-color: $color-base;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+
+    &:hover {
+        &.services-v7-img-one,
+        &.services-v7-img-two,
+        &.services-v7-img-three {
+            @include size(100%, 450px);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+
+        &.services-v7-img-one {
+            background: url(../../assets/img/970x970/20.jpg) no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        &.services-v7-img-two {
+            background: url(../../assets/img/970x970/22.jpg) no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        &.services-v7-img-three {
+            background: url(../../assets/img/970x970/24.jpg) no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .services-v7-link-title {
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+
+        .services-v7-link-icon {
+            &:before {
+                @include position(absolute, $top: 19px, $left: 12px);
+                @include size(15px, 1px);
+                background: $color-white;
+                content: " ";
+            }
+
+            &:after {
+                @include position(absolute, $top: 12px, $left: 19px);
+                @include size(1px, 15px);
+                background: $color-white;
+                content: " ";
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Serviecs v8]
+----------------------------------------------------*/
+
+.services-v8 {
+    display: block;
+    background: $color-sky-light;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 10px;
+    @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+
+    .services-v8-no,
+    .services-v8-text,
+    .services-v8-like,
+    .services-v8-like-amount,
+    .services-v8-like-icon {
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+    }
+
+    .services-v8-no {
+        width: 40px;
+        @include font($size: $font-size-18, $weight: $font-weight-300);
+        color: $color-subtitle;
+        text-align: center;
+        margin-right: 10px;
+    }
+
+    .services-v8-text {
+        @include font($size: $font-size-18, $weight: $font-weight-300);
+        color: $color-dark;
+    }
+
+    .services-v8-like {
+        float: right;
+        text-align: center;
+        opacity: 0;
+        margin-right: -100px;
+
+        .services-v8-like-amount {
+            @include font($size: $font-size-18, $weight: $font-weight-300);
+            color: $color-white;
+            margin-right: 3px;
+        }
+
+        .services-v8-like-icon {
+            @include font($size: $font-size-18);
+        }
+    }
+
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:hover {
+        background: $color-base;
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+
+        .services-v8-no,
+        .services-v8-text,
+        .services-v8-like,
+        .services-v8-like-amount,
+        .services-v8-like-icon {
+            color: $color-white;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+
+        .services-v8-no {
+            opacity: 0;
+            margin-left: -40px;
+        }
+
+        .services-v8-like {
+            opacity: 1;
+            margin-right: 0;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Service Block v9]
+----------------------------------------------------*/
+
+.services-v9 {
+    text-align: center;
+    padding: 80px 40px;
+
+    .services-v9-icon {
+        display: block;
+        @include font($size: 40px);
+        color: $color-white;
+        opacity: .9;
+        margin-bottom: 20px;
+    }
+
+    .services-v9-title {
+        @include font($size: $font-size-28);
+        color: $color-white;
+    }
+
+    .services-v9-text {
+        @include font($size: 18px);
+        color: $color-white;
+        opacity: .85;
+        margin-bottom: 20px;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Services v10]
+----------------------------------------------------*/
+
+.services-v10 {
+    padding: 60px;
+
+    &.services-v10-border-l {
+        position: relative;
+        border-left: 1px solid $color-tint-light;
+
+        &:before {
+            @include position(absolute, $top: 50%, $left: 0);
+            @include size(20px);
+            background: lighten($color-subtitle, 45%);
+            box-shadow: 0 0 0 4px $color-white;
+            border: 1px solid $color-sky-light;
+            content: " ";
+            margin: -10px 0 0 -10px;
+            @include rotate(45deg);
+        }
+    }
+
+    &.services-v10-border-r {
+        position: relative;
+        border-right: 1px solid $color-tint-light;
+
+        &:after {
+            @include position(absolute, $top: 50%, $right: 0);
+            @include size(20px);
+            background: lighten($color-subtitle, 45%);
+            box-shadow: 0 0 0 4px $color-white;
+            border: 1px solid $color-sky-light;
+            content: " ";
+            margin: -10px -10px 0 0;
+            @include rotate(45deg);
+        }
+    }
+
+    .services-v10-no {
+        display: block;
+        @include font($size: $font-size-70, $weight: $font-weight-700, $style: italic, $family: $font-family-droid);
+        color: $color-dark;
+    }
+
+    .services-v10-title {
+        @include font($size: $font-size-24);
+        letter-spacing: $letter-spacing-1;
+        text-transform: inherit;
+        margin-bottom: 20px;
+    }
+
+    .services-v10-subtitle {
+        display: block;
+        @include font($size: $font-size-14);
+        color: $color-subtitle;
+        margin-bottom: 20px;
+    }
+
+    .services-v10-text {
+        margin-bottom: 30px;
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .services-v10 {
+        &.services-v10-border-l {
+            border-top: 1px solid $color-tint-light;
+            border-left: none;
+
+            &:before {
+                @include position(absolute, $top: 0, $left: 50%);
+                margin: -10px 0 0 -10px;
+            }
+        }
+
+        &.services-v10-border-r {
+            border-bottom: 1px solid $color-tint-light;
+            border-right: none;
+
+            &:after {
+                @include position(absolute, $top: auto, $left: 50%, $right: auto, $bottom: -10px);
+                margin: 0 0 0 -10px;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Servives v11]
+----------------------------------------------------*/
+
+.services-v11 {
+    padding: 30px;
+
+    .services-v11-subtitle {
+        display: block;
+        @include font($size: $font-size-14, $weight: $font-weight-400, $style: italic, $family: $font-family-droid);
+        color: $color-white;
+        letter-spacing: $letter-spacing-1;
+        margin-bottom: 5px;
+    }
+
+    .services-v11-title {
+        position: relative;
+        @include font($size: $font-size-22);
+        color: $color-white;
+        margin: 0 0 30px;
+
+        &:after {
+            @include position(absolute, $bottom: -10px, $left: 0);
+            @include size(30px, 2px);
+            background: $color-white;
+            content: " ";
+        }
+    }
+
+    .services-v11-text {
+        color: $color-white;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Services v12]
+----------------------------------------------------*/
+
+.services-v12 {
+    padding: 60px 30px;
+
+    &.services-v12-bg-color {
+        background: $color-dark;
+    }
+
+    &.services-v12-bg-img-one {
+        background: url(../../assets/img/970x970/01.jpg) no-repeat;
+    }
+
+    &.services-v12-bg-img-two {
+        background: url(../../assets/img/970x970/04.jpg) no-repeat;
+    }
+
+    &.services-v12-bg-img-one,
+    &.services-v12-bg-img-two {
+        position: relative;
+        z-index: 1;
+        background-size: cover;
+        background-position: center center;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            z-index: -1;
+            @include bg-opacity($color-dark, .92);
+            content: " ";
+        }
+    }
+
+    .services-v12-icon {
+        @include font($size: $font-size-30);
+        color: $color-white;
+        margin-bottom: 20px;
+    }
+
+    .services-v12-title {
+        @include font($size: $font-size-24);
+        color: $color-white;
+        margin-bottom: 10px;
+
+        &.services-v12-title-element {
+            position: relative;
+            margin-bottom: 30px;
+
+            &:after {
+                @include position(absolute, $bottom: -12px, $left: 0);
+                @include size(30px, 1px);
+            }
+
+            &:before {
+                @include position(absolute, $bottom: -15px, $left: 0);
+                @include size(20px, 1px);
+            }
+
+            &:after,
+            &:before {
+                background: lighten($color-white, 20%);
+                content: " ";
+            }
+        }
+    }
+
+    .services-v12-text {
+        @include font($size: $font-size-13);
+        color: $color-white;
+    }
+
+    .services-v12-link {
+        display: block;
+        text-decoration: none;
+        opacity: 0;
+        @include translate3d(-5%,0,0);
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    &:hover {
+        .services-v12-link {
+            opacity: 1;
+            @include translate3d(0,0,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+}

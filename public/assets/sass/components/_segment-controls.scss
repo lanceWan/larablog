@@ -1,0 +1,281 @@
+/*--------------------------------------------------
+    [Segments]
+----------------------------------------------------*/
+
+.segment-controls {
+    @include position(relative);
+    display: block;
+    border: 1px solid $color-base;
+    @include font($size: $font-size-16, $weight: $font-weight-300, $style: normal, $family: $font-family-base);
+    text-decoration: none;
+    overflow: hidden;
+    @include box-sizing(border-box);
+    @include user-select(none);
+    @include cubic-transition($delay: 0, $duration: 1000ms, $property: (all));
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Input */
+.segment-controls {
+    .segment-controls-input {
+        @include position(absolute, $left: -10000px);
+        opacity: 0;
+        
+        &[type='checkbox'] {
+            ~ label {
+                @include cubic-transition($delay: 0, $duration: 0, $property: (all));
+
+                &:before {
+                    opacity: 0;
+                }
+            }
+        }
+        
+        @for $i from 1 through $control-count {
+            &:disabled:nth-child(#{$i}) ~ label:nth-of-type(#{$i}) {
+                opacity: 0.3;
+                cursor: not-allowed;
+            }
+
+            &:nth-child(#{$i}):checked {
+                ~ label:nth-of-type(#{$i}) {
+                    &:after, &:before { 
+                        opacity: 1; 
+                    }
+                }
+
+                @for $j from $i through $control-count {
+                    ~ label:first-of-type:nth-last-of-type(#{$j}) {
+                        &:after, &:before, & ~ label:after, & ~ label:before { 
+                            left: percentage((($i - 1) / 10) / ($j / 10)); 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Label */
+.segment-controls {
+    .segment-controls-label {
+        display: inline-block;
+        float: left;
+        @include font($size: $font-size-16, $weight: $font-weight-300, $style: normal, $family: $font-family-base);
+        line-height: 3;
+        text-decoration: inherit;
+        cursor: pointer;
+        padding: 0 25px;
+        margin-bottom: 0;
+        @include cubic-transition($delay: inherit, $duration: inherit, $property: (all));
+        @include transition(none, inherit);
+        
+        &:before,
+        &:after {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            pointer-events: none;
+        }
+
+        &:before {
+            color: inherit;
+            background: $color-base;
+            content: " ";
+            @include transition(left, inherit);
+            @include cubic-transition($delay: inherit, $duration: inherit, $property: (all));
+        }
+        
+        &:after {
+            z-index: 10;
+            @include font($style: inherit, $weight: inherit);
+            color: $color-white;
+            text-align: center;
+            content: attr(data-value);
+            padding: inherit;
+            opacity: 0;
+            text-decoration: inherit;
+            @include cubic-transition($delay: inherit, $duration: inherit, $property: (all));
+            @include transition(opacity, left);
+        }
+
+        &:after, & {
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            @include box-sizing(border-box);
+        }
+
+        @for $i from 1 through $control-count {
+            &:first-of-type:nth-last-of-type(#{$i}) {
+                &, & ~ label {
+                    &, &:after, &:before {
+                        width: percentage(1/$i);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Size]
+----------------------------------------------------*/
+
+/* Extra Small */
+.segment-controls {
+    &.segment-controls-xs {
+        .segment-controls-label {
+            @include font($size: $font-size-13);
+            line-height: 2.5;
+            padding: 0 15px;
+        }
+    }
+}
+
+/* Small */
+.segment-controls {
+    &.segment-controls-sm {
+        .segment-controls-label {
+            @include font($size: $font-size-14);
+            line-height: 3;
+            padding: 0 20px;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Color Options]
+----------------------------------------------------*/
+
+/* Color Dark */
+.segment-controls {
+    &.segment-controls-dark {
+        border-color: $color-dark;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-dark;
+            }
+        }
+    }
+}
+
+/* Color Pink */
+.segment-controls {
+    &.segment-controls-pink {
+        border-color: $color-pink;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-pink;
+            }
+        }
+    }
+}
+
+/* Color Purple */
+.segment-controls {
+    &.segment-controls-purple {
+        border-color: $color-purple;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-purple;
+            }
+        }
+    }
+}
+
+/* Color Green */
+.segment-controls {
+    &.segment-controls-green {
+        border-color: $color-green;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-green;
+            }
+        }
+    }
+}
+
+/* Color Red */
+.segment-controls {
+    &.segment-controls-red {
+        border-color: $color-red;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-red;
+            }
+        }
+    }
+}
+
+/* Color Teal */
+.segment-controls {
+    &.segment-controls-teal {
+        border-color: $color-teal;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-teal;
+            }
+        }
+    }
+}
+
+/* Color Blue */
+.segment-controls {
+    &.segment-controls-blue {
+        border-color: $color-blue;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-blue;
+            }
+        }
+    }
+}
+
+/* Color Blue Grey */
+.segment-controls {
+    &.segment-controls-blue-grey {
+        border-color: $color-blue-grey;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-blue-grey;
+            }
+        }
+    }
+}
+
+/* Color Grey */
+.segment-controls {
+    &.segment-controls-grey {
+        border-color: $color-grey;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-grey;
+            }
+        }
+    }
+}
+
+/* Color Gold */
+.segment-controls {
+    &.segment-controls-gold {
+        border-color: $color-gold;
+
+        .segment-controls-label {
+            &:before {
+                background: $color-gold;
+            }
+        }
+    }
+}

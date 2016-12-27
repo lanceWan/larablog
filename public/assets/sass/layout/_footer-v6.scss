@@ -1,0 +1,53 @@
+/*------------------------------------------------------------------
+    [Footer v6]
+------------------------------------------------------------------*/
+
+.footer-v6 {
+    background: lighten($color-sky-light, 1.5%);
+
+    .footer-v6-logo-img {
+        @include size(85px, auto);
+    }
+
+    .footer-v6-title {
+        @include font($size: $font-size-22);
+    }
+
+    .footer-link-v6-list {
+        margin-bottom: 0;
+
+        .footer-link-v6-list-item {
+            color: $color-subtitle;
+            padding: 4px 0;
+
+            .footer-link-v6-list-link {
+                color: $color-subtitle;
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .footer-link-v6-list-item-divider {
+            border-bottom: 1px solid $color-tint-light;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/* Footer v6 Copyright */
+.footer-v6 {
+    .footer-v6-copyright {
+        background: $color-sky-light;
+        text-align: center;
+        padding: 20px 0;
+
+        .footer-v6-copyright-text {
+            @include font($size: $font-size-14);
+            margin: 6px 0;
+        }
+    }
+}

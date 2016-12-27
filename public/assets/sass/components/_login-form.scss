@@ -1,0 +1,134 @@
+/*--------------------------------------------------
+    [Login]
+----------------------------------------------------*/
+
+.login {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+
+    .login-content {
+        width: 450px;
+        background: $color-white;
+        padding: 40px;
+    }
+
+    .login-form-logo {
+        @include size(100px, auto);
+    }
+
+    .login-form-title {
+        @include font($size: $font-size-30);
+        margin-bottom: 0;
+    }
+
+    .login-form-actions {
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    .login-form-forgot {
+        float: right;
+        @include font($size: $font-size-13, $weight: $font-weight-300);
+
+        &:hover {
+            color: $color-base;
+        }
+    }
+    
+    .forget-form,
+    .register-form {
+        display: none;
+    }
+}
+
+/* Error */
+.login {
+    .form-control {
+        &.error {
+            border-color: $color-red;
+            margin-bottom: 5px;
+        }
+    }
+
+    label {
+        &.error {
+            display: block;
+            @include font($size: $font-size-13, $style: italic);
+            color: $color-red;
+            text-align: left;
+        }
+    }
+}
+
+/* Login Error */
+.login-error {
+    .form-control {
+        &.error {
+            border-color: $color-red;
+            margin-bottom: 5px;
+        }
+    }
+
+    label {
+        &.error {
+            display: block;
+            @include font($size: $font-size-13, $style: italic);
+            color: $color-red;
+            text-align: left;
+        }
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .login {
+        .login-content {
+            width: 100%;
+        }
+    }        
+}
+
+
+/*--------------------------------------------------
+    [Form Conrol White Semi Transparent]
+----------------------------------------------------*/
+
+.form-control-white-semi-transparent {
+    @include bg-opacity($color-white, .3);
+    color: $color-white !important;
+    @include placeholder($color-white !important);
+    border: none;
+
+    &:focus {
+        @include bg-opacity($color-white, .4);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Form Conrol White Border Bottom]
+----------------------------------------------------*/
+
+.form-control-white-border-bottom {
+    background: transparent;
+    color: $color-white !important;
+    @include placeholder($color-white !important);
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    padding-left: 1px;
+
+    &:focus {
+        background: transparent;
+        border-bottom-color: rgba(255,255,255,1);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Form Conrol No Border]
+----------------------------------------------------*/
+
+.form-control-no-border {
+    border: none;
+}

@@ -1,0 +1,66 @@
+/*------------------------------------------------------------------
+    [Font Awesome Icons]
+------------------------------------------------------------------*/
+
+.bordered-icon {
+    display: block;
+    
+    .bordered-icon-box {
+        display: inline-block;
+        @include size(16.7%, 100px);
+        float: left;
+        text-align: center;
+        padding: 20px 10px;
+        margin: 0 -1px -1px 0;
+        word-wrap: break-word;
+        border: 1px solid $color-sky-light;
+
+        .bordered-icon-box-item {
+            display: block;
+            @include font($size: $font-size-24);
+            color: $color-dark;
+            padding-bottom: 10px;
+        }
+
+        .bordered-icon-box-item-title {
+            color: $color-dark;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: $color-base;
+
+            .bordered-icon-box-item,
+            .bordered-icon-box-item-title {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    .bordered-icon {
+        .bordered-icon-box {
+            @include size(25%, 100px);
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .bordered-icon {
+        .bordered-icon-box {
+            @include size(33%, 115px);
+        }
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .bordered-icon {
+        .bordered-icon-box {
+            @include size(50%, 130px);
+        }
+    }
+}

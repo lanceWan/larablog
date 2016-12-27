@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------
+    [Footer v3]
+------------------------------------------------------------------*/
+
+/* Footer v3 Content */
+.footer-v3 {
+    background: $color-sky-light;
+}
+
+/* Footer v3 Copyright */
+.footer-v3-copyright {
+    background: $color-white;
+    padding: 30px 0;
+
+    .footer-v3-copright-text {
+        @include font($size: $font-size-14);
+        margin-bottom: 0;
+    }
+
+    .footer-v3-list {
+        float: right;
+        margin: 10px 0;
+
+        .footer-v3-list-item {
+            @include font($size: $font-size-14);
+            padding: 0 15px;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        .footer-v3-list-link {
+            @include font($size: $font-size-14);
+            text-decoration: none;
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    /* Footer v3 Copyright */
+    .footer-v3-copyright {
+        text-align: center;
+
+        .footer-v3-list {
+            float: none;
+        }
+    }
+}

@@ -1,0 +1,286 @@
+/*----------------------------------------------------------------------
+
+[Master Stylesheet]
+
+	Project:        Ark - Responsive Multi-Purpose Theme
+	Version:        3.3
+	Author:         Prothemes.net
+	Primary use:    Corporate, Business, Portfolio, Landing, Shop, Blog and One Page Themes.
+	Email: 			prothemes.net@gmail.com
+	Website:		http://www.prothemes.net
+
+
+[Table of Contents]
+
+	1. Base
+	2. Blog Classic
+	3. Blog Grid
+	4. Blog Sidebar
+	5. Blog Single Post
+	7. Blog Teaser
+	7. News
+	8. Accordion
+	9. Alerts
+	10. Blockquotes
+	11. Breadcrumbs
+	12. Comment Form
+	13. Dividers
+	14. Dropcap
+	15. Heading
+	16. Icon List
+	17. Image Popup
+	18. Lists
+	19. Login Form
+	20. Noty
+	21. Pagination
+	22. Progress Bar
+	23. Radio Checkbox
+	24. Scroll to Section
+	25. Segment Controls
+	26. Sliding Background
+	27. Spinbox
+	28. Star Ratings
+	29. Tab
+	30. Tables
+	31. Table Wrap
+	32. Theme Icons
+	33. Timeline
+	34. Call to Action
+	35. Clients
+	36. Countdown
+	37. Counters
+	38. Diagonal Content
+	39. Equal Height Block
+	40. Icon Box
+	41. Image Gallery
+	42. Interactive Banner
+	43. Newsletter
+	44. Banner Image
+	45. Parallax
+	46. Piecharts
+	47. Process
+	48. Promo Block
+	49. Services
+	50. Slider Block
+	51. Team Members
+	52. Testimonials
+	53. Video
+	54. Work
+	55. Footer (Default)
+	56. Footer v2
+	57. Footer v3
+	58. Footer v4
+	59. Footer v5
+	60. Footer v6
+	61. Footer v7
+	62. Footer v8
+	63. Header
+	64. Header Center Aligned
+	65. Header Center Aligned Transparent
+	66. Header Fullscreen
+	67. Header Section Scroll
+	68. Header Transparent
+	69. Header Vertical
+	70. Language
+	71. Language Push
+	72. Responsive
+	73. Form Modal
+	74. Search Default
+	75. Search Classic
+	76. Search Fullscreen
+	77. Search On Header
+	78. Search Push
+	79. Sidebar
+	80. Topbar Classic
+	81. Topbar e-Commerce
+	82. Topbar Transparent
+	83. Coming Soon
+	84. Contact Us
+	85. FAQ
+	86. Shopify
+	87. Animated Headline
+	88. Animsition
+	89. Back to Top
+	90. Bootstrap Components
+	91. Google Maps
+	92. Instashow
+	93. Masonry Grid
+	94. Owl Carousel
+	95. Portfolio
+	96. Revolution Slider
+	97. Swiper
+	98. Switch
+	99. Wizard
+	100. Colors
+	101. Helpers
+-----------------------------------------------------------------------*/
+
+/* =================================================================
+    [Primary Sass files]
+================================================================= */
+
+// Custom
+// =================================================================
+
+@import 'mixins'; // Mixins
+@import 'variables'; // Variables
+
+
+// Base
+// =================================================================
+
+@import 'base/base'; // Base
+
+
+// Blogs
+// =================================================================
+
+@import 'blog/blog-classic'; // Blog Classic
+@import 'blog/blog-grid'; // Blog Grid
+@import 'blog/blog-sidebar'; // Blog Sidebar
+@import 'blog/blog-single-post'; // Blog Single Post
+@import 'blog/blog-teaser'; // Blog Teaser
+@import 'blog/news'; // News
+
+
+// Components
+// =================================================================
+
+@import 'components/accordion'; // Accordion
+@import 'components/alerts'; // Alerts
+@import 'components/blockquotes'; // Blockquotes
+@import 'components/breadcrumbs'; // Breadcrumbs
+@import 'components/buttons'; // Buttons
+@import 'components/comment-form'; // Comment Form
+@import 'components/dividers'; // Dividers
+@import 'components/dropcap'; // Dropcap
+@import 'components/heading'; // Heading
+@import 'components/icon-list'; // Icon List
+@import 'components/image-popup'; // Image Popup
+@import 'components/lists'; // Lists
+@import 'components/login-form'; // Login Form
+@import 'components/noty'; // Noty
+@import 'components/paginations'; // Paginations
+@import 'components/progress-bar'; // Progress Bar
+@import 'components/radio-checkbox'; // Radio Checkbox
+@import 'components/scroll-to-section'; // Scroll To Section
+@import 'components/segment-controls'; // Segment Controls
+@import 'components/sliding-bg'; // Sliding Background
+@import 'components/spinbox'; // Spinbox
+@import 'components/star-ratings'; // Star Ratings
+@import 'components/tab'; // Tab
+@import 'components/tables'; // Tables
+@import 'components/table-wrap'; // Table Wrap
+@import 'components/theme-icons'; // Theme Icons
+@import 'components/timeline'; // Timeline
+
+
+// Gui
+// =================================================================
+
+@import 'gui/call-to-action'; // Call To Action
+@import 'gui/clients'; // Clients
+@import 'gui/countdown'; // Countdown
+@import 'gui/counters'; // Counters
+@import 'gui/diagonal-content'; // Diagonal Content
+@import 'gui/equal-height-block'; // Equal Height Block
+@import 'gui/icon-box'; // Icon Box
+@import 'gui/image-gallery'; // Image Gallery
+@import 'gui/interactive-banner'; // Interactive Banner
+@import 'gui/newsletter'; // Newsletter
+@import 'gui/banner-img'; // Banner Img
+@import 'gui/parallax'; // Parallax
+@import 'gui/piecharts'; // Piecharts
+@import 'gui/pricing-list'; // Pricing List
+@import 'gui/process'; // Process
+@import 'gui/promo-block'; // Promo Block
+@import 'gui/services'; // Services
+@import 'gui/slider-block'; // Slider Block
+@import 'gui/team-members'; // Team Members
+@import 'gui/testimonials'; // Testimonials
+@import 'gui/video'; // Video
+@import 'gui/work'; // Work
+
+
+// Layout
+// =================================================================
+
+@import 'layout/footer'; // Footer
+@import 'layout/footer-v2'; // Footer v2
+@import 'layout/footer-v3'; // Footer v3
+@import 'layout/footer-v4'; // Footer v4
+@import 'layout/footer-v5'; // Footer v5
+@import 'layout/footer-v6'; // Footer v6
+@import 'layout/footer-v7'; // Footer v7
+@import 'layout/footer-v8'; // Footer v8
+@import 'layout/header'; // Header
+@import 'layout/header-center-aligned'; // Header Center Aligned
+@import 'layout/header-center-aligned-transparent'; // Header Center Aligned Transparent
+@import 'layout/header-fullscreen'; // Header Fullscreen
+@import 'layout/header-section-scroll'; // Header Section Scroll
+@import 'layout/header-slide'; // Header Slide
+@import 'layout/header-transparent'; // Header Transparent
+@import 'layout/header-vertical'; // Header Vertical
+@import 'layout/language'; // Language
+@import 'layout/language-push'; // Language Push
+@import 'layout/responsive'; // Responsive
+@import 'layout/form-modal'; // Form Modal
+@import 'layout/search'; // Search Default
+@import 'layout/search-classic'; // Search Classic
+@import 'layout/search-fullscreen'; // Search Fullscreen
+@import 'layout/search-on-header'; // Search On Header
+@import 'layout/search-push'; // Search Push
+@import 'layout/sidebar'; // Sidebar
+@import 'layout/topbar-classic'; // Topbar Classic
+@import 'layout/topbar-e-commerce'; // Topbar e-Commerce
+@import 'layout/topbar-transparent'; // Topbar v3
+
+
+// Pages
+// =================================================================
+
+@import 'pages/coming-soon'; // Coming Soon
+@import 'pages/contact-us'; // Contact Us
+@import 'pages/faq'; // FAQ
+@import 'pages/shopify'; // Shopify
+
+
+// Plugins
+// =================================================================
+
+@import 'plugins/animated-headline'; // Animated Headline
+@import 'plugins/animsition'; // Animsition
+@import 'plugins/back-to-top'; // Back To Top
+@import 'plugins/bootstrap-components'; // Bootstrap Components
+@import 'plugins/google-maps'; // Google Maps
+@import 'plugins/instashow'; // Instashow
+@import 'plugins/masonry-grid'; // Masonry Grid
+@import 'plugins/owl-carousel'; // Owl Carousel
+@import 'plugins/portfolio'; // Portfolio
+@import 'plugins/rev-slider'; // Revolution Slider
+@import 'plugins/swiper'; // Swiper
+@import 'plugins/switch'; // Switch
+@import 'plugins/wizard'; // Wizard
+
+
+// Theme
+// =================================================================
+
+@import 'theme/dark'; // Dark Theme Color
+@import 'theme/base-color'; // Base Theme Color
+@import 'theme/blue-color'; // Blue Theme Color
+@import 'theme/blue-grey-color'; // Blue Grey Theme Color
+@import 'theme/gold-color'; // Gold Theme Color
+@import 'theme/green-color'; // Green Theme Color
+@import 'theme/grey-color'; // Grey Theme Color
+@import 'theme/pink-color'; // Pink Theme Color
+@import 'theme/purple-color'; // Purple Theme Color
+@import 'theme/red-color'; // Red Theme Color
+@import 'theme/teal-color'; // Teal Theme Color
+
+
+// Utils
+// =================================================================
+
+@import 'utils/colors'; // Colors
+@import 'utils/helpers'; // Helpers

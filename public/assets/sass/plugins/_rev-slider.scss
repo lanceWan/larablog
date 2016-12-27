@@ -1,0 +1,139 @@
+/*------------------------------------------------------------------
+	[Revolution Slider]
+------------------------------------------------------------------*/
+
+/* Spinner */
+.tp-loader {
+	&.spinner2 {
+		background: $color-base;
+	}
+}
+
+/* Form */
+.theme-rev-slider-form-v1 {
+	.rev-slideer-form-input-v1 {
+		height: 40px;
+		color: $color-white;
+		@include bg-opacity($color-white, .3);
+		border: none;
+		@include placeholder($color-white);
+
+		&:focus {
+			@include bg-opacity($color-white, .5);
+			color: $color-white;
+			@include placeholder($color-white);			
+		}
+	}
+}
+
+/* Zeus Bullet */
+.zeus {
+	.tp-bullet {
+		@include size(10px);
+		border-width: 1px;
+	}
+
+	.tp-bullet-title {
+		@include font($size: $font-size-12, $weight: $font-weight-300, $family: $font-family-base);
+	}
+}
+
+/* To Tab */
+.erinyen {
+	.theme-rev-tab-title-v1 {
+		@include font($size: $font-size-14, $weight: $font-weight-700);
+		color: $color-white;
+		text-transform: uppercase;
+		border-top: 2px solid $color-white;
+		margin-bottom: 10px;
+		padding-top: 15px;
+	}
+
+	.theme-rev-tab-desc-v1 {
+	    @include font($size: $font-size-13, $weight: $font-weight-400);
+	    color: $color-white;
+	}
+}
+
+/* Scrollbelow Action */
+.scrollbelow-action-icon {
+	@include position(absolute, $top: 0, $left: 0);
+	@include size(20px);
+	@include font($size: $font-size-30);
+	@include animation-name(Scrollbelow);
+	@include animation-duration(2s);
+	@include animation-timing-function(linear);
+	@include animation-iteration-count(infinite);
+	@include animation-direction(alternate);
+}
+
+@include keyframes(Scrollbelow) {
+	0% { top: 0; bottom: 0; }
+	25% { top: -20px; bottom: 25px; }
+	50% { top: -20px; bottom: 50px; }
+	75% { top: -20px; bottom: 75px; }
+	100% { top: 0; bottom: 100px; }
+}
+
+/* Scrollbelow Action v2 */
+.scrollbelow-action-icon-v2 {
+	@include position(absolute, $top: 0);
+	display: inline-block;
+	@include font($size: $font-size-20);
+	@include animation-name(Scrollbelow-v2);
+	@include animation-duration(2s);
+	@include animation-timing-function(linear);
+	@include animation-iteration-count(infinite);
+	@include animation-direction(alternate);
+}
+
+@include keyframes(Scrollbelow-v2) {
+	0% { top: 0; bottom: 0; }
+	25% { top: 5px; bottom: 45px; }
+	50% { top: 5px; bottom: 70px; }
+	75% { top: 5px; bottom: 95px; }
+	100% { top: 0; bottom: 120px; }
+}
+
+/* Theme Rev Slider Input v1 */
+.theme-rev-slider-input-v1 {
+	@include font($size: $font-size-26);
+	color: $color-white;
+	text-align: center;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid $color-white;
+	border-radius: 0;
+	@include placeholder($color-white);
+
+	&:focus {
+		color: $color-white;
+		@include placeholder($color-white);
+	}
+}
+
+/* Theme Rev Slider Input v2 */
+.theme-rev-slider-input-v2 {
+	@include size(100%, 48px);
+	color: $color-white;
+	background: transparent;
+	border-color: $color-white;
+	@include placeholder($color-white);
+
+	&:focus {
+		color: $color-white;
+		border-color: $color-white;
+		@include placeholder($color-white);
+	}
+}
+
+/* Metis Arrows */
+.metis {
+	&.tparrows {
+		@include bg-opacity($color-white, .3);
+
+		&:before {
+			color: $color-base;
+		}
+	}
+}

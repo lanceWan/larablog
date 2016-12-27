@@ -1,0 +1,279 @@
+/*------------------------------------------------------------------
+    [Sidebar]
+------------------------------------------------------------------*/
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+/* Sidebar Trigger */
+.sidebar-trigger {
+    position: relative;
+    padding-left: 10px;
+    text-decoration: none;
+
+    .sidebar-trigger-icon {
+        position: relative;
+        @include size(18px, 1px);
+        display: inline-block;
+        background: $color-dark;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        &:before,
+        &:after {
+            @include position(absolute, $left: 0);
+            @include size(18px, 1px);
+            background: $color-dark;
+            content: " ";
+        }
+        &:before {
+            bottom: 12px;
+            @include rotate(0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+        &:after {
+            top: -6px;
+            @include rotate(0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+
+    &.is-clicked {
+        .sidebar-trigger-icon {
+            @include bg-opacity($color-dark, 0);
+
+            &:before,
+            &:after {
+                background: $color-dark;
+            }
+            &:before {
+                bottom: 5px;
+                @include rotate(45deg);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+            &:after {
+                top: -5px;
+                @include rotate(-45deg);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+    }
+
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:hover {
+        &.is-clicked {
+            .sidebar-trigger-icon {
+                @include bg-opacity($color-dark, 0);
+            }
+        }
+
+        .sidebar-trigger-icon {
+            background: $color-base;
+
+            &:before,
+            &:after {
+                background: $color-base;
+            }
+        }
+    }
+}
+
+/* Sidebar Content */
+.sidebar-content-overlay {
+    position: relative;
+
+    &.sidebar-menu-is-open {
+        cursor: e-resize;
+
+        &:before {
+            @include position(fixed, $top: 0, $left: 0);
+            @include size(100%);
+            z-index: 9999;
+            @include bg-opacity(#000, .7);
+            content: " ";
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+}
+
+/* Sidebar Nav */
+.sidebar-nav {
+    @include position(fixed, $top: 0, $right: 0);
+    @include size(260px, 100%);
+    z-index: 99999;
+    background: $color-dark;
+    overflow-y: auto;
+    visibility: hidden;
+    @include visibility-backface(hidden);
+    margin-right: -260px;
+    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+    &.sidebar-menu-is-open {
+        visibility: visible;
+        margin-right: 0;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .sidebar-nav-trigger {
+        float: right;
+        padding: 15px;
+
+        .sidebar-trigger-icon {
+            @include bg-opacity($color-white, 0);
+
+            &:before,
+            &:after {
+                background: $color-white;
+            }
+        }
+
+        &:hover {
+            .sidebar-trigger-icon {
+                &:before,
+                &:after {
+                    background: $color-base;
+                }
+            }
+        }
+    }
+
+    .sidebar-nav-content {
+        margin: 80px 20px 20px;
+    }
+
+    .sidebar-nav-title {
+        @include font($size: $font-size-22);
+        color: $color-white;
+        margin-bottom: 10px;
+    }
+
+    .sidebar-nav-about-text,
+    .sidebar-nav-about-link {
+        @include font($size: $font-size-13);
+        color: $color-white;
+        margin-bottom: 5px;
+    }
+
+    .sidebar-nav-about-link {
+        &:hover {
+            color: $color-base;
+            text-decoration: none;
+        }
+    }
+
+    .sidebar-nav-comment-input {
+        color: darken($color-white, 10%);
+        background: darken($color-dark, 2%);
+        border: none;
+        @include placeholder(darken($color-white, 20%));
+
+        &:focus {
+            color: $color-white;
+            @include placeholder($color-white);
+        }
+    }
+}
+
+.sidebar-content-bottom {
+    @include position(absolute, $bottom: 0, $left: 0, $right: 0);
+    display: block;
+}
+
+
+/*------------------------------------------------------------------
+    [Sidebar Trigger Style White]
+------------------------------------------------------------------*/
+
+/* Media Queries below 992px */
+@media (min-width: $screen-md-min) {
+    /* Sidebar Trigger */
+    .sidebar-trigger {
+        &.sidebar-trigger-style-white {
+            .sidebar-trigger-icon {
+                background: $color-white;
+
+                &:before,
+                &:after {
+                    background: $color-white;
+                }
+            }
+
+            &.is-clicked {
+                .sidebar-trigger-icon {
+                    @include bg-opacity($color-white, 0);
+
+                    &:before,
+                    &:after {
+                        background: $color-white;
+                    }
+                }
+            }
+
+            &:hover {
+                &.is-clicked {
+                    .sidebar-trigger-icon {
+                        @include bg-opacity($color-white, 0);
+                    }
+                }
+
+                .sidebar-trigger-icon {
+                    background: $color-base;
+
+                    &:before,
+                    &:after {
+                        background: $color-base;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Header Shrink */
+    .header-shrink {
+        .sidebar-trigger {
+            &.sidebar-trigger-style-white {
+                .sidebar-trigger-icon {
+                    background: $color-dark;
+
+                    &:before,
+                    &:after {
+                        background: $color-dark;
+                    }
+                }
+
+                &.is-clicked {
+                    .sidebar-trigger-icon {
+                        @include bg-opacity($color-dark, 0);
+
+                        &:before,
+                        &:after {
+                            background: $color-dark;
+                        }
+                    }
+                }
+
+                &:hover {
+                    &.is-clicked {
+                        .sidebar-trigger-icon {
+                            @include bg-opacity($color-dark, 0);
+                        }
+                    }
+
+                    .sidebar-trigger-icon {
+                        background: $color-base;
+
+                        &:before,
+                        &:after {
+                            background: $color-base;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

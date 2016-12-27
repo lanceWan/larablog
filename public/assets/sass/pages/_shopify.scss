@@ -1,0 +1,69 @@
+/*--------------------------------------------------
+    [Shopify Services]
+----------------------------------------------------*/
+
+.shopify-services {
+	text-align: center;
+
+	.shopify-services-img {
+		display: block;
+		@include size(200px);
+		margin: 0 auto 30px;
+	}
+
+	.shopify-services-title {
+		position: relative;
+		@include font($size: $font-size-24);
+		margin-bottom: 40px;
+
+		&:before {
+			@include position(absolute, $bottom: -20px, $left: 50%);
+			@include size(40px, 1px);
+			background: $color-dark;
+			content: " ";
+			margin-left: -20px;
+		}
+	}
+
+	.shopify-services-price {
+		@include font($size: $font-size-18);
+	}
+}
+
+
+/*--------------------------------------------------
+    [Shopify Product]
+----------------------------------------------------*/
+
+.shopify-product {
+	text-align: center;
+
+	.shopify-product-content {
+		padding: 20px;
+	}
+
+	.shopify-product-name {
+		@include font($size: $font-size-20);
+		margin-bottom: 10px;
+		@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+	}
+
+	.shopify-product-price {
+		display: block;
+		@include font($size: $font-size-16);
+	}
+
+	.shopify-product-link {
+		@include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 3;
+        text-decoration: none;
+	}
+
+	&:hover {
+		.shopify-product-name {
+			color: $color-base;
+			@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+		}
+	}
+}

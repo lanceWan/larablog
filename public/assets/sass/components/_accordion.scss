@@ -1,0 +1,490 @@
+/*--------------------------------------------------
+    [Accordion v1]
+----------------------------------------------------*/
+
+.accordion-v1 {
+    .panel-group {
+        margin-bottom: 0;
+    }
+
+    .panel {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .panel-default {
+        .panel-heading {
+            border-radius: 0;
+            padding: 0;
+
+            + .panel-collapse {
+                > .panel-body {
+                    border-top: none;
+                }
+            }
+        }
+    }
+
+    .panel-title {
+        > a {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            @include font($size: $font-size-15, $weight: $font-weight-300);
+            color: $color-dark;
+            background: $color-sky-light;
+            padding: 15px 50px 15px 15px;
+
+            &:after {
+                @include position(absolute, $top: 8px, $right: 20px);
+                @include font($size: $font-size-24, $weight: $font-weight-200);
+                color: $color-dark;
+                content: "\2B";
+            }
+
+            &[aria-expanded="true"] {
+                color: $color-white;
+                background: $color-base;
+
+                &:after {
+                    color: $color-white;
+                    @include position(absolute, $top: 5px, $right: 20px);
+                    content: "\2013";
+                }
+            }
+
+            &:focus,
+            &:hover {
+                color: $color-white;
+                background: $color-base;
+                text-decoration: none;
+
+                &:after {
+                    color: $color-white ;
+                }
+            }
+        }
+    }
+
+    .panel-body {
+        @include font($size: $font-size-15, $weight: $font-weight-300);
+        color: $color-subtitle;
+    }
+}
+
+/* Accordion v1 Active aligned to the left (the default is right) */
+.accordion-v1 {
+    &.accordion-v1-active-left {
+        .panel-title {
+            > a {
+                padding: 15px 15px 15px 50px;
+
+                &:after {
+                    @include position(absolute, $top: 7.5px, $left: 20px, $right: auto);
+                }
+
+                &[aria-expanded="true"] {
+                    &:after {
+                        @include position(absolute, $top: 6px, $left: 20px, $right: auto);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Accordion v2]
+----------------------------------------------------*/
+
+.accordion-v2 {
+    .panel-group {
+        margin-bottom: 0;
+    }
+
+    .panel {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+
+        + .panel {
+            margin: 0;
+        }
+    }
+
+    .panel-default {
+        .panel-heading {
+            background: $color-white;
+            border: 1px solid $color-sky-light;
+            border-radius: 0;
+            box-shadow: 1px 2px 5px 0 lighten($color-tint-light, 1%);
+            padding: 0;
+            margin-bottom: 15px;
+
+            + .panel-collapse {
+                > .panel-body {
+                    border-top: none;
+                }
+            }
+        }
+    }
+
+    .panel-title {
+        > a {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            @include font($size: $font-size-15, $weight: $font-weight-300);
+            color: $color-dark;
+            padding: 15px 50px 15px 15px;
+
+            &:after {
+                @include position(absolute, $top: 10px, $right: 15px);
+                display: inline-block;
+                @include size(30px);
+                @include font($size: $font-size-18, $weight: $font-weight-200);
+                color: $color-dark;
+                text-align: center;
+                vertical-align: middle;
+                content: "\2B";
+                padding: 4px;
+
+            }
+
+            &[aria-expanded="true"] {
+                &:after {
+                    content: "\2013";
+                    padding: 5px;
+                }
+            }
+
+            &:focus,
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+
+                &:after {
+                    color: $color-base;
+                }
+            }
+
+            .panel-title-icon {
+                @include position(relative, $top: 3px);
+                min-width: 30px;
+                height: auto;
+                text-align: center;
+                @include font($size: $font-size-18);
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .panel-body {
+        @include font($size: $font-size-15, $weight: $font-weight-300);
+        color: $color-subtitle;
+        border: none;
+    }
+}
+
+/* Accordion v2 Active aligned to the left (the default is right) */
+.accordion-v2 {
+    &.accordion-v2-active-left {
+        .panel-title {
+            > a {
+                padding: 15px 15px 15px 70px;
+
+                &:after {
+                    @include position(absolute, $top: 10px, $left: 15px);
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Accordion v3]
+----------------------------------------------------*/
+
+.accordion-v3 {
+    .panel-group {
+        margin-bottom: 0;
+    }
+
+    .panel {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .panel-default {
+        background: transparent;
+
+        .panel-heading {
+            border-radius: 0;
+            border: 1px solid $color-white;
+            background: transparent;
+            padding: 0;
+
+            + .panel-collapse {
+                > .panel-body {
+                    border-top: none;
+                }
+            }
+        }
+    }
+
+    .panel-title {
+        > a {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            @include font($size: $font-size-15);
+            color: $color-white;
+            padding: 15px 15px 15px 45px;
+
+            &:before {
+                @include position(absolute, $top: 8px, $left: 15px);
+                @include font($size: $font-size-24, $weight: $font-weight-200);
+                color: $color-white;
+                content: "\2B";
+            }
+
+            &[aria-expanded="true"] {
+                &:before {
+                    @include position(absolute, $top: 10px, $left: 15px);
+                    content: "\2013";
+                }
+            }
+
+            &:focus,
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+
+                &:before {
+                    color: $color-base ;
+                }
+            }
+        }
+    }
+
+    .panel-body {
+        @include font($size: $font-size-15, $weight: $font-weight-300);
+        color: $color-white;
+    }
+}
+
+/* Accordion v3 Active aligned to the right (the default is left) */
+.accordion-v3 {
+    &.accordion-v3-active-right {
+        .panel-title {
+            > a {
+                padding: 15px 50px 15px 15px;
+
+                &:before {
+                    @include position(absolute, $top: 8px, $left: auto, $right: 15px);
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Accordion v4]
+----------------------------------------------------*/
+
+.accordion-v4 {
+    padding-left: 50px;
+
+    .panel-group {
+        margin-bottom: 0;
+    }
+
+    .panel {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .panel-default {
+        background: transparent;
+
+        .panel-heading {
+            border-radius: 0;
+            border: 1px solid $color-white;
+            background: transparent;
+            padding: 0;
+
+            + .panel-collapse {
+                > .panel-body {
+                    border-top: none;
+                }
+            }
+        }
+    }
+
+    .panel-title {
+        > a {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            @include font($size: $font-size-15);
+            color: $color-white;
+            padding: 10px;
+
+            &:before {
+                @include position(absolute, $top: 0, $left: -50px);
+                @include size(40px);
+                @include font($size: $font-size-24, $weight: $font-weight-200);
+                color: $color-base;
+                line-height: .5;
+                border: 1px solid $color-white;
+                content: "\2B";
+                padding: 13px;
+            }
+
+            &[aria-expanded="true"] {
+                &:before {
+                    line-height: .6;
+                    content: "\2013";
+                }
+            }
+
+            &:focus,
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+
+                &:before {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+
+    .panel-body {
+        @include font($size: $font-size-15, $weight: $font-weight-300);
+        color: $color-white;
+    }
+}
+
+/* Accordion v4 Active aligned to the left (the default is right) */
+.accordion-v4 {
+    &.accordion-v4-active-right {
+        padding: 0 50px 0 0;
+
+        .panel-title {
+            > a {
+                &:before {
+                    @include position(absolute, $top: 0, $left: auto, $right: -50px);
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Accordion v5]
+----------------------------------------------------*/
+
+.accordion-v5 {
+    .panel-group {
+        margin-bottom: 0;
+    }
+
+    .panel {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+
+        + .panel {
+            margin-top: 0;
+        }
+    }
+
+    .panel-default {
+        .panel-heading {
+            background: 0;
+            border-radius: 0;
+            padding: 0;
+
+            + .panel-collapse {
+                > .panel-body {
+                    border-top: none;
+                }
+            }
+        }
+    }
+
+    .panel-title {
+        > a {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            @include font($size: $font-size-15, $weight: $font-weight-300);
+            color: $color-dark;
+            padding: 15px 35px;
+
+            &:after {
+                @include position(absolute, $top: 8px, $right: 20px);
+                display: inline-block;
+                @include font($size: $font-size-24, $weight: $font-weight-200);
+                color: $color-dark;
+                vertical-align: middle;
+                content: "\2B";
+            }
+
+            &[aria-expanded="true"] {
+                &:after {
+                    @include position(absolute, $top: 10px, $right: 20px);
+                    content: "\2013";
+                }
+            }
+
+            &:focus,
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+
+                &:after {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+
+    .panel-body {
+        @include font($size: $font-size-15, $weight: $font-weight-300);
+        color: darken($color-subtitle, 1%);
+        background: $color-sky-light;
+        border-top: none;
+        padding: 50px;
+    }
+}
+
+/* Accordion v5 Active aligned to the left (the default is right) */
+.accordion-v5 {
+    &.accordion-v5-active-left {
+        .panel-title {
+            > a {
+                padding: 15px 15px 15px 50px;
+
+                &:after {
+                    @include position(absolute, $top: 8px, $left: 20px, $right: auto);
+                }
+
+                &[aria-expanded="true"] {
+                    &:after {
+                        @include position(absolute, $top: 5px, $left: 20px, $right: auto);
+                    }
+                }
+            }
+        }
+    }
+}

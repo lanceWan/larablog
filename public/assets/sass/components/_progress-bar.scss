@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------
+    [Progress Bar]
+------------------------------------------------------------------*/
+
+.progress-box {
+    overflow: hidden;
+
+    .progress-title {
+        @include font($size: $font-size-18, $style: italic);
+        text-align: left;
+        text-transform: inherit;
+        margin: 0 0 10px 2px;
+
+        > .pull-right {
+            float: right !important;
+        }
+    }
+
+    .progress {
+        background: lighten($color-tint-light, 2%);
+        box-shadow: none;
+        margin-bottom: 15px;
+    }
+
+    .progress-xs { height: 3px; }
+    .progress-sm { height: 6px; }
+    .progress-md { height: 11px; }
+
+    .progress-bar {
+        @include transition(all, 3s ease-in);
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Vertical Progress Bar]
+------------------------------------------------------------------*/
+
+.progress-vertical {
+    position: relative;
+    float: left;
+    @include size(100%, 200px);
+
+    .progress-bar {
+        @include position(absolute, $bottom: 0);
+        @include size(100%, 0);
+        @include transition(height, 3s ease);
+    }
+}
+

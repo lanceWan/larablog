@@ -1,0 +1,471 @@
+/*------------------------------------------------------------------
+    [Header Fullscreen]
+------------------------------------------------------------------*/
+
+/* Navbar */
+.header-fullscreen {
+    /* Auto Hiding Navbar */
+    &.auto-hiding-navbar {
+        &.nav-up {
+            top: -80px;
+        }
+    }
+
+    .navbar-fullscreen-navbar {
+        z-index: 999;
+        background: transparent;
+        border-bottom: 1px solid rgba(255,255,255,.5);
+        @include clearfix;
+    }
+
+    .header-fullscreen-col {
+        width: 33.33333%;
+        float: left;
+    }
+
+    .header-fullscreen-nav-actions-left {
+        padding: 32px 0;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        
+        .header-fullscreen-nav-trigger {
+            position: relative;
+            float: left;
+            display: inline-block;
+            @include size(30px);
+            text-align: center;
+            text-decoration: none;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+            .header-fullscreen-nav-trigger-icon {
+                @include position(relative, $top: 3px);
+                @include size(20px, 1px);
+                display: inline-block;
+                background: $color-white;
+                @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+                &:before,
+                &:after {
+                    @include position(absolute, $left: 0);
+                    @include size(20px, 1px);
+                    background: $color-white;
+                    content: " ";
+                }
+                &:before {
+                    bottom: -6px;
+                    @include rotate(0);
+                    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                }
+                &:after {
+                    top: -6px;
+                    @include rotate(0);
+                    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                }
+            }
+            
+            &:hover {
+                .header-fullscreen-nav-trigger-icon {
+                    background: $color-base;
+                    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+                    &:before,
+                    &:after {
+                        background: $color-base;
+                        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                    }
+                }
+            }
+        }
+    }
+
+    .header-fullscreen-nav-logo-wrap {
+        @include position(relative, $top: 0, $left: 50%);
+        @include size(150px, auto);
+        text-align: center;
+        @include translate3d(-50%,0,0);
+        
+        .header-fullscreen-nav-logo {
+            display: block;
+            @include size(150px, auto);
+            z-index: 2001;
+            max-height: 95px;
+            text-align: center;
+            line-height: 65px;
+            padding: 15px 0;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+            .header-fullscreen-nav-logo-img {
+                display: inline-block;
+                @include size(85px, auto);
+                max-width: 100%;
+                max-height: 100%;
+                vertical-align: middle;
+
+                &.header-fullscreen-nav-logo-img-white {
+                    display: inline-block;
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+                &.header-fullscreen-nav-logo-img-dark {
+                    display: none;
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+        }
+    }
+
+    .header-fullscreen-nav-actions-right {
+        display: inline-block;
+        text-align: right;
+        padding: 37px 0;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        .nav-item-child {
+            color: $color-white;
+            line-height: 20px;
+            padding: 7px 15px;
+            background: $color-base;
+            text-decoration: none;
+
+            &:hover {
+                color: $color-white;
+            }
+        }
+    }
+}
+
+/* Nav Overlay */
+.header-fullscreen {
+    .header-fullscreen-nav-overlay {
+        @include position(fixed, $top: 50%, $left: 50%);
+        @include size(92%, auto);
+        z-index: 2000;
+        visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        @include translate3d(-50%,-50%,0);
+
+        .header-fullscreen-nav-overlay-content {
+            background: transparent;
+            opacity: 0;
+            overflow: hidden;
+            @include transform-scale(.7);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+    }
+
+    .header-fullscreen-nav-bg-overlay {
+        @include position(fixed, $top: 0, $left: 0);
+        @include size(100%);
+        z-index: 1000;
+        @include bg-opacity($color-sky-light, .2);
+        visibility: hidden;
+        opacity: 0;
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+
+        .header-fullscreen-nav-close {
+            @include position(fixed, $top: 15px, $right: 15px);
+            @include size(30px);
+            @include font($size: $font-size-30);
+            color: $color-dark;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+
+            &:hover {
+                color: $color-base;
+                @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+            }
+        }
+    }
+
+    .header-fullscreen-nav-overlay-show {
+        visibility: visible;
+
+        .header-fullscreen-nav-overlay-content {
+            opacity: 1;
+            @include transform-scale(1);
+        }
+
+        ~ .header-fullscreen-nav-bg-overlay {
+            opacity: 1;
+            visibility: visible;
+            background: $color-sky-light;
+        }
+    }
+}
+
+/* Menu */
+.header-fullscreen {
+    .header-fullscreen-menu {
+        max-width: 500px;
+        display: block;
+        text-align: center;
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+
+        .nav-main-item {
+            display: block;
+            @include font($size: $font-size-18);
+            color: $color-dark;
+        }
+
+        .nav-main-item-child,
+        .nav-submenu-item-child {
+            display: block;
+            color: $color-dark;
+            text-decoration: none;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            &.nav-main-item-child-hover {
+                &.active,
+                &:hover {
+                    color: $color-base;
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            &.nav-main-item-child-dropdown,
+            &.nav-submenu-item-child-dropdown {
+                position: relative;
+
+                &:after {
+                    display: inline-block;
+                    @include font($size: $font-size-14, $family: $font-family-font-awesome);
+                    color: $color-subtitle;
+                    content: "\f105";
+                    margin-left: 10px;
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+
+                &.nav-item-open {
+                    &:after {
+                        @include rotate(90deg);
+                        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                    }
+                }
+
+                &.active,
+                &:hover {
+                    color: $color-base;
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                    
+                    &:before,
+                    &:after {
+                        color: $color-base;
+                        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                    }
+                }
+            }
+        }
+        
+        .nav-main-item-child {
+            @include font($size: $font-size-18);
+            padding: 10px 0;
+
+            &.nav-main-item-child-dropdown {
+                &:after {
+                    top: 10px;
+                }
+            }
+        }
+
+        .nav-submenu-item-child {
+            @include font($size: $font-size-16);
+            padding: 5px 0;
+            color: $color-subtitle;
+
+            &.nav-submenu-item-child-dropdown {
+                &:after {
+                    top: 5px;
+                }
+            }
+        }
+
+        .nav-dropdown-menu {
+            display: none;
+            list-style: none;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            padding: 0;
+            margin: 0 0 15px 10px;
+
+            .nav-dropdown-menu {
+                margin-bottom: 0;
+            }
+
+            .nav-dropdown-menu-item,
+            .nav-dropdown-menu-child {
+                display: block;
+                @include font($size: $font-size-15);
+                color: $color-subtitle;
+            }
+            
+            .nav-dropdown-menu-item {
+                padding: 5px 0;
+            }
+
+            .nav-dropdown-menu-link {
+                display: block;
+                @include font($size: $font-size-15);
+                color: $color-subtitle;
+                text-decoration: none;
+
+                &:hover {
+                    color: $color-base;
+                }
+            }
+
+            .nav-dropdown-menu-child {
+                text-decoration: none;
+
+                &.active {
+                    color: $color-base;
+                }
+
+                &:hover {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries below 767px */
+@media (max-width: $screen-sm-min) {
+    .header-fullscreen {
+        .header-fullscreen-nav-overlay {
+            width: 90%;
+        }
+    }
+}
+
+/* Media Queries below 991px */
+@media (max-width: $screen-sm-max) {
+    /* Navbar */
+    .header-fullscreen {
+        .navbar-fullscreen-navbar {
+            background: $color-white;
+        }
+    }
+
+    /* Nav Logo */
+    .header-fullscreen {
+        .header-fullscreen-nav-logo-wrap {
+            .header-fullscreen-nav-logo {
+                .header-fullscreen-nav-logo-img {
+                    &.header-fullscreen-nav-logo-img-white {
+                        display: none;
+                        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                    }
+                    &.header-fullscreen-nav-logo-img-dark {
+                        display: inline-block;
+                        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                    }
+                }
+            }
+        }
+    }
+
+    /* Nav Trigger */
+    .header-fullscreen {
+        .header-fullscreen-nav-actions-left {
+            .header-fullscreen-nav-trigger {
+                .header-fullscreen-nav-trigger-icon {
+                    background: $color-dark;
+                    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+                    &:before,
+                    &:after {
+                        background: $color-dark;
+                    }
+                }
+
+                &:hover {
+                    .header-fullscreen-nav-trigger-icon {
+                        background: $color-base;
+                        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+                        &:before,
+                        &:after {
+                            background: $color-base;
+                            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Header Shrink */
+    .header-shrink {
+        &.header-fullscreen {
+            .navbar-fullscreen-navbar {
+                background: $color-white;
+                box-shadow: 0 0 15px $color-tint-light;
+            }
+
+            .header-fullscreen-nav-logo-wrap {
+                .header-fullscreen-nav-logo {
+                    max-height: 80px;
+                    line-height: 50px;
+                    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+                    .header-fullscreen-nav-logo-img {
+                        &.header-fullscreen-nav-logo-img-white {
+                            display: none;
+                            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                        }
+                        &.header-fullscreen-nav-logo-img-dark {
+                            display: inline-block;
+                            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                        }
+                    }
+                }
+            }
+
+            .header-fullscreen-nav-actions-left {
+                padding: 25px 0;
+                @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+                .header-fullscreen-nav-trigger {
+                    height: 30px;
+                    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                    
+                    .header-fullscreen-nav-trigger-icon {
+                        top: -1px;
+                        background: $color-dark;
+                        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+                        &:before,
+                        &:after {
+                            background: $color-dark;
+                        }
+                    }
+
+                    &:hover {
+                        .header-fullscreen-nav-trigger-icon {
+                            background: $color-base;
+                            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+                            &:before,
+                            &:after {
+                                background: $color-base;
+                                @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header-fullscreen-nav-actions-right {
+                padding: 30px 0;
+                @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+            }
+        }
+    }
+}

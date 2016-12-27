@@ -1,0 +1,162 @@
+/*------------------------------------------------------------------
+    [Search Fullscreen]
+------------------------------------------------------------------*/
+
+.search-fullscreen {
+    position: relative;
+
+    .search-fullscreen-trigger-icon {
+        @include position(relative, $top: -1px);
+        display: inline-block;
+        @include font($size: $font-size-13);
+        color: $color-dark;
+        cursor: pointer;
+        padding: 0 5px;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        &:hover {
+            color: $color-base;
+        }
+    }
+
+    .search-fullscreen-overlay {
+        @include position(fixed, $top: 50%, $left: 50%);
+        @include size(50%, auto);
+        z-index: 2000;
+        visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        @include translate3d(-50%,-50%,0);
+
+        .search-fullscreen-overlay-content {
+            background: transparent;
+            opacity: 0;
+            overflow: hidden;
+            @include transform-scale(.7);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+    }
+
+    .search-fullscreen-input-group {
+        position: relative;
+
+        .search-fullscreen-input {
+            @include size(100%, 50px);
+            @include font($size: $font-size-36, $weight: $font-weight-300);
+            color: $color-dark;
+            @include placeholder($color-dark);
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0 35px 0 0;
+
+            &:focus {
+                @include placeholder($color-dark);
+            }
+        }
+
+        .search-fullscreen-search {
+            @include position(absolute, $top: -20px, $right: 0);
+            @include size(35px);
+            background: transparent;
+            outline: none;
+            border: none;
+
+            .search-fullscreen-search-icon {
+                @include font($size: $font-size-18);
+                color: $color-dark;
+            }
+
+            &:hover {
+                .search-fullscreen-search-icon {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+
+    .search-fullscreen-bg-overlay {
+        @include position(fixed, $top: 0, $left: 0);
+        @include size(100%);
+        z-index: 1000;
+        @include bg-opacity($color-sky-light, .2);
+        visibility: hidden;
+        opacity: 0;
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+
+        .search-fullscreen-close {
+            @include position(fixed, $top: 0, $right: 15px);
+            @include size(35px);
+            @include font($size: $font-size-30);
+            color: $color-dark;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+    }
+
+    .search-fullscreen-overlay-show {
+        visibility: visible;
+
+        .search-fullscreen-overlay-content {
+            opacity: 1;
+            @include transform-scale(1);
+        }
+
+        ~ .search-fullscreen-bg-overlay {
+            opacity: 1;
+            visibility: visible;
+            background: $color-sky-light;
+        }
+    }
+}
+
+/* Media Queries below 767px */
+@media (max-width: $screen-sm-min) {
+    .search-fullscreen {
+        .search-fullscreen-overlay {
+            width: 90%;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Search Fullscreen Trigger White]
+------------------------------------------------------------------*/
+
+/* Media Queries below 992px */
+@media (min-width: $screen-md-min) {
+    /* Search Fullscreen */
+    .search-fullscreen {
+        &.search-fullscreen-trigger-white {
+            .search-fullscreen-trigger-icon {
+                color: $color-white;
+
+                &:hover {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+
+    /* Header Shrink */
+    .header-shrink {
+        .search-fullscreen {
+            &.search-fullscreen-trigger-white {
+                .search-fullscreen-trigger-icon {
+                    color: $color-dark;
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+}

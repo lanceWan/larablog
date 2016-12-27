@@ -1,0 +1,113 @@
+/*--------------------------------------------------
+    [Work v1]
+----------------------------------------------------*/
+
+.work-v1 {
+	position: relative;
+	box-shadow: 0 2px 5px 3px lighten($color-tint-light, 1%);
+	overflow: hidden;
+
+	.work-v1-img-gradient {
+		position: relative;
+        display: block;
+        text-decoration: none;
+
+		&:before {
+			@include position(absolute, $top: 0, $left: 0);
+			@include size(100%);
+			@include bg-opacity($color-dark, 0);
+			content: " ";
+			@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+		}
+
+		.work-v1-view {
+			@include position(absolute, $top: 0, $left: 50%);
+			opacity: 0;
+        	@include translate3d(-50%,0,0);
+			@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+		}
+	}
+
+	.work-v1-wrap {
+		position: relative;
+	}
+
+	.work-v1-content {
+		@include position(absolute, $left: 0, $bottom: 0);
+		@include size(100%, auto);
+		background: $color-white;
+		padding: 20px;
+	}
+
+	.work-v1-badge {
+		@include position(absolute, $top: -15px, $right: 30px);
+		color: $color-white;
+		background: $color-base;
+		padding: 5px 10px;
+		text-align: center;
+	}
+
+	.work-v1-title {
+		@include font($size: $font-size-20);
+		margin-bottom: 10px;
+	}
+
+	.work-v1-list {
+		margin-bottom: 0;
+
+		> li {
+			position: relative;
+			color: $color-subtitle;
+			padding: 0 20px 0 0;
+
+			&:after {
+				@include position(absolute, $top: 4px, $right: 8px);
+				display: inline-block;
+				@include size(1px, 12px);
+				background: $color-subtitle;
+				content: " ";
+			}
+
+			&:last-child {
+				&:after {
+					display: none;
+				}
+			}
+		}
+
+		.work-v1-category {
+			@include font($size: $font-size-14);
+
+			.work-v1-category-link {
+				color: $color-subtitle;
+
+				&:hover {
+					color: $color-base;
+				}
+			}
+		}
+		
+		.work-v1-date {
+			@include font($size: $font-size-14);
+		}
+	}
+
+	.work-v1-collapse {
+		padding-top: 15px;
+	}
+
+	&:hover {
+		.work-v1-img-gradient {
+			&:before {
+				@include bg-opacity($color-dark, .3);
+				@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+			}
+
+			.work-v1-view {
+				top: 20%;
+				opacity: 1;
+				@include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+			}
+		}
+	}
+}

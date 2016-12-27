@@ -1,0 +1,119 @@
+/*--------------------------------------------------
+    [Star Ratings]
+----------------------------------------------------*/
+
+/* Loading */
+.rating-loading {
+	@include size(25px);
+    @include font($size: 0);
+    color: $color-white;
+    background: transparent url('../../assets/img/widgets/loading.gif') top left no-repeat;
+    border: none;
+}
+
+/* Stars */
+.rating-container {
+	.rating {
+	    display: inline-block;
+	    position: relative;
+	    vertical-align: middle;
+	    cursor: default;
+	    overflow: hidden;
+	    white-space: nowrap;
+	}
+}
+
+.rating-disabled {
+	.rating {
+    	cursor: not-allowed;
+    }
+}
+
+.rating-container {
+	.star {
+	    display: inline-block;
+	    text-align: center;
+	    margin: 0 3px;
+	}
+}
+
+.rating-container {
+	.empty-stars {
+    	color: darken($color-tint-light, 5%);
+    }
+}
+
+.rating-container {
+	.filled-stars {
+		@include position(absolute, $top: 0, $left: 0);
+	    color: #ffc300;
+	    white-space: nowrap;
+	    overflow: hidden;
+	    margin: auto;
+	}
+}
+
+.rating-animate {
+	.filled-stars {
+		@include cubic-transition($delay: 0, $duration: 300ms, $property: (width));
+	}
+}
+
+/* Size */
+.rating-xs {
+    @include font($size: $font-size-18);
+}
+
+.rating-sm {
+    @include font($size: $font-size-30);
+}
+
+.rating-md {
+    @include font($size: $font-size-36);
+}
+
+
+/* Clear */
+.rating-container {
+	.clear-rating {
+    	@include font($size: $font-size-16);
+	    display: inline-block;
+	    color: lighten($color-subtitle, 25%);
+	    vertical-align: middle;
+	    cursor: not-allowed;
+    	padding-right: 5px;
+	}
+}
+
+.clear-rating-active {
+    cursor: pointer !important;
+	
+	&:hover {
+	    color: $color-red;
+	}
+}
+
+/* Caption */
+.rating-container {
+	.caption {
+	    color: #999;
+	    display: inline-block;
+	    vertical-align: middle;
+	    font-size: 60%;
+	    margin: -6px 0 0 5px;
+
+	    > .label {
+	    	@include font($weight: $font-weight-400, $family: $font-family-base);
+	    }
+	}
+}
+
+/* Print */
+@media print {
+    .rating-container {
+    	.clear-rating {
+        	display: none;
+        }
+    }
+}
+

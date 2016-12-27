@@ -1,0 +1,127 @@
+/*------------------------------------------------------------------
+    [Equal Height Interactive Banner]
+------------------------------------------------------------------*/
+
+.equal-height-ib {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+
+    &.equal-height-ib-400 {
+        height: 400px;
+    }
+
+    &.equal-height-ib-600 {
+        height: 600px;
+    }
+
+    &.equal-height-ib-700 {
+        height: 700px;
+    }
+
+    &.equal-height-ib-850 {
+        height: 850px;
+    }
+
+    .equal-height-ib-one,
+    .equal-height-ib-two {
+        position: absolute;
+        height: 500px;
+
+        &.equal-height-ib-one-400,
+        &.equal-height-ib-two-400 {
+            height: 400px;
+        }
+
+        &.equal-height-ib-one-600,
+        &.equal-height-ib-two-600 {
+            height: 600px;
+        }
+
+        &.equal-height-ib-one-700,
+        &.equal-height-ib-two-700 {
+            height: 700px;
+        }
+
+        &.equal-height-ib-one-850,
+        &.equal-height-ib-two-850 {
+            height: 850px;
+        }
+    }
+
+    .equal-height-ib-one {
+        left: 0;
+    }
+    .equal-height-ib-two {
+        right: 0;
+    }
+
+    .equal-height-ib-ver-center-align {
+        @include position(relative, $top: 50%);
+        @include translate3d(0,-50%,0);
+    }
+
+    .equal-height-ib-bg-img {
+        @include size(100%);
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    .equal-height-ib {
+        &.equal-height-ib-md-break {
+            position: static;
+            height: auto;
+
+            &.equal-height-ib-400,
+            &.equal-height-ib-600,
+            &.equal-height-ib-700,
+            &.equal-height-ib-850 {
+                height: auto;
+            }
+
+            .equal-height-ib-one,
+            .equal-height-ib-two {
+                position: relative;
+
+                &.equal-height-ib-md-height-auto {
+                    height: auto;
+                }
+            }
+
+            .equal-height-ib-ver-center-align {
+                @include position(static, $top: 0);
+                @include translate3d(0,0,0);
+            }
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .equal-height-ib {
+        position: static;
+        height: auto;
+
+        &.equal-height-ib-400,
+        &.equal-height-ib-600,
+        &.equal-height-ib-700,
+        &.equal-height-ib-850 {
+            height: auto;
+        }
+
+        .equal-height-ib-one,
+        .equal-height-ib-two {
+            position: relative;
+
+            &.equal-height-ib-sm-height-auto {
+                height: auto;
+            }
+        }
+
+        .equal-height-ib-ver-center-align {
+            @include position(static, $top: 0);
+            @include translate3d(0,0,0);
+        }
+    }
+}

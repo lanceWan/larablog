@@ -1,0 +1,856 @@
+/*--------------------------------------------------
+    [Radio Checkbox]
+----------------------------------------------------*/
+
+.fuelux {
+	.radio-checkbox,
+	.radio-checkbox-inline {
+		label {
+			color: $color-subtitle;
+		}
+
+		input[type="checkbox"]:not(.sr-only),
+		input[type="radio"]:not(.sr-only) {
+			~ label {
+				&:before {
+					z-index: 1;
+				}
+			}
+		}
+
+		input[type="checkbox"]:not(.sr-only):checked,
+		input[type="radio"]:not(.sr-only):checked {
+			~ label {
+				&:before {
+					@include font($size: 8px);
+					color: $color-white;
+					line-height: 1em;
+					padding-top: 2px;
+					padding-left: 1px;
+					content: "\f00c";
+				}
+			}
+		}
+
+		.radio-checkbox-label {
+			@include font($size: $font-size-14, $weight: $font-weight-300, $family: $font-family-base);
+		}
+	}
+
+	.radio-checkbox-inline {
+		& +.radio-checkbox-inline {
+	    	margin-left: 15px;
+	    }
+	}
+}
+
+
+/*--------------------------------------------------
+    [Radio Checkbox Button Styles]
+----------------------------------------------------*/
+
+/* General */
+.fuelux {
+	.radio-checkbox-btn {
+  		@include position(relative);
+		padding-left: 22px;
+
+		&:before {
+			@include position(absolute, $top: 3px, $left: 0);
+			@include size(15px);
+			z-index: 2;
+			display: inline-block;
+			line-height: 1;
+			text-align: left;
+			speak: none;
+			cursor: pointer;
+			content: " ";
+			padding: 2px;
+		}
+
+		&:active,
+		&:focus {
+			&:before {
+				cursor: pointer;
+			}
+		}
+		
+		&.disabled,
+		&.disabled:before {
+			cursor: not-allowed;
+			opacity: .65;
+		}
+  	}
+}
+
+/* Background Icon */
+.fuelux {
+	.radio-checkbox-bg-icon {
+		&:before {
+			@include font($size: 9px, $style: normal, $weight: $font-weight-300, $variant: normal, $family: $font-family-font-awesome);
+			color: $color-white;
+			border: 1px solid darken($color-tint-light, 2%);
+			padding: 2px;
+		}
+
+		&:active,
+		&:focus {
+			&:before {
+				color: $color-white;
+			}
+		}
+
+		&.checked {
+			&:before {
+				background: $color-base;
+				border-color: $color-base;
+				content: "\f00c";
+			}
+		}
+  	}
+}
+
+/* Background Color */
+.fuelux {
+	.radio-checkbox-bg-color {
+		&:before {
+			color: $color-white;
+			background: darken($color-tint-light, 2%);
+		}
+
+		&.checked {
+			&:before {
+				background: $color-base;
+				border-color: $color-base;
+			}
+		}
+  	}
+}
+
+/* Border */
+.fuelux {
+	.radio-checkbox-brd {
+		&:before {
+			border: 3px solid darken($color-tint-light, 2%);
+		}
+
+		&.checked {
+			&:before {
+				border-color: $color-base;
+			}
+		}
+  	}
+}
+
+/* Border with Dot */
+.fuelux {
+	.radio-checkbox-brd-dot {
+		&:before {
+			border: 2px solid darken($color-tint-light, 2%);
+		}
+
+		&:after {
+			@include position(absolute, $top: 8px, $left: 5px);
+			@include size(5px);
+			z-index: 2;
+			display: inline-block;
+			speak: none;
+			cursor: pointer;
+			background: darken($color-tint-light, 2%);
+			content: " ";
+		}
+
+		&.checked {
+			&:before {
+				border-color: $color-base;
+			}
+
+			&:after {
+				background: $color-base;
+			}
+		}
+  	}
+}
+
+
+/*--------------------------------------------------
+    [Size]
+----------------------------------------------------*/
+
+/* Small */
+.fuelux {
+	.radio-checkbox-btn {
+		&.radio-checkbox-sm {
+			&:before {
+				top: 0;
+				@include font($size: $font-size-11);
+				@include size(20px);
+				padding: 3.5px;
+			}
+		}
+	}
+
+	.radio-checkbox,
+	.radio-checkbox-inline {
+		&.radio-checkbox-sm {
+			.radio-checkbox-btn {
+				&:before {
+					top: 0;
+					@include font($size: $font-size-11);
+					@include size(20px);
+					padding: 3.5px;
+				}
+			}
+
+			.radio-checkbox-brd-dot {
+				&:before {
+					border-width: 3px;
+				}
+
+				&:after {
+					@include position(absolute, $top: 6px, $left: 6px);
+					@include size(8px);
+				}
+			}
+
+			label {
+				height: 20px;
+			}
+
+			.radio-checkbox-label {
+				@include font($size: $font-size-15);
+			}
+		}
+	}
+
+	.radio-checkbox {
+		&.radio-checkbox-sm {
+			label {
+				padding-left: 29px;
+			}
+		}
+	}
+
+	.radio-checkbox-inline {
+		&.radio-checkbox-sm {
+			padding-left: 29px;
+		}
+	}
+}
+
+/* Medium */
+.fuelux {
+	.radio-checkbox-btn {
+		&.radio-checkbox-md {
+			&:before {
+				top: 0;
+				@include font($size: $font-size-14);
+				@include size(25px);
+				padding: 4.5px;
+			}
+		}
+	}
+
+	.radio-checkbox,
+	.radio-checkbox-inline {
+		&.radio-checkbox-md {
+			.radio-checkbox-btn {
+				&:before {
+					top: 0;
+					@include font($size: $font-size-14);
+					@include size(25px);
+					padding: 4.5px;
+				}
+			}
+
+			.radio-checkbox-brd-dot {
+				&:before {
+					border-width: 3px;
+				}
+
+				&:after {
+					@include position(absolute, $top: 8px, $left: 8px);
+					@include size(9px);
+				}
+			}
+
+			label {
+				height: 25px;
+			}
+
+			.radio-checkbox-label {
+				@include font($size: $font-size-16);
+			}
+		}
+	}
+
+	.radio-checkbox {
+		&.radio-checkbox-md {
+			label {
+				padding-left: 33px;
+			}
+		}
+	}
+
+	.radio-checkbox-inline {
+		&.radio-checkbox-md {
+			padding-left: 33px;
+		}
+	}
+}
+
+
+/*--------------------------------------------------
+    [Bootstrap Colors]
+----------------------------------------------------*/
+
+/* Primary */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-primary {
+			&.checked {
+				&:before {
+					background: $color-bt-primary;
+					border-color: $color-bt-primary;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-primary {
+			&.checked {
+				&:before {
+					border-color: $color-bt-primary;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-primary {
+			&.checked {
+				&:before {
+					border-color: $color-bt-primary;
+				}
+
+				&:after {
+					background: $color-bt-primary;
+				}
+			}
+		}
+  	}
+}
+
+/* Info */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-info {
+			&.checked {
+				&:before {
+					background: $color-bt-info;
+					border-color: $color-bt-info;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-info {
+			&.checked {
+				&:before {
+					border-color: $color-bt-info;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-info {
+			&.checked {
+				&:before {
+					border-color: $color-bt-info;
+				}
+
+				&:after {
+					background: $color-bt-info;
+				}
+			}
+		}
+  	}
+}
+
+/* Warning */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-warning {
+			&.checked {
+				&:before {
+					background: $color-bt-warning;
+					border-color: $color-bt-warning;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-warning {
+			&.checked {
+				&:before {
+					border-color: $color-bt-warning;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-warning {
+			&.checked {
+				&:before {
+					border-color: $color-bt-warning;
+				}
+
+				&:after {
+					background: $color-bt-warning;
+				}
+			}
+		}
+  	}
+}
+
+/* Danger */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-danger {
+			&.checked {
+				&:before {
+					background: $color-bt-danger;
+					border-color: $color-bt-danger;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-danger {
+			&.checked {
+				&:before {
+					border-color: $color-bt-danger;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-danger {
+			&.checked {
+				&:before {
+					border-color: $color-bt-danger;
+				}
+
+				&:after {
+					background: $color-bt-danger;
+				}
+			}
+		}
+  	}
+}
+
+/* Success */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-success {
+			&.checked {
+				&:before {
+					background: $color-bt-success;
+					border-color: $color-bt-success;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-success {
+			&.checked {
+				&:before {
+					border-color: $color-bt-success;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-success {
+			&.checked {
+				&:before {
+					border-color: $color-bt-success;
+				}
+
+				&:after {
+					background: $color-bt-success;
+				}
+			}
+		}
+  	}
+}
+
+
+/*--------------------------------------------------
+    [Theme Colors]
+----------------------------------------------------*/
+
+/* Dark */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-dark {
+			&.checked {
+				&:before {
+					background: $color-dark;
+					border-color: $color-dark;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-dark {
+			&.checked {
+				&:before {
+					border-color: $color-dark;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-dark {
+			&.checked {
+				&:before {
+					border-color: $color-dark;
+				}
+
+				&:after {
+					background: $color-dark;
+				}
+			}
+		}
+  	}
+}
+
+/* Red */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-red {
+			&.checked {
+				&:before {
+					background: $color-red;
+					border-color: $color-red;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-red {
+			&.checked {
+				&:before {
+					border-color: $color-red;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-red {
+			&.checked {
+				&:before {
+					border-color: $color-red;
+				}
+
+				&:after {
+					background: $color-red;
+				}
+			}
+		}
+  	}
+}
+
+/* Pink */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-pink {
+			&.checked {
+				&:before {
+					background: $color-pink;
+					border-color: $color-pink;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-pink {
+			&.checked {
+				&:before {
+					border-color: $color-pink;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-pink {
+			&.checked {
+				&:before {
+					border-color: $color-pink;
+				}
+
+				&:after {
+					background: $color-pink;
+				}
+			}
+		}
+  	}
+}
+
+/* Green */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-green {
+			&.checked {
+				&:before {
+					background: $color-green;
+					border-color: $color-green;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-green {
+			&.checked {
+				&:before {
+					border-color: $color-green;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-green {
+			&.checked {
+				&:before {
+					border-color: $color-green;
+				}
+
+				&:after {
+					background: $color-green;
+				}
+			}
+		}
+  	}
+}
+
+/* Blue */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-blue {
+			&.checked {
+				&:before {
+					background: $color-blue;
+					border-color: $color-blue;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-blue {
+			&.checked {
+				&:before {
+					border-color: $color-blue;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-blue {
+			&.checked {
+				&:before {
+					border-color: $color-blue;
+				}
+
+				&:after {
+					background: $color-blue;
+				}
+			}
+		}
+  	}
+}
+
+/* Teal */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-teal {
+			&.checked {
+				&:before {
+					background: $color-teal;
+					border-color: $color-teal;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-teal {
+			&.checked {
+				&:before {
+					border-color: $color-teal;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-teal {
+			&.checked {
+				&:before {
+					border-color: $color-teal;
+				}
+
+				&:after {
+					background: $color-teal;
+				}
+			}
+		}
+  	}
+}
+
+/* Blue-Grey */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-blue-grey {
+			&.checked {
+				&:before {
+					background: $color-blue-grey;
+					border-color: $color-blue-grey;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-blue-grey {
+			&.checked {
+				&:before {
+					border-color: $color-blue-grey;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-blue-grey {
+			&.checked {
+				&:before {
+					border-color: $color-blue-grey;
+				}
+
+				&:after {
+					background: $color-blue-grey;
+				}
+			}
+		}
+  	}
+}
+
+/* Purple */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-purple {
+			&.checked {
+				&:before {
+					background: $color-purple;
+					border-color: $color-purple;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-purple {
+			&.checked {
+				&:before {
+					border-color: $color-purple;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-purple {
+			&.checked {
+				&:before {
+					border-color: $color-purple;
+				}
+
+				&:after {
+					background: $color-purple;
+				}
+			}
+		}
+  	}
+}
+
+/* Gold */
+.fuelux {
+	.radio-checkbox-bg-icon,
+	.radio-checkbox-bg-color {
+		&.radio-checkbox-gold {
+			&.checked {
+				&:before {
+					background: $color-gold;
+					border-color: $color-gold;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd {
+		&.radio-checkbox-gold {
+			&.checked {
+				&:before {
+					border-color: $color-gold;
+				}
+			}
+		}
+  	}
+
+  	.radio-checkbox-brd-dot {
+		&.radio-checkbox-gold {
+			&.checked {
+				&:before {
+					border-color: $color-gold;
+				}
+
+				&:after {
+					background: $color-gold;
+				}
+			}
+		}
+  	}
+}

@@ -1,0 +1,97 @@
+/*--------------------------------------------------
+    [Call To Action v1]
+----------------------------------------------------*/
+
+.call-to-action-v1 {
+    position: relative;
+    z-index: 1;
+    background: url(../../assets/img/1920x1080/10.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .7);
+        content: " ";
+    }
+
+    .call-to-action-v1-title {
+        @include font($size: $font-size-36);
+        color: $color-white;
+    }
+
+    .call-to-action-v1-text {
+        @include font($size: $font-size-22);
+        color: $color-white;
+        opacity: .8;
+        margin-bottom: 0;
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .call-to-action-v1 {
+        .call-to-action-v1-title {
+            @include font($size: $font-size-28);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Call To Action v2]
+----------------------------------------------------*/
+
+.call-to-action-v2 {
+    .call-to-action-v2-title {
+        @include font($size: $font-size-30);
+        margin-bottom: 10px;
+    }
+
+    .call-to-action-v2-text {
+        @include font($size: $font-size-18, $style: italic);
+        margin-bottom: 0;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Call To Action v3]
+----------------------------------------------------*/
+
+.call-to-action-v3 {
+    text-align: center;
+
+    .call-to-action-badge {
+        @include font($size: $font-size-18, $weight: $font-weight-400);
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .call-to-action-v3-text {
+        @include font($size: $font-size-18, $weight: $font-weight-300);
+
+        .call-to-action-text-bold {
+            @include font($size: $font-size-20, $weight: $font-weight-500);
+            color: $color-dark;
+            margin-right: 10px;
+        }
+    }
+
+    .call-to-action-v3-link {
+        display: inline-block;
+        @include font($size: $font-size-16, $weight: $font-weight-300);
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .call-to-action-v3 {
+        .call-to-action-v3-text {
+            display: block;
+            margin: 5px 0;
+        }
+    }
+}

@@ -1,0 +1,234 @@
+/*------------------------------------------------------------------
+    [Blog Grid]
+------------------------------------------------------------------*/
+
+.blog-grid {
+    position: relative;
+    background: $color-white;
+}
+
+/* Video */
+.blog-grid {
+    .blog-grid-video {
+        position: relative;
+
+        .blog-grid-video-player {
+            text-align: center;
+            @include position(absolute, $top: 50%, $left: 0, $right: 0);
+            @include translate3d(0,-50%,0);
+        }
+    }
+}
+
+/* Content */
+.blog-grid {
+    .blog-grid-box-shadow {
+        box-shadow: 0 2px 5px 3px lighten($color-tint-light, 1%);
+    }
+
+    .blog-grid-content {
+        padding: 20px;
+
+        &.blog-grid-content-no-gutter {
+            padding: 20px 0;
+        }
+    }
+
+    .blog-grid-title-sm {
+        @include font($size: $font-size-20);
+
+        > a {
+            @include font($size: $font-size-20);
+        }
+    }
+    .blog-grid-title-md {
+        @include font($size: $font-size-24);
+
+        > a {
+            @include font($size: $font-size-24);
+        }
+    }
+
+    .blog-grid-title-el {
+        @include font($size: $font-size-28, $family: $font-family-droid);
+
+        .blog-grid-title-link {
+            @include font($size: $font-size-30, $family: $font-family-droid);
+            text-decoration: none;
+        }
+    }
+}
+
+/* Supplemental */
+.blog-grid {
+    .blog-grid-supplemental {
+        border-top: 1px solid $color-tint-light;
+        background: $color-white;
+        padding: 20px;
+    }
+
+    .blog-grid-supplemental-title {
+        @include font($size: $font-size-12, $style: italic, $family: $font-family-droid);
+        color: $color-subtitle;
+    }
+
+    .blog-grid-supplemental-category {
+        @include font($size: $font-size-13, $family: $font-family-droid);
+        color: $color-base;
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .blog-grid {
+        .blog-grid-title-lg {
+            @include font($size: $font-size-24);
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Blog Grid Quote]
+------------------------------------------------------------------*/
+
+.blog-grid-quote {
+    text-align: center;
+    background: $color-white;
+    padding: 30px 20px;
+
+    &.blog-grid-box-shadow {
+        box-shadow: 0 2px 5px 3px lighten($color-tint-light, 1%);
+    }
+
+    .blog-grid-quote-icon {
+        @include font($size: $font-size-50);
+        color: $color-dark-light;
+        line-height: 0.8;
+    }
+
+    .blog-grid-quote-text {
+        display: block;
+        @include font($size: $font-size-18, $style: italic);
+        color: $color-dark;
+        text-transform: capitalize;
+        text-decoration: none;
+        letter-spacing: 0;
+        margin: 0 0 25px 0;
+
+        &.blog-grid-quote-text-md {
+            @include font($size: $font-size-20);
+        }
+        &.blog-grid-quote-text-lg {
+            @include font($size: $font-size-22);
+        }
+
+        &:hover {
+            color: $color-base;
+        }
+    }
+
+    .blog-quote-title {
+        @include font($size: $font-size-14);
+        color: $color-subtitle;
+        margin: 0;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Blog Grid Quote v2]
+------------------------------------------------------------------*/
+
+.blog-grid-quote-v2 {
+    text-align: center;
+    background: $color-base;
+    @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+    .blog-grid-quote-v2-title {
+        @include font($size: $font-size-18, $weight: $font-weight-400, $style: italic);
+        color: $color-white;
+        text-transform: capitalize;
+        letter-spacing: 0;
+        margin: 0;
+
+        .blog-grid-quote-v2-title-text {
+            display: block;
+            @include font($size: $font-size-18, $weight: $font-weight-400, $style: italic);
+            color: $color-white;
+            text-decoration: none;
+            padding: 20px;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+    }
+
+    &:hover {
+        background: $color-dark;
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Blog Grid Thumb]
+------------------------------------------------------------------*/
+
+.blog-grid-thumb {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+
+    .blog-grid-thumb-body {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        opacity: 0;
+        padding: 20px;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+            @include size(100%);
+            @include bg-opacity($color-base, .7);
+            content: " ";
+        }
+
+        &:after {
+            @include position(absolute, $top: 20px, $left: 20px, $right: 20px, $bottom: 20px);
+            @include size(auto);
+            border: 2px solid $color-white;
+            content: " ";
+        }
+    }
+
+    .blog-grid-thumb-content {
+        @include position(relative, $top: 50%);
+        text-align: center;
+        padding: 10px;
+        @include translate3d(0,-50%,0);
+    }
+
+    .blog-grid-thumb-category {
+        @include font($size: $font-size-14);
+        color: $color-white;
+        opacity: .8;
+    }
+
+    .blog-grid-thumb-title {
+        @include font($size: $font-size-18);
+        color: $color-white;
+    }
+
+    .blog-grid-thumb-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 3;
+        text-decoration: none;
+    }
+
+    &:hover {
+        .blog-grid-thumb-body {
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+}

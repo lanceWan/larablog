@@ -1,0 +1,36 @@
+/*--------------------------------------------------
+    [Countdown v1]
+----------------------------------------------------*/
+
+.countdown-v1 {
+	.countdown_section {
+		color: $color-white;
+		display: inline-block;
+		margin: 5px 10px;
+	}
+
+	.countdown_amount {
+		@include font($size: $font-size-36, $style: italic, $weight: $font-weight-700, $family: $font-family-lora);
+		line-height: 1.2;
+	}
+}
+
+/* Media Queries below 480px */
+@media (min-width: $screen-xs-min) {
+	.countdown-v1 {
+		.countdown_section {
+			@include size(130px);
+			@include font($size: $font-size-18, $weight: $font-weight-300);
+			text-align: center;
+			padding: 25px;
+			margin: 5px;
+			@include bg-opacity($color-white, .2);
+			@include border-radius(3px);
+		}
+
+		.countdown_amount {
+			@include font($size: $font-size-50);
+			line-height: 1.2;
+		}
+	}
+}

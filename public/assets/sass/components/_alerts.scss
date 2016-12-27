@@ -1,0 +1,142 @@
+/*--------------------------------------------------
+    [Alerts]
+----------------------------------------------------*/
+
+/* Alert Box Error */
+.alert-box-error {
+    @include font($size: $font-size-14);
+    color: $color-red-light;
+    @include bg-opacity($color-red-light, .2);
+    border: 1px solid lighten($color-red, 23%);
+
+    .close {
+        color: $color-red-light;
+    }
+
+    .alert-box-element {
+        color: lighten($color-red-light, 7%);
+        margin: 0 10px;
+    }
+}
+
+/* Alert Box Info */
+.alert-box-info {
+    @include font($size: $font-size-14);
+    color: $color-blue-light;
+    @include bg-opacity($color-blue-light, .2);
+    border: 1px solid lighten($color-blue, 18%);
+
+    .close {
+        color: $color-blue-light;
+    }
+
+    .alert-box-element {
+        color: lighten($color-blue-light, 7%);
+        margin: 0 10px;
+    }
+}
+
+/* Alert Box Warning */
+.alert-box-warning {
+    @include font($size: $font-size-14);
+    color: $color-gold;
+    @include bg-opacity($color-gold-light, .2);
+    border: 1px solid lighten($color-gold, 20%);
+
+    .close {
+        color: $color-gold;
+    }
+
+    .alert-box-element {
+        color: lighten($color-gold-light, 7%);
+        margin: 0 10px;
+    }
+}
+
+/* Alert Box Success */
+.alert-box-success {
+    @include font($size: $font-size-14);
+    color: $color-teal;
+    @include bg-opacity($color-teal, .2);
+    border: 1px solid lighten($color-teal, 15%);
+
+    .close {
+        color: $color-teal;
+    }
+
+    .alert-box-element {
+        color: lighten($color-teal-light, 7%);
+        margin: 0 10px;
+    }
+}
+
+/* Alert Box General */
+.alert-box-general {
+    background: $color-white;
+    border: 1px solid $color-tint-light;
+    overflow: hidden;
+
+    .alert-box-element {
+        float: left;
+        margin-right: 20px;
+    }
+
+    .alert-box-body {
+        overflow: hidden;
+
+        .alert-box-title {
+            display: block;
+            @include font($size: $font-size-16, $weight: $font-weight-400);
+            margin-bottom: 5px;
+        }
+
+        .alert-box-paragraph {
+            @include font($size: $font-size-14);
+            color: $color-subtitle;
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Alert Box Vertical */
+.alert-box-vertical {
+    position: relative;
+    color: $color-white;
+    text-align: center;
+    border: none;
+    overflow: hidden;
+    padding: 30px 10px;
+
+    .close {
+        @include position(absolute, $top: 5px, $right: 10px);
+        z-index: 1;
+        float: none;
+        color: $color-white;
+        opacity: .6;
+
+        &:hover {
+            opacity: .9;
+        }
+    }
+
+    .close-overlay {
+        @include position(absolute, $top: 0, $right: -40px);
+        @include size(100px, auto);
+        @include bg-opacity($color-white, .2);
+        padding: 20px;
+        @include rotate(45deg);
+    }
+
+    .alert-box-element {
+        display: block;
+        @include font($size: $font-size-24);
+        margin-bottom: 10px;
+    }
+
+    .alert-box-title {
+        display: block;
+        @include font($size: $font-size-18, $weight: $font-weight-400);
+        margin-bottom: 10px;
+    }
+}
+

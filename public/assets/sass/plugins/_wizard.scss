@@ -1,0 +1,229 @@
+/*--------------------------------------------------
+    [Wizard]
+----------------------------------------------------*/
+
+/* General */
+.wizard,
+.tabcontrol {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+
+	a {
+    	outline: 0;
+    }
+
+	ul {
+	    list-style: none;
+	    padding: 0;
+	    margin: 0;
+		
+		> li {
+		    display: inline-block;
+		    padding: 0;
+		}
+	}
+}
+
+/* Accessibility */
+.wizard,
+.tabcontrol {
+	> .steps {
+		.current-info {
+    		@include position(absolute, $left: -999em);
+    	}
+    }
+
+	> .content {
+		> .title {
+		    @include position(absolute, $left: -999em);
+		}
+	}
+}
+
+/* Steps */
+.wizard {
+	> .steps {
+	    @include position(relative);
+	    width: 100%;
+	    display: block;
+	    background: $color-base;
+
+	    > ul > li {
+		    width: 25%;
+		}
+		
+		> ul > li,
+		> ul > li {
+		    float: left;
+		}
+
+		a {
+	  		@include font($size: $font-size-18, $weight: $font-weight-400);
+			color: $color-white;
+			text-align: center;
+			padding: 20px 10px;
+		}
+
+	    a,
+		a:hover,
+		a:active {
+		    display: block;
+		    width: auto;
+		    color: $color-white;
+		    text-decoration: none;
+		}
+
+		.disabled {
+			a,
+			a:hover,
+			a:active {
+			    opacity: .6;
+			    cursor: default;
+			}
+		}
+
+		.current {
+			a,
+			a:hover,
+			a:active {
+			    cursor: default;
+			}
+		}
+		
+		.done {
+			a,
+			a:hover,
+			a:active {
+		    	opacity: .6;
+		    }
+		}
+
+		.number {
+		    @include font($size: $font-size-18);
+		}
+	}
+}
+
+/* Steps Vertical */
+.wizard {
+	&.vertical {
+		> .steps {
+		    display: inline;
+		    float: left;
+		    width: 30%;
+			
+			> ul > li {
+			    float: none;
+			    width: 100%;
+			}
+		}
+	}
+}
+
+/* Content */
+.wizard {
+	> .content {
+		@include position(relative);
+	    width: auto;
+	    min-height: 200px;
+	    display: block;
+	    background: $color-white;
+	    overflow: hidden;
+	    padding: 40px;
+	}
+}
+
+/* Content Vertical */
+.wizard {
+	&.vertical {
+		> .content {
+			display: inline;
+			float: left;
+			margin: 0 2.5% 0.5em 2.5%;
+			width: 65%;
+		}
+	}
+}
+
+/* Content Body */
+.wizard {
+	> .content {
+		> .body {
+			width: 100%;
+			float: left;
+		}
+	}
+}
+
+/* Actions */
+.wizard {
+	> .actions {
+		ul {
+			width: 100%;
+			margin-top: 30px;
+
+			> li {
+				> a {
+					display: inline-block;
+					padding: 12px 40px;
+					text-decoration: none;
+					@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+					&:hover {
+						@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+					}
+				}
+
+				&:nth-child(1) {
+					> a {
+						color: $color-base;
+						border: 1px solid $color-base;
+						@include border-radius(3px);
+
+						&:hover {
+							color: $color-white;
+							background: $color-base;
+						}
+					}
+				}
+
+				&:nth-child(2),
+				&:nth-child(3) {
+					float: right;
+					
+					> a {
+						color: $color-white;
+						background: $color-base;
+						@include border-radius(3px);
+
+						&:hover {
+							background: $color-base-light;
+						}
+					}
+				}
+			}
+		}
+
+		.disabled {
+			a,
+			a:hover,
+			a:active {
+			    opacity: .6;
+			    cursor: default;
+			}
+		}
+	}
+
+	&.actions-radius-circle {
+		> .actions {
+			ul {
+				> li {
+					> a {
+						@include border-radius(50px);
+					}
+				}
+			}
+		}
+	}
+}

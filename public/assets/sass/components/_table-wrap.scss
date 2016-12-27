@@ -1,0 +1,33 @@
+/*--------------------------------------------------
+    [Table Wrap]
+----------------------------------------------------*/
+
+.table-wrap {
+    background: $color-white;
+    border: 1px solid lighten($color-tint-light, 2%);
+
+    .table-wrap-header {
+        padding: 15px 20px;
+        border-bottom: 1px solid $color-tint-light;
+
+        .table-wrap-header-title {
+            float: left;
+            @include font($size: $font-size-18);
+            margin: 8px 0 0;
+        }
+    }
+
+    .table-wrap-header-tools {
+        @include position(relative, $top: 2px);
+        text-align: right;
+        margin-bottom: 0;
+
+        .table-wrap-header-tools-item {
+            padding: 0;
+        }
+    }
+
+    .table-wrap-body {
+        padding: 20px;
+    }
+}

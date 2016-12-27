@@ -1,0 +1,108 @@
+/*------------------------------------------------------------------
+    [Blog Single Post]
+------------------------------------------------------------------*/
+
+/* Blog Single Post Source */
+.blog-single-post-source {
+    display: block;
+    margin: 20px 0;
+}
+
+/* Blog Single Post Content */
+.blog-single-post-content {
+    padding: 60px 20px 40px;
+}
+
+/* Blog Single Post Comment Forum */
+.blog-single-post-comment-form {
+    .blog-single-post-form {
+        color: $color-dark;
+        @include placeholder($color-dark);
+        background: $color-sky-light;
+        border-color: $color-sky-light;
+
+        &:focus {
+            color: $color-dark;
+            @include placeholder($color-dark);
+            background: $color-sky-light;
+            border-color: lighten($color-tint-light, 1%);
+        }
+    }
+
+    .blog-single-post-comment {
+        overflow: hidden;
+        border-top: 1px solid $color-grey-light;
+        padding-top: 20px;
+        margin-top: 10px;
+
+        &.blog-single-post-comment-first-child {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .blog-single-post-comment {
+            margin-left: 30px;
+        }
+
+        .blog-single-post-comment-media {
+            float: left;
+            margin-right: 15px;
+
+            .blog-single-post-comment-media-img {
+                @include size(50px);
+            }
+        }
+
+        .blog-single-post-comment-content {
+            overflow: hidden;
+
+            .blog-single-post-comment-username {
+                display: inline-block;
+                @include font($size: $font-size-16, $weight: $font-weight-400);
+                text-transform: inherit;
+                margin: 0 0 5px;
+            }
+
+            .blog-single-post-comment-time {
+                float: right;
+                color: $color-subtitle;
+                @include font($size: $font-size-11);
+            }
+
+            .blog-single-post-comment-text {
+                color: $color-dark;
+            }
+        }
+
+        .blog-single-post-comment-share {
+            overflow: hidden;
+
+            .blog-single-post-comment-share-item {
+                @include font($size: $font-size-12);
+                padding: 0 5px;
+            }
+
+            .blog-single-post-comment-share-link {
+                @include font($size: $font-size-12);
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .blog-single-post-comment-form {
+        .blog-single-post-comment {
+            .blog-single-post-comment-media {
+                float: none;
+                margin-right: 0;
+
+                .blog-single-post-comment-media-img {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}

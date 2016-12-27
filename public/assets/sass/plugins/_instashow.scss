@@ -1,0 +1,19 @@
+/*------------------------------------------------------------------
+    [Instashow]
+------------------------------------------------------------------*/
+
+.instashow-gallery-media-cover {
+    background: rgba(0,188,212,.9) !important;
+}
+
+.instashow-gallery-control-arrow::before,
+.instashow-gallery-control-arrow::after {
+    background: rgba(0,188,212,.9) !important;
+}
+
+.instashow-gallery-media-counter,
+.instashow-gallery-media-info-counter {
+	em {
+    	color: $color-white;
+    }
+}

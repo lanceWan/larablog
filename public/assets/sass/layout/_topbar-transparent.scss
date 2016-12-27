@@ -1,0 +1,326 @@
+/*------------------------------------------------------------------
+    [Topbar Transparent]
+------------------------------------------------------------------*/
+
+.topbar-t {
+    background: transparent;
+    border-bottom: 1px dashed rgba(255,255,255,.8);
+    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+}
+
+/* Topbar v3 List */
+.topbar-t {
+    .topbar-t-list {
+        margin-bottom: 0;
+
+        .topbar-t-list-item {
+            position: relative;
+            min-width: 45px;
+            @include font($size: $font-size-12, $weight: $font-weight-600);
+            color: $color-white;
+            text-align: center;
+            padding: 0;
+            margin-left: -4px;
+
+            &:last-child {
+            	border-right: 1px dashed rgba(255,255,255,.8);
+            }
+
+            .topbar-t-list-dropdown {
+                display: block;
+                @include font($size: $font-size-12, $weight: $font-weight-600);
+                color: $color-white;
+                padding: 11px 15px;
+
+                &:focus {
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .topbar-t-list-dropdown-menu {
+            @include position(absolute, $top: 100%, $left: 0);
+            min-width: 130px;
+            display: none;
+            z-index: 1;
+            text-align: left;
+            background: $color-white;
+            list-style: none;
+            margin: 0;
+            padding: 10px 0;
+
+            .topbar-t-list-dropdown-menu-item {
+                display: block;
+                @include font($size: $font-size-12);
+                color: $color-dark;
+            }
+
+            .topbar-t-list-dropdown-menu-link {
+                display: block;
+                @include font($size: $font-size-12);
+                color: $color-dark;
+                padding: 5px 15px;
+
+                &:focus,
+                &:hover {
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    color: $color-white;
+                    background: $color-base;
+                }
+            }
+
+            .topbar-t-list-dropdown-menu-icon {
+                @include font($size: $font-size-12);
+                padding-right: 5px;
+            }
+        }
+    }
+}
+
+/* Topbar v3 Icons List */
+.topbar-t {
+	.topbar-t-socials {
+		float: left;
+		margin: 0 10px 0 0;
+
+		.topbar-t-socials-list {
+			@include position(relative, $top: 5px);
+		}
+	}
+}
+
+/* Topbar v3 Right Actions */
+.topbar-t-right-actions {
+	float: right;
+}
+
+/* Topbar v3 Shopping Cart */
+.topbar-t {
+	.topbar-t-sh-action {
+		float: right;
+	}
+
+    .topbar-t-sh-cart {
+        position: relative;
+        border-left: 1px dashed rgba(255,255,255,.8);
+        padding: 10px 15px;
+
+        .topbar-t-sh-cart-link {
+            @include font($size: $font-size-13);
+            color: $color-white;
+
+            &:focus {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+
+        .topbar-t-sh-cart-badge {
+            @include position(relative, $top: -1px);
+            @include size(16px);
+            display: inline-block;
+            @include font($size: $font-size-10);
+            color: $color-dark;
+            line-height: 1.6;
+            text-align: center;
+            background: $color-white;
+            margin-left: 5px;
+        }
+
+        .topbar-t-sh-cart-menu {
+            @include position(absolute, $top: 100%, $right: 0);
+            width: 270px;
+            display: none;
+            z-index: 1;
+            background: $color-white;
+            border-top: 2px solid $color-dark;
+        }
+
+        .topbar-t-sh-cart-menu-title {
+            display: block;
+            @include font($size: $font-size-18);
+            color: $color-dark;
+            border-bottom: 1px solid $color-tint-light;
+            padding: 15px;
+        }
+
+        .topbar-t-sh-cart-menu-content {
+            display: block;
+            padding: 15px;
+            @include clearfix;
+            border-bottom: 1px solid $color-tint-light;
+        }
+
+        .topbar-t-sh-cart-menu-product-media {
+            float: left;
+            margin-right: 15px;
+
+            .topbar-t-sh-cart-menu-product-img {
+                @include size(60px, auto);
+            }
+        }
+
+        .topbar-t-sh-cart-menu-product-wrap {
+            float: left;
+            margin-right: 15px;
+            @include clearfix;
+        }
+
+        .topbar-t-sh-cart-menu-product-name {
+            display: block;
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            margin-bottom: -2px;
+
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+
+        .topbar-t-sh-cart-menu-product-price {
+            display: block;
+            @include font($size: $font-size-12);
+            color: darken($color-subtitle, 5%);
+            margin-top: 5px;
+        }
+
+        .topbar-t-sh-cart-close {
+            float: right;
+            @include font($size: $font-size-16);
+            color: darken($color-subtitle, 5%);
+            @include clearfix;
+
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+
+        .topbar-t-sh-cart-subtotal {
+            padding: 15px;
+        }
+
+        .topbar-t-sh-cart-subtotal-content {
+            display: block;
+            margin-bottom: 10px;
+            @include clearfix;
+        }
+
+        .topbar-t-sh-cart-subtotal-title {
+            @include font($size: $font-size-14);
+            color: $color-dark;
+        }
+
+        .topbar-t-sh-cart-subtotal-price {
+            @include font($size: $font-size-13);
+            color: $color-base;
+            float: right;
+        }
+
+        .topbar-t-sh-cart-subtotal-view {
+            @include font($size: $font-size-12);
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .topbar-t-sh-cart-subtotal-view-link {
+            @include font($size: $font-size-12);
+            color: $color-dark;
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+    }
+}
+
+/* Media Queries below 767px */
+@media (max-width: $screen-xs-max) {
+	/* Topbar v3 List */
+	.topbar-t {
+		.topbar-t-list {
+	        .topbar-t-list-item {
+	        	display: block;
+	        	text-align: left;
+				
+				&:last-child {
+	            	border-right: none;
+	            }
+
+		        .topbar-t-list-dropdown {
+	                padding: 10px 5px;
+	            }
+	        }
+
+	        .topbar-t-list-dropdown-menu {
+                @include position(relative, $top: 0, $left: 0);
+            }
+	    }
+	}
+
+	/* Topbar v3 Right Actions */
+	.topbar-t-right-actions {
+		float: none;
+	}
+
+	/* Topbar v3 Socials */
+	.topbar-t {
+		.topbar-t-socials {
+			display: block;
+			float: none;
+		}
+	}
+
+	/* Topbar v3 Shopping Cart */
+    .topbar-t {
+    	.topbar-t-sh-action {
+			float: none;
+		}
+
+        .topbar-t-sh-cart {
+            border-left: none;
+            padding: 0;
+
+            .topbar-t-sh-cart-link {
+                display: inline-block;
+                padding: 10px 3px;
+            }
+
+            .topbar-t-sh-cart-menu {
+                @include position(relative, $top: 0, $left: 0);
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* Media Queries below 991px */
+@media (max-width: $screen-sm-max) {
+    /* Topbar v3 */
+    .topbar-t {
+        background: $color-dark;
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    .header-shrink {
+        .topbar-t {
+            margin-top: -41px;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+}

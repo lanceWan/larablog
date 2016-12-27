@@ -1,0 +1,151 @@
+/*------------------------------------------------------------------
+    [Swiper Slider]
+------------------------------------------------------------------*/
+
+.swiper-slider {
+	@include position(relative);
+	@include size(100%);
+	overflow: hidden;
+}
+
+
+/*------------------------------------------------------------------
+    [Swiper Pagination]
+------------------------------------------------------------------*/
+
+.swiper-pagination-bullet-active {
+	background: $color-base;
+}
+
+.swiper-container-horizontal {
+	> .swiper-pagination-bullets {
+		.swiper-pagination-bullet {
+			@include size(10px);
+			margin: 0 3px;
+		}
+	}
+}
+
+/* Swiper Pagination Left */
+.swiper-pagination-left {
+	&.swiper-pagination-bullets {
+		@include position(absolute, $left: 15px);
+		width: auto;
+	}
+}
+
+/* Swiper Pagination Right */
+.swiper-pagination-right {
+	&.swiper-pagination-bullets {
+		@include position(absolute, $left: auto, $right: 15px);
+		width: auto;
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Swiper Button Style V1]
+------------------------------------------------------------------*/
+
+.swiper-button-style-v1-prev,
+.swiper-button-style-v1-next {
+	@include position(absolute, $top: 50%, $left: inherit, $right: inherit);
+	@include size(60px);
+	display: inline-block;
+	color: $color-gold;
+	text-align: center;
+	vertical-align: middle;
+	background-image: none;
+	@include bg-opacity($color-white, 1);
+	background-size: inherit;
+	background-position: inherit;
+	background-repeat: inherit;
+	padding: 4px;
+	margin-top: -20px;
+
+	&:before {
+		@include font($size: $font-size-36, $family: $font-family-font-awesome);
+	}
+}
+
+.swiper-button-style-v1-prev {
+	left: 10px;
+
+	&:before {
+		content: "\f104";
+	}
+}
+
+.swiper-button-style-v1-next {
+	right: 10px;
+
+	&:before {
+		content: "\f105";
+	}
+}
+
+
+/*------------------------------------------------------------------
+    [Swiper Button Style V2]
+------------------------------------------------------------------*/
+
+.swiper-slider {
+	.swiper-button-style-v2-prev,
+	.swiper-button-style-v2-next {
+		@include position(absolute, $top: 50%, $left: inherit, $right: inherit);
+		@include size(50px);
+		display: inline-block;
+		color: $color-gold;
+		text-align: center;
+		vertical-align: middle;
+		background-image: none;
+		background: $color-white;
+		background-size: inherit;
+		background-position: inherit;
+		background-repeat: inherit;
+		padding: 3px;
+		margin-top: -25px;
+		@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+		&:before {
+			@include font($size: $font-size-30, $family: $font-family-font-awesome);
+		}
+
+		&:hover {
+			color: $color-white;
+			background: $color-gold;
+			@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+		}
+	}
+
+	.swiper-button-style-v2-prev {
+		left: -51px;
+
+		&:before {
+			content: "\f104";
+		}
+	}
+
+	.swiper-button-style-v2-next {
+		right: -51px;
+
+		&:before {
+			content: "\f105";
+		}
+	}
+
+	&:hover {
+		.swiper-button-style-v2-prev,
+		.swiper-button-style-v2-next {
+			@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+		}
+
+		.swiper-button-style-v2-prev {
+			left: 0;
+		}
+
+		.swiper-button-style-v2-next {
+			right: 0;
+		}
+	}
+}

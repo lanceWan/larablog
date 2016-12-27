@@ -1,0 +1,683 @@
+/*------------------------------------------------------------------
+	[Portfolio]
+------------------------------------------------------------------*/
+
+/* Popup Lightbox Close Button */
+.cbp-popup-lightbox {
+    .cbp-popup-close,
+    .cbp-popup-next,
+    .cbp-popup-prev {
+        @include size(38px);
+        background: #000;
+        border-radius: 3px;
+        opacity: .5;
+
+        &:after {
+            display: inline-block;
+            @include size(38px);
+            @include font($size: $font-size-20, $family: $font-family-font-awesome);
+            color: $color-white;
+            text-align: center;
+            vertical-align: middle;
+            padding: 5px;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .cbp-popup-close {
+        &:after {
+            @include font($size: $font-size-16);
+            content: "\2716";
+            padding: 8px;
+        }
+    }
+
+    .cbp-popup-prev {
+        &:after {
+            content: "\f104";
+        }
+    }
+
+    .cbp-popup-next {
+        &:after {
+            content: "\f105";
+        }
+    }
+}
+
+/* Theme Portfolio Nav Controls v1 */
+.theme-portfolio {
+    &.theme-portfolio-nav-v1 {
+        .cbp-nav-controls {
+            @include position(absolute, $top: auto, $left: 50%, $bottom: -40px);
+            margin-left: -35px;
+
+            .cbp-nav-next,
+            .cbp-nav-prev {
+                @include size(30px);
+                background: transparent;
+                border-radius: 3px;
+                margin: 0 3px;
+
+                &:after {
+                    display: inline-block;
+                    @include size(30px);
+                    @include font($size: $font-size-20, $family: $font-family-font-awesome);
+                    color: $color-dark;
+                    text-align: center;
+                    background: transparent;
+                    border: 1px solid $color-dark;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                    @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+                }
+
+                &:hover {
+                    opacity: 1;
+
+                    &:after {
+                        color: $color-white;
+                        background: $color-dark;
+                        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+                    }
+                }
+            }
+
+            .cbp-nav-next {
+                &:after {
+                    content: "\f105";
+                }
+            }
+
+            .cbp-nav-prev {
+                &:after {
+                    content: "\f104";
+                }
+            }
+        }
+    }
+}
+
+/* Theme Portfolio Nav Controls v2 */
+.theme-portfolio {
+    &.theme-portfolio-nav-v2 {
+        &.theme-portfolio-nav-v2-on-hover {
+            overflow: hidden;
+
+            .cbp-nav-controls {
+                .cbp-nav-prev {
+                    left: -32px;
+                    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                }
+
+                .cbp-nav-next {
+                    right: -32px;
+                    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                }
+            }
+
+            &:hover {
+                .cbp-nav-controls {
+                    .cbp-nav-prev {
+                        left: 0;
+                        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                    }
+
+                    .cbp-nav-next {
+                        right: 0;
+                        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+                    }
+                }
+            }
+        }
+
+        .cbp-nav-controls {
+            position: static;
+
+            .cbp-nav-prev,
+            .cbp-nav-next {
+                @include size(30px, 50px);
+                z-index: 1;
+                background: transparent;
+                margin: -25px 3px 0;
+
+                &:after {
+                    display: inline-block;
+                    @include size(30px, 50px);
+                    @include font($size: $font-size-20, $family: $font-family-font-awesome);
+                    color: $color-white;
+                    text-align: center;
+                    line-height: 2.4;
+                    @include bg-opacity($color-dark, .8);
+                    vertical-align: middle;
+                    @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+                }
+
+                &:hover {
+                    opacity: 1;
+
+                    &:after {
+                        @include bg-opacity($color-dark, 1);
+                        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+                    }
+                }
+            }
+
+            .cbp-nav-next {
+                @include position(absolute, $top: 50%, $right: 0);
+
+                &:after {
+                    content: "\f105";
+                    margin-right: -2px;
+                }
+            }
+
+            .cbp-nav-prev {
+                @include position(absolute, $top: 50%, $left: 0);
+
+                &:after {
+                    content: "\f104";
+                    margin-left: -2px;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Portfolio Filter */
+.theme-portfolio {
+    .cbp-l-filters-alignRight,
+    .cbp-l-filters-alignLeft,
+    .cbp-l-filters-alignCenter {
+        @include font($size: $font-size-16, $weight: $font-weight-300, $family: $font-family-base);
+        margin-bottom: 0;
+    }
+
+    .cbp-filter-item {
+        @include font($size: $font-size-18, $weight: $font-weight-300, $family: $font-family-base);
+        color: $color-dark;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid transparent;
+        text-transform: inherit;
+        padding: 5px 10px;
+        margin: 0 10px 40px;
+
+        &.cbp-filter-item-active {
+            color: $color-base;
+            background: transparent;
+            border-color: $color-base;
+        }
+
+        &:hover {
+            color: $color-base;
+        }
+    }
+
+    .cbp-filter-counter {
+        background: $color-base;
+
+        &:after {
+            border-top-color: $color-base;
+        }
+    }
+}
+
+/* Media Queries under 768px */
+@media (max-width: $screen-sm-min) {
+    .cbp-l-filters-alignRight,
+    .cbp-l-filters-alignLeft {
+        float: none;
+        text-align: center;
+    }
+}
+
+/* Theme Portfolio Load More Button */
+.theme-portfolio {
+    .cbp-l-loadMore-button,
+    .cbp-l-loadMore-text {
+        .cbp-l-loadMore-link,
+        .cbp-l-loadMore-button-link {
+            display: inline-block;
+            min-width: auto;
+            @include font($size: $font-size-16, $weight: $font-weight-300, $family: $font-family-base);
+            color: $color-base;
+            line-height: $line-height-base;
+            border: 1px solid $color-base;
+            padding: 12px 25px;
+
+            &:hover {
+                color: $color-white;
+                background: $color-base;
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+        }
+    }
+}
+
+/* Theme Portfolio Zoom Effect */
+.theme-portfolio {
+    .cbp-caption-zoom {
+        .cbp-caption-activeWrap {
+            @include bg-opacity($color-base, .6);
+        }
+    }
+}
+
+/* Theme Portfolio Item v1 */
+.theme-portfolio {
+    .theme-portfolio-item-v1 {
+        .theme-portfolio-active-wrap {
+            position: relative;
+
+            &:before {
+                @include position(absolute, $top: 0, $left: 0);
+                @include size(100%);
+                @include bg-opacity($color-white, 0);
+                content: " ";
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+
+        .theme-portfolio-item-v1-heading {
+            @include position(absolute, $top: 50%, $left: 0);
+            @include size(100%, auto);
+            display: block;
+            text-align: center;
+            opacity: 0;
+            @include translate3d(0,-50%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            .theme-portfolio-item-v1-title {
+                @include font($size: $font-size-18);
+                margin-bottom: 0;
+                @include translate3d(0,-40%,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+
+            .theme-portfolio-item-v1-subtitle {
+                display: block;
+                @include font($size: $font-size-14, $style: italic);
+                color: $color-subtitle;
+                margin-bottom: 0;
+                @include translate3d(0,40%,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+
+        &:hover {
+            .theme-portfolio-active-wrap {
+                &:before {
+                    @include bg-opacity($color-white, .95);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            .theme-portfolio-item-v1-heading {
+                opacity: 1;
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+                .theme-portfolio-item-v1-title {
+                    @include translate3d(0,0,0);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+
+                .theme-portfolio-item-v1-subtitle {
+                    @include translate3d(0,0,0);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+        }
+    }
+}
+
+/* Theme Portfolio Item v2 */
+.theme-portfolio {
+    .theme-portfolio-item-v2 {
+        .theme-portfolio-active-wrap {
+            position: relative;
+
+            &:before {
+                @include position(absolute, $top: 0, $left: 0);
+                @include size(100%);
+                @include bg-opacity($color-white, 0);
+                content: " ";
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+
+        .theme-portfolio-lightbox {
+            @include position(absolute, $top: 50%, $left: 50%);
+            opacity: 0;
+            @include translate3d(-50%,-20%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        &:hover {
+            .theme-portfolio-active-wrap {
+                &:before {
+                    @include bg-opacity($color-base, .5);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            .theme-portfolio-lightbox {
+                opacity: 1;
+                @include translate3d(-50%,-50%,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+    }
+}
+
+/* Theme Portfolio Item v3 */
+.theme-portfolio {
+    .theme-portfolio-item-v3 {
+        .theme-portfolio-active-wrap {
+            position: relative;
+
+            &:before {
+                @include position(absolute, $top: 15px, $left: 15px, $right: 15px, $bottom: 15px);
+                @include size(auto);
+                @include bg-opacity($color-white, 0);
+                content: " ";
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+
+        .theme-portfolio-lightbox {
+            @include position(absolute, $top: 50%, $left: 50%);
+            z-index: 1;
+            opacity: 0;
+            @include translate3d(-50%,-20%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            .theme-portfolio-item-v3-icon {
+                position: relative;
+                @include size(30px);
+                display: inline-block;
+                color: $color-dark;
+                text-align: center;
+
+                &:before {
+                    @include position(absolute, $top: 50%, $left: 50%);
+                    @include size(1px, 30px);
+                    margin-top: -15px;
+                }
+
+                &:after {
+                    @include position(absolute, $top: 50%, $left: 50%);
+                    @include size(30px, 1px);
+                    margin-left: -15px;
+                }
+
+                &:before,
+                &:after {
+                    background: $color-dark;
+                    content: " ";
+                }
+
+                &:hover {
+                    &:before,
+                    &:after {
+                        background: $color-base;
+                    }
+                }
+            }
+        }
+
+        .theme-portfolio-item-v3-heading {
+            @include position(absolute, $bottom: 0, $left: 0);
+            @include size(100%, auto);
+            display: block;
+            padding: 30px;
+            opacity: 0;
+            @include translate3d(0,20%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            .theme-portfolio-item-v3-title {
+                @include font($size: $font-size-16);
+                margin-bottom: 0;
+            }
+
+            .theme-portfolio-item-v3-subtitle {
+                display: block;
+                @include font($size: $font-size-14, $style: italic);
+                margin-bottom: 0;
+            }
+        }
+
+        &:hover {
+            .theme-portfolio-active-wrap {
+                &:before {
+                    @include bg-opacity($color-white, .8);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            .theme-portfolio-lightbox {
+                opacity: 1;
+                @include translate3d(-50%,-50%,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+
+            .theme-portfolio-item-v3-heading {
+                opacity: 1;
+                @include translate3d(0,0,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+    }
+}
+
+/* Theme Portfolio Title Heading */
+.theme-portfolio {
+    .theme-portfolio-title-heading {
+        text-align: center;
+        background: $color-white;
+        padding: 20px 0;
+
+        &.theme-portfolio-title-heading-sm {
+            padding: 15px;
+
+            .theme-portfolio-title {
+                @include font($size: $font-size-16);
+            }
+
+            .theme-portfolio-subtitle {
+                @include font($size: $font-size-14);
+            }
+        }
+        
+        .theme-portfolio-title {
+            display: block;
+            @include font($size: $font-size-18);
+            margin: 0 0 3px;
+        }
+
+        .theme-portfolio-subtitle {
+            display: block;
+            color: $color-subtitle;
+            @include font($size: $font-size-15, $style: italic);
+        }
+    }
+}
+
+/* Theme Portfolio Description */
+.theme-portfolio-desc {
+    .portfolio-item-img-wrap {
+        position: relative;
+
+        .portfolio-item-content-wrap {
+            @include position(absolute, $bottom: 0, $left: 0);
+            @include size(auto);
+        }
+
+        .portfolio-item-heading {
+            background: $color-white;
+            padding: 10px 20px;
+            margin: 40px;
+
+            .portfolio-item-heading-title {
+                @include font($size: $font-size-30, $weight: $font-weight-400);
+                margin: 0;
+            }
+        }
+    }
+
+    .portfolio-item-subitem-title {
+        @include font($size: $font-size-18, $weight: $font-weight-400);
+        margin-bottom: 10px;
+    }
+
+    .portfolio-item-subitem-paragraph {
+        margin-bottom: 0;
+    }
+
+    .portfolio-item-category {
+        font-size: $font-size-15;
+        font-weight: $font-weight-300;
+        color: $color-subtitle;
+
+        &:hover {
+            color: $color-base;
+            text-decoration: none;
+        }
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .theme-portfolio-desc {
+        .portfolio-item-img-wrap {
+            .portfolio-item-heading {
+                margin: 10px;
+                padding: 5px 10px;
+
+                .portfolio-item-heading-title {
+                    @include font($size: $font-size-18);
+                }
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Theme Portfolio v2]
+----------------------------------------------------*/
+
+/* Filter */
+.theme-portfolio-v2 {
+    .cbp-l-filters-alignRight {
+        .cbp-filter-item {
+            @include position(relative);
+            z-index: 2;
+            display: block;
+            @include font($size: $font-size-16, $weight: $font-weight-300, $family: $font-family-base);
+            color: $color-dark;
+            line-height: $line-height-base;
+            border: none;
+            background: inherit;
+            text-transform: inherit;
+            padding: 0;
+            margin: 0 0 10px;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+            &:hover {
+                color: $color-base;
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+
+            &.cbp-filter-item-active {
+                color: $color-base;
+                background: inherit;
+            }
+        }
+    }
+}
+
+/* Caption */
+.theme-portfolio-v2 {
+    .cbp-caption {
+        background: $color-white;
+        box-shadow: 0 2px 5px 3px lighten($color-tint-light, 1%);
+        padding: 15px;
+        margin: 5px;
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    .theme-portfolio-v2 {
+        .cbp-l-filters-alignRight {
+            text-align: center;
+        }
+    }
+
+    .theme-portfolio-v2 {
+        .cbp-l-filters-alignRight {
+            .cbp-filter-item {
+                display: inline-block;
+                margin: 0 10px 10px;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Theme Portfolio v3]
+----------------------------------------------------*/
+
+.theme-portfolio-v3 {
+    .cbp-l-filters-button {
+        margin-bottom: 15px;
+        
+        .cbp-filter-item {
+            @include font($size: $font-size-20, $weight: $font-weight-300, $family: $font-family-base);
+            color: $color-white;
+            background: transparent;
+            border: none;
+            padding: 0 3px;
+        }
+
+        .cbp-filter-item-active {
+            @include font($weight: $font-weight-400);
+        }
+    }
+}
+
+/* Hover Effect */
+.theme-portfolio-v3 {
+    .cbp-caption-zoom {
+        .cbp-caption-activeWrap {
+            @include bg-opacity($color-dark, .9);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Theme Portfolio Filter v1]
+----------------------------------------------------*/
+
+.theme-portfolio-filter-v1 {
+    .cbp-filter-item {
+        @include font($size: $font-size-14);
+        color: $color-dark;
+        background: $color-white;
+        border-bottom: none;
+        padding: 10px 20px;
+        margin: 0 3px 40px;
+        
+        &.cbp-filter-item-active {
+            color: $color-base;
+            background: $color-white;
+        }
+    }        
+    
+}

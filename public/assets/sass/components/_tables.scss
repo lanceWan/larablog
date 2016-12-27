@@ -1,0 +1,125 @@
+/*--------------------------------------------------
+    [Tables]
+----------------------------------------------------*/
+
+/* General Stylesheet Design */
+.table {
+    margin-bottom: 0;
+
+    thead {
+        tr {
+            th {
+                @include font($weight: $font-weight-300);
+                color: $color-dark-light;
+                border-top: none;
+                border-width: 1px;
+                padding: 10px;
+            }
+
+            > td,
+            > th {
+                &.active {
+                    background: $color-sky-light;
+                }
+            }
+
+            &.active {
+                > td,
+                > th {
+                    background: $color-sky-light;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                @include font($weight: $font-weight-300);
+                color: $color-dark-light;
+                border-top: none;
+                vertical-align: middle;
+                padding: 10px;
+            }
+
+            > td,
+            > th {
+                &.active {
+                    background: $color-sky-light;
+                }
+            }
+
+            &.active {
+                > td,
+                > th {
+                    background: $color-sky-light;
+                }
+            }
+
+            &:nth-of-type(odd) {
+                background: $color-sky-light;
+            }
+        }
+    }
+
+    tfoot {
+        tr {
+            > td,
+            > th {
+                &.active {
+                    background: $color-sky-light;
+                }
+            }
+
+            &.active {
+                > td,
+                > th {
+                    background: $color-sky-light;
+                }
+            }
+        }
+    }
+}
+
+/* Table Advance */
+.table-advance {
+    overflow: hidden;
+
+    .table-advance-body {
+        .table-advance-body-user-img {
+            float: left;
+            @include size(24px);
+            margin-right: 10px;
+        }
+
+        .table-advance-body-user-name {
+            @include position(relative, $top: 2px);
+            color: $color-dark;
+        }
+    }
+
+    .table-advance-element {
+        .progress {
+            @include position(relative, $top: 11px);
+        }
+    }
+}
+
+/* Table Bordered */
+.table-bordered {
+    > tbody,
+    > tfoot,
+    > thead {
+        > tr {
+            > td,
+            > th {
+                border-color: $color-tint-light;
+            }
+        }
+    }
+}
+
+/* Table Responsive */
+.table-responsive {
+    border: none;
+}

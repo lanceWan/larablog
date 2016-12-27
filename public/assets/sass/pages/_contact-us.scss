@@ -1,0 +1,26 @@
+/*--------------------------------------------------
+    [Contact Us Banner]
+----------------------------------------------------*/
+
+.contact-us {
+    padding: 40px;
+
+    .contact-us-timeline-day {
+        display: block;
+        width: 100%;
+        @include font($size: $font-size-12, $weight: $font-weight-300);
+        color: $color-white;
+        text-align: center;
+        background: $color-base;
+        padding: 5px 0;
+        margin-right: 15px;
+    }
+
+    .contact-us-timeline-time {
+        display: block;
+        @include font($size: $font-size-12, $weight: $font-weight-300);
+        text-align: center;
+        border: 1px solid $color-tint-light;
+        padding: 5px 10px;
+    }
+}

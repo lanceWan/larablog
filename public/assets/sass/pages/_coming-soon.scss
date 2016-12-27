@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+  	[Coming Soon]
+------------------------------------------------------------------*/
+.coming-soon {
+    text-align: center;
+    background: url(../../assets/img/1920x1080/30.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .coming-soon-logo-img {
+        @include position(fixed, $top: 30px, $left: 30px);
+        @include size(85px, auto);
+    }
+
+    .coming-soon-title {
+        @include font($size: $font-size-70);
+        color: $color-white;
+        margin-bottom: 20px;
+    }
+
+    .coming-soon-text {
+        @include font($size: $font-size-22, $style: italic);
+        color: $color-grey-light;
+        margin-bottom: 0;
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-sm-min) {
+    .coming-soon {
+        .coming-soon-title {
+            @include font($size: $font-size-50);
+        }
+
+        .coming-soon-text {
+            @include font($size: $font-size-18);
+        }
+    }
+}

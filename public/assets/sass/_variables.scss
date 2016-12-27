@@ -1,0 +1,139 @@
+/*--------------------------------------------------
+	[Layout Settings & Variables]
+----------------------------------------------------*/
+
+//==================================
+// 	Typography
+//==================================
+//
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-base:                                                      Roboto, sans-serif !default; // Default Roboto font family
+$font-family-droid:                                              		Droid Serif, serif !default; // Secondary Playfari Display font family
+$font-family-hind:                                              		Hind, sans-serif !default; // Hind font family
+$font-family-lora:                                              		Lora, serif !default; // Lora font family
+$font-family-source-sans:                                              	Source Sans Pro, sans-serif !default; // Source Sans Pro font family
+$font-family-dancing:                                              		Dancing Script, cursive !default; // Dancing Script font family
+$font-family-font-awesome:                                              FontAwesome !default; // Font Awesome third-party icons plugin
+$font-family-et-line:                                         			et-line !default; // Et Line Icons third-party icons plugin
+$font-family-themify:                                         			themify !default; // Themify Icons third-party icons plugin
+
+$font-size-10:                                                          10px !default;
+$font-size-11:                                                          11px !default;
+$font-size-12:                                                          12px !default;
+$font-size-13:                                                          13px !default;
+$font-size-14:                                                          14px !default;
+$font-size-15:                                                          15px !default;
+$font-size-16:                                                          16px !default;
+$font-size-18:                                                          18px !default;
+$font-size-20:                                                          20px !default;
+$font-size-22:                                                          22px !default;
+$font-size-24:                                                          24px !default;
+$font-size-26:                                                          26px !default;
+$font-size-28:                                                          28px !default;
+$font-size-30:                                                          30px !default;
+$font-size-32:                                                          32px !default;
+$font-size-34:                                                          34px !default;
+$font-size-36:                                                          36px !default;
+$font-size-50:                                                          50px !default;
+$font-size-60:                                                          60px !default;
+$font-size-70:                                                          70px !default;
+$font-size-100:                                                         100px !default;
+
+$font-weight-100:                                                       100 !default;
+$font-weight-200:                                                       200 !default;
+$font-weight-300:                                                       300 !default;
+$font-weight-400:                                                       400 !default;
+$font-weight-500:                                                       500 !default;
+$font-weight-600:                                                       600 !default;
+$font-weight-700:                                                       700 !default;
+$font-weight-900:                                                       900 !default;
+
+$line-height-1:                                                      	1 !default;
+$line-height-base:                                                      1.4 !default;
+$line-height-2:                                                         2 !default;
+
+$letter-spacing-1:                                                      1px !default;
+$letter-spacing-2:                                                      2px !default;
+$letter-spacing-3:                                                      3px !default;
+$letter-spacing-4:                                                      4px !default;
+$letter-spacing-5:                                                      5px !default;
+
+$color-base:                                                            #00bcd4 !default;
+$color-subtitle:                                                        #606060 !default;
+$color-sky-light:                                                       #f7f8fa !default;
+$color-floral-light:                                                    #e5d8be !default;
+$color-floral-white:                                                    #fbf9f5 !default;
+$color-tint-light:                                                      #ebeef6 !default;
+$color-white:                                                           #fff !default;
+$color-dark:                                                            #34343c !default;
+$color-black:                                                           #181818 !default;
+$color-blue:                                                            #536dfe !default;
+$color-blue-grey:                                                       #546e7a !default;
+$color-grey:                                                            #9e9e9e !default;
+$color-teal:                                                            #009688 !default;
+$color-green:                                                           #4fd2c2 !default;
+$color-red:                                                             #e55973 !default;
+$color-pink:                                                            #e91e63 !default;
+$color-purple:                                                          #b260ce !default;
+$color-gold:                                                            #c69f73 !default;
+$color-base-light:                                                      #4ed7e8 !default;
+$color-dark-light:                                                      #3a3a44 !default;
+$color-blue-grey-light:                                                 #6b8997 !default;
+$color-grey-light:                                                      #f1f1f1 !default;
+$color-blue-light:                                                      #687ffa !default;
+$color-teal-light:                                                      #45b4a9 !default;
+$color-green-light:                                                     #6edfd1 !default;
+$color-red-light:                                                       #e57287 !default;
+$color-pink-light:                                                      #ec407a !default;
+$color-purple-light:                                                    #ba75d1 !default;
+$color-gold-light:                                                      #d3af87 !default;
+$color-fb:                                                              #44619d !default;
+$color-tw:                                                              #55acee !default;
+$color-dr:                                                              #ea4c89 !default;
+$color-yt:                                                              #cc181e !default;
+$color-ig:                                                              #125688 !default;
+$color-vm:                                                              #45bbff !default;
+$color-bt-primary:                                                      #337ab7 !default;
+$color-bt-info:                                                         #5bc0de !default;
+$color-bt-warning:                                                      #5cb85c !default;
+$color-bt-danger:                                                       #f0ad4e !default;
+$color-bt-success:                                                      #d9534f !default;
+$color-bt-default:                                                      #eee !default;
+
+
+//==================================
+//  Gutter
+//==================================
+//
+//The CSS padding, margin, widht, and height properties
+
+$gutter:                                                        		10px !default; // IMPORTANT! Please do not change the space-property, it will affect the predefined theme classes
+	
+
+//==================================
+//	Media queries breakpoints
+//==================================
+//
+//Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+$screen-xs-min:                											480px !default;
+
+// Small screen / tablet
+$screen-sm-min:                											768px !default;
+
+// Medium screen / desktop
+$screen-md-min:                											992px !default;
+
+// Large screen / wide desktop
+$screen-lg-min:                											1200px !default;
+
+// Large scree / wider desktop
+$screen-lg-med:                     									1260px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:             											($screen-sm-min - 1) !default;
+$screen-sm-max:                											($screen-md-min - 1) !default;
+$screen-md-max:                											($screen-lg-min - 1) !default;
+

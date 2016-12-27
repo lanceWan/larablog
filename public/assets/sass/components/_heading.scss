@@ -1,0 +1,182 @@
+/*------------------------------------------------------------------
+    [Heading v1]
+------------------------------------------------------------------*/
+
+.heading-v1 {
+    .heading-v1-title {
+        @include font($size: $font-size-28, $style: italic, $family: $font-family-droid);
+    }
+
+    .heading-v1-subtitle {
+        max-width: 350px;
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        color: $color-base;
+        margin-bottom: 20px;
+    }
+
+    .heading-v1-text {
+        @include font($size: $font-size-18, $style: italic);
+        margin-bottom: 0;
+    }
+}
+
+/* White Version */
+.heading-v1.heading-v1-white {
+    .heading-v1-title {
+        color: $color-white;
+    }
+
+    .heading-v1-text {
+        color: $color-white;
+        opacity: .8;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Heading v2]
+------------------------------------------------------------------*/
+
+.heading-v2 {
+    text-align: center;
+    overflow: hidden;
+
+    .heading-v2-title {
+        @include font($size: $font-size-36);
+        line-height: $line-height-base;
+        margin: 0 0 10px;
+    }
+
+    .heading-v2-text {
+        position: relative;
+        display: inline-block;
+        @include font($style: italic, $family: $font-family-droid);
+        margin-bottom: 0;
+
+        &:before,
+        &:after {
+            @include position(absolute, $top: 10px);
+            @include size(30px, 1px);
+            background: lighten($color-grey, 20%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    }
+}
+
+/* White Version */
+.heading-v2.heading-v2-white {
+    .heading-v2-title,
+    .heading-v2-text {
+        color: $color-white;
+    }
+
+    .heading-v2-paragraph {
+        &:before,
+        &:after {
+            background: $color-white;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Heading v3]
+------------------------------------------------------------------*/
+
+.heading-v3 {
+    text-align: center;
+    
+    .heading-v3-title {
+        @include font($size: $font-size-34);
+        margin: 0 0 10px;
+    }
+
+    .heading-v3-element {
+        position: relative;
+        display: inline-block;
+        @include font($size: $font-size-12);
+        color: $color-subtitle;
+
+        &:before,
+        &:after {
+            @include position(absolute, $top: 8px);
+            @include size(30px, 1px);
+            border-bottom: 1px solid lighten($color-grey, 20%);
+            content: " ";
+        }
+
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
+
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+
+        .heading-v3-element-icon {
+            @include position(relative, $top: -1px);
+            font-size: 8px;
+            color: $color-subtitle;
+        }
+    }
+
+    .heading-v3-text {
+        margin-bottom: 0;
+        @include font($style: italic, $family: $font-family-droid);
+    }
+}
+
+/* White Version */
+.heading-v3.heading-v3-white {
+    .heading-v3-subtitle,
+    .heading-v3-title,
+    .heading-v3-element,
+    .heading-v3-text {
+        color: $color-white;
+    }
+
+    .heading-v3-element {
+        &:before,
+        &:after {
+            border-bottom-color: $color-white;
+        }
+
+        .heading-v3-element-icon {
+            color: $color-white;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Heading v4]
+----------------------------------------------------*/
+
+.heading-v4 {
+    .heading-v4-subtitle {
+        display: block;
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        margin-bottom: 0;
+    }
+
+    .heading-v4-title {
+        @include font($size: $font-size-28);
+    }
+
+    .heading-v4-text {
+        @include font($size: $font-size-16, $style: italic);
+        margin-bottom: 0;
+    }
+}

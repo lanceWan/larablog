@@ -1,0 +1,55 @@
+/*--------------------------------------------------
+    [Dropcap]
+----------------------------------------------------*/
+
+%dropcap {
+    @include size(40px);
+    float: left;
+    clear: left;
+    @include font($size: $font-size-36, $weight: $font-weight-600);
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1px;
+    margin: 5px 10px 0 0;
+}
+
+/* Dropcap Base Color */
+.dropcap-base {
+    @extend %dropcap;
+    color: $color-base;
+}
+
+/* Dropcap Base Background Color */
+.dropcap-base-bg {
+    @extend %dropcap;
+    color: $color-white;
+    background: $color-base;
+}
+
+/* Dropcap Base Color Bordered */
+.dropcap-base-bordered {
+    @extend %dropcap;
+    color: $color-base;
+    border: 1px solid $color-base;
+}
+
+/* Dropcap Base Color */
+.dropcap-dark {
+    @extend %dropcap;
+    color: $color-dark;
+}
+
+/* Dropcap Dark Background Color */
+.dropcap-dark-bg {
+    @extend %dropcap;
+    color: $color-white;
+    background: $color-dark;
+}
+
+/* Dropcap Dark Color Bordered */
+.dropcap-dark-bordered {
+    @extend %dropcap;
+    color: $color-dark;
+    border: 1px solid $color-dark;
+}

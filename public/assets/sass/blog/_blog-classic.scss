@@ -1,0 +1,165 @@
+/*------------------------------------------------------------------
+    [Blog Classic]
+------------------------------------------------------------------*/
+
+.blog-classic {
+    position: relative;
+    overflow: hidden;
+
+    .blog-classic-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 3;
+        text-decoration: none;
+    }
+
+    .blog-classic-hover {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        z-index: 1;
+        opacity: 0;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-dark, .3);
+            content: " ";
+        }
+
+        .blog-classic-hover-img {
+            @include size(auto, 100%);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .blog-classic-body {
+        position: relative;
+        background: $color-white;
+        padding: 40px 30px 60px;
+    }
+
+    .blog-classic-label {
+        @include position(absolute, $top: 0, $right: 30px);
+        @include size(60px);
+        display: block;
+        @include font($size: $font-size-16, $family: $font-family-droid);
+        color: $color-white;
+        line-height: 3.3;
+        text-align: center;
+        background: $color-dark;
+        border-radius: 3px;
+        text-transform: uppercase;
+        padding: 5px;
+        margin-top: -30px;
+    }
+
+    .blog-classic-title {
+        @include font($size: $font-size-28);
+        margin-bottom: 5px;
+
+        &.blog-classic-title-sm {
+            @include font($size: $font-size-24);
+        }
+    }
+
+    .blog-classic-subtitle {
+        display: block;
+        @include font($size: $font-size-18, $style: italic, $family: $font-family-droid);
+
+        &.blog-classic-subtitle-sm {
+            @include font($size: $font-size-16);
+        }
+    }
+
+    .blog-classic-paragraph {
+        position: relative;
+        display: block;
+        @include font($size: $font-size-13);
+        text-transform: uppercase;
+        text-decoration: none;
+        padding-top: 25px;
+
+        &:after {
+            @include position(absolute, $top: 10px, $left: 0);
+            @include size(40px, 1px);
+            background: lighten($color-dark, 55%);
+            content: " ";
+        }
+    }
+
+    .blog-classic-overlay {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+
+        &:before,
+        &:after {
+            @include position(absolute, $top: 20px, $left: 20px, $right: 20px, $bottom: 20px);
+            z-index: 2;
+            content: " ";
+            opacity: 0;
+            @include cubic-transition($delay: 0, $duration: 600ms, $property: (all));
+        }
+
+        &:before {
+            border-top: 1px solid $color-white;
+            border-bottom: 1px solid $color-white;
+            @include transform-scale(0, 1);
+        }
+
+        &:after {
+            border-left: 1px solid $color-white;
+            border-right: 1px solid $color-white;
+            @include transform-scale(1, 0);
+        }
+    }
+    
+    .blog-classic-overlay-body {
+        @include position(absolute, $left: 40px, $right: 40px, $bottom: 40px);
+        @include size(auto);
+        z-index: 2;
+        opacity: 0;
+        @include translate3d(-20%,0,0);
+        @include cubic-transition($delay: 0, $duration: 600ms, $property: (all));
+
+        .blog-classic-title,
+        .blog-classic-subtitle {
+            color: $color-white;
+        }
+        
+        .blog-classic-paragraph {
+            color: $color-white;
+
+            &:after {
+                background: $color-white;
+            }
+        }
+    }
+
+    &:hover {
+        .blog-classic-hover {
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            .blog-classic-hover-img {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .blog-classic-overlay {
+            &:before,
+            &:after {
+                opacity: 1;
+                @include transform-scale(1, 1);
+                @include cubic-transition($delay: 0, $duration: 600ms, $property: (all));
+            }
+        }
+
+        .blog-classic-overlay-body {
+            opacity: 1;
+            @include translate3d(0,0,0);
+            @include cubic-transition($delay: 0, $duration: 600ms, $property: (all));
+        }
+    }
+}
+

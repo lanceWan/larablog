@@ -1,0 +1,113 @@
+/*--------------------------------------------------
+    [Blockquotes v1]
+----------------------------------------------------*/
+
+.blockquotes-v1 {
+    position: relative;
+    max-width: 400px;
+    float: left;
+    @include font($size: $font-size-20, $style: italic);
+    color: $color-base;
+    border-left: none;
+    clear: left;
+    padding: 10px 0;
+    margin-right: 60px;
+
+    &:before {
+        display: inline-block;
+        @include font($size: $font-size-26);
+        content: open-quote;
+        padding-right: 5px;
+    }
+
+    &:after {
+        @include position(absolute, $bottom: -5px, $left: 0);
+        @include size(120px, 2px);
+        background: $color-base;
+        content: " ";
+    }
+}
+
+
+/*--------------------------------------------------
+    [Blockquotes v2]
+----------------------------------------------------*/
+
+.blockquotes-v2 {
+    float: right;
+    max-width: 350px;
+    @include font($size: $font-size-20, $style: italic);
+    color: $color-red;
+    text-align: right;
+    border-left: none;
+    border-right: 2px solid $color-red;
+    text-transform: uppercase;
+    clear: right;
+    padding: 10px 20px 10px 10px;
+}
+
+
+/*--------------------------------------------------
+    [Blockquotes v3]
+----------------------------------------------------*/
+
+.blockquotes-v3 {
+    position: relative;
+    max-width: 400px;
+    z-index: 1;
+    float: left;
+    @include font($size: $font-size-24, $weight: $font-weight-300);
+    color: $color-subtitle;
+    text-transform: uppercase;
+    border-left: none;
+    clear: left;
+    padding: 15px 0 15px 20px;
+    margin: 0 60px 0 0;
+
+    &:before {
+        @include position(absolute, $top: -5px, $left: 10px);
+        z-index: -1;
+        display: inline-block;
+        @include font($size: $font-size-50, $family: $font-family-font-awesome);
+        color: lighten($color-grey, 35%);
+        content: "\f10d";
+    }
+}
+
+
+/*--------------------------------------------------
+    [Blockquotes v4]
+----------------------------------------------------*/
+
+.blockquotes-v4 {
+    border-left: none;
+    text-align: center;
+    margin: 0 0 15px;
+
+    .blockquotes-v4-text {
+        position: relative;
+        @include font($size: $font-size-15, $weight: $font-weight-300, $style: italic);
+        color: $color-subtitle;
+        margin: 30px 0;
+
+        &:before,
+        &:after {
+            @include position(absolute, $left: 50%);
+            @include size(20px, 1px);
+            background: darken($color-grey-light, 15%);
+            content: " ";
+            margin-left: -10px;
+        }
+        &:before {
+            top: -15px;
+        }
+        &:after {
+            bottom: -15px;
+        }
+    }
+
+    .blockquotes-v4-by {
+        display: block;
+        color: $color-dark;
+    }
+}

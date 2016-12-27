@@ -1,0 +1,25 @@
+/*--------------------------------------------------
+    [Video Background]
+----------------------------------------------------*/
+
+.responsive-video {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+
+    iframe {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+    }
+}
+
+
+/*--------------------------------------------------
+    [HTML5 Video Background]
+----------------------------------------------------*/
+
+.html5-video-bg {
+    > div:first-child {
+        z-index: 0 !important;
+    }
+}
