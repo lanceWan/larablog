@@ -71,6 +71,7 @@ class ArticleService{
 	 */
 	public function createView()
 	{
+		dd($this->article->skipPresenter()->find(1));
 		$categories = $this->category->getArticleCategories();
 		$tags = $this->tag->allTags();
 		return compact('categories','tags');
