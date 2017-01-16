@@ -73,7 +73,7 @@
 .promo-block-v2 {
 	position: relative;
 	z-index: 1;
-	background: url(../img/1920x1080/48.jpg) no-repeat;
+	background: url(../../image/48.jpg) no-repeat;
 	background-size: cover;
 	background-position: center center;
 
@@ -631,7 +631,7 @@
 	position: relative;
 	z-index: 1;
 	text-align: center;
-	background: url(../img/1920x1080/33.jpg) no-repeat;
+	background: url(../../image/33.jpg) no-repeat;
 	background-size: cover;
 	background-position: center top;
 
@@ -655,7 +655,7 @@
 	}
 
 	.promo-block-v11-category {
-		@include position(absolute, $left: 0, $right: 0, $bottom: 30px);
+		@include position(absolute, $left: 0, $right: 0, $bottom: 80px);
 		margin: 0;
 		padding: 0;
 

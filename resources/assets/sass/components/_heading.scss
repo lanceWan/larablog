@@ -4,7 +4,7 @@
 
 .heading-v1 {
     .heading-v1-title {
-        @include font($size: $font-size-28, $style: italic, $family: $font-family-droid);
+        @include font($size: $font-size-28, $family: $font-family-droid);
     }
 
     .heading-v1-subtitle {

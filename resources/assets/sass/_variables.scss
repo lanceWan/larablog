@@ -1,4 +1,4 @@
-font-family-base/*--------------------------------------------------
+/*--------------------------------------------------
 	[Layout Settings & Variables]
 ----------------------------------------------------*/
 
@@ -8,7 +8,7 @@ font-family-base/*--------------------------------------------------
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-base:                                                      "Lucida Grande", Lucida Sans Unicode, Microsoft YaHei, WenQuanYi Micro Hei, Verdana, Aril, sans-serif !default; // Default Roboto font family
+$font-family-base:                                                      "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif !default; // Default Roboto font family
 $font-family-droid:                                              		Droid Serif, serif !default; // Secondary Playfari Display font family
 $font-family-hind:                                              		Hind, sans-serif !default; // Hind font family
 $font-family-lora:                                              		Lora, serif !default; // Lora font family
