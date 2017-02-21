@@ -30,8 +30,8 @@ class MenusTableSeeder extends Seeder
         $system->pid = 0;
         $system->icon = "fa fa-cog";
         $system->slug = "system.manage";
-        $system->url = "";
-        $system->active = "admin/role*,admin/permission*,admin/user*,admin/menu*,admin/log*,admin/link*";
+        $system->url = "admin/role*,admin/permission*,admin/user*,admin/menu*,admin/log*";
+        $system->active = "admin/role*,admin/permission*,admin/user*,admin/menu*,admin/log*";
         $system->description = "系统功能管理";
         $system->save();
 
@@ -97,7 +97,7 @@ class MenusTableSeeder extends Seeder
             'pid' => 0,
             'icon' => 'fa fa-diamond',
             'slug' => 'system.blog',
-            'url' => 'admin/article*,admin/category*,admin/tag*,admin/link*,admin/setting*',
+            'url' => 'admin/article*,admin/category*,admin/tag*,admin/link*,admin/setting*,admin/media*',
             'active' => 'admin/article*,admin/category*,admin/tag*,admin/link*,admin/setting*,admin/media*',
             'description' => '博客管理',
         ]);

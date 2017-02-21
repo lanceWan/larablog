@@ -39,6 +39,13 @@ class LinkService
 
 		$result = $this->link->getLinkList($start,$length,$search,$order);
 
+		if ($result['links']) {
+			foreach ($result['links'] as &$v) {
+				$v->actionButton = $v->getArticleActionButton();
+				$articles[] = $v;
+			}
+		}
+
 		return [
 			'draw' => $draw,
 			'recordsTotal' => $result['count'],
@@ -47,7 +54,7 @@ class LinkService
 		];
 	}
 
-	
+
 	/**
 	 * 添加友情链接
 	 * @author 晚黎
@@ -58,12 +65,26 @@ class LinkService
 	public function storeLink($attributes)
 	{
 		try {
-			return $this->link->create($attributes['data'][0]);
+			$result = $this->link->create($attributes);
+			flash_info($result,trans('admin/alert.link.create_success'),trans('admin/alert.link.create_error'));
+			return $result;
 		} catch (Exception $e) {
 			// 错误信息发送邮件
 			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
 			return false;
 		}
+	}
+	// 修改友情链接视图
+	public function editView($id)
+	{
+		try {
+			return $this->link->find($this->link->decodeId($id));
+		} catch (Exception $e) {
+			// 错误信息发送邮件
+			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
+			return false;
+		}
+
 	}
 
 	/**
@@ -77,8 +98,11 @@ class LinkService
 	public function updateLink($attributes,$id)
 	{
 		try {
-			return $this->link->update($attributes['data'][$id],$this->link->decodeId($id));
+			$result = $this->link->update($attributes,$this->link->decodeId($id));
+			flash_info($result,trans('admin/alert.link.edit_success'),trans('admin/alert.link.edit_error'));
+			return $result;
 		} catch (Exception $e) {
+			dd($e);
 			// 错误信息发送邮件
 			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
 			return false;
@@ -94,16 +118,14 @@ class LinkService
 	public function destroyLink($id)
 	{
 		try {
-			$ids = explode(',',$id);
-			foreach ($ids as &$v) {
-				$v = $this->link->decodeId($v);
-			}
-			return $this->link->delete($ids);
+			$result = $this->link->delete($this->link->decodeId($id));
+			flash_info($result,trans('admin/alert.link.destroy_success'),trans('admin/alert.link.destroy_error'));
+			return $result;
 		} catch (Exception $e) {
 			// 错误信息发送邮件
 			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
 			return false;
 		}
-		
+
 	}
 }

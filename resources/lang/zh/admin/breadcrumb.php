@@ -40,6 +40,8 @@ return [
 	],
 	'link' => [
 		'list' 		=> '<i class="fa fa-link"></i> 友情链接管理',
+		'create' 		=> '<i class="fa fa-plus"></i> 添加友情链接',
+		'edit' 		=> '<i class="fa fa-edit"></i> 修改友情链接',
 	],
 	'setting' => [
 		'list' 		=> '<i class="fa fa-link"></i> 博客配置',

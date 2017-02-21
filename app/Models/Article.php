@@ -27,7 +27,7 @@ class Article extends Model implements Transformable
     public function transform()
     {
     	return [
-            'id'    => $this->id,
+        'id'    => $this->id,
     		'title' => $this->title,
     		'author' => $this->author,
     		'lead' => $this->lead,

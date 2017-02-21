@@ -61,17 +61,12 @@ class LinkRepositoryEloquent extends BaseRepository implements LinkRepository
         }
 
         $count = $link->count();
-        
+
         $link = $link->orderBy($order['name'], $order['dir']);
 
         $links = $this->getEncryptId($link->offset($start)->limit($length)->get());
 
         return compact('count','links');
-    }
-
-    public function delete($ids)
-    {
-        return $this->model->destroy($ids);
     }
 
 }
