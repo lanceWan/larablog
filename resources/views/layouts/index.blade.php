@@ -48,54 +48,45 @@
                     <!-- Logo -->
                     <div class="navbar-logo">
                         <a class="navbar-logo-wrap" href="index.html">
-                            <img class="navbar-logo-img navbar-logo-img-white" src="/image/logo-default-white.png" alt="Ark">
-                            <img class="navbar-logo-img navbar-logo-img-dark" src="/image/logo-default.png" alt="Ark">
+                            <img class="navbar-logo-img navbar-logo-img-white" src="/image/logo-white.png" alt="Ark">
+                            <img class="navbar-logo-img navbar-logo-img-dark" src="/image/logo-dark.png" alt="Ark">
                         </a>
                     </div>
                     <!-- End Logo -->
                 </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse nav-collapse">
                     <div class="menu-container">
                         <ul class="nav navbar-nav">
-                            <!-- Home -->
                             <li class="nav-item">
                                 <a class="nav-item-child radius-3" href="javascript:void(0);">
                                     Home
                                 </a>
                             </li>
-                            <!-- End Home -->
 
-                            <!-- Pages -->
                             <li class="nav-item">
-                                <a class="nav-item-child radius-3" href="javascript:void(0);">
+                                <a class="nav-item-child radius-3" href="http://iwanli.me">
                                     博客
                                 </a>
                             </li>
-                            <!-- End Pages -->
 
-                            <!-- Features -->
                             <li class="nav-item">
-                                <a class="nav-item-child radius-3 active" href="javascript:void(0);">
-                                    学院
-                                </a>
-                            </li>
-                            <!-- End Features -->
-
-                            <!-- Portfolio -->
-                            <li class="nav-item dropdown">
                                 <a class="nav-item-child radius-3" href="javascript:void(0);">
-                                    关于我
+                                    学院(开发中)
                                 </a>
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-item-child radius-3" href="javascript:void(0);">
-                                    开源
+                                    关于我(开发中)
                                 </a>
                             </li>
-                            <!-- End Portfolio -->
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-item-child radius-3" href="javascript:void(0);">
+                                    Github
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -110,14 +101,14 @@
     <!--========== PROMO BLOCK V11 ==========-->
     <section class="promo-block-v11 fullheight">
         <div class="container vertical-center-aligned">
-            <div class="margin-b-40">
+            <div class="margin-b-30">
                 <h1 class="promo-block-v11-title wow fadeInUp" >晚黎</h1>
                 <p class="promo-block-v11-subtitle wow fadeInUp" data-wow-duration=".2" data-wow-delay=".2s">I am a slow walker, but I never walk backwards...</p>
             </div>
 
             <ul class="list-inline promo-block-v11-category">
                 <li class="promo-block-v11-category-item wow fadeInUp" data-wow-duration=".2" data-wow-delay=".4s">
-                    <a class="promo-block-v11-category-link radius-3" href="#">
+                    <a class="promo-block-v11-category-link radius-3" href="http://blog.iwanli.me">
                         <i class="promo-block-v11-category-icon fa fa-paper-plane"></i>
                         Blog
                     </a>
@@ -262,12 +253,12 @@
                 </div>
             </div>
             <div class="text-center">
-                <button type="button" class="btn-red-brd-slide btn-slide btn-slide-left btn-base-md btn-base-sm radius-3 text-uppercase">View More</button>
+                <a href="http://www.iwanli.me" class="btn-base-bg btn-base-sm radius-3">View More</a>
             </div>
         </div>
     </div>
 
-    <div class="bg-color-grey-light overflow-h">
+    {{-- <div class="bg-color-grey-light overflow-h">
         <div class="content-md container">
             <!-- Heading v1 -->
             <div class="heading-v1 text-center margin-b-80">
@@ -280,7 +271,7 @@
                 <div class="col-md-4 md-margin-b-20">
                     <!-- Services v1 -->
                     <section class="services-v1">
-                        <div class="margin-b-50">
+                        <div class="margin-b-30">
                             <div class="services-v1-icon-wrap radius-circle">
                                 <img class="services-v1-icon" src="/image/04.png" alt="">
                             </div>
@@ -295,7 +286,7 @@
                 <div class="col-md-4 md-margin-b-20">
                     <!-- Services v1 -->
                     <section class="services-v1">
-                        <div class="margin-b-50">
+                        <div class="margin-b-30">
                             <div class="services-v1-icon-wrap radius-circle">
                                 <img class="services-v1-icon" src="/image/03.png" alt="">
                             </div>
@@ -303,14 +294,14 @@
                             <h3 class="services-v1-title">Always something new</h3>
                             <p class="services-v1-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed cursus sapien, vitae fringilla sem. Duis convallis vel nunc at laoreet.</p>
                         </div>
-                        <a href="#" class="btn-red-bg btn-base-sm radius-3">Know More</a>
+                        <a href="#" class="btn-base-bg btn-base-sm radius-3">Know More</a>
                     </section>
                     <!-- End Services v1 -->
                 </div>
                 <div class="col-md-4">
                     <!-- Services v1 -->
                     <section class="services-v1">
-                        <div class="margin-b-50">
+                        <div class="margin-b-30">
                             <div class="services-v1-icon-wrap radius-circle">
                                 <img class="services-v1-icon" src="/image/02.png" alt="">
                             </div>
@@ -318,17 +309,14 @@
                             <h3 class="services-v1-title">Fully responsive</h3>
                             <p class="services-v1-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed cursus sapien, vitae fringilla sem. Duis convallis vel nunc at laoreet.</p>
                         </div>
-                        <a href="#" class="btn-teal-bg btn-base-sm radius-3">Know More</a>
+                        <a href="#" class="btn-base-bg btn-base-sm radius-3">Know More</a>
                     </section>
                     <!-- End Services v1 -->
                 </div>
             </div>
-            <div class="text-center">
-                <button type="button" class="btn-red-brd-slide btn-slide btn-slide-left btn-base-md btn-base-sm radius-3 text-uppercase">View More</button>
-            </div>
         </div>
-    </div>
-    <div class="bg-color-white">
+    </div> --}}
+{{--     <div class="bg-color-white">
         <div class="content-md container">
             <!-- Heading v1 -->
             <div class="heading-v1 text-center">
@@ -351,7 +339,7 @@
                             <span class="pricing-list-v4-subtitle">Individual</span>
                         </div>
                         <div class="pricing-list-v4-content">
-                            <div class="margin-b-40">
+                            <div class="margin-b-30">
                                 <span class="pricing-list-v4-price-sign"><i class="fa fa-dollar"></i></span>
                                 <span class="pricing-list-v4-price">7.</span>
                                 <span class="pricing-list-v4-subprice">00</span>
@@ -372,7 +360,7 @@
                             <span class="pricing-list-v4-subtitle">Business</span>
                         </div>
                         <div class="pricing-list-v4-content">
-                            <div class="margin-b-40">
+                            <div class="margin-b-30">
                                 <span class="pricing-list-v4-price-sign"><i class="fa fa-dollar"></i></span>
                                 <span class="pricing-list-v4-price">15.</span>
                                 <span class="pricing-list-v4-subprice">00</span>
@@ -393,7 +381,7 @@
                             <span class="pricing-list-v4-subtitle">Enterprise</span>
                         </div>
                         <div class="pricing-list-v4-content">
-                            <div class="margin-b-40">
+                            <div class="margin-b-30">
                                 <span class="pricing-list-v4-price-sign"><i class="fa fa-dollar"></i></span>
                                 <span class="pricing-list-v4-price">23.</span>
                                 <span class="pricing-list-v4-subprice">00</span>
@@ -409,13 +397,13 @@
             </div>
             <!--// end row -->
         </div>
-    </div>
+    </div> --}}
     <!--========== END PAGE CONTENT ==========-->
 
     <!--========== FOOTER ==========-->
     <footer id="footer" class="footer footer-reveal">
         <div class="container">
-            <div class="row margin-b-50">
+            <div class="row margin-b-30">
                 <div class="col-sm-6 sm-margin-b-30">
                     <!-- Address -->
                     <div class="footer-address">

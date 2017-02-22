@@ -6,17 +6,15 @@ use Baum\Node;
 class Comment extends Node implements Transformable
 {
     use TransformableTrait;
-
-    protected $table = 'category';
     // 'parent_id' column name
     protected $parentColumn = 'pid';
- 
+
     // 'lft' column name
     protected $leftColumn = 'lidx';
- 
+
     // 'rgt' column name
     protected $rightColumn = 'ridx';
- 
+
     // 'depth' column name
     protected $depthColumn = 'depth';
 
