@@ -193,7 +193,7 @@
 
             &:before {
                 @include position(relative, $top: 15px);
-                @include font($size: $font-size-50, $family: $font-family-droid);
+                @include font($size: $font-size-50);
                 color: darken($color-white, 35%);
                 line-height: 1;
                 content: "“";
