@@ -103,67 +103,67 @@
 }
 
 /* Topbar Toggle Trigger */
-// .header-transparent {
-//     .topbar-toggle-trigger {
-//         float: left;
-//         @include size(27px);
-//         text-align: center;
-//         cursor: pointer;
-//         padding: 35px 0 55px;
+.header-transparent {
+    .topbar-toggle-trigger {
+        float: left;
+        @include size(27px);
+        text-align: center;
+        cursor: pointer;
+        padding: 35px 0 55px;
 
-//         .topbar-toggle-trigger-style {
-//             @include position(relative, $top: 8px);
-//             display: block;
-//             @include size(4px);
-//             text-align: center;
-//             background: $color-dark;
-//             border-radius: 50%;
-//             content: " ";
-//             margin: 0 auto;
+        .topbar-toggle-trigger-style {
+            @include position(relative, $top: 8px);
+            display: block;
+            @include size(4px);
+            text-align: center;
+            background: $color-dark;
+            border-radius: 50%;
+            content: " ";
+            margin: 0 auto;
 
-//             &:before,
-//             &:after {
-//                 @include position(absolute, $left: 50%);
-//                 @include size(4px);
-//                 background: $color-dark;
-//                 border-radius: 50%;
-//                 content: " ";
-//                 margin-left: -2px;
-//             }
-//             &:before {
-//                 top: -6px;
-//             }
-//             &:after {
-//                 bottom: -6px;
-//             }
-//         }
+            &:before,
+            &:after {
+                @include position(absolute, $left: 50%);
+                @include size(4px);
+                background: $color-dark;
+                border-radius: 50%;
+                content: " ";
+                margin-left: -2px;
+            }
+            &:before {
+                top: -6px;
+            }
+            &:after {
+                bottom: -6px;
+            }
+        }
 
-//         &:hover {
-//             .topbar-toggle-trigger-style {
-//                 background: $color-base;
+        &:hover {
+            .topbar-toggle-trigger-style {
+                background: $color-base;
 
-//                 &:before,
-//                 &:after {
-//                     background: $color-base;
-//                 }
-//             }
-//         }
-//     }
-// }
+                &:before,
+                &:after {
+                    background: $color-base;
+                }
+            }
+        }
+    }
+}
 
 // /* Topbar Toggle Trigger Icon */
-// .header-transparent {
-//     .topbar-toggle-trigger-icon-style {
-//         color: $color-dark;
-//         padding: 2px 5px;
-//         @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+.header-transparent {
+    .topbar-toggle-trigger-icon-style {
+        color: $color-dark;
+        padding: 2px 5px;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
 
-//         &:hover {
-//             color: $color-base;
-//             @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
-//         }
-//     }
-// }
+        &:hover {
+            color: $color-base;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+}
 
 /* Navbar Actions */
 .header-transparent {

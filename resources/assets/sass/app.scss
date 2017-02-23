@@ -136,8 +136,8 @@
 // =================================================================
 
 //@import 'blog/blog-classic'; // Blog Classic
-// @import 'blog/blog-grid'; // Blog Grid
-// @import 'blog/blog-sidebar'; // Blog Sidebar
+@import 'blog/blog-grid'; // Blog Grid
+@import 'blog/blog-sidebar'; // Blog Sidebar
 // @import 'blog/blog-single-post'; // Blog Single Post
 // @import 'blog/blog-teaser'; // Blog Teaser
 // @import 'blog/news'; // News
@@ -152,7 +152,7 @@
 @import 'components/breadcrumbs'; // Breadcrumbs
 @import 'components/buttons'; // Buttons
 // @import 'components/comment-form'; // Comment Form
-// @import 'components/dividers'; // Dividers
+@import 'components/dividers'; // Dividers
 // @import 'components/dropcap'; // Dropcap
 @import 'components/heading'; // Heading
 @import 'components/icon-list'; // Icon List
@@ -199,7 +199,7 @@
 // @import 'gui/team-members'; // Team Members
 // @import 'gui/testimonials'; // Testimonials
 // @import 'gui/video'; // Video
-@import 'gui/work'; // Work
+// @import 'gui/work'; // Work
 
 
 // Layout
@@ -253,8 +253,8 @@
 @import 'plugins/back-to-top'; // Back To Top
 // @import 'plugins/bootstrap-components'; // Bootstrap Components
 // @import 'plugins/google-maps'; // Google Maps
-@import 'plugins/instashow'; // Instashow
-@import 'plugins/masonry-grid'; // Masonry Grid
+// @import 'plugins/instashow'; // Instashow
+// @import 'plugins/masonry-grid'; // Masonry Grid
 // @import 'plugins/owl-carousel'; // Owl Carousel
 // @import 'plugins/portfolio'; // Portfolio
 // @import 'plugins/rev-slider'; // Revolution Slider

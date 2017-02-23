@@ -4,14 +4,15 @@
 
 .heading-v1 {
     .heading-v1-title {
-        @include font($size: $font-size-28, $family: $font-family-droid);
+        @include font($size: $font-size-28);
     }
 
     .heading-v1-subtitle {
         max-width: 350px;
-        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
-        color: $color-base;
+        @include font($size: $font-size-16, $style: italic);
+        color: #b260ce;
         margin-bottom: 20px;
+        display: inline-block;
     }
 
     .heading-v1-text {
@@ -93,50 +94,50 @@
 //     [Heading v3]
 // ------------------------------------------------------------------*/
 
-// .heading-v3 {
-//     text-align: center;
+.heading-v3 {
+    text-align: center;
     
-//     .heading-v3-title {
-//         @include font($size: $font-size-34);
-//         margin: 0 0 10px;
-//     }
+    .heading-v3-title {
+        @include font($size: $font-size-34);
+        margin: 0 0 10px;
+    }
 
-//     .heading-v3-element {
-//         position: relative;
-//         display: inline-block;
-//         @include font($size: $font-size-12);
-//         color: $color-subtitle;
+    .heading-v3-element {
+        position: relative;
+        display: inline-block;
+        @include font($size: $font-size-12);
+        color: $color-subtitle;
 
-//         &:before,
-//         &:after {
-//             @include position(absolute, $top: 8px);
-//             @include size(30px, 1px);
-//             border-bottom: 1px solid lighten($color-grey, 20%);
-//             content: " ";
-//         }
+        &:before,
+        &:after {
+            @include position(absolute, $top: 8px);
+            @include size(30px, 1px);
+            border-bottom: 1px solid lighten($color-grey, 20%);
+            content: " ";
+        }
 
-//         &:before {
-//             right: 100%;
-//             margin-right: 10px;
-//         }
+        &:before {
+            right: 100%;
+            margin-right: 10px;
+        }
 
-//         &:after {
-//             left: 100%;
-//             margin-left: 10px;
-//         }
+        &:after {
+            left: 100%;
+            margin-left: 10px;
+        }
 
-//         .heading-v3-element-icon {
-//             @include position(relative, $top: -1px);
-//             font-size: 8px;
-//             color: $color-subtitle;
-//         }
-//     }
+        .heading-v3-element-icon {
+            @include position(relative, $top: -1px);
+            font-size: 8px;
+            color: $color-subtitle;
+        }
+    }
 
-//     .heading-v3-text {
-//         margin-bottom: 0;
-//         @include font($style: italic, $family: $font-family-droid);
-//     }
-// }
+    .heading-v3-text {
+        margin-bottom: 0;
+        @include font($style: italic);
+    }
+}
 
 // /* White Version */
 // .heading-v3.heading-v3-white {
