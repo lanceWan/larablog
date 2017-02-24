@@ -373,7 +373,6 @@
             color: $color-white;
             background: transparent;
             letter-spacing: $letter-spacing-1;
-            text-transform: uppercase;
             padding: 5px 17px;
             @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
 
@@ -423,7 +422,7 @@
             .dropdown-menu-item-child {
                 @include font($size: $font-size-13, $weight: $font-weight-400);
                 color: lighten($color-dark, 10%);
-                text-transform: uppercase;
+
                 padding: 8px 20px;
                 @include transition(all, .3s ease-in-out);
 
@@ -481,7 +480,6 @@
             display: block;
             @include font($size: $font-size-13, $weight: $font-weight-400);
             color: lighten($color-dark, 10%);
-            text-transform: uppercase;
             cursor: pointer;
             padding: 8px 20px;
             margin: 0;
@@ -550,7 +548,6 @@
             display: block;
             @include font($size: $font-size-14, $weight: $font-weight-500);
             color: $color-dark;
-            text-transform: uppercase;
             margin-bottom: 10px;
         }
 
@@ -558,7 +555,6 @@
             display: block;
             @include font($size: $font-size-13, $weight: $font-weight-400);
             color: lighten($color-dark, 10%);
-            text-transform: uppercase;
             text-decoration: none;
             padding: 8px 15px 8px 0;
             margin: 0;

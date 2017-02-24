@@ -19,3 +19,18 @@ if(!function_exists('getUerId')){
 		return $this->getUser()->id;
 	}
 }
+
+if(!function_exists('getSettings')){
+	function getSettings()
+	{
+		$key = config('admin.global.blog');
+		
+		if (cache()->has($key)) {
+			return cache($key);
+		}else{
+			$settings = settings($key,config('admin.global.setting'));
+			cache()->forever($key,$settings);
+			return $settings;
+		}
+	}
+}

@@ -18,6 +18,7 @@ elixir((mix) => {
     		'bootstrap.min.css',
     		'font-awesome.min.css',
     		'animate.css',
+            'prism.css'
     	])
     	.scripts([
     		'jquery.min.js',
@@ -34,7 +35,8 @@ elixir((mix) => {
     		'animsition.js',
     		'wow.js',
     		'footer-reveal.js',
-    		'snow.js',
+            'snow.js',
+    		'prism.js',
     	],'public/js/app.js')
     	.copy('resources/assets/fonts', 'public/fonts')
     	.copy('resources/assets/js/html5shiv.js', 'public/js/html5shiv.js')

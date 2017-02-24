@@ -14,8 +14,12 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::group(['namespace' => 'Iwanli'],function ($router){
+Route::group(['namespace' => 'Iwanli', 'domain' => 'iwanli.me'],function ($router){
 	$router->get('/','IndexController@index');
+});
+
+Route::group(['namespace' => 'Iwanli', 'domain' => 'blog.iwanli.me'],function ($router){
+	$router->get('/','IndexController@blog');
 });
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth']],function ($router)

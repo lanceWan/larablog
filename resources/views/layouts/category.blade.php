@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+<!-- HEAD -->
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>{{$settings['title']}}</title>
-<meta name="keywords" content="{{$settings['keywords']}}" />
-<meta name="description" content="{{$settings['description']}}">
-<meta name="author" content="{{$settings['author']}}">
+<title>首页-晚黎</title>
+<meta name="keywords" content="HTML5 Theme" />
+<meta name="description" content="Ark - Responsive Multi-Purpose Template">
+<meta name="author" content="prothemes.net">
 
+<!-- Mobile Metas -->
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <link href="{{ elixir('css/all.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css"/>
 
-<link rel="shortcut icon" href="{{asset('image/favicon.ico')}}"/>
+<!-- FAVICON -->
+<link rel="shortcut icon" href="favicon.ico"/>
+<!-- END FAVICON -->
 </head>
+<!-- END HEAD -->
+<!-- BODY -->
 <body class="animsition">
 <div class="snow-container"></div>
 <!-- WRAPPER -->
 <div class="wrapper">
+    <!--========== HEADER TRANSPARENT ==========-->
     <header class="header-transparent header-transparent-bb navbar-fixed-top header-sticky">
         <!-- Navbar -->
         <nav class="navbar mega-menu" role="navigation">
@@ -109,49 +116,49 @@
         <!-- Navbar -->
     </header>
 
-    <div class="promo-block-v2 fullheight text-center">
-        <div class="container vertical-center-aligned">
-            <h1 class="promo-block-v2-title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">Welcome To iWanli's Blog</h1>
-            <p class="promo-block-v2-text margin-b-50 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".5s">
-                I am a slow walker, but I never walk backwards...
-            </p>
-            <div class="scroll-to-section-v1 wow fadeInUp pull-right" data-wow-duration="1.5s" data-wow-delay="1.5s">
-                <a href="#scroll_page">
-                    <i class="scroll-to-section-click-icon fa fa-angle-double-down"></i>
-                </a>
-            </div>
+    <section class="breadcrumbs-v5">
+        <div class="container">
+            <h2 class="breadcrumbs-v5-title">I am Wanli</h2>
+            <span class="breadcrumbs-v5-subtitle">I am a slow walker, but I never walk backwards...</span>
         </div>
-    </div>
-    <div class="bg-color-sky-light">
-        <div class="container-sm">
-            <div class="bg-color-white border-1 padding-40 margin-t-o-80">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="heading-v1 margin-b-20 text-center">
-                            <h2 class="heading-v1-title">{{$settings['about_en_title']}}</h2>
-                            <span class="heading-v1-subtitle">{{$settings['about_title']}}</span>
-                        </div>
-                        {!! $settings['about_content'] !!}
-                    </div>
-                </div>
-            </div>
-            <div class="content"></div>
+    </section>
+    <section class="breadcrumbs-v1">
+        <div class="container">
+            <h2 class="breadcrumbs-v1-title">Laravel</h2>
+            <ol class="breadcrumbs-v1-links">
+                <li><a href="http://iwanli.me">Home</a></li>
+                <li class="active">Laravel</li>
+            </ol>
         </div>
-    </div>
-    <div class="bg-color-white">
-        <div class="content-md container" id="scroll_page">
-            <div class="heading-v3 text-center">
-                <h2 class="heading-v3-title">Great Diary</h2>
-                <div class="divider-v2"><div class="divider-v2-element"><i class="divider-v2-icon fa fa-paper-plane-o"></i></div></div>
-                <p class="heading-v3-text">It's the small details that will make a big difference</p>
-            </div>
-        </div>
-    </div>
+    </section>
+
+    <!-- Work v1 -->
     <div class="bg-color-sky-light">
         <div class="content-md container">
             <div class="row">
                 <div class="col-md-8 no-space ">
-                    @yield('content')
+                    <div class="col-md-12 grid-item">
+                        <article class="blog-grid">
+                            <div class="blog-grid-box-shadow">
+                                <div class="blog-grid-content">
+                                    <h2 class="blog-grid-title-md"><a href="http://iwanli.me/article/56">iDashboard-基于Laravel5.3的后台管理</a></h2>
+                                    <div class="starImg">
+                                        <a href="http://iwanli.me/article/56"><img class="img-responsive margin-b-10" src="http://7xsgy7.com1.z0.glb.clouddn.com/iwanli/image/451a50846d6e9cfb62ab31775f9040e2.png" alt="iDashboard-基于Laravel5.3的后台管理"></a>
+                                    </div>
+                                    <p>经过几天的奋斗，Laravel5.3的后台管理基本框架已经完成，代码大量优化，设计模式更改。博客改版计划也要开始了~</p>
+                                </div>
+                                <div class="blog-grid-supplemental">
+                                    <span class="blog-grid-supplemental-title">
+                                        <a class="blog-grid-supplemental-category" href="http://iwanli.me/cate/4"><i class="fa fa-leaf"></i> Laravel</a>
+                                         -  <i class="fa fa-clock-o"></i> 2016-11-07 12:28:32
+                                    </span>
+                                    <span class="blog-grid-supplemental-title pull-right">
+                                        <i class="fa fa-eye"></i> 1027
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
                 
                 <div class="col-md-4 ">
@@ -267,8 +274,9 @@
             <!--// enr row -->
         </div>
     </div>
-    @yield('paginate')
-    {{-- <div class="bg-color-sky-light">
+    <!-- End Work v1 -->
+    <!-- Paginations -->
+    <div class="bg-color-sky-light">
         <div class="content-md container">
 
             <div class="row">
@@ -293,13 +301,53 @@
             </div>
             <!--// end row -->
         </div>
-    </div> --}}
+    </div>
+    <!-- End Paginations -->
 
-    @include('layouts.partials.footer')
+    <!--========== FOOTER ==========-->
+    <footer id="footer" class="footer footer-reveal">
+        <div class="container">
+            <div class="row margin-b-50">
+                <div class="col-sm-6 sm-margin-b-30">
+                    <!-- Address -->
+                    <div class="footer-address">
+                        <h3 class="footer-title">Headquarter</h3>
+                        <p class="footer-address-text">795 Folsom Ave, Suite 600, San Francisco, CA 94107</p>
+                        <p class="footer-address-text">+123 456 7890</p>
+                        <a class="footer-address-link" href="#">prothemes.net@gmail.com</a>
+                    </div>
+                    <!-- Address -->
+                </div>
+                <div class="col-sm-6">
+                    <!-- Testimonials -->
+                    <div class="footer-testimonials">
+                        <div class="footer-testimonials-quote">
+                            <p>Ark is the most amazing premium template with powerful customization settings and ultra fully responsive template with modern and smart design.</p>
+                        </div>
+                        <span class="footer-testimonials-author">&#8212; Kenny Johnson</span>
+                    </div>
+                    <!-- End Testimonials -->
+                </div>
+            </div>
+            <!-- end row -->
+
+            <!-- Copyright -->
+            <ul class="list-inline footer-copyright">
+                <li class="footer-copyright-item">Copyright &#169; 2016 Prothemes. All Rights Reserved.</li>
+                <li class="footer-copyright-item"><a href="#">Terms &amp; Conditions</a></li>
+                <li class="footer-copyright-item"><a href="#">Privacy &amp; Policy</a></li>
+            </ul>
+            <!-- End Copyright -->
+        </div>
+    </footer>
+    <!--========== END FOOTER ==========-->
     
 </div>
+<!-- END WRAPPER -->
 
+<!-- Back To Top -->
 <a href="javascript:void(0);" class="js-back-to-top back-to-top-theme"></a>
+<!-- End Back To Top -->
 
 <!--[if lt IE 9]>
 <script src="/js/html5shiv.js"></script>
@@ -309,4 +357,5 @@
 <script type="text/javascript" src="{{ elixir('js/app.js') }}"></script>
 
 </body>
+<!-- END BODY -->
 </html>

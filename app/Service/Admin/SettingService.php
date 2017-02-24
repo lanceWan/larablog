@@ -33,6 +33,10 @@ class SettingService
 				$attributes['sponsor_wechat'] = isset($settings['sponsor_wechat']) ? $settings['sponsor_wechat']:'';
 			}
 			settings([config('admin.global.blog') => $attributes]);
+			// 清楚缓存
+			if (cache()->has(config('admin.global.blog'))) {
+				cache()->forget(config('admin.global.blog'));
+			}
 			flash(trans('admin/alert.setting.update_success'),'success')->important();
 		} catch (Exception $e) {
 			// 错误信息发送邮件

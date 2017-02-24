@@ -71,7 +71,6 @@ class ArticleService{
 	 */
 	public function createView()
 	{
-		dd($this->article->skipPresenter()->find(1));
 		$categories = $this->category->getArticleCategories();
 		$tags = $this->tag->allTags();
 		return compact('categories','tags');
@@ -88,8 +87,12 @@ class ArticleService{
 		try {
 			$attributes = $request->all();
 			// 文章banner
-			if ($request->hasFile('banner')) {
-				$attributes['banner'] = $this->upload($request->file('banner'));
+			if ($attributes['edit_banner']) {
+				$attributes['banner'] = $attributes['edit_banner'];
+			}else{
+				if ($request->hasFile('banner')) {
+					$attributes['banner'] = $this->upload($request->file('banner'));
+				}
 			}
 
 			$attributes['content_html'] = $attributes['editor-html-code'];
@@ -151,8 +154,12 @@ class ArticleService{
 		}
 		try {
 			// 文章banner
-			if ($request->hasFile('banner')) {
-				$attributes['banner'] = $this->upload($request->file('banner'));
+			if ($attributes['edit_banner']) {
+				$attributes['banner'] = $attributes['edit_banner'];
+			}else{
+				if ($request->hasFile('banner')) {
+					$attributes['banner'] = $this->upload($request->file('banner'));
+				}
 			}
 
 			$attributes['content_html'] = $attributes['editor-html-code'];
