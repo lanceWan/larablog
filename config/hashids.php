@@ -58,6 +58,11 @@ return [
             'length' => '8',
             'alphabet' => 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ',
         ],
+        'tag' => [
+            'salt' => 'iwanli.tag',
+            'length' => '8',
+            'alphabet' => 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        ],
 
     ],
 

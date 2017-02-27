@@ -186,7 +186,7 @@ Eof;
         $str = '';
         $this->setEncryptConnection('tag');
         foreach ($tags as $tag) {
-            $str .= '<li><a href="'.url('category/'.$this->encodeId($tag->id).'.html').'">'.$tag->name.'</a></li>';
+            $str .= '<li><a href="'.url('tag/'.$this->encodeId($tag->id).'.html').'">'.$tag->name.'</a></li>';
         }
         return $str;
 

@@ -22,6 +22,7 @@ Route::group(['namespace' => 'Iwanli', 'domain' => 'blog.iwanli.me'],function ($
 	$router->get('/','IndexController@blog');
 	require(__DIR__ . '/front/category.php');
 	require(__DIR__ . '/front/article.php');
+	require(__DIR__ . '/front/tag.php');
 });
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth']],function ($router)

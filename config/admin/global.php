@@ -50,6 +50,7 @@ return [
 		'article'	=> true,
 		'link'		=> true,
 		'category'	=> true,
+		'tag'		=> true,
 
 	],
 	// 缓存

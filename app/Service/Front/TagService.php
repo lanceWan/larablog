@@ -1,43 +1,45 @@
 <?php
 namespace App\Service\Front;
+use App\Repositories\Eloquent\TagRepositoryEloquent;
 use App\Repositories\Eloquent\ArticleRepositoryEloquent;
-use App\Repositories\Eloquent\CategoryRepositoryEloquent;
-use App\Repositories\Eloquent\ArticleCategoryRepositoryEloquent;
+use App\Repositories\Eloquent\ArticleTagRepositoryEloquent;
 use App\Repositories\Criteria\FilterStatusCriteria;
 use App\Repositories\Criteria\FilterArticleIdsCriteria;
 use App\Traits\EncryptIdsTrait;
 use App\Traits\SendSystemErrorTrait;
 use Exception;
-class CategoryService
+class TagService
 {
 	use SendSystemErrorTrait,EncryptIdsTrait;
+	protected $tag;
 	protected $article;
-	protected $category;
-	protected $articleCategory;
+	protected $articleTag;
 
-	function __construct(ArticleRepositoryEloquent $article,CategoryRepositoryEloquent $category, ArticleCategoryRepositoryEloquent $articleCategory)
+	function __construct(TagRepositoryEloquent $tag, ArticleRepositoryEloquent $article,ArticleTagRepositoryEloquent $articleTag)
 	{
+		$this->tag =  $tag;
 		$this->article =  $article;
-		$this->category =  $category;
-		$this->articleCategory =  $articleCategory;
+		$this->articleTag =  $articleTag;
 	}
 
-	public function getArticleList($categoryId)
+	public function tagList($tagId)
 	{
 		try {
-			$this->setEncryptConnection('category');
+			$this->setEncryptConnection('tag');
 			// id解密
-			$categoryId = $this->decodeId($categoryId);
-			$category = $this->category->skipPresenter()->find($categoryId);
-			$articleCategory = $this->articleCategory->findWhere(['category_id' => $categoryId]);
+			$tagId = $this->decodeId($tagId);
+			$tag = $this->tag->skipPresenter()->find($tagId);
+			$articleTag = $this->articleTag->findWhere(['tag_id' => $tagId]);
 			$articleIds = [];
-			if (!$articleCategory->isEmpty()) {
-				$articleIds = $articleCategory->pluck('article_id');
+			if (!$articleTag->isEmpty()) {
+				$articleIds = $articleTag->pluck('article_id');
 			}
 			$this->article->pushCriteria(new FilterStatusCriteria(config('admin.global.status.active')));
 			$this->article->pushCriteria(new FilterArticleIdsCriteria($articleIds));
 			$articles = $this->article->orderBy('created_at', 'desc')->skipPresenter()->paginate(config('admin.global.paginate'));
-			return compact('articles','category');
+			return compact('articles','tag');
+
+
 		} catch (Exception $e) {
 			// 错误信息发送邮件
 			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
