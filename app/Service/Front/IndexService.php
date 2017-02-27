@@ -24,7 +24,7 @@ class IndexService
 		try {
 			$this->article->pushCriteria(new FilterStatusCriteria(config('admin.global.status.active')));
 			$articles = $this->article->with('category')->orderBy('created_at', 'desc')->skipPresenter()->paginate(config('admin.global.paginate'));
-			// dd($articles->toArray());
+			// dd($articles->isEmpty(),$articles->total());
 			return $articles;
 		} catch (Exception $e) {
 			// 错误信息发送邮件
