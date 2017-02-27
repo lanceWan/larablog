@@ -38,8 +38,6 @@ class TagService
 			$this->article->pushCriteria(new FilterArticleIdsCriteria($articleIds));
 			$articles = $this->article->orderBy('created_at', 'desc')->skipPresenter()->paginate(config('admin.global.paginate'));
 			return compact('articles','tag');
-
-
 		} catch (Exception $e) {
 			// 错误信息发送邮件
 			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
