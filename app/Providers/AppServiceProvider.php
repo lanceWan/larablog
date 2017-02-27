@@ -22,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(
             ['layouts.index','layouts.blog'], 'App\Http\ViewComposers\SettingsComposer'
         );
+        view()->composer(
+            'layouts.partials.category', 'App\Http\ViewComposers\CategoryComposer'
+        );
     }
 
     /**

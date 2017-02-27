@@ -3,6 +3,13 @@ namespace App\Presenters\Front;
 
 class IndexPresenter
 {
+    /**
+     * 文章列表渲染
+     * @author 晚黎
+     * @date   2017-02-27T11:24:04+0800
+     * @param  [type]                   $articles [description]
+     * @return [type]                             [description]
+     */
 	public function articleList($articles)
 	{
 		$str = '';
@@ -43,4 +50,49 @@ Eof;
 		}
 		return $str;
 	}
+
+    public function categoriesList($categories)
+    {
+        $str = '';
+        if ($categories) {
+            foreach ($categories as $category) {
+                $icon = $category['icon'] ? '<i class="'.$category['icon'].'"></i> ':'';
+                $url = $category['url'] ? $category['url'] : url('category/'.$category['id']);
+                $target = $category['url'] ? 'target="_blank"':'';
+                if ($category['child']) {
+                    $str .= <<<Eof
+                    <li class="nav-item dropdown">
+                        <a class="nav-item-child dropdown-toggle radius-3" {$target} href="{$url}" data-toggle="dropdown">
+                            {$icon}{$category['name']}
+                        </a>
+                        {$this->childCategoryList($category['child'])}
+                    </li>
+Eof;
+                }else{
+                    $str .= <<<Eof
+                    <li class="nav-item">
+                        <a class="nav-item-child radius-3" {$target} href="{$url}">
+                            {$icon}{$category['name']}
+                        </a>
+                    </li>
+Eof;
+                }
+            }
+        }
+        return $str;
+    }
+
+    private function childCategoryList($categories)
+    {
+        $str = '<ul class="dropdown-menu">';
+        foreach ($categories as $category) {
+            $icon = $category['icon'] ? '<i class="'.$category['icon'].'"></i> ':'';
+            $url = $category['url'] ? $category['url'] : url('category/'.$category['id']);
+            $target = $category['url'] ? 'target="_blank"':'';
+            $str .= <<<Eof
+            <li class="dropdown-menu-item"><a class="dropdown-menu-item-child" {$target} href="{$url}">{$icon}{$category['name']}</a></li>
+Eof;
+        }
+        return $str .= '</ul>';
+    }
 }
