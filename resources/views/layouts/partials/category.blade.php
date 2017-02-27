@@ -1,4 +1,4 @@
-@inject('presenter', 'App\Presenters\Front\IndexPresenter')
+@inject('presenter', 'App\Presenters\Front\BlogPresenter')
 <header class="header-transparent header-transparent-bb navbar-fixed-top header-sticky">
     <nav class="navbar mega-menu" role="navigation">
         <div class="container">
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="navbar-logo">
-                    <a class="navbar-logo-wrap" href="index.html">
+                    <a class="navbar-logo-wrap" href="/">
                         <img class="navbar-logo-img navbar-logo-img-white" src="{{asset('image/logo-white.png')}}" alt="Ark">
                         <img class="navbar-logo-img navbar-logo-img-dark" src="{{asset('image/logo-dark.png')}}" alt="Ark">
                     </a>

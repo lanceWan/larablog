@@ -20,10 +20,13 @@ class AppServiceProvider extends ServiceProvider
             'layouts.partials.sidebar', 'App\Http\ViewComposers\MenuComposer'
         );
         view()->composer(
-            ['layouts.index','layouts.blog'], 'App\Http\ViewComposers\SettingsComposer'
+            ['layouts.index','layouts.blog', 'front.article.detail'], 'App\Http\ViewComposers\SettingsComposer'
         );
         view()->composer(
             'layouts.partials.category', 'App\Http\ViewComposers\CategoryComposer'
+        );
+        view()->composer(
+            'layouts.partials.link', 'App\Http\ViewComposers\FriendshipLinkComposer'
         );
     }
 

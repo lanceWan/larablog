@@ -1,6 +1,6 @@
 @extends('layouts.blog')
 @section('content')
-@inject('presenter', 'App\Presenters\Front\IndexPresenter')
+@inject('presenter', 'App\Presenters\Front\BlogPresenter')
 {!! $presenter->articleList($articles) !!}
 @endsection
 

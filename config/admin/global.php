@@ -49,12 +49,14 @@ return [
 		'main' 		=> false,
 		'article'	=> true,
 		'link'		=> true,
+		'category'	=> true,
 
 	],
 	// 缓存
 	'cache' => [
 		'menuList' => 'menuList',// 后台菜单缓存
 		'categoryList' => 'categoryList',// 前端分类缓存
+		'link' => 'link',// 友情链接缓存
 	],
 	'imagePath' => 'iwanli/image/',
 	'blog' => 'blog.system',
@@ -81,5 +83,7 @@ return [
 		'statistics' => '',
 		// 第三方评论，为空时启用博客自带评论
 		'comment' => '',
+		// 分享代码
+		'share' => '',
 	],
 ];

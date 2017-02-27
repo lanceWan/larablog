@@ -48,7 +48,7 @@ $(function() {
 	var windowHalfY = window.innerHeight / 2;
 	var particles = [];
 	var particleImage = new Image();
-	particleImage.src = "image/snow.png";
+	particleImage.src = "/image/snow.png";
 	var snowNum = 500;
 
 	function init() {

@@ -202,7 +202,7 @@
         }
 
         .footer-testimonials-author {
-            @include font($size: $font-size-16, $weight: $font-weight-700, $style: italic);
+            @include font($size: $font-size-16);
             color: $color-white;
             float: right;
         }

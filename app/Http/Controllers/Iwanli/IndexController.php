@@ -30,7 +30,6 @@ class IndexController extends Controller
     public function blog()
     {
     	$articles = $this->service->getArticleList();
-    	// dd($articles);
     	return view('front.index.blog')->with(compact('articles'));
     }
 }

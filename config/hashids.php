@@ -53,6 +53,11 @@ return [
             'length' => '8',
             'alphabet' => 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ',
         ],
+        'category' => [
+            'salt' => 'iwanli.category',
+            'length' => '8',
+            'alphabet' => 'abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        ],
 
     ],
 
