@@ -14,7 +14,7 @@ class BlogPresenter
 	public function articleList($articles)
 	{
 		$str = '';
-		if ($articles->total() > 0) {
+		if ($articles->total()) {
             $this->setEncryptConnection('article');
 			foreach ($articles as $article) {
 				$banner = '';
