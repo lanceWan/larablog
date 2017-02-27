@@ -14,7 +14,7 @@ class BlogPresenter
 	public function articleList($articles)
 	{
 		$str = '';
-		if (!$articles) {
+		if ($articles->total() > 0) {
             $this->setEncryptConnection('article');
 			foreach ($articles as $article) {
 				$banner = '';
@@ -54,7 +54,7 @@ Eof;
                     <article class="blog-grid">
                         <div class="blog-grid-box-shadow">
                             <div class="blog-grid-content">
-                                该分类暂无文章
+                                暂无文章
                             </div>
                         </div>
                     </article>
