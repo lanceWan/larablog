@@ -22,13 +22,14 @@ elixir((mix) => {
     	])
     	.scripts([
     		'jquery.min.js',
-    		'jquery.animsition.min.js',
-    		'jquery.wow.min.js',
-    		'jquery.footer-reveal.js',
+            'bootstrap.min.js',
             'jquery.smooth-scroll.js',
+            'jquery.animsition.min.js',
+            'jquery.wow.min.js',
+            'jquery.footer-reveal.js',
         ])
         .scripts([
-            'jquery.back-to-top.js',
+            // 'jquery.back-to-top.js',
             'app.js',
             'header-sticky.js',
             'animsition.js',

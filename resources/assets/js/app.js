@@ -91,12 +91,12 @@ var App = function() {
     // }
 
     // Work v1 Collapse
-    var handleWorkV1 = function() {
-        $('.work-v1-collapse').hide();
-        $('.work-v1').on('hover', function() {
-            $(this).find('.work-v1-collapse').slideToggle(400);
-        });
-    }
+    // var handleWorkV1 = function() {
+    //     $('.work-v1-collapse').hide();
+    //     $('.work-v1').on('hover', function() {
+    //         $(this).find('.work-v1-collapse').slideToggle(400);
+    //     });
+    // }
 
     // Topbar Transparent Dropdown
     // var handleTopbarTDropdown = function() {
@@ -324,7 +324,7 @@ var App = function() {
             // handleNavbarToggle(); // initial setup for navbar toggle
             // handleSidebarMenu(); // initial setup for sidebar menu
             // handleServicesV7(); // initial setup for services v7 collapse
-            handleWorkV1(); // initial setup for work v1
+            // handleWorkV1(); // initial setup for work v1
             // handleTopbarTDropdown(); // initial setup for topbar transparent dropdown
             // handleTopbarTShoppingDropdown(); // initial setup for topbar transparent shopping dropdown
             // handleTopbarEDropdown(); // initial setup for topbar e-commerce dropdown
