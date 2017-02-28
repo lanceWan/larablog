@@ -68,7 +68,7 @@ class LinkService
 			$result = $this->link->create($attributes);
 			if ($result) {
 				// 清除缓存
-				cahce()->forget(config('admin.global.cache.link'));
+				cache()->forget(config('admin.global.cache.link'));
 			}
 			flash_info($result,trans('admin/alert.link.create_success'),trans('admin/alert.link.create_error'));
 			return $result;
@@ -105,7 +105,7 @@ class LinkService
 			$result = $this->link->update($attributes,$this->link->decodeId($id));
 			if ($result) {
 				// 清除缓存
-				cahce()->forget(config('admin.global.cache.link'));
+				cache()->forget(config('admin.global.cache.link'));
 			}
 			flash_info($result,trans('admin/alert.link.edit_success'),trans('admin/alert.link.edit_error'));
 			return $result;
@@ -129,7 +129,7 @@ class LinkService
 			$result = $this->link->delete($this->link->decodeId($id));
 			if ($result) {
 				// 清除缓存
-				cahce()->forget(config('admin.global.cache.link'));
+				cache()->forget(config('admin.global.cache.link'));
 			}
 			flash_info($result,trans('admin/alert.link.destroy_success'),trans('admin/alert.link.destroy_error'));
 			return $result;

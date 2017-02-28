@@ -16,7 +16,7 @@
 <link rel="shortcut icon" href="{{asset('image/favicon.ico')}}"/>
 </head>
 <body class="animsition">
-<div class="snow-container"></div>
+@yield('snow')
 <div class="wrapper">
     @include('layouts.partials.category')
     @section('promo')

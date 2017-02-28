@@ -47,7 +47,6 @@ class ArticleService{
 		$result = $this->article->getArticleList($start,$length,$search,$order);
 
 		$articles = [];
-
 		if ($result['articles']) {
 			foreach ($result['articles'] as &$v) {
 				$v->actionButton = $v->getArticleActionButton();
@@ -164,10 +163,9 @@ class ArticleService{
 
 			$attributes['content_html'] = $attributes['editor-html-code'];
 
-			$id = $this->article->decodeId($id);
-			$attributes['id'] = $this->article->decodeId($attributes['id']);
+			$attributes['id'] = $id = $this->article->decodeId($attributes['id']);
 
-			$result = $this->article->update($attributes,$id);
+			$result = $this->article->skipPresenter()->update($attributes,$id);
 			if ($result) {
 				// 添加标签关系
 				$tagIds = [];
@@ -179,13 +177,15 @@ class ArticleService{
 					}
 				}
 				$tagIds = array_unique(array_merge($tagIds,$attributes['tags']));
-				$article->tag()->sync($tagIds);
 
-				$article->category()->sync($attributes['cid']);
+				$result->tag()->sync($tagIds);
+
+				$result->category()->sync($attributes['cid']);
 			}
 			flash_info($result,trans('admin/alert.article.edit_success'),trans('admin/alert.article.edit_error'));
 			return $result;
 		} catch (Exception $e) {
+			dd($e);
 			// 错误信息发送邮件
 			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
 			return false;

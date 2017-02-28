@@ -31,7 +31,7 @@ trait ActionButtonAttributeTrait
 		if (config('admin.global.'.$this->action.'.show')) {
 			if (auth()->user()->can(config('admin.permissions.'.$this->action.'.show'))) {
 				$id = isset($this->encodeId) ? $this->encodeId:$this->id;
-				return '<a href="'.url('admin/'.$this->action.'/'.$id).'" class="btn btn-xs btn-info btn-outline tooltips" data-original-title="' . trans('admin/action.actionButton.show') . '" target="_blank" data-placement="top"><i class="fa fa-eye"></i></a> ';
+				return '<a href="'.url($this->action.'/'.$id.'.html').'" class="btn btn-xs btn-info btn-outline tooltips" data-original-title="' . trans('admin/action.actionButton.show') . '" target="_blank" data-placement="top"><i class="fa fa-eye"></i></a> ';
 				
 			}
 			return '';
