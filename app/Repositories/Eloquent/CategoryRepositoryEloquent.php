@@ -4,7 +4,6 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use App\Repositories\Contracts\CategoryRepository;
 use App\Models\Category;
 use Prettus\Repository\Presenter\ModelFractalPresenter;
-use App\Repositories\Criteria\FilterArticleCategoriesCriteria;
 /**
  * Class CategoryRepositoryEloquent
  * @package namespace App\Repositories\Eloquent;
@@ -38,7 +37,6 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
      */
     public function getArticleCategories()
     {
-        $this->pushCriteria(FilterArticleCategoriesCriteria::class);
         return $this->skipPresenter()->all()->toArray();
     }
 }
