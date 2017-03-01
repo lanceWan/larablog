@@ -1,6 +1,7 @@
 @extends('layouts.blog')
 @section('meta')
-<meta name="keywords" content="{{ $category->name }}-{{$settings['keywords']}}" />
+<title>{{ $category->name }}-{{$settings['title']}}</title>
+<meta name="keywords" content="{{$settings['keywords']}}" />
 <meta name="description" content="{{$settings['description']}},{{$category->name}}">
 <meta name="author" content="{{$settings['author']}}">
 @endsection
