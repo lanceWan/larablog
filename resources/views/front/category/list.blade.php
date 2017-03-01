@@ -1,4 +1,9 @@
 @extends('layouts.blog')
+@section('meta')
+<meta name="keywords" content="{{ $category->name }}-{{$settings['keywords']}}" />
+<meta name="description" content="{{$settings['description']}},{{$category->name}}">
+<meta name="author" content="{{$settings['author']}}">
+@endsection
 @section('promo')
 <section class="breadcrumbs-v5">
     <div class="container">

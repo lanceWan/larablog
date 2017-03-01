@@ -74,10 +74,10 @@ Eof;
      */
     private function articleCategory($category)
     {
-        $str = '';
+        $str = '<i class="fa fa-leaf"></i>';
         $this->setEncryptConnection('category');
         foreach ($category as $v) {
-            $str .= '<a class="blog-grid-supplemental-category" href="'.url('category/'.$this->encodeId($v->id).'.html').'"><i class="fa fa-leaf"></i> '.$v->name.'</a>,';
+            $str .= '<a class="blog-grid-supplemental-category" href="'.url('category/'.$this->encodeId($v->id).'.html').'"> '.$v->name.'</a>,';
         }
         return rtrim($str,',');
     }
@@ -205,7 +205,18 @@ Eof;
     {
         $str = '';
         if ($recommendedArticles) {
-            
+            $this->setEncryptConnection('article');
+            foreach ($recommendedArticles as $article) {
+                $article = json_decode($article,true);
+                $url = url('article/'.$this->encodeId($article['id']).'.html');
+                $str .= <<<Eof
+                <li class="timeline-v2-list-item">
+                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
+                    <small class="timeline-v2-news-date">{$article['updated_at']}</small>
+                    <h5 class="timeline-v2-news-title"><a href="{$url}">{$article['title']}</a></h5>
+                </li>
+Eof;
+            }
         }
         return $str;
     }

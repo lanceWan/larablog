@@ -28,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
         view()->composer(
             'layouts.partials.link', 'App\Http\ViewComposers\FriendshipLinkComposer'
         );
+        view()->composer(
+            'layouts.partials.hot', 'App\Http\ViewComposers\RecommendedArticlesComposer'
+        );
     }
 
     /**

@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+@section('meta')
 <title>{{$settings['title']}}</title>
 <meta name="keywords" content="{{$settings['keywords']}}" />
 <meta name="description" content="{{$settings['description']}}">
 <meta name="author" content="{{$settings['author']}}">
-
+@show
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <link href="{{ elixir('css/all.css') }}" rel="stylesheet" type="text/css"/>
@@ -66,67 +67,7 @@
                 </div>
                 <div class="col-xs-12 col-md-3">
                 @section('sidebar')
-                    <div class="blog-sidebar margin-b-30">
-                        <div class="blog-sidebar-heading">
-                            <i class="blog-sidebar-heading-icon fa fa-fire"></i>
-                            <h4 class="blog-sidebar-heading-title">热门文章</h4>
-                        </div>
-                        <div class="blog-sidebar-content scrollbar">
-                            <ul class="timeline-v2">
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-07-14 11:52:08</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">Laravel视频教程专题【2016/11/29第33节】</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-09-07 14:02:48</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">Laravel5.3多用户表登录</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-05-23 09:14:57</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">laravel5分页Pagination及扩展</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-05-26 05:23:30</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">Laravel5使用Captcha扩展包生成验证码</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-08-16 12:48:43</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">Laravel5.2中多用户表登录</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-12-01 10:28:18</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">Laravel5.3&amp;Vue2.0系列【2016.12.7 第5节】</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-05-25 05:34:44</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">Laravel5 自定义登录字段</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-07-04 09:23:24</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">01-Laravel5.2视频教程之简介</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-07-15 12:45:13</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">07-Laravel5.2视频教程之Entrust安装</a></h5>
-                                </li>
-                                <li class="timeline-v2-list-item">
-                                    <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                                    <small class="timeline-v2-news-date">2016-06-12 22:36:04</small>
-                                    <h5 class="timeline-v2-news-title"><a href="#!">Laravel自定义错误页面</a></h5>
-                                </li>
-                                <li class="clearfix" style="float: none;"></li>
-                            </ul>
-                        </div>
-                    </div>
+                    @include('layouts.partials.hot')
                     @include('layouts.partials.link')
                 @show
                 </div>
