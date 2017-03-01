@@ -29,7 +29,7 @@ elixir((mix) => {
             'jquery.footer-reveal.js',
         ])
         .scripts([
-            // 'jquery.back-to-top.js',
+            'jquery.back-to-top.js',
             'app.js',
             'header-sticky.js',
             'animsition.js',
@@ -37,12 +37,12 @@ elixir((mix) => {
             'footer-reveal.js',
             'prism.js',
         ],'public/js/app.js')
-        .scripts([
-    		'three.js',
-            'snow.js',
-        ],'public/js/snow.js')
+      //   .scripts([
+    		// 'three.js',
+      //       'snow.js',
+      //   ],'public/js/snow.js')
     	.copy('resources/assets/fonts', 'public/fonts')
     	.copy('resources/assets/js/html5shiv.js', 'public/js/html5shiv.js')
     	.copy('resources/assets/js/respond.min.js', 'public/js/respond.min.js')
-    	.version(['css/all.css','css/app.css', 'js/all.js', 'js/app.js','js/snow.js']);
+    	.version(['css/all.css','css/app.css', 'js/all.js', 'js/app.js']);
 });

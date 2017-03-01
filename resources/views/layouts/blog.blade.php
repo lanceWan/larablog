@@ -16,7 +16,6 @@
 <link rel="shortcut icon" href="{{asset('image/favicon.ico')}}"/>
 </head>
 <body class="animsition">
-@yield('snow')
 <div class="wrapper">
     @include('layouts.partials.category')
     @section('promo')
@@ -62,10 +61,10 @@
     <div class="bg-color-sky-light">
         <div class="content-md container">
             <div class="row">
-                <div class="col-md-9 col-sm-12 no-space">
+                <div class="col-xs-12 col-md-9 no-space">
                     @yield('content')
                 </div>
-                <div class="col-md-3 col-sm-12">
+                <div class="col-xs-12 col-md-3">
                 @section('sidebar')
                     <div class="blog-sidebar margin-b-30">
                         <div class="blog-sidebar-heading">
@@ -139,7 +138,6 @@
     @include('layouts.partials.footer')
     
 </div>
-
 <a href="javascript:void(0);" class="js-back-to-top back-to-top-theme"></a>
 
 <!--[if lt IE 9]>

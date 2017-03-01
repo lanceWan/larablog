@@ -26,15 +26,15 @@ var App = function() {
     // }
 
     // Bootstrap Navbar Trigger
-    // var handleNavbarToggle = function() {
-    //     $('.navbar-toggle').on('click', function(event) {
-    //         if ($('.toggle-icon').hasClass('is-clicked')) {
-    //             $('.toggle-icon').removeClass('is-clicked');
-    //         } else {
-    //             $('.toggle-icon').addClass('is-clicked');
-    //         }
-    //     });
-    // }
+    var handleNavbarToggle = function() {
+        $('.navbar-toggle').on('click', function(event) {
+            if ($('.toggle-icon').hasClass('is-clicked')) {
+                $('.toggle-icon').removeClass('is-clicked');
+            } else {
+                $('.toggle-icon').addClass('is-clicked');
+            }
+        });
+    }
 
     // Handle Sidebar Menu
     // var handleSidebarMenu = function() {
@@ -321,7 +321,7 @@ var App = function() {
     return {
         init: function() {
             // handleBootstrapComponents(); // initial setup for bootstrap components
-            // handleNavbarToggle(); // initial setup for navbar toggle
+            handleNavbarToggle(); // initial setup for navbar toggle
             // handleSidebarMenu(); // initial setup for sidebar menu
             // handleServicesV7(); // initial setup for services v7 collapse
             // handleWorkV1(); // initial setup for work v1

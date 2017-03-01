@@ -1,7 +1,4 @@
 @extends('layouts.blog')
-@section('snow')
-<div class="snow-container"></div>
-@endsection
 @section('promo')
 <section class="breadcrumbs-v5">
     <div class="container">
@@ -26,8 +23,4 @@
 
 @section('paginate')
 {!! $articles->fragment('pageScroll')->links('pagination::iwanli') !!}
-@endsection
-
-@section('js')
-<script type="text/javascript" src="{{ elixir('js/snow.js') }}"></script>
 @endsection
