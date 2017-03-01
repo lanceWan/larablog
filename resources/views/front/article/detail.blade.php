@@ -1,8 +1,8 @@
 @extends('layouts.blog')
 @section('meta')
-<title>{{$article->meta_title or $article->title.'-'.$settings['title']}}</title>
-<meta name="keywords" content="{{$article->meta_keyword or $settings['keywords']}}" />
-<meta name="description" content="{{$article->meta_description or $settings['description']}}">
+<title>{{empty($article->meta_title) ? $article->title.'-'.$settings['title'] : $article->meta_title}}</title>
+<meta name="keywords" content="{{empty($article->meta_keyword) ? $settings['keywords'] : $article->meta_keyword}}" />
+<meta name="description" content="{{empty($article->description) ? $settings['description'] : $article->meta_description}}">
 <meta name="author" content="{{$settings['author']}}">
 @endsection
 @section('promo')
