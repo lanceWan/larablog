@@ -1,9 +1,10 @@
 <?php
 namespace App\Presenters\Front;
 use App\Traits\EncryptIdsTrait;
+use App\Traits\RedisOperationTrait;
 class BlogPresenter
 {
-    use EncryptIdsTrait;
+    use EncryptIdsTrait, RedisOperationTrait;
     /**
      * 文章列表渲染
      * @author 晚黎
@@ -26,6 +27,7 @@ class BlogPresenter
 Eof;
 				}
                 $url = url('article/'.$this->encodeId($article->id).'.html');
+                $visits = $this->hgetVisits($article->id, 'visits');
 				$str .= <<<Eof
 				<div class="col-md-12 grid-item">
                     <article class="blog-grid">
@@ -40,7 +42,7 @@ Eof;
                                     {$this->articleCategory($article->category)} - <i class="fa fa-clock-o"></i> {$article->created_at}
                                 </span>
                                 <span class="blog-grid-supplemental-title pull-right">
-                                    <i class="fa fa-fire"></i> 1027
+                                    <i class="fa fa-fire"></i> {$visits}
                                 </span>
                             </div>
                         </div>
@@ -190,5 +192,21 @@ Eof;
         }
         return $str;
 
+    }
+
+    /**
+     * 推荐文章列表
+     * @author 晚黎
+     * @date   2017-03-01T17:06:26+0800
+     * @param  [type]                   $recommendedArticles [description]
+     * @return [type]                                        [description]
+     */
+    public function recommendedArticleList($recommendedArticles)
+    {
+        $str = '';
+        if ($recommendedArticles) {
+            
+        }
+        return $str;
     }
 }

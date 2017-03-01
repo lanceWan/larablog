@@ -20,6 +20,7 @@ Route::group(['namespace' => 'Iwanli', 'domain' => 'iwanli.me'],function ($route
 
 Route::group(['namespace' => 'Iwanli', 'domain' => 'blog.iwanli.me'],function ($router){
 	$router->get('/','IndexController@blog');
+	$router->get('/test','ArticleController@test');
 	require(__DIR__ . '/front/category.php');
 	require(__DIR__ . '/front/article.php');
 	require(__DIR__ . '/front/tag.php');

@@ -3,15 +3,16 @@ namespace App\Service\Admin;
 use App\Repositories\Eloquent\ArticleRepositoryEloquent;
 use App\Repositories\Eloquent\CategoryRepositoryEloquent;
 use App\Repositories\Eloquent\TagRepositoryEloquent;
-use App\Traits\SendSystemErrorTrait;
 use App\Traits\QiniuTrait;
+use App\Traits\RedisOperationTrait;
+use App\Traits\SendSystemErrorTrait;
 use Exception;
 /**
 * 角色service
 */
 class ArticleService{
 
-	use SendSystemErrorTrait,QiniuTrait;
+	use SendSystemErrorTrait,QiniuTrait, RedisOperationTrait;
 	protected $article;
 	protected $category;
 	protected $tag;
@@ -201,7 +202,11 @@ class ArticleService{
 	public function destroyArticle($id)
 	{
 		try {
-			$result = $this->article->delete($this->article->decodeId($id));
+			$id = $this->article->decodeId($id);
+			// 删除文章在redis中的信息
+			$this->zrem($this->article->skipPresenter()->find($id,['id', 'title', 'updated_at']));
+			$this->delKey(config('admin.global.redis.hash').$id);
+			$result = $this->article->delete($id);
 			flash_info($result,trans('admin/alert.article.destroy_success'),trans('admin/alert.article.destroy_error'));
 			return $result;
 		} catch (Exception $e) {

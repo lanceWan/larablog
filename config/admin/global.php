@@ -59,6 +59,10 @@ return [
 		'categoryList' => 'categoryList',// 前端分类缓存
 		'link' => 'link',// 友情链接缓存
 	],
+	'redis' => [
+		'zset' => 'iwanli:trending_articles',
+		'hash' => 'iwanli:article.',
+	],
 	'imagePath' => 'iwanli/image/',
 	'blog' => 'blog.system',
 	// 博客网站设置

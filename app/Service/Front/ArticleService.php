@@ -3,11 +3,12 @@ namespace App\Service\Front;
 use App\Repositories\Eloquent\ArticleRepositoryEloquent;
 use App\Repositories\Eloquent\CategoryRepositoryEloquent;
 use App\Traits\EncryptIdsTrait;
+use App\Traits\RedisOperationTrait;
 use App\Traits\SendSystemErrorTrait;
 use Exception;
 class ArticleService
 {
-	use SendSystemErrorTrait,EncryptIdsTrait;
+	use SendSystemErrorTrait,EncryptIdsTrait, RedisOperationTrait;
 	protected $article;
 	protected $category;
 
@@ -24,12 +25,31 @@ class ArticleService
 			// id解密
 			$articleId = $this->decodeId($articleId);
 			$article = $this->article->with('tag','category')->skipPresenter()->find($articleId);
-			return compact('article');
+			// 浏览量增加
+			$this->hincr($articleId,'visits',1);
+			// 文章分数增加
+			$this->incrScore(8640, collect([
+				'id' => $articleId,
+				'title' => $article->title,
+				'updated_at' => $article->updated_at->toDateTimeString(),
+			]));
+			// 获取文章浏览量
+			$visits = $this->hgetVisits($articleId,'visits');
+			return compact('article','visits');
 		} catch (Exception $e) {
 			dd($e);
 			// 错误信息发送邮件
 			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
 			return false;
 		}
+	}
+
+	public function test()
+	{
+		$articles = $this->article->skipPresenter()->all(['id', 'title', 'updated_at']);
+		foreach ($articles as $article) {
+			$this->incrScore(strtotime($article->updated_at),$article);
+		}
+		dd($this->zrevrange());
 	}
 }

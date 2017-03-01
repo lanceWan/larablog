@@ -25,4 +25,9 @@ class ArticleController extends Controller
         $result = $this->service->postDetail($id);
         return view('front.article.detail')->with($result);
     }
+
+    public function test()
+    {
+        return $this->service->test();
+    }
 }
