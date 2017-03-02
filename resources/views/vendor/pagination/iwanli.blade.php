@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
 <div class="bg-color-sky-light">
-    <div class="content-md container">
+    <div class="content-xs container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
                 <div class="paginations-v2 text-center">

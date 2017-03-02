@@ -60,7 +60,7 @@
     </div>
     @show
     <div class="bg-color-sky-light">
-        <div class="content-md container">
+        <div class="content-xs container">
             <div class="row">
                 <div class="col-xs-12 col-md-9 no-space">
                     @yield('content')
