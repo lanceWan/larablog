@@ -175,11 +175,9 @@ var App = function() {
     // Scroll To Section
     var handleScrollToSection = function() {
         $(function() {
-            $('a[href*=#scroll_]:not([href=#scroll_])').on('click', function() {
+            $('a[href*=#scroll_page]').on('click', function() {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    var target = $('#scroll');
                     if (target.length) {
                         $('html,body').animate({
                             scrollTop: target.offset().top - 70

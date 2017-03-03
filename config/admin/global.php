@@ -9,7 +9,7 @@ return [
 		'start'=> 0,
 		'length' => 10,
 	],
-	'paginate' => 6,
+	'paginate' => 1,
 	/**
 	 * 全局状态
 	 * active 	正常

@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="bg-color-white">
-        <div class="content-md container" id="scroll_page">
+        <div class="content-md container" id="scroll">
             <div class="heading-v3 text-center">
                 <h2 class="heading-v3-title">Great Diary</h2>
                 <div class="divider-v2"><div class="divider-v2-element"><i class="divider-v2-icon fa fa-paper-plane-o"></i></div></div>
