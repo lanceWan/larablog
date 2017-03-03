@@ -37,10 +37,6 @@ elixir((mix) => {
             'footer-reveal.js',
             'prism.js',
         ],'public/js/app.js')
-      //   .scripts([
-    		// 'three.js',
-      //       'snow.js',
-      //   ],'public/js/snow.js')
     	.copy('resources/assets/fonts', 'public/fonts')
     	.copy('resources/assets/js/html5shiv.js', 'public/js/html5shiv.js')
     	.copy('resources/assets/js/respond.min.js', 'public/js/respond.min.js')

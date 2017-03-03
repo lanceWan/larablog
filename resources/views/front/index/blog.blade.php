@@ -5,5 +5,5 @@
 @endsection
 
 @section('paginate')
-{!! $articles->fragment('pageScroll')->links('pagination::iwanli') !!}
+{!! $articles->fragment('scroll_page')->links('pagination::iwanli') !!}
 @endsection

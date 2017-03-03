@@ -32,4 +32,13 @@ class IndexController extends Controller
     	$articles = $this->service->getArticleList();
     	return view('front.index.blog')->with(compact('articles'));
     }
+
+    public function search()
+    {
+        $result = $this->service->search(request('q',''));
+        if ($result) {
+            return view('front.index.search')->with($result);
+        }
+        return redirect('/');
+    }
 }

@@ -15,12 +15,15 @@
                             <i class="search-fullscreen-trigger-icon fa fa-search"></i>
                         </div>
                         <div class="search-fullscreen-overlay">
-                            <div class="search-fullscreen-overlay-content">
-                                <div class="search-fullscreen-input-group">
-                                    <input type="text" class="form-control search-fullscreen-input" placeholder="Search for ...">
-                                    <button class="search-fullscreen-search" type="button"><i class="search-fullscreen-search-icon fa fa-search"></i></button>
+                            <form action="{{url('search')}}" method="post">
+                                {{csrf_field()}}
+                                <div class="search-fullscreen-overlay-content">
+                                    <div class="search-fullscreen-input-group">
+                                        <input type="text" class="form-control search-fullscreen-input" name="q" placeholder="Search for ...">
+                                        <button class="search-fullscreen-search" type="submit"><i class="search-fullscreen-search-icon fa fa-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="search-fullscreen-bg-overlay">
                             <div class="search-fullscreen-close">×</div>
@@ -30,8 +33,8 @@
 
                 <div class="navbar-logo">
                     <a class="navbar-logo-wrap" href="/">
-                        <img class="navbar-logo-img navbar-logo-img-white" src="{{asset('image/logo-white.png')}}" alt="Ark">
-                        <img class="navbar-logo-img navbar-logo-img-dark" src="{{asset('image/logo-dark.png')}}" alt="Ark">
+                        <img class="navbar-logo-img navbar-logo-img-white" src="{{asset('image/logo-white.png')}}" alt="晚黎">
+                        <img class="navbar-logo-img navbar-logo-img-dark" src="{{asset('image/logo-dark.png')}}" alt="晚黎">
                     </a>
                 </div>
             </div>
