@@ -212,7 +212,7 @@ Eof;
                 $str .= <<<Eof
                 <li class="timeline-v2-list-item">
                     <i class="timeline-v2-badge-icon radius-circle fa fa-calendar"></i>
-                    <small class="timeline-v2-news-date">{$article['updated_at']}</small>
+                    <small class="timeline-v2-news-date">{$article['created_at']}</small>
                     <h5 class="timeline-v2-news-title"><a href="{$url}">{$article['title']}</a></h5>
                 </li>
 Eof;
