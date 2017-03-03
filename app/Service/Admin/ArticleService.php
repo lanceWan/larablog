@@ -204,8 +204,8 @@ class ArticleService{
 		try {
 			$id = $this->article->decodeId($id);
 			// 删除文章在redis中的信息
-			$this->zrem($this->article->skipPresenter()->find($id,['id', 'title', 'updated_at']));
-			$this->delKey(config('admin.global.redis.hash').$id);
+			$this->zrem($this->article->skipPresenter()->find($id,['id', 'title', 'created_at']));
+			$this->delKey(config('admin.global.redis.hashi').$d);
 			$result = $this->article->delete($id);
 			flash_info($result,trans('admin/alert.article.destroy_success'),trans('admin/alert.article.destroy_error'));
 			return $result;

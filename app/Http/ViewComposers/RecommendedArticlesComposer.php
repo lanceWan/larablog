@@ -8,7 +8,7 @@ class RecommendedArticlesComposer
 
     public function compose(View $view)
     {
-    	$recommendedArticles = $this->zrevrange(0,10);
+    	$recommendedArticles = $this->zrevrange(0,9);
 		$view->with('recommendedArticles',$recommendedArticles);
     }
 }

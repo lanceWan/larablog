@@ -31,7 +31,7 @@ class ArticleService
 			$this->incrScore(8640, collect([
 				'id' => $articleId,
 				'title' => $article->title,
-				'updated_at' => $article->updated_at->toDateTimeString(),
+				'created_at' => $article->created_at->toDateTimeString(),
 			]));
 			// 获取文章浏览量
 			$visits = $this->hgetVisits($articleId,'visits');
@@ -46,10 +46,10 @@ class ArticleService
 
 	public function test()
 	{
-		$articles = $this->article->skipPresenter()->all(['id', 'title', 'updated_at']);
+		$articles = $this->article->skipPresenter()->all(['id', 'title', 'created_at']);
 		foreach ($articles as $article) {
-			$this->incrScore(strtotime($article->updated_at),$article);
+			$this->incrScore(strtotime($article->created_at),$article);
 		}
-		dd($this->zrevrange());
+		return $this->zrevrange();
 	}
 }
