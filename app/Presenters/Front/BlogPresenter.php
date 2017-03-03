@@ -19,14 +19,14 @@ class BlogPresenter
             $this->setEncryptConnection('article');
 			foreach ($articles as $article) {
 				$banner = '';
-				if ($article->banner) {
-					$banner .= <<<Eof
-					<div class="starImg">
-                        <a href="http://iwanli.me/article/56"><img class="img-responsive margin-b-10" src="{$article->banner}" alt="{$article->title}"></a>
+                $url = url('article/'.$this->encodeId($article->id).'.html');
+                if ($article->banner) {
+                    $banner .= <<<Eof
+                    <div class="starImg">
+                        <a href="{$url}"><img class="img-responsive margin-b-10" src="{$article->banner}" alt="{$article->title}"></a>
                     </div>
 Eof;
-				}
-                $url = url('article/'.$this->encodeId($article->id).'.html');
+                }
                 $visits = $this->hgetVisits($article->id, 'visits');
 				$str .= <<<Eof
 				<div class="col-md-12 grid-item">
