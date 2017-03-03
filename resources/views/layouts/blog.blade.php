@@ -20,7 +20,7 @@
 <div class="wrapper">
     @include('layouts.partials.category')
     @section('promo')
-    <div class="promo-block-v2 fullheight text-center" style="background-image: url('http://cache.iwanli.me/iwanli/imagebg.jpg? imageslim') no-repeat;">
+    <div class="promo-block-v2 fullheight text-center">
         <div class="container vertical-center-aligned">
             <h1 class="promo-block-v2-title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".2s">Welcome To iWanli's Blog</h1>
             <p class="promo-block-v2-text margin-b-50 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay=".5s">
