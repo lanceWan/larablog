@@ -13,11 +13,13 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::group(['namespace' => 'Iwanli', 'domain' => 'www.iwanli.me'],function ($router){
+Route::group(['namespace' => 'Iwanli', 'domain' => 'iwanli.me'],function ($router){
 	$router->get('/','IndexController@index');
 });
 
+Route::group(['namespace' => 'Iwanli', 'domain' => 'www.iwanli.me'],function ($router){
+	$router->get('/','IndexController@index');
+});
 Route::group(['namespace' => 'Iwanli', 'domain' => 'blog.iwanli.me'],function ($router){
 	$router->get('/','IndexController@blog');
 	$router->post('search','IndexController@search');
@@ -26,6 +28,8 @@ Route::group(['namespace' => 'Iwanli', 'domain' => 'blog.iwanli.me'],function ($
 	require(__DIR__ . '/front/article.php');
 	require(__DIR__ . '/front/tag.php');
 });
+
+
 
 Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth']],function ($router)
 {
