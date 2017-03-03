@@ -45,13 +45,13 @@
 下载本项目代码到本地:
 
 ```
-git clone https://github.com/lanceWan/iDashboard.git
+git clone https://github.com/lanceWan/larablog.git
 ```
 
 进入到项目然后 `composer` 安装:
 
 ```
-cd iDashboard
+cd larablog
 
 composer install
 ```
