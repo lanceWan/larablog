@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "73233ceeaee5b9c3465205af1ecff73d",
+    "hash": "20df2ca18c237e9ce19d5c8b2cd40a07",
     "content-hash": "82edf6ae6411df1c8cd220563d21ed2f",
     "packages": [
         {
@@ -72,16 +72,16 @@
         },
         {
             "name": "arcanedev/support",
-            "version": "3.19.0",
+            "version": "3.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ARCANEDEV/Support.git",
-                "reference": "6055b41702532a60c63cbc10451085cb7457dfdd"
+                "reference": "4680f50e4146e7871d99a3223107322b170efbb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ARCANEDEV/Support/zipball/6055b41702532a60c63cbc10451085cb7457dfdd",
-                "reference": "6055b41702532a60c63cbc10451085cb7457dfdd",
+                "url": "https://api.github.com/repos/ARCANEDEV/Support/zipball/4680f50e4146e7871d99a3223107322b170efbb2",
+                "reference": "4680f50e4146e7871d99a3223107322b170efbb2",
                 "shasum": ""
             },
             "require": {
@@ -127,7 +127,7 @@
                 "laravel",
                 "support"
             ],
-            "time": "2016-12-07 20:04:32"
+            "time": "2016-12-16 20:13:01"
         },
         {
             "name": "classpreloader/classpreloader",
