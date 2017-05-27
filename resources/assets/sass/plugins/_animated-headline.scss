@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------
+    [Animated Headline v1]
+------------------------------------------------------------------*/
+
+.animated-headline-v1 {
+    width: 100%;
+    text-align: center;
+
+    .animated-headline-title {
+        @include font($size: $font-size-50);
+
+        .animated-headline-wrap {
+            display: inline-block;
+            @include font($size: $font-size-50, $weight: $font-weight-300);
+            position: relative;
+            text-align: left;
+            vertical-align: top;
+            overflow: hidden;
+
+            &.waiting {
+                &:after {
+                    @include animation(animated-headline-v1-pulse .1s infinite);
+                }
+            }
+            
+            &.selected {
+                &:after {
+                    visibility: hidden;
+                }
+
+            }
+            
+            b {
+                @include font($weight: $font-weight-300);
+                visibility: hidden;
+
+                &.is-visible {
+                    visibility: visible;
+                }
+            }
+
+            i {
+                position: absolute;
+                @include font($style: normal);
+                visibility: hidden;
+                
+                &.in {
+                    position: relative;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    .animated-headline-v1-subtitle {
+        @include font($size: $font-size-18, $style: italic, $family: $font-family-droid);
+        opacity: .8;
+    }
+}
+
+@include keyframes(animated-headline-v1-pulse) {
+    0% {
+        @include translate3d(0,-50%,0);
+        @include transform-scale(1, 1);
+        opacity: 1;
+    }
+    40% {
+        @include translate3d(0,-50%,0);
+        @include transform-scale(.9, 1);
+        opacity: 0;
+    }
+    100% {
+        @include translate3d(0,-50%,0);
+        @include transform-scale(0, 0);
+        opacity: 0;
+    }
+}

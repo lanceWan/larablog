@@ -1,0 +1,156 @@
+/*------------------------------------------------------------------
+    [Search]
+------------------------------------------------------------------*/
+
+.search {
+    text-align: center;
+
+    .search-btn {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+
+        .search-btn-default,
+        .search-btn-active {
+            position: relative;
+            @include size(30px, 0);
+            display: block;
+            @include font($size: $font-size-16);
+            color: $color-dark;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+        
+        .search-btn-default {
+            top: 0;
+            opacity: 1;
+        }
+
+        .search-btn-active {
+            top: 12px;
+            @include font($size: $font-size-15);
+            opacity: 0;
+        }
+
+        &.is-clicked {
+            .search-btn-default {
+                top: -13px;
+                opacity: 0;
+            }
+
+            .search-btn-active {
+                top: 0;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* Search Field */
+.search-field {
+    @include position(absolute, $top: 100%, $left: 0);
+    display: none;
+    z-index: 9;
+    width: 100%;
+    background: $color-white;
+    border-top: 1px solid $color-tint-light;
+    border-bottom: 1px solid $color-tint-light;
+
+    .search-field-input {
+        @include size(100%, 100px);
+        @include font($size: $font-size-30);
+        color: $color-dark;
+        @include placeholder($color-dark);
+        background: $color-white;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+
+        &:focus {
+            color: $color-dark;
+            @include placeholder($color-dark);
+        }
+    }
+}
+
+/* Media Queries below 991px */
+@media (max-width: $screen-sm-max) {
+    .header {
+        .search-field {
+            > .container {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Search Button White]
+------------------------------------------------------------------*/
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    /* Search */
+    .search {
+        &.search-white {
+            .search-btn {
+                .search-btn-default,
+                .search-btn-active {
+                    color: $color-dark;
+                    
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Search */
+    .search {
+        &.search-white {
+            .search-btn {
+                .search-btn-default,
+                .search-btn-active {
+                    color: $color-white;
+                    
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Header Shrink */
+    .header-shrink {
+        .search {
+            .search-btn {
+                .search-btn-default,
+                .search-btn-active {
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            &.search-white {
+                .search-btn {
+                    .search-btn-default,
+                    .search-btn-active {
+                        color: $color-dark;
+                        
+                        &:hover {
+                            color: $color-base;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

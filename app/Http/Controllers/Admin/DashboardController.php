@@ -3,10 +3,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Traits\QiniuTrait;
 class DashboardController extends Controller
 {
-    use QiniuTrait;
     public function __construct()
     {
         $this->middleware('check.permission:system');
@@ -19,7 +17,6 @@ class DashboardController extends Controller
 	 */
     public function index()
     {
-        dd($this->allFiles('iwanli/image'));
     	return view('admin.dashboard.index');
     }
     /**

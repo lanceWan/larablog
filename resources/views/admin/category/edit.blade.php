@@ -30,6 +30,13 @@
       </div>
       <div class="hr-line-dashed"></div>
       <div class="form-group">
+        <label class="col-sm-2 control-label">{{trans('admin/category.model.url')}}</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="{{trans('admin/category.model.url')}}" name="url" value="{{$category->url}}">
+        </div>
+      </div>
+      <div class="hr-line-dashed"></div>
+      <div class="form-group">
         <label class="col-sm-2 control-label">{{trans('admin/category.model.icon')}}</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" placeholder="{{trans('admin/category.model.icon')}}" name="icon" value="{{$category->icon}}">

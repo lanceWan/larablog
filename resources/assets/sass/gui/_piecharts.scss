@@ -1,0 +1,55 @@
+/*--------------------------------------------------
+    [Pie Chart v1]
+----------------------------------------------------*/
+
+.piechart-v1 {
+    overflow: hidden;
+
+    .piechart-v1-wrap {
+        float: left;
+        margin-right: 20px;
+
+        .circle {
+            .circles-text-v1 {
+                color: $color-dark;
+                @include font($size: $font-size-32 !important);
+            }
+        }
+    }
+
+    .piechart-v1-body {
+        overflow: hidden;
+
+        .piechart-v1-body-title {
+            @include font($size: $font-size-22);
+            margin: 0 0 5px;
+        }
+
+        .piechart-v1-body-subtitle {
+            display: block;
+            @include font($style: italic, $family: $font-family-droid);
+            color: $color-subtitle;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Pie Chart v2]
+----------------------------------------------------*/
+
+.piechart-v2 {
+    text-align: center;
+
+    .piechart-v2-title {
+        @include font($size: $font-size-22);
+    }
+
+    .circle-v2 {
+        .circles-text-v2 {
+            @include font($size: $font-size-20 !important);
+            color: $color-white;
+        }
+    }
+}

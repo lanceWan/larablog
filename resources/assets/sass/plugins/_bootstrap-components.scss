@@ -1,0 +1,590 @@
+/*------------------------------------------------------------------
+    [List Inline]
+------------------------------------------------------------------*/
+
+.list-inline {
+    margin-left: 0;
+}
+
+
+/*------------------------------------------------------------------
+    [Checkbox]
+------------------------------------------------------------------*/
+
+.checkbox {
+    padding-left: 21px;
+    text-align: left;
+    margin: 0;
+  
+    label {
+        display: inline-block;
+        @include font($size: $font-size-13, $weight: $font-weight-300);
+        vertical-align: middle;
+        position: relative;
+        padding-left: 5px;
+
+        &:before {
+            @include position(absolute, $left: 0);
+            @include size(17px);
+            display: inline-block;
+            background: $color-white;
+            border: 1px solid darken($color-tint-light, 3%);
+            @include border-radius(3px);
+            content: " ";
+            margin-left: -20px;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+        
+        &:after {
+            @include position(absolute, $top: 0, $left: 0);
+            display: inline-block;
+            @include size(16px);
+            @include font($size: $font-size-11);
+            color: $color-subtitle;
+            margin-left: -17px;
+            padding-top: 1px;
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        z-index: 1;
+        opacity: 0;
+        cursor: pointer;
+
+        &:focus {
+            + {
+                label {
+                    &:before {
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        &:checked {
+            + {
+                label {
+                    &:before {
+                        background: $color-base;
+                        border-color: $color-base;
+                    }
+
+                    &:after {
+                        @include font($family: $font-family-font-awesome);
+                        color: $color-white;
+                        content: "\f00c";
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Form Control]
+------------------------------------------------------------------*/
+
+.form-control {
+    height: 40px;
+    @include font($size: $font-size-13, $weight: $font-weight-300);
+    color: $color-subtitle;
+    @include placeholder($color-subtitle);
+    border-color: $color-tint-light;
+    box-shadow: none;
+
+    &:focus {
+        @include placeholder($color-subtitle);
+        border-color: darken($color-tint-light, 5%);
+        box-shadow: none;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Carousel Control]
+------------------------------------------------------------------*/
+
+.carousel-control {
+    &.left,
+    &.right {
+        background-image: none;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Carousel Animation Fade]
+------------------------------------------------------------------*/
+
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            @include transition(opacity, .8s);
+        }
+
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            @include translate3d(0,0,0);
+        }
+    }
+
+    .carousel-control {
+        z-index: 2;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Carousel Control Arrows v1]
+------------------------------------------------------------------*/
+
+.theme-carousel-control-v1 {
+    width: 0;
+    text-shadow: none;
+    opacity: 1;
+
+    .carousel-control-arrows-v1 {
+        @include position(absolute, $top: 50%);
+        display: inline-block;
+        @include size(35px);
+        @include font($size: $font-size-18);
+        color: $color-dark;
+        text-align: center;
+        @include bg-opacity($color-white, .7);
+        vertical-align: middle;
+        padding: 8px;
+        margin-top: -17.5px;
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+        &:hover {
+            color: $color-dark;
+            background: $color-white;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+    }
+
+    &.left {
+        .carousel-control-arrows-v1 {
+            left: 10px;
+        }
+    }
+    &.right {
+        .carousel-control-arrows-v1 {
+            right: 10px;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Carousel Control Arrows v2]
+------------------------------------------------------------------*/
+
+.theme-carousel-control-v2 {
+    position: static;
+    width: 0;
+    text-align: center;
+    text-shadow: none;
+    opacity: .8;
+    padding: 0 3px;
+
+    .carousel-control-arrows-v2 {
+        display: inline-block;
+        @include size(40px);
+        @include font($size: $font-size-18);
+        color: $color-dark;
+        line-height: $line-height-base;
+        text-align: center;
+        background: $color-white;
+        vertical-align: middle;
+        padding: 8px;
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+        &:hover {
+            color: $color-white;
+            background: $color-base;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Carousel Control Arrows v3]
+----------------------------------------------------*/
+
+.theme-carousel-control-v3 {
+    position: static;
+    opacity: .8;
+    
+    .carousel-controls-arrow-v3 {
+        @include position(absolute, $top: 50%);
+        display: inline-block;
+        @include size(44px);
+        @include font($size: $font-size-36);
+        color: $color-white;
+        @include bg-opacity($color-white, .3);
+        text-shadow: 0 3px 0px rgba(52,52,60,.3);
+        margin-top: -22px;
+        padding: 4px;
+    }
+
+    &.left {
+        .carousel-controls-arrow-v3 {
+            left: 0;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+    }
+    &.right {
+        .carousel-controls-arrow-v3 {
+            right: 0;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Carousel Indicators v1]
+------------------------------------------------------------------*/
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    .theme-ci-v1 {
+        width: 100%;
+        margin-left: -50%;
+
+        .theme-ci-v1-item {
+            position: relative;
+            min-width: 190px;
+            @include size(auto);
+            @include font($size: $font-size-18);
+            color: $color-white;
+            text-align: left;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            text-indent: inherit;
+            overflow: hidden;
+            opacity: .5;
+            padding: 10px 5px;
+            margin: 0 50px;
+
+            &:before,
+            &:after {
+                background: $color-white;
+                content: " ";
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+
+            &:before {
+                @include position(absolute, $right: 0, $top: 0);
+                @include size(0, 2px);
+            }
+
+            &:after {
+                @include position(absolute, $left: 0, $bottom: 0);
+                @include size(0, 2px);
+            }
+
+            .theme-ci-v1-no {
+                @include font($size: $font-size-50, $weight: $font-weight-400);
+                float: left;
+                line-height: .9;
+                letter-spacing: -2px;
+                margin-right: 8px;
+            }
+
+            .theme-ci-v1-media {
+                overflow: hidden;
+            }
+
+            .theme-ci-v1-title {
+                display: block;
+                @include font($size: $font-size-18, $style: italic, $family: $font-family-droid);
+            }
+
+            .theme-ci-v1-subtitle {
+                display: block;
+                @include font($size: $font-size-14);
+            }
+
+            &.active {
+                @include size(auto);
+                background: transparent;
+                opacity: 1;
+                margin: 0 50px;
+
+                &:before {
+                    @include position(absolute, $right: 0, $top: 0);
+                    @include size(100%, 2px);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+
+                &:after {
+                    @include size(100%, 2px);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            &:hover {
+                &:before {
+                    @include position(absolute, $right: 0, $top: 0);
+                    @include size(100%, 2px);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+
+                &:after {
+                    @include size(100%, 2px);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    .theme-ci-v1 {
+        .theme-ci-v1-item {
+            .theme-ci-v1-no,
+            .theme-ci-v1-media {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Carousel Indicators v2]
+------------------------------------------------------------------*/
+
+.theme-carousel-indicators-v2 {
+    bottom: -10px;
+
+    li {
+        @include size(8px);
+        background: $color-dark;
+        margin: 0;
+
+        &.active {
+            @include size(8px);
+            background: $color-base;
+            border-color: $color-base;
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    .theme-carousel-indicators-v2 {
+        left: 65%;
+        bottom: 35px;
+        margin-left: 0;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Carousel Indicators v3]
+------------------------------------------------------------------*/
+
+.theme-carousel-indicators-v3 {
+    position: static;
+    width: auto;
+    text-align: right;
+    margin: 0;
+
+    li {
+        position: relative;
+        @include size(auto);
+        @include font($size: $font-size-18);
+        color: $color-white;
+        background: 0;
+        border: none;
+        border-bottom: 1px solid $color-white;
+        border-radius: 0;
+        text-indent: inherit;
+        padding: 0 2px;
+        margin: 0 6px 0 0;
+
+        &.active {
+            @include size(auto);
+            color: $color-base;
+            background: 0;
+            border-bottom-color: $color-base;
+            margin: 0 6px 0 0;
+        }
+
+        &:hover {
+            border-bottom-color: $color-base;
+
+            &.active {
+                color: $color-base;
+                border-bottom-color: $color-base;
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Carousel Indicators v4]
+------------------------------------------------------------------*/
+
+.theme-carousel-indicators-v4 {
+    bottom: -40px;
+
+    li {
+        @include size(8px);
+        background: $color-dark;
+        margin: 0;
+
+        &.active {
+            @include size(8px);
+            background: $color-base;
+            border-color: $color-base;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Carousel Indicators v5]
+------------------------------------------------------------------*/
+
+.theme-carousel-indicators-v5 {
+    position: static;
+    width: auto;
+    text-align: center;
+    background: $color-white;
+    border: 1px solid $color-sky-light;
+    border-radius: 0;
+    padding: 10px;
+    margin: 0;
+
+    li {
+        @include size(auto);
+        z-index: 1;
+        text-indent: inherit;
+        background: 0;
+        border: none;
+        padding: 0;
+        margin: 0 1px;
+
+        &.active {
+            @include size(auto);
+            background: 0;
+            border: none;
+            padding: 0;
+            margin: 0 1px;
+
+            .theme-carousel-indicators-item {
+                @include size(50px);
+                border: 2px solid $color-base;
+            }
+        }
+    }
+
+    .theme-carousel-indicators-item {
+        @include size(50px);
+        border: 2px solid $color-tint-light;
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .theme-carousel-indicators-v5 {
+        display: none;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Carousel Indicators v6]
+------------------------------------------------------------------*/
+
+.theme-carousel-indicators-v6 {
+    @include position(absolute, $top: 30px, $bottom: auto);
+
+    > li {
+        position: relative;
+        @include size(15px);
+        margin: 1px 3px;
+        border: 3px solid $color-white;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+            @include size(100%);
+            background: $color-white;
+            @include border-radius(50%);
+            content: " ";
+            @include transform-scale(1,1);
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+
+        &.active {
+            @include size(17px);
+            margin: 0 2px;
+            background: transparent;
+            
+            &:before {
+                @include transform-scale(0,0);
+                @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Bootstrap Carousel with Animation]
+----------------------------------------------------*/
+
+.carousel-caption {
+    .carousel-caption-wrap {
+        position: relative;
+    }
+
+    .carousel-caption-element {
+        @include position(absolute, $bottom: -20px, $left: 50%);
+        @include translate3d(-50%,0,0);
+    }
+
+    .carousel-animation-one {
+        @include animation-delay(.5s);
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Modal]
+------------------------------------------------------------------*/
+
+.modal-open {
+    padding-right: 0 !important;
+    
+    .modal {
+        padding-right: 0 !important;
+    }
+}

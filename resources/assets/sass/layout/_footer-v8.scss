@@ -1,0 +1,61 @@
+/*------------------------------------------------------------------
+    [Footer v8]
+------------------------------------------------------------------*/
+
+.footer-v8 {
+    background: $color-sky-light;
+
+    .footer-v8-logo-img {
+        @include size(85px, auto);
+        margin-bottom: 20px;
+    }
+
+    .footer-v8-title {
+        @include font($size: $font-size-20);
+    }
+
+    .footer-v8-contact-info-bg {
+        background: url(../../assets/img/widgets/world-map.png) no-repeat;
+        background-size: 100%;
+        background-position: center center;
+        min-height: 220px;
+    }
+    
+    .footer-v8-contact-info {
+        .footer-v8-contact-info-item {
+            @include font($size: $font-size-14);
+            margin-bottom: 5px;
+            @include clearfix;
+        }
+
+        .footer-v8-contact-info-icon {
+            @include position(relative, $top: -1px);
+            display: inline-block;
+            width: 20px;
+            float: left;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .footer-v8-contact-info-media {
+            overflow: hidden;
+        }
+
+        .footer-v8-contact-info-text {
+            @include font($size: $font-size-14);
+        }
+    }
+
+    .footer-v8-img {
+        @include size(80px);
+        margin-bottom: 3px;
+    }
+}
+
+/* Footer v8 Copyright */
+.footer-v8 {
+    .footer-v8-copyright {
+        background: $color-white;
+        padding: 20px 0;
+    }
+}

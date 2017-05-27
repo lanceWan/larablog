@@ -9,6 +9,7 @@ return [
 		'start'=> 0,
 		'length' => 10,
 	],
+	'paginate' => 1,
 	/**
 	 * 全局状态
 	 * active 	正常
@@ -48,12 +49,19 @@ return [
 		'main' 		=> false,
 		'article'	=> true,
 		'link'		=> true,
+		'category'	=> true,
+		'tag'		=> true,
 
 	],
 	// 缓存
 	'cache' => [
 		'menuList' => 'menuList',// 后台菜单缓存
 		'categoryList' => 'categoryList',// 前端分类缓存
+		'link' => 'link',// 友情链接缓存
+	],
+	'redis' => [
+		'zset' => 'iwanli:trending_articles',
+		'hash' => 'iwanli:article.',
 	],
 	'imagePath' => 'iwanli/image/',
 	'blog' => 'blog.system',
@@ -80,5 +88,7 @@ return [
 		'statistics' => '',
 		// 第三方评论，为空时启用博客自带评论
 		'comment' => '',
+		// 分享代码
+		'share' => '',
 	],
 ];

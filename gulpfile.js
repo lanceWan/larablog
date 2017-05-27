@@ -1,6 +1,5 @@
 const elixir = require('laravel-elixir');
-
-require('laravel-elixir-vue-2');
+elixir.config.sourcemaps = false;
 
 /*
  |--------------------------------------------------------------------------
@@ -15,5 +14,31 @@ require('laravel-elixir-vue-2');
 
 elixir((mix) => {
     mix.sass('app.scss')
-       .webpack('app.js');
+    	.styles([
+    		'bootstrap.min.css',
+    		'font-awesome.min.css',
+    		'animate.css',
+            'prism.css'
+    	])
+    	.scripts([
+    		'jquery.min.js',
+            'bootstrap.min.js',
+            'jquery.smooth-scroll.js',
+            'jquery.animsition.min.js',
+            'jquery.wow.min.js',
+            'jquery.footer-reveal.js',
+        ])
+        .scripts([
+            'jquery.back-to-top.js',
+            'app.js',
+            'header-sticky.js',
+            'animsition.js',
+            'wow.js',
+            'footer-reveal.js',
+            'prism.js',
+        ],'public/js/app.js')
+    	.copy('resources/assets/fonts', 'public/fonts')
+    	.copy('resources/assets/js/html5shiv.js', 'public/js/html5shiv.js')
+    	.copy('resources/assets/js/respond.min.js', 'public/js/respond.min.js')
+    	.version(['css/all.css','css/app.css', 'js/all.js', 'js/app.js']);
 });

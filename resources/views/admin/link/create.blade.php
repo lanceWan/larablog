@@ -8,10 +8,10 @@
             <a href="{{url('admin/dash')}}">{!!trans('admin/breadcrumb.home')!!}</a>
         </li>
         <li>
-            <a href="{{url('admin/tag')}}">{!!trans('admin/breadcrumb.tag.list')!!}</a>
+            <a href="{{url('admin/link')}}">{!!trans('admin/breadcrumb.link.list')!!}</a>
         </li>
         <li class="active">
-            <strong>{!!trans('admin/breadcrumb.tag.create')!!}</strong>
+            <strong>{!!trans('admin/breadcrumb.link.create')!!}</strong>
         </li>
     </ol>
   </div>
@@ -21,7 +21,7 @@
     <div class="col-lg-12">
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <h5>{!!trans('admin/tag.create')!!}</h5>
+          <h5>{!!trans('admin/link.create')!!}</h5>
           <div class="ibox-tools">
               <a class="collapse-link">
                   <i class="fa fa-chevron-up"></i>
@@ -32,15 +32,32 @@
           </div>
         </div>
         <div class="ibox-content">
-          <form method="post" action="{{url('admin/tag')}}" class="form-horizontal">
+          <form method="post" action="{{url('admin/link')}}" class="form-horizontal">
             {{csrf_field()}}
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-              <label class="col-sm-2 control-label">{{trans('admin/tag.model.name')}}</label>
+              <label class="col-sm-2 control-label">{{trans('admin/link.model.name')}}</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="{{trans('admin/tag.model.name')}}"> 
+                <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="{{trans('admin/link.model.name')}}">
                 @if ($errors->has('name'))
                 <span class="help-block m-b-none text-danger">{{ $errors->first('name') }}</span>
                 @endif
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+              <label class="col-sm-2 control-label">{{trans('admin/link.model.url')}}</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="url" value="{{old('url')}}" placeholder="{{trans('admin/link.model.url')}}">
+                @if ($errors->has('url'))
+                <span class="help-block m-b-none text-danger">{{ $errors->first('url') }}</span>
+                @endif
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">{{trans('admin/link.model.description')}}</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="description" value="{{old('description')}}" placeholder="{{trans('admin/link.model.description')}}">
               </div>
             </div>
             <div class="hr-line-dashed"></div>

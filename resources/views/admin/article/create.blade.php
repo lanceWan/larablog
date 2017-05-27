@@ -104,6 +104,7 @@
                                     <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                   </div>
                                 </div>
+                                <input type="text" class="form-control" name="edit_banner" value="{{old('edit_banner')}}">
                               </div>
                             </div>
                             <div class="hr-line-dashed"></div>

@@ -1,0 +1,213 @@
+/*------------------------------------------------------------------
+    [Modal Form]
+------------------------------------------------------------------*/
+
+.form-modal {
+    @include position(fixed, $top: 0, $left: 0);
+    @include size(100%);
+    background: $color-sky-light;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+    .form-modal-wrap {
+        @include position(fixed, $top: 50%, $left: 50%);
+        @include translate3d(-50%,-50%,0);
+    }
+
+    .form-modal-container {
+        @include transform-scale(.8);
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+
+    &.is-visible {
+        visibility: visible;
+        opacity: 1;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+        .form-modal-container {
+            @include transform-scale(1);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+
+    .form-modal-container {
+        width: 100%;
+
+        .form-modal-connect,
+        .form-modal-divider,
+        .form-modal-login-form {
+            float: left;
+            padding: 10px;
+        }
+
+        .form-modal-connect {
+            width: 45%;
+            margin-top: 25px;
+        }
+
+        .form-modal-divider {
+            width: 10%;
+
+            .form-modal-divider-text {
+                position: relative;
+                display: block;
+                @include font($size: $font-size-20);
+                color: $color-dark;
+                text-align: center;
+                margin-top: 30px;
+
+                &:before,
+                &:after {
+                    @include position(absolute, $left: 50%);
+                    @include size(1px, 20px);
+                    background: lighten($color-subtitle, 25%);
+                    content: " ";
+                }
+
+                &:before {
+                    top: 100%;
+                    margin-top: 10px;
+                }
+                &:after {
+                    bottom: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .form-modal-login-form {
+            width: 45%;
+        }
+
+        .form-modal-reset-form {
+            width: 100%;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    .form-modal-heading {
+        text-align: center;
+        margin-bottom: 20px;
+
+        .form-modal-title {
+            @include font($size: $font-size-28);
+            margin: 0 0 5px;
+        }
+    }
+
+    .form-modal-back-btn-message {
+        @include font($size: $font-size-14, $weight: $font-weight-300);
+        color: $color-dark;
+        text-align: center;
+        margin-bottom: 5px;
+
+        .form-modal-back-btn-message-link {
+            @include font($size: $font-size-14, $weight: $font-weight-300);
+            color: $color-base;
+        }
+    }
+
+    .form-modal-input {
+        height: 40px;
+    }
+
+    .form-modal-input-group {
+        position: relative;
+
+        .form-modal-input-form {
+            padding: 6px 75px 6px 12px;
+        }
+
+        .form-modal-hide-password {
+            @include position(absolute, $top: 0, $right: 0);
+            min-width: 65px;
+            @include font($size: $font-size-13, $weight: $font-weight-300);
+            color: $color-dark;
+            text-align: center;
+            border-left: 1px solid $color-tint-light;
+            text-decoration: none;
+            padding: 11px 15px;
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+    }
+
+    .form-modal-close-form {
+        @include position(absolute, $top: 0, $right: 0);
+        @include size(35px);
+        display: block;
+        @include font($size: $font-size-28);
+        color: $color-dark;
+        text-align: center;
+        line-height: 1.25;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-base;
+        }
+    }
+
+    #form-modal-login,
+    #form-modal-signup,
+    #form-modal-reset-password {
+        display: none;
+
+        &.is-selected {
+            display: block;
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .form-modal {
+        .form-modal-container {
+            max-width: 100%;
+
+            .form-modal-connect,
+            .form-modal-divider,
+            .form-modal-login-form {
+                width: 100%;
+                float: none;
+            }
+
+            .form-modal-connect {
+                margin-top: 0;
+            }
+
+            .form-modal-divider {
+                text-align: center;
+
+                .form-modal-divider-text {
+                    display: inline-block;
+                    margin: 0;
+
+                    &:before,
+                    &:after {
+                        @include position(absolute, $top: 15px);
+                        @include size(20px, 1px);
+                        background: lighten($color-subtitle, 25%);
+                        content: " ";
+                    }
+
+                    &:before {
+                        left: auto;
+                        right: 100%;
+                        margin: 0 15px 0 0;
+                    }
+                    &:after {
+                        bottom: auto;
+                        left: 100%;
+                        margin: 0 0 0 15px;
+                    }
+                }
+            }
+        }
+    }
+}

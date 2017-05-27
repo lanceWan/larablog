@@ -1,0 +1,494 @@
+/*--------------------------------------------------
+    [Icons Box v1]
+----------------------------------------------------*/
+
+.icon-box-v1 {
+    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    
+    .icon-box-v1-header {
+        position: relative;
+        text-align: center;
+        padding: 70px 40px;
+
+        &.icon-box-v1-header-bg-one,
+        &.icon-box-v1-header-bg-two,
+        &.icon-box-v1-header-bg-three {
+            @include animation-duration(5s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(infinite);
+            @include animation-direction(alternate);
+        }
+        &.icon-box-v1-header-bg-one {
+            @include animation-name(icon-box-v1-bg-color-one);
+        }
+        &.icon-box-v1-header-bg-two {
+            @include animation-name(icon-box-v1-bg-color-two);
+        }
+        &.icon-box-v1-header-bg-three {
+            @include animation-name(icon-box-v1-bg-color-three);
+        }
+    }
+
+    .icon-box-v1-bg-icon {
+        @include position(absolute, $top: 45%, $left: 47%);
+        @include font($size: 53px);
+        color: $color-white;
+        opacity: .1;
+        @include translate3d(-48%,-48%,0);
+    }
+
+    .icon-box-v1-icon {
+        z-index: 1;
+        @include font($size: $font-size-50);
+        color: $color-white;
+    }
+
+    .icon-box-v1-content {
+        background: $color-white;
+        padding: 40px;
+    }
+
+    .icon-box-v1-title {
+        @include font($size: $font-size-24);
+    }
+
+    .icon-box-v1-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 2;
+        text-decoration: none;
+    }
+
+    &:hover {
+        box-shadow: 0 2px 5px 3px lighten($color-tint-light, 1%);
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+}
+
+/* Icon Box v1 ackground Color One */
+@include keyframes(icon-box-v1-bg-color-one) {
+    0% {
+        background: $color-base;
+    }
+    40% {
+        background: $color-blue;
+    }
+    100% {
+        background: $color-blue-grey;
+    }
+}
+
+/* Icon Box v1 ackground Color Two */
+@include keyframes(icon-box-v1-bg-color-two) {
+    0% {
+        background: $color-red;
+    }
+    40% {
+        background: $color-purple;
+    }
+    100% {
+        background: $color-pink;
+    }
+}
+
+/* Icon Box v1 ackground Color Three */
+@include keyframes(icon-box-v1-bg-color-three) {
+    0% {
+        background: $color-teal;
+    }
+    40% {
+        background: $color-green;
+    }
+    100% {
+        background: $color-grey;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Icons Box v2]
+----------------------------------------------------*/
+
+.icon-box-v2 {
+    position: relative;
+    background: $color-white;
+    border: 8px solid $color-white;
+    padding: 40px;
+
+    .icon-box-v2-overlay {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+
+        &:before,
+        &:after {
+            @include position(absolute, $top: 15px, $left: 15px, $right: 15px, $bottom: 15px);
+            z-index: 2;
+            content: " ";
+            opacity: 0;
+            @include cubic-transition($delay: 0, $duration: 600ms, $property: (all));
+        }
+
+        &:before {
+            border-top: 1px solid lighten($color-dark, 62%);
+            border-bottom: 1px solid lighten($color-dark, 62%);
+            @include transform-scale(0, 1);
+        }
+
+        &:after {
+            border-left: 1px solid lighten($color-dark, 62%);
+            border-right: 1px solid lighten($color-dark, 62%);
+            @include transform-scale(1, 0);
+        }
+    }
+
+    .icon-box-v2-icons {
+        @include font($size: $font-size-50);
+        color: $color-base;
+        margin-bottom: 40px;
+    }
+
+    .icon-box-v2-body-title {
+        @include font($size: $font-size-24);
+        margin-bottom: 5px;
+    }
+
+    .icon-box-v2-body-subtitle {
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        color: $color-subtitle;
+    }
+
+    .icon-box-v2-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 2;
+        text-decoration: none;
+    }
+
+    &:hover {
+        .icon-box-v2-overlay {
+            &:before,
+            &:after {
+                opacity: 1;
+                @include transform-scale(1, 1);
+                @include cubic-transition($delay: 0, $duration: 600ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Icons Box v3]
+----------------------------------------------------*/
+
+.icon-box-v3 {
+    .icon-box-v3-icons {
+        display: block;
+        @include font($size: $font-size-36);
+        color: lighten($color-dark-light, 10%);
+        margin: 0 0 20px 1px;
+    }
+
+    .icon-box-v3-title {
+        @include font($size: $font-size-22);
+        margin: 0 0 10px;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Icons Box v4]
+----------------------------------------------------*/
+
+.icon-box-v4 {
+    overflow: hidden;
+
+    .icon-box-v4-element {
+        float: left;
+        margin: 5px 20px 0 0;
+    }
+
+    .icon-box-v4-body {
+        overflow: hidden;
+
+        .icon-box-v4-body-title {
+            @include font($size: $font-size-22);
+            margin: 0 0 10px;
+        }
+
+        .icon-box-v4-body-text {
+            margin-bottom: 5px;
+        }
+    }
+
+    &.icon-box-v4-right {
+        text-align: right;
+
+        .icon-box-v4-element {
+            float: right;
+            margin: 5px 0 0 15px;
+        }
+    }
+}
+
+/* White Version */
+.icon-box-v4 {
+    &.icon-box-v4-white {
+        .icon-box-v4-body {
+            .icon-box-v4-body-title {
+                color: $color-white;
+            }
+
+            .icon-box-v4-body-text {
+                color: $color-white;
+                opacity: .8;
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Icon Box v5]
+----------------------------------------------------*/
+
+.icon-box-v5 {
+    @include clearfix;
+
+    .icon-box-v5-media {
+        float: left;
+        margin-right: 25px;
+    }
+
+    .icon-box-v5-icon {
+        @include size(100px, auto);
+    }
+
+    .icon-box-v5-content {
+        overflow: hidden;
+    }
+
+    .icon-box-v5-subtitle {
+        display: block;
+        @include font($size: $font-size-16, $weight: $font-weight-400);
+        color: lighten($color-subtitle, 15%);
+        margin-bottom: 5px;
+    }
+
+    .icon-box-v5-title {
+        @include font($size: $font-size-22);
+    }
+
+    .icon-box-v5-link {
+        @include font($size: $font-size-14, $weight: $font-weight-300);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Icons Box v6]
+----------------------------------------------------*/
+
+.icon-box-v6 {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    @include transition(all, .3s ease);
+
+    &.icon-box-v6-body-color-one { background: $color-tw; }
+    &.icon-box-v6-body-color-two { background: $color-fb; }
+    &.icon-box-v6-body-color-three { background: $color-dr; }
+    &.icon-box-v6-body-color-four { background: $color-yt; }
+
+    .icon-box-v6-body {
+        padding: 60px 40px;
+
+        .icon-box-v6-icons {
+            display: block;
+            @include font($size: $font-size-50);
+            color: $color-white;
+            margin-bottom: 15px;
+        }
+
+        .icon-box-v6-title {
+            display: block;
+            @include font($size: $font-size-26);
+            color: $color-white;
+            margin: 0;
+        }
+
+        .icon-box-v6-subtitle {
+            display: block;
+            @include font($size: $font-size-15, $weight: $font-weight-400);
+            color: $color-white;
+            opacity: .8;
+            margin-bottom: 10px;
+        }
+
+        .icon-box-v6-text {
+            @include font($style: italic);
+            color: $color-white;
+            margin-bottom: 0;
+        }
+    }
+
+    .icon-box-v6-hover-gradient {
+        @include position(absolute, $top: 50%, $left: 0, $right: 0);
+        text-align: center;
+        opacity: 0;
+        @include transition(all, .3s);
+        @include translate3d(0,-50%,0);
+    }
+
+    &:hover {
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            z-index: -1;
+            @include size(100%);
+            text-align: center;
+            @include bg-opacity($color-dark, .4);
+            content: " ";
+            @include transition(all, .3s ease);
+        }
+
+        .icon-box-v6-icons,
+        .icon-box-v6-title,
+        .icon-box-v6-subtitle,
+        .icon-box-v6-text {
+            opacity: .1;
+            @include transition(all, .3s ease);
+        }
+
+        .icon-box-v6-hover-gradient {
+            opacity: 1;
+            @include transition(all, .3s);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Icons Box v7]
+----------------------------------------------------*/
+
+.icon-box-v7 {
+    position: relative;
+    z-index: 1;
+    background: url(../../assets/img/1920x1080/02.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .95);
+        content: " ";
+    }
+
+    .icon-box-v7-wrap {
+        text-align: center;
+        border: 1px solid $color-white;
+    }
+
+    .icon-box-v7-icons {
+        @include font($size: $font-size-36);
+        color: $color-white;
+        padding: 20px;
+    }
+
+    .icon-box-v7-header {
+        @include bg-opacity($color-white, .4);
+        padding: 10px;
+    }
+    
+    .icon-box-v7-title {
+        @include font($size: $font-size-24);
+        color: $color-white;
+        margin: 0;
+    }
+
+    .icon-box-v7-body {
+        padding: 20px 10px;
+    }
+
+    .icon-box-v7-text {
+        color: $color-white;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Icons Box v8]
+----------------------------------------------------*/
+
+.icon-box-v8 {
+    @include clearfix;
+
+    .icon-box-v8-media {
+        float: left;
+        margin-right: 25px;
+    }
+    
+    .icon-box-v8-media-icon {
+        @include font($size: $font-size-36);
+        color: $color-dark;
+        margin: 5px 0 0 2px;
+    }
+
+    .icon-box-v8-content {
+        overflow: hidden;
+    }
+    
+    .icon-box-v8-content-title {
+        @include font($size: $font-size-24);
+
+        &.icon-box-v8-content-title-element {
+            position: relative;
+            margin-bottom: 30px;
+            
+            &:after {
+                @include position(absolute, $bottom: -12px, $left: 0);
+                @include size(40px, 1px);
+            }
+
+            &:before {
+                @include position(absolute, $bottom: -17px, $left: 0);
+                @include size(30px, 1px);
+            }
+            
+            &:after,
+            &:before {
+                background: $color-dark;
+                content: " ";
+            }
+        }
+    }
+}
+
+/* White Version */
+.icon-box-v8 {
+    &.icon-box-v8-white {
+        .icon-box-v8-media-icon {
+            color: $color-white;
+        }
+
+        .icon-box-v8-content-title {
+            color: $color-white;
+
+            &.icon-box-v8-content-title-element {
+                &:after,
+                &:before {
+                    background: $color-white;
+                }
+            }
+        }
+
+        .icon-box-v8-text {
+            color: $color-white;
+            opacity: .8;
+        }
+    }
+}

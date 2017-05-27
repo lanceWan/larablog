@@ -214,7 +214,16 @@ class BlogPermissionsTableSeeder extends Seeder
          */
         Permission::create([
             'name' => '七牛图片管理',
-            'slug' => 'blog.media',
+            'slug' => 'media.list',
+            'description' => '七牛图片管理'
+        ]);
+
+        /**
+         * 七牛图片管理
+         */
+        Permission::create([
+            'name' => '七牛图片管理',
+            'slug' => 'media.destroy',
             'description' => '七牛图片管理'
         ]);
 

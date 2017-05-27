@@ -1,0 +1,1487 @@
+/*------------------------------------------------------------------
+    [Theme Icons]
+------------------------------------------------------------------*/
+
+.theme-icons-wrap {
+    z-index: 1;
+}
+
+.theme-icons-wrap {
+    .theme-icons {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    a {
+        &[href] {
+            &:hover {
+                .theme-icons {
+                    @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Base */
+.theme-icons-base {
+    @include theme-icons($color-base, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-base-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-base;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons White */
+.theme-icons-white {
+    @include theme-icons($color-white, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-white-hover {
+                color: $color-white;
+
+                &:hover {
+                    color: $color-dark;
+                    background: $color-white;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Dark */
+.theme-icons-dark {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-dark-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-dark;
+                    border-color: $color-dark;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Dark Light */
+.theme-icons-dark-light {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-dark-light-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-dark-light;
+                    border-color: $color-dark-light;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Blue */
+.theme-icons-blue {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-blue-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-blue;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Blue Grey */
+.theme-icons-blue-grey {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-blue-grey-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-blue-grey;
+                    border-color: $color-blue-grey;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Grey */
+.theme-icons-grey {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-grey-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-grey;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Teal */
+.theme-icons-teal {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-teal-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-teal;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Red */
+.theme-icons-red {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-red-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-red;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Red */
+.theme-icons-pink {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-pink-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-pink;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Purple */
+.theme-icons-purple {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-purple-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-purple;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Gold */
+.theme-icons-gold {
+    @include theme-icons($color-dark-light, transparent, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-gold-hover {
+                &:hover {
+                    color: $color-white;
+                    background: $color-gold;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Icons Background Color]
+------------------------------------------------------------------*/
+
+/* Theme Icons Base Background */
+.theme-icons-base-bg {
+    @include theme-icons($color-white, $color-base, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-base-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-base-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons White Background */
+.theme-icons-white-bg {
+    @include theme-icons($color-dark-light, $color-white, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-white-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-base;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Dark Background */
+.theme-icons-dark-bg {
+    @include theme-icons($color-white, $color-dark, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-dark-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-dark-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Dark Light Background */
+.theme-icons-dark-light-bg {
+    @include theme-icons($color-white, $color-dark-light, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-dark-light-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-dark;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Blue Background */
+.theme-icons-blue-bg {
+    @include theme-icons($color-white, $color-blue, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-blue-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-blue-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Blue Grey Background */
+.theme-icons-blue-grey-bg {
+    @include theme-icons($color-white, $color-blue-grey, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-blue-grey-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-blue-grey-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Grey Background */
+.theme-icons-grey-bg {
+    @include theme-icons($color-white, #6a6969, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-grey-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-grey-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Teal Background */
+.theme-icons-teal-bg {
+    @include theme-icons($color-white, $color-teal, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-teal-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-teal-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Red Background */
+.theme-icons-red-bg {
+    @include theme-icons($color-white, $color-red, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-red-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-red-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Pink Background */
+.theme-icons-pink-bg {
+    @include theme-icons($color-white, $color-pink, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-pink-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-pink-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Purple Background */
+.theme-icons-purple-bg {
+    @include theme-icons($color-white, $color-purple, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-purple-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-purple-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Gold Background */
+.theme-icons-gold-bg {
+    @include theme-icons($color-white, $color-gold, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-gold-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-gold-light;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Grey Light Background */
+.theme-icons-grey-light-bg {
+    @include theme-icons($color-subtitle, $color-grey-light, 0, transparent);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-grey-light-bg {
+                &:hover {
+                    color: $color-white;
+                    background: $color-base;
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Icons Bordered Color]
+------------------------------------------------------------------*/
+
+/* Theme Icons Base Bordered */
+.theme-icons-base-brd {
+    @include theme-icons($color-base, transparent, 1px, $color-base);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-base-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-base;
+                    border-color: $color-base;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons White Bordered */
+.theme-icons-white-brd {
+    @include theme-icons(lighten($color-white, 15%), transparent, 1px, $color-white);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-white-brd {
+                &:hover {
+                    color: $color-dark-light;
+                    background: $color-white;
+                    border-color: $color-white;
+                }
+            }
+        }
+    }
+
+    .theme-icons-white-brd-hover-base {
+        &:hover {
+            color: $color-dark-light;
+            background: $color-white;
+        }
+    }
+}
+
+/* Theme Icons Dark Bordered */
+.theme-icons-dark-brd {
+    @include theme-icons($color-dark, transparent, 1px, $color-dark);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-dark-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-dark;
+                    border-color: $color-dark;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Dark Light Bordered */
+.theme-icons-dark-light-brd {
+    @include theme-icons($color-dark-light, transparent, 1px, $color-dark-light);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-dark-light-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-dark-light;
+                    border-color: $color-dark-light;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Blue Bordered */
+.theme-icons-blue-brd {
+    @include theme-icons($color-blue, transparent, 1px, $color-blue);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-blue-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-blue;
+                    border-color: $color-blue;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Blue Grey Bordered */
+.theme-icons-blue-grey-brd {
+    @include theme-icons($color-blue-grey, transparent, 1px, $color-blue-grey);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-blue-grey-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-blue-grey;
+                    border-color: $color-blue-grey;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Grey Bordered */
+.theme-icons-grey-brd {
+    @include theme-icons($color-grey, transparent, 1px, $color-grey);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-grey-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-grey;
+                    border-color: $color-grey;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Teal Bordered */
+.theme-icons-teal-brd {
+    @include theme-icons($color-teal, transparent, 1px, $color-teal);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-teal-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-teal;
+                    border-color: $color-teal;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Red Bordered */
+.theme-icons-red-brd {
+    @include theme-icons($color-red, transparent, 1px, $color-red);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-red-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-red;
+                    border-color: $color-red;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Pink Bordered */
+.theme-icons-pink-brd {
+    @include theme-icons($color-pink, transparent, 1px, $color-pink);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-pink-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-pink;
+                    border-color: $color-pink;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Purple Bordered */
+.theme-icons-purple-brd {
+    @include theme-icons($color-purple, transparent, 1px, $color-purple);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-purple-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-purple;
+                    border-color: $color-purple;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Gold Bordered */
+.theme-icons-gold-brd {
+    @include theme-icons($color-gold, transparent, 1px, $color-gold);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-gold-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-gold;
+                    border-color: $color-gold;
+                }
+            }
+        }
+    }
+}
+
+/* Theme Icons Floral White Bordered */
+.theme-icons-floral-light-brd {
+    @include theme-icons($color-floral-light, transparent, 1px, $color-floral-light);
+}
+
+.theme-icons-wrap {
+    > a {
+        &[href] {
+            > .theme-icons-floral-light-brd {
+                &:hover {
+                    color: $color-white;
+                    background: $color-floral-light;
+                    border-color: $color-floral-light;
+                }
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Icons Sizes]
+------------------------------------------------------------------*/
+
+/* Extra Small Size */
+.theme-icons-xs {
+    @include theme-icons-size(30px, 30px, $font-size-14, $line-height-base, 5px);
+}
+
+/* Small Size */
+.theme-icons-sm {
+    @include theme-icons-size(35px, 35px, $font-size-16, $line-height-base, 6px);
+}
+
+/* Medium Size */
+.theme-icons-md {
+    @include theme-icons-size(45px, 45px, $font-size-20, 1.5, 8px);
+}
+
+/* Large Size */
+.theme-icons-lg {
+    @include theme-icons-size(55px, 55px, $font-size-24, 1.15, 14px);
+}
+
+
+/*------------------------------------------------------------------
+    [Social Icons Theme]
+------------------------------------------------------------------*/
+
+/* Theme Icons Facebook */
+.theme-icons-fb {
+    @include theme-icons($color-white, $color-fb, 0, transparent);
+}
+
+/* Theme Icons Twitter */
+.theme-icons-tw {
+    @include theme-icons($color-white, $color-tw, 0, transparent);
+}
+
+/* Theme Icons Dribbble */
+.theme-icons-dr {
+    @include theme-icons($color-white, $color-dr, 0, transparent);
+}
+
+/* Theme Icons Youtube */
+.theme-icons-yt {
+    @include theme-icons($color-white, $color-yt, 0, transparent);
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Theme Icons]
+------------------------------------------------------------------*/
+
+.animate-theme-icons {
+    .animate-theme-icons-body {
+        z-index: 1;
+        display: inline-block;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    &:hover {
+        .animate-theme-icons-body {
+            .animate-theme-icons-element {
+                @include animation(toTopFromBottom .3s forwards);
+            }
+        }
+    }
+}
+
+@include keyframes(toTopFromBottom) {
+    49% {
+        @include translate3d(0,-100%,0);
+    }
+    50% {
+        opacity: 0;
+        @include translate3d(0,100%,0);
+    }
+    51% {
+        opacity: 1;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Theme Icons Colors]
+------------------------------------------------------------------*/
+
+/* Animate Theme Icons Base */
+.animate-theme-icons .animate-theme-icons-base {
+    color: $color-base;
+}
+
+/* Animate Theme Icons White */
+.animate-theme-icons .animate-theme-icons-white {
+    color: $color-white;
+}
+
+/* Animate Theme Icons Dark */
+.animate-theme-icons .animate-theme-icons-dark {
+    color: $color-dark;
+}
+
+/* Animate Theme Icons Dark Light */
+.animate-theme-icons .animate-theme-icons-dark-light {
+    color: $color-dark-light;
+}
+
+/* Animate Theme Icons Blue */
+.animate-theme-icons .animate-theme-icons-blue {
+    color: $color-blue;
+}
+
+/* Animate Theme Icons Blue Grey */
+.animate-theme-icons .animate-theme-icons-blue-grey {
+    color: $color-blue-grey;
+}
+
+/* Animate Theme Icons Grey */
+.animate-theme-icons .animate-theme-icons-grey {
+    color: $color-grey;
+}
+
+/* Animate Theme Icons Teal */
+.animate-theme-icons .animate-theme-icons-teal {
+    color: $color-teal;
+}
+
+/* Animate Theme Icons Red */
+.animate-theme-icons .animate-theme-icons-red {
+    color: $color-red;
+}
+
+/* Animate Theme Icons Pink */
+.animate-theme-icons .animate-theme-icons-pink {
+    color: $color-pink;
+}
+
+/* Animate Theme Icons Purple */
+.animate-theme-icons .animate-theme-icons-purple {
+    color: $color-purple;
+}
+
+/* Animate Theme Icons Gold */
+.animate-theme-icons .animate-theme-icons-gold {
+    color: $color-gold;
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Theme Icons Background Colors]
+------------------------------------------------------------------*/
+
+/* Animate Theme Icons Base Background */
+.animate-theme-icons .animate-theme-icons-base-bg {
+    color: $color-white;
+    background: $color-base;
+}
+
+/* Animate Theme Icons White Background */
+.animate-theme-icons .animate-theme-icons-white-bg {
+    color: $color-dark-light;
+    background: $color-white;
+}
+
+/* Animate Theme Icons Dark Background */
+.animate-theme-icons .animate-theme-icons-dark-bg {
+    color: $color-white;
+    background: $color-dark;
+}
+
+/* Animate Theme Icons Dark Light Background */
+.animate-theme-icons .animate-theme-icons-dark-light-bg {
+    color: $color-white;
+    background: $color-dark-light;
+}
+
+/* Animate Theme Icons Blue Background */
+.animate-theme-icons .animate-theme-icons-blue-bg {
+    color: $color-white;
+    background: $color-blue;
+}
+
+/* Animate Theme Icons Blue Grey Background */
+.animate-theme-icons .animate-theme-icons-blue-grey-bg {
+    color: $color-white;
+    background: $color-blue-grey;
+}
+
+/* Animate Theme Icons Grey Background */
+.animate-theme-icons .animate-theme-icons-grey-bg {
+    color: $color-white;
+    background: $color-grey;
+}
+
+/* Animate Theme Icons Teal Background */
+.animate-theme-icons .animate-theme-icons-teal-bg {
+    color: $color-white;
+    background: $color-teal;
+}
+
+/* Animate Theme Icons Red Background */
+.animate-theme-icons .animate-theme-icons-red-bg {
+    color: $color-white;
+    background: $color-red;
+}
+
+/* Animate Theme Icons Pink Background */
+.animate-theme-icons .animate-theme-icons-pink-bg {
+    color: $color-white;
+    background: $color-pink;
+}
+
+/* Animate Theme Icons Purple Background */
+.animate-theme-icons .animate-theme-icons-purple-bg {
+    color: $color-white;
+    background: $color-purple;
+}
+
+/* Animate Theme Icons Gold Background */
+.animate-theme-icons .animate-theme-icons-gold-bg {
+    color: $color-white;
+    background: $color-gold;
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Theme Icons Bordered]
+------------------------------------------------------------------*/
+
+
+/* Animate Theme Icons Base Bordered */
+.animate-theme-icons .animate-theme-icons-base-brd {
+    color: $color-base;
+    border: 1px solid $color-base;
+}
+
+/* Animate Theme Icons White Bordered */
+.animate-theme-icons .animate-theme-icons-white-brd {
+    color: $color-white;
+    border: 1px solid $color-white;
+}
+
+/* Animate Theme Icons Dark Bordered */
+.animate-theme-icons .animate-theme-icons-dark-brd {
+    color: $color-dark;
+    border: 1px solid $color-dark;
+}
+
+/* Animate Theme Icons Dark Light Bordered */
+.animate-theme-icons .animate-theme-icons-dark-light-brd {
+    color: $color-dark-light;
+    border: 1px solid $color-dark-light;
+}
+
+/* Animate Theme Icons Blue Bordered */
+.animate-theme-icons .animate-theme-icons-blue-brd {
+    color: $color-blue;
+    border: 1px solid $color-blue;
+}
+
+/* Animate Theme Icons Blue Grey Bordered */
+.animate-theme-icons .animate-theme-icons-blue-grey-brd {
+    color: $color-blue-grey;
+    border: 1px solid $color-blue-grey;
+}
+
+/* Animate Theme Icons Grey Bordered */
+.animate-theme-icons .animate-theme-icons-grey-brd {
+    color: $color-grey;
+    border: 1px solid $color-grey;
+}
+
+/* Animate Theme Icons Teal Bordered */
+.animate-theme-icons .animate-theme-icons-teal-brd {
+    color: $color-teal;
+    border: 1px solid $color-teal;
+}
+
+/* Animate Theme Icons Red Bordered */
+.animate-theme-icons .animate-theme-icons-red-brd {
+    color: $color-red;
+    border: 1px solid $color-red;
+}
+
+/* Animate Theme Icons Pink Bordered */
+.animate-theme-icons .animate-theme-icons-pink-brd {
+    color: $color-pink;
+    border: 1px solid $color-pink;
+}
+
+/* Animate Theme Icons Purple Bordered */
+.animate-theme-icons .animate-theme-icons-purple-brd {
+    color: $color-purple;
+    border: 1px solid $color-purple;
+}
+
+/* Animate Theme Icons Gold Bordered */
+.animate-theme-icons .animate-theme-icons-gold-brd {
+    color: $color-gold;
+    border: 1px solid $color-gold;
+}
+
+
+/*------------------------------------------------------------------
+    [Theme Icons Elegant]
+------------------------------------------------------------------*/
+
+.theme-icons-elegant {
+    @include clearfix;
+
+    .theme-icons-element {
+        float: left;
+        margin-right: 15px;
+
+        .theme-icons-wrap {
+            > a {
+                &[href] {
+                    > .theme-icons {
+                        &:hover {
+                            color: $color-white;
+                            background: $color-base;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .theme-icons-body {
+        overflow: hidden;
+
+        .theme-icons-body-title {
+            display: block;
+            @include font($size: $font-size-14);
+            margin-bottom: 5px;
+        }
+
+        .them-icon-body-paragraph {
+            @include font($size: $font-size-12);
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Theme Icons Elegant Right */
+.theme-icons-elegant-right {
+    text-align: right;
+
+    .theme-icons-element {
+        float: right;
+        margin: 0 0 0 15px;
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .theme-icons-elegant {
+        .theme-icons-element {
+            float: none;
+            text-align: center;
+            margin: 0 0 5px;
+        }
+
+        .theme-icons-body {
+            text-align: center;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Icons]
+------------------------------------------------------------------*/
+
+.animate-icon {
+    margin: 5px 0;
+
+    .animate-icon-wrap {
+        display: inline-block;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+        color: $color-dark-light;
+        @include transition(all, .3s ease);
+        margin: 0;
+
+        &:hover {
+            .animate-icon-item:last-child {
+                color: $color-white;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .animate-icon-item {
+        position: relative;
+        display: block;
+        @include transition(all, .3s ease);
+    }
+
+    .animate-icon-item-shadow {
+        text-shadow: 1px 1px 1px lighten($color-dark, 30%);
+    }
+}
+
+/*------------------------------------------------------------------
+    [Animate Icons Sizes]
+------------------------------------------------------------------*/
+
+/* Extra Small Size */
+.animate-icon {
+    .animate-icon-xs {
+        @include size(30px);
+        @include font($size: 14px);
+
+        .animate-icon-item {
+            padding: 8px 0;
+        }
+
+        &:hover {
+            .animate-icon-item:first-child {
+                margin-top: -30px;
+            }
+        }
+    }
+}
+
+/* Small Size */
+.animate-icon {
+    .animate-icon-sm {
+        @include size(35px);
+        @include font($size: 16px);
+
+        .animate-icon-item {
+            padding: 10px 0;
+        }
+
+        &:hover {
+            .animate-icon-item:first-child {
+                margin-top: -35px;
+            }
+        }
+    }
+}
+
+/* Medium Size */
+.animate-icon {
+    .animate-icon-md {
+        @include size(45px);
+        @include font($size: 22px);
+
+        .animate-icon-item {
+            padding: 12px 0;
+        }
+
+        &:hover {
+            .animate-icon-item:first-child {
+                margin-top: -45px;
+            }
+        }
+    }
+}
+
+/* Large Size */
+.animate-icon {
+    .animate-icon-lg {
+        @include size(55px);
+        @include font($size: 26px);
+
+        .animate-icon-item {
+            padding: 15px 0;
+        }
+
+        &:hover {
+            .animate-icon-item:first-child {
+                margin-top: -55px;
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Transition Icons Bordered Color]
+------------------------------------------------------------------*/
+
+/* Animate Transition Icons Border Grey */
+.animate-icon .animate-icon-grey-brd {
+    border: 1px solid $color-grey;
+
+    &:hover {
+        border-color: transparent;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Transition Icons Tooltips]
+------------------------------------------------------------------*/
+
+/* Animate Icons Tooltip */
+.animate-icon {
+    position: relative;
+
+    .icon-tooltip {
+        display: block;
+        font-size: $font-size-14;
+        color: $color-white;
+        background: $color-dark-light;
+        visibility: hidden;
+        opacity: 0;
+        white-space: nowrap;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        padding: 15px 25px;
+    }
+
+    &:hover {
+        .icon-tooltip-top,
+        .icon-tooltip-bottom {
+            z-index: 1;
+            visibility: visible;
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        .icon-tooltip-top {
+            transform: translateX(-50%) translateY(-80%);
+        }
+
+        .icon-tooltip-bottom {
+            transform: translateX(-50%) translateY(80%);
+        }
+    }
+}
+
+/* Animate Icons Tooltip Top */
+.animate-icon {
+    .icon-tooltip-top {
+        @include position(absolute, $top: 0, $left: 50%);
+        transform: translateX(-50%) translateY(-100%);
+        margin-top: -30px;
+    }
+
+    .icon-tooltip-arrow-top {
+        bottom: -14px;
+        border-bottom-color: transparent !important;
+    }
+}
+
+/* Animate Icons Tooltip Bottom */
+.animate-icon {
+    .icon-tooltip-bottom {
+        @include position(absolute, $bottom: 0, $left: 50%);
+        transform: translateX(-50%) translateY(100%);
+        margin-bottom: -30px;
+    }
+
+    .icon-tooltip-arrow-bottom {
+        top: -14px;
+        border-top-color: transparent !important;
+    }
+}
+
+/* Animate Icons Tooltip Arrow */
+.animate-icon {
+    .icon-tooltip-arrow {
+        @include position(absolute, $left: 50%);
+        border-color: $color-dark-light;
+        border-right-color: transparent !important;
+        border-left-color: transparent !important;
+        border-style: solid;
+        border-width: 7px;
+        margin-left: -7px;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Icons Horizontal]
+------------------------------------------------------------------*/
+
+.animate-icon {
+    .animate-icon-horizontal {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+        text-align: center;
+        vertical-align: middle;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+}
+
+/* Animated Icon Horizontal Wrap */
+.animate-icon {
+    .animate-icon-horizontal-wrap {
+        @include position(relative, $top: 0, $left: 0);
+        display: block;
+        @include size(80px);
+        @include transition(all, .3s ease);
+        padding: 20px;
+    }
+}
+
+/* Animated Icon Left To Right Hover */
+.animate-icon {
+    .animate-icon-horizontal {
+        &:hover {
+            .animate-icon-left-to-right:first-child {
+                transform: translate(100%, 0);
+            }
+
+            .animate-icon-left-to-right:last-child {
+                transform: translate(0, 0);
+            }
+        }
+    }
+}
+
+/* Animated Icon Left To Right */
+.animate-icon {
+    .animate-icon-left-to-right:first-child {
+        transform: translate(0, 0);
+    }
+
+    .animate-icon-left-to-right:last-child {
+        @include position(absolute, $top: 0, $left: 0);
+        display: block;
+        transform: translate(-100%, 0);
+    }
+}
+
+/* Animated Icon Right To Left Hover */
+.animate-icon {
+    .animate-icon-horizontal {
+        &:hover {
+            .animate-icon-right-to-left:first-child {
+                transform: translate(-100%, 0);
+            }
+
+            .animate-icon-right-to-left:last-child {
+                transform: translate(0, 0);
+            }
+        }
+    }
+}
+
+/* Animated Icon Right To Left */
+.animate-icon {
+    .animate-icon-right-to-left:first-child {
+        transform: translate(0, 0);
+    }
+
+    .animate-icon-right-to-left:last-child {
+        @include position(absolute, $top: 0, $left: 0);
+        display: block;
+        transform: translate(100%, 0);
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Animate Icons Border Style]
+------------------------------------------------------------------*/
+
+/* Animated Icons With Solid Border */
+.animate-icon {
+    .brd-solid {
+        border: 1px solid darken($color-grey, 10%);
+    }
+}
+
+/* Animated Icons With Dashed Border */
+.animate-icon {
+    .brd-dashed {
+        border: 1px dashed darken($color-grey, 10%);
+    }
+}
+
+
+/* Animated Icons With Dotted Border */
+.animate-icon {
+    .brd-dotted {
+        border: 1px dotted darken($color-grey, 10%);
+    }
+}
+
+/* Animated Icons With Double Line Border */
+.animate-icon {
+    .brd-double-square,
+    .brd-double-circle {
+        position: relative;
+        border: 1px double darken($color-grey, 10%);
+
+        &:after {
+            @include position(absolute, $top: 2px, $right: 2px, $left: 2px, $bottom: 2px);
+            z-index: -1;
+            @include size(auto);
+            border: 1px solid darken($color-grey, 10%);
+            content: " ";
+        }
+    }
+
+    .brd-double-circle {
+        &:after {
+            border-radius: 50%;
+        }
+    }
+}

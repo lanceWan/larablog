@@ -1,0 +1,166 @@
+/*------------------------------------------------------------------
+    [Search Classic]
+------------------------------------------------------------------*/
+
+.search-classic {
+    text-align: center;
+    
+    .search-classic-btn {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+
+        .search-classic-btn-default,
+        .search-classic-btn-active {
+            position: relative;
+            @include size(30px, 0);
+            display: block;
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+        
+        .search-classic-btn-default {
+            top: 0;
+            opacity: 1;
+        }
+
+        .search-classic-btn-active {
+            top: 12px;
+            @include font($size: $font-size-15);
+            opacity: 0;
+        }
+
+        &.is-clicked {
+            .search-classic-btn-default {
+                top: -13px;
+                opacity: 0;
+            }
+
+            .search-classic-btn-active {
+                top: 0;
+                opacity: 1;
+            }
+        }
+    }
+
+    .search-classic-field {
+        @include position(absolute, $top: 100%, $right: 0);
+        display: none;
+        z-index: 1;
+        line-height: $line-height-base;
+        background: $color-white;
+        border-top: 2px solid $color-base;
+        padding: 20px;
+
+        .search-classic-input {
+            @include size(250px, 39px);
+            float: none;
+            border-radius: 0;
+            color: $color-dark;
+            @include placeholder($color-dark);
+
+            &:focus {
+                color: $color-dark;
+                @include placeholder($color-dark);
+            }
+        }
+    }
+}
+
+/* Media Queries above 480px */
+@media (max-width: $screen-xs-min) {
+    .search-classic {
+        .search-classic-field {
+            right: 0;
+
+            .search-classic-input {
+                width: 200px;
+            }
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    .header-on-scroll .header {
+        .search-classic {
+            .search-classic-field {
+                top: 70px;
+                @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Search Classic Trigger White]
+------------------------------------------------------------------*/
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    /* Search Classic */
+    .search-classic {
+        &.search-classic-white {
+            .search-classic-btn {
+                .search-classic-btn-default,
+                .search-classic-btn-active {
+                    color: $color-dark;
+                    
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Search Classic */
+    .search-classic {
+        &.search-classic-white {
+            .search-classic-btn {
+                .search-classic-btn-default,
+                .search-classic-btn-active {
+                    color: $color-white;
+                    
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Header Shrink */
+    .header-shrink {
+        .search-classic {
+            .search-classic-btn {
+                .search-classic-btn-default,
+                .search-classic-btn-active {
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            &.search-classic-white {
+                .search-classic-btn {
+                    .search-classic-btn-default,
+                    .search-classic-btn-active {
+                        color: $color-dark;
+                        
+                        &:hover {
+                            color: $color-base;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

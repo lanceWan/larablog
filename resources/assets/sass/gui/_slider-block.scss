@@ -1,0 +1,95 @@
+/*--------------------------------------------------
+    [Slider Block v1]
+----------------------------------------------------*/
+
+.slider-block-v1 {
+    .slider-block-v1-subtitle {
+        display: block;
+        @include font($size: $font-size-14, $style: italic, $family: $font-family-droid);
+        color: $color-base;
+        margin-bottom: 3px;
+    }
+
+    .slider-block-v1-title {
+        @include font($size: $font-size-26);
+        color: $color-white;
+    }
+
+    .slider-block-v1-paragraph {
+        color: darken($color-white, 17%);
+        line-height: $line-height-2;
+        margin-bottom: 15px;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Slider Block v2]
+----------------------------------------------------*/
+
+.slider-block-v2 {
+    border-top: 1px solid $color-tint-light;
+    border-bottom: 1px solid $color-tint-light;
+
+    .slider-block-v2-content-right-border {
+        border-right: 1px solid $color-tint-light;
+    }
+
+    .slider-block-v2-content {
+        overflow: hidden;
+        padding: 40px 40px 40px 0;
+    }
+
+    .slider-block-v2-widget {
+        position: relative;
+        float: left;
+        @include size(200px, auto);
+        margin-right: 25px;
+
+        .slider-block-v2-content-img {
+            @include size(200px, auto);
+        }
+    }
+
+    .slider-block-v2-media {
+        overflow: hidden;
+
+        .slider-block-v2-media-title {
+            @include font($size: $font-size-24);
+            margin: 0 0 10px;
+        }
+    }
+
+    .slider-block-v2-content-right {
+        display: block;
+        text-align: center;
+        padding: 40px;
+        margin: 0 auto;
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    .slider-block-v2 {
+        text-align: center;
+
+        .slider-block-v2-content-right-border {
+            border-right: none;
+        }
+
+        .slider-block-v2-widget {
+            float: none;
+            display: block;
+            text-align: center;
+            margin: 0 auto 15px;
+        }
+
+        .slider-block-v2-content {
+            padding: 20px 10px;
+        }
+
+        .slider-block-v2-content-right {
+            padding: 10px;
+        }
+    }
+}

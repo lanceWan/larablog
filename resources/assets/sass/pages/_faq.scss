@@ -1,0 +1,148 @@
+/*--------------------------------------------------
+    [FAQ]
+----------------------------------------------------*/
+
+.faq {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: url(../../assets/img/1920x1080/28.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 250px 0 100px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .7);
+        content: " ";
+    }
+
+    .faq-title {
+        @include font($size: $font-size-70);
+        color: $color-white;
+        margin: 0 0 60px;
+    }
+
+    .faq-search {
+        position: relative;
+        @include size(100%, auto);
+
+        .faq-search-input {
+            @include size(100%, 50px);
+            @include font($size: $font-size-22);
+            color: $color-white;
+            @include placeholder($color-white);
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid $color-white;
+            border-radius: 0;
+            padding: 6px 35px 6px 0;
+
+            &:focus {
+                @include placeholder($color-white);
+                border-bottom-color: $color-white;
+            }
+        }
+
+        .faq-search-search {
+            @include position(absolute, $top: 7px, $right: 0);
+            @include size(35px);
+            background: transparent;
+            outline: none;
+            border: none;
+
+            .faq-search-search-icon {
+                @include font($size: $font-size-14);
+                color: $color-white;
+            }
+
+            &:hover {
+                .faq-search-search-icon {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .faq {
+        .faq-title {
+            @include font($size: $font-size-36);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [FAQ V2]
+----------------------------------------------------*/
+
+.faq-v2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: url(../../assets/img/1920x1080/03.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 220px 0 130px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .7);
+        content: " ";
+    }
+
+    .faq-v2-community {
+        position: relative;
+        z-index: 1;
+        background: $color-white;
+        text-align: center;
+        overflow: hidden;
+        padding: 40px;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        .faq-v2-community-content {
+            margin-bottom: 20px;
+            @include translate3d(0,30%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+        
+        .faq-v2-community-icon {
+            display: block;
+            @include font($size: $font-size-50);
+            color: $color-base;
+            margin-bottom: 30px;
+        }
+
+        .faq-v2-community-title {
+            @include font($size: $font-size-20);
+            margin-bottom: 0;
+        }
+
+        .faq-v2-community-btn {
+            opacity: 0;
+            margin-bottom: 0;
+            @include translate3d(0,105%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        &:hover {
+            .faq-v2-community-content  {
+                @include translate3d(0,0,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+
+            .faq-v2-community-btn {
+                opacity: 1;
+                @include translate3d(0,0,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+    }
+}

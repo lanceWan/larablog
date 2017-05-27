@@ -1,0 +1,75 @@
+/*--------------------------------------------------
+    [Theme Image v1]
+----------------------------------------------------*/
+
+.theme-image-popup-v1 {
+	position: relative;
+
+	.theme-image-popup-v1-child {
+		@include position(absolute, $bottom: 20px, $right: 20px);
+		text-decoration: none;
+	}
+
+	.theme-image-popup-v1-toggle {
+		position: relative;
+		display: block;
+		@include size(30px);
+		border: 2px solid $color-white;
+		@include border-radius(50%);
+		
+		&:before,
+		&:after {
+			@include position(absolute, $top: 50%, $left: 50%);
+			background: $color-white;
+			content: " ";
+			@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+		}
+
+		&:before {
+			@include size(16px, 2px);
+			margin: -1px 0 0 -8px;
+			@include transform-scale(0.5,1);
+		}
+
+		&:after {
+			@include size(2px, 16px);
+			margin: -8px 0 0 -1px;
+			@include transform-scale(1,0.5);
+		}
+	}
+
+	&:hover {
+		.theme-image-popup-v1-toggle {
+			&:before,
+			&:after {
+				@include transform-scale(1,1);
+				@include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+			}
+		}
+	}
+}
+
+
+/*--------------------------------------------------
+    [Theme Image v2]
+----------------------------------------------------*/
+
+.theme-image-popup-v2 {
+	position: relative;
+
+	.theme-image-popup-v2-child {
+		@include position(absolute, $top: 20px, $left: 20px);
+		text-decoration: none;
+	}
+
+	.theme-image-popup-v2-toggle {
+		position: relative;
+		display: block;
+		@include size(50px);
+		@include font($size: $font-size-20);
+		text-align: center;
+		background: $color-white;
+		padding: 15px;
+		box-shadow: 0 2px 3px 1px darken($color-white, 7%);
+	}
+}

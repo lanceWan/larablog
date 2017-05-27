@@ -1,9 +1,6 @@
 @extends('layouts.admin')
 @section('css')
 <link href="{{asset('vendors/dataTables/datatables.min.css')}}" rel="stylesheet">
-<link href="{{asset('vendors/dataTables/buttons.bootstrap.min.css')}}" rel="stylesheet">
-<link href="{{asset('vendors/dataTables/select.bootstrap.min.css')}}" rel="stylesheet">
-<link href="{{asset('vendors/dataTables/editor.bootstrap.min.css')}}" rel="stylesheet">
 @endsection
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -51,6 +48,9 @@
                   <th>{{trans('admin/link.model.name')}}</th>
                   <th>{{trans('admin/link.model.url')}}</th>
 			            <th>{{trans('admin/link.model.description')}}</th>
+			            <th>{{trans('admin/link.model.created_at')}}</th>
+			            <th>{{trans('admin/link.model.updated_at')}}</th>
+			            <th>{{trans('admin/action.title')}}</th>
 			          </tr>
 		          </thead>
 		          <tbody>
@@ -65,11 +65,6 @@
 @endsection
 @section('js')
 <script src="{{asset('vendors/dataTables/datatables.min.js')}}"></script>
-<script src="{{asset('vendors/dataTables/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('vendors/dataTables/buttons.bootstrap.min.js')}}"></script>
-<script src="{{asset('vendors/dataTables/dataTables.select.min.js')}}"></script>
-<script src="{{asset('vendors/dataTables/dataTables.editor.min.js')}}"></script>
-<script src="{{asset('vendors/dataTables/editor.bootstrap.min.js')}}"></script>
 <script src="{{asset('vendors/layer/layer.js')}}"></script>
 <script src="{{asset('admin/js/link/link-datatable.js')}}"></script>
 <script type="text/javascript">

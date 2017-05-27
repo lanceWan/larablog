@@ -1,0 +1,337 @@
+/*------------------------------------------------------------------
+    [Header Section Scroll]
+------------------------------------------------------------------*/
+
+.header-section-scroll {
+    background: $color-white;
+}
+
+/* Navbar */
+.header-section-scroll {
+    .navbar {
+        background: $color-white;
+        border-radius: 0;
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+/* Navbar Toggle */
+.header-section-scroll {
+    .navbar-toggle {
+        @include size(25px);
+        float: left;
+        border: none;
+        padding: 0;
+        margin: 29px 0;
+
+        .toggle-icon {
+            position: relative;
+            @include size(15px, 1px);
+            display: inline-block;
+            background: $color-dark;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            &:before,
+            &:after {
+                @include position(absolute, $left: 0);
+                @include size(15px, 1px);
+                background: $color-dark;
+                content: " ";
+            }
+            &:before {
+                bottom: 10px;
+                @include rotate(0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+            &:after {
+                top: -5px;
+                @include rotate(0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+
+            &.is-clicked {
+                @include bg-opacity($color-dark, 0);
+
+                &:before,
+                &:after {
+                    background: $color-dark;
+                }
+                &:before {
+                    bottom: 5px;
+                    @include rotate(45deg);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+                &:after {
+                    top: -5px;
+                    @include rotate(-45deg);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+        }
+
+        &:hover {
+            .toggle-icon {
+                background: $color-base;
+
+                &:before,
+                &:after {
+                    background: $color-base;
+                }
+
+                &.is-clicked {
+                    @include bg-opacity($color-dark, 0);
+                }
+            }
+        }
+    }
+}
+
+/* Navbar Logo */
+.header-section-scroll {
+    .navbar-logo {
+        @include size(auto, 100%);
+        display: block;
+        float: none;
+        text-align: center;
+        margin: 40px 25px;
+
+        .navbar-logo-wrap {
+            display: inline-block;
+            padding: 20px 0;
+
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .navbar-logo-img {
+            display: inline-block;
+            @include size(85px, auto);
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+    }
+}
+
+/* Navbar Nav */
+.header-section-scroll {
+    .header-section-scroll-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .nav-item {
+            display: block;
+            @include font($size: $font-size-13, $weight: $font-weight-400);
+            border-top: 1px dashed $color-tint-light;
+            color: $color-dark;
+            letter-spacing: $letter-spacing-1;
+
+            &:last-child {
+                border-bottom: 1px dashed $color-tint-light;
+            }
+
+            &.active {
+                .nav-item-child {
+                    &:hover,
+                    &:focus {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+
+        .nav-item-child {
+            display: block;
+            @include font($size: $font-size-13, $weight: $font-weight-400);
+            color: $color-dark;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px;
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+    }
+}
+
+/* Copyright */
+.header-section-scroll {
+    .header-section-scroll-copyright {
+        @include font($size: $font-size-14);
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+
+/* Media Queries below 991px */
+@media (max-width: $screen-sm-max) {
+    /* Bootstrap collapse of navigation with a maximum width: 991px
+    (Change it to any breakpoint you want to be collapsed) */
+    .header-section-scroll {
+        .navbar-toggle {
+            display: block;
+        }
+
+        .navbar-collapse {
+            &.collapse {
+                display: none !important;
+
+                &.in {
+                    display: block !important;
+                    overflow-y: auto !important;
+                }
+            }
+        }
+    }
+
+    /* Navbar Logo */
+    .header-section-scroll {
+        .navbar-logo {
+            margin: 0 25px;
+        }
+    }
+
+    /* Copyright */
+    .header-section-scroll {
+        .header-section-scroll-copyright {
+            display: none;
+        }
+    }
+
+    /* Navbar */
+    .header-section-scroll {
+        .navbar {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+/* Media Queries above 768px */
+@media (min-width: $screen-sm-min) {
+    /* Navbar Collapse */
+    .header-section-scroll {
+        .navbar-collapse {
+            padding: 0;
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Header v5 */
+    .header-section-scroll {
+        @include position(fixed, $top: 0, $left: 0);
+        @include size(260px, 100%);
+        z-index: 999;
+        float: left;
+        border-right: 2px solid $color-tint-light;
+
+        .container {
+            width: auto;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    /* Navbar Collapse */
+    .header-section-scroll {
+        .navbar-collapse {
+            height: auto;
+            max-height: none;
+            border-top: 0;
+            box-shadow: none;
+            padding: 0;
+            
+            &.collapse {
+                width: auto !important;
+                display: block !important;
+                overflow: visible !important;
+            }
+            
+            &.in {
+                overflow-x: visible;
+            }
+        }
+
+        .navbar-nav,
+        .navbar-left,
+        .navbar-right,
+        .navbar-header,
+        .nav-item {
+            float: none !important;
+        }
+    }
+
+    /* Header v5 Container */
+    .header-section-scroll-container {
+        margin-left: 260px;
+
+        .container {
+            width: 100%;  
+        }
+    }
+}
+
+/* Media Queries above 1200px */
+@media (min-width: $screen-lg-min) {
+    /* Header v5 Container */
+    .header-section-scroll-container {
+        > .container {
+            width: auto;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Header v5 Right]
+------------------------------------------------------------------*/
+
+/* Navbar Toggle */
+.header-section-scroll {
+    &.header-section-scroll-right {
+        .navbar-toggle {
+            float: right;
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Header v5 Right */
+    .header-section-scroll {
+        &.header-section-scroll-right {
+            @include position(fixed, $top: 0, $left: auto, $right: 0);
+            float: none;
+            border-left: 2px solid $color-tint-light;
+            border-right: none;
+        }
+    }
+
+    /* Header v5 Container Right*/
+    .header-section-scroll-container-right {
+        margin-right: 260px;
+
+        .container {
+            width: auto;
+        }
+    }
+}
+
+/* Media Queries above 1200px */
+@media (min-width: $screen-lg-min) {
+    /* Header v5 Container Right */
+    .header-section-scroll-container-right {
+        .container {
+            width: auto;
+        }
+    }
+}

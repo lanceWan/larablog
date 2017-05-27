@@ -1,0 +1,352 @@
+/*--------------------------------------------------
+    [Switch]
+--------------------------------------------------*/
+
+/* Container */
+.bootstrap-switch {
+	position: relative;
+	z-index: 0;
+	display: inline-block;
+	text-align: left;
+	border: 1px solid #ccc;
+	direction: ltr;
+	overflow: hidden;
+	line-height: 8px;
+	cursor: pointer;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+	&.bootstrap-switch-focused {
+		outline: 0;
+	}
+	
+	.bootstrap-switch-container {
+		top: 0;
+		display: inline-block;
+		@include translate3d(0,0,0);
+	}
+}
+
+/* Handle */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off,
+	.bootstrap-switch-label {
+		display: inline-block !important;
+		height: 100%;
+		@include font($size: $font-size-14);
+		padding: 6px 12px;
+		line-height: 20px;
+		cursor: pointer;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+	  	z-index: 1;
+	  	text-align: center;
+	}
+}
+
+/* Label */
+.bootstrap-switch {
+	.bootstrap-switch-label {
+		z-index: 100;
+		color: #333;
+		text-align: center;
+		background: $color-white;
+		margin-top: -1px;
+		margin-bottom: -1px;
+	}
+}
+
+/* Animate */
+.bootstrap-switch {
+	&.bootstrap-switch-animate {
+		.bootstrap-switch-container {
+			@include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+		}
+	}
+}
+
+.bootstrap-switch {
+	input[type='radio'],
+	input[type='checkbox'] {
+		@include position(absolute !important, $top: 0, $left: 0);
+		z-index: -1;
+		opacity: 0;
+		filter: alpha(opacity=0);
+		margin: 0;
+	}
+}
+
+.bootstrap-switch {
+	&.bootstrap-switch-disabled,
+	&.bootstrap-switch-readonly,
+	&.bootstrap-switch-indeterminate {
+  		cursor: default !important;
+  	}
+}
+
+.bootstrap-switch {
+	&.bootstrap-switch-disabled .bootstrap-switch-handle-on,
+	&.bootstrap-switch-readonly .bootstrap-switch-handle-on,
+	&.bootstrap-switch-indeterminate .bootstrap-switch-handle-on,
+	&.bootstrap-switch-disabled .bootstrap-switch-handle-off,
+	&.bootstrap-switch-readonly .bootstrap-switch-handle-off,
+	&.bootstrap-switch-indeterminate .bootstrap-switch-handle-off,
+	&.bootstrap-switch-disabled .bootstrap-switch-label,
+	&.bootstrap-switch-readonly .bootstrap-switch-label,
+	&.bootstrap-switch-indeterminate .bootstrap-switch-label {
+		opacity: 0.5;
+		filter: alpha(opacity=50);
+		cursor: default !important;
+	}
+}
+
+
+/*--------------------------------------------------
+    [Size]
+--------------------------------------------------*/
+
+/* Mini */
+.bootstrap-switch {
+	&.bootstrap-switch-mini {
+		.bootstrap-switch-handle-on,
+		.bootstrap-switch-handle-off,
+		.bootstrap-switch-label {
+			@include font($size: $font-size-12);
+			line-height: 1.5;
+			padding: 1px 5px;
+		}
+	}
+}
+
+/* Small */
+.bootstrap-switch {
+	&.bootstrap-switch-small {
+		.bootstrap-switch-handle-on,
+		.bootstrap-switch-handle-off,
+		.bootstrap-switch-label {
+			@include font($size: $font-size-12);
+			line-height: 1.5;
+			padding: 5px 10px;
+		}
+	}
+}
+
+/* Large */
+.bootstrap-switch {
+	&.bootstrap-switch-large {
+		.bootstrap-switch-handle-on,
+		.bootstrap-switch-handle-off,
+		.bootstrap-switch-label {
+			@include font($size: $font-size-18);
+  			line-height: 1.3333333;
+  			padding: 6px 16px;
+		}
+	}
+}
+
+
+/*--------------------------------------------------
+    [Bootstrap Colors]
+--------------------------------------------------*/
+
+/* Primary Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-primary {
+		  	color: $color-white;
+		  	background: $color-bt-primary;
+		}
+	}
+}
+
+/* Info Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-info {
+		  	color: $color-white;
+		  	background: $color-bt-info;
+		}
+	}
+}
+
+/* Success Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-success {
+		  	color: $color-white;
+		  	background: $color-bt-success;
+		}
+	}
+}
+
+/* Warning Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-warning {
+		  	color: $color-white;
+		  	background: $color-bt-warning;
+		}
+	}
+}
+
+/* Danger Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-danger {
+		  	color: $color-white;
+		  	background: $color-bt-danger;
+		}
+	}
+}
+
+/* Default Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-default {
+		  	color: $color-white;
+		  	background: $color-bt-default;
+		}
+	}
+}
+
+
+/*--------------------------------------------------
+    [Theme Colors]
+--------------------------------------------------*/
+
+/* Base Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-base {
+		  	color: $color-white;
+		  	background: $color-base;
+		}
+	}
+}
+
+/* Dark Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-dark {
+		  	color: $color-white;
+		  	background: $color-dark;
+		}
+	}
+}
+
+/* Red Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-red {
+		  	color: $color-white;
+		  	background: $color-red;
+		}
+	}
+}
+
+/* Purple Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-purple {
+		  	color: $color-white;
+		  	background: $color-purple;
+		}
+	}
+}
+
+/* Pink Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-pink {
+		  	color: $color-white;
+		  	background: $color-pink;
+		}
+	}
+}
+
+/* Green Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-green {
+		  	color: $color-white;
+		  	background: $color-green;
+		}
+	}
+}
+
+/* Teal Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-teal {
+		  	color: $color-white;
+		  	background: $color-teal;
+		}
+	}
+}
+
+/* Blue Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-blue {
+		  	color: $color-white;
+		  	background: $color-blue;
+		}
+	}
+}
+
+/* Blue Grey Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-blue-grey {
+		  	color: $color-white;
+		  	background: $color-blue-grey;
+		}
+	}
+}
+
+/* Grey Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-grey {
+		  	color: $color-white;
+		  	background: $color-grey;
+		}
+	}
+}
+
+/* Gold Colors */
+.bootstrap-switch {
+	.bootstrap-switch-handle-on,
+	.bootstrap-switch-handle-off {
+		&.bootstrap-switch-gold {
+		  	color: $color-white;
+		  	background: $color-gold;
+		}
+	}
+}

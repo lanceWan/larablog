@@ -1,0 +1,229 @@
+/*--------------------------------------------------
+    [Process v1]
+----------------------------------------------------*/
+
+.process-v1 {
+    position: relative;
+    z-index: 1;
+    @include size(270px);
+    text-align: center;
+    @include border-radius(50%);
+    margin: 0 auto;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        @include bg-opacity($color-dark, .3);
+        @include border-radius(50%);
+        content: " ";
+    }
+
+    &.img-one {
+        background: url(../../assets/img/500x500/11.jpg) no-repeat center center;
+    }
+    &.img-two {
+        background: url(../../assets/img/500x500/12.jpg) no-repeat center center;
+    }
+    &.img-three {
+        background: url(../../assets/img/500x500/13.jpg) no-repeat center center;
+    }
+
+    .process-v1-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 3;
+        text-decoration: none;
+    }
+
+    .process-v1-body {
+        @include position(absolute, $top: 20px, $left: 20px, $right: 20px, $bottom: 20px);
+        @include size(230px);
+        background: $color-white;
+        box-shadow: 0 0 0 20px rgba(255,255,255,.7);
+        @include border-radius(50%);
+        text-decoration: none;
+        @include perspective(800px);
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+    }
+
+    .process-v1-flip {
+        position: absolute;
+        display: block;
+        @include size(230px);
+        @include border-radius(50%);
+        @include preserve3d(preserve-3d);
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+    }
+
+    .process-v1-front,
+    .process-v1-back {
+        position: absolute;
+        display: block;
+        @include size(100%);
+        @include border-radius(50%);
+        @include visibility-backface(hidden);
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+    }
+
+    .process-v1-front {
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-dark, .3);
+            @include border-radius(50%);
+            content: " ";
+        }
+
+        &.img-one {
+            background: url(../../assets/img/500x500/11.jpg) no-repeat center center;
+        }
+        &.img-two {
+            background: url(../../assets/img/500x500/12.jpg) no-repeat center center;
+        }
+        &.img-three {
+            background: url(../../assets/img/500x500/13.jpg) no-repeat center center;
+        }
+    }
+    
+    .process-v1-back {
+        background: $color-base;
+        @include rotateY(180deg);
+    }
+
+    .process-v1-center-align {
+        @include position(absolute, $top: 50%, $left: 50%);
+        display: block;
+        @include translate3d(-50%,-50%,0);
+    }
+
+    .process-v1-title,
+    .process-v1-text {
+        color: $color-white;
+        margin-bottom: 0;
+    }
+    
+    .process-v1-title {
+        @include font($size: $font-size-28);
+    }
+
+    &:hover {
+        .process-v1-body {
+            box-shadow: 0 0 0 0 rgba(255,255,255,.7);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+
+        .process-v1-flip {
+            @include rotateY(180deg);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Process v2]
+----------------------------------------------------*/
+
+.process-v2 {
+    text-align: center;
+    padding: 0 30px;
+
+    .process-v2-element {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        @include size(120px);
+        @include font($size: 45px);
+        color: $color-dark;
+        text-align: center;
+        background: $color-white;
+        box-shadow: 0 0 0 8px $color-sky-light;
+        border: 8px solid lighten($color-tint-light, 2%);
+        vertical-align: middle;
+        padding: 21px;
+        margin-bottom: 20px;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+
+    .process-v2-title {
+        @include font($size: $font-size-22);
+        margin: 0 0 10px;
+    }
+
+    &:hover {
+        .process-v2-element {
+            color: $color-white;
+            background: $color-base;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+}
+
+/* Proccess v2 Border */
+.process-v2-border {
+    position: relative;
+
+    &:after {
+        @include position(absolute, $top: 60px, $left: 150px);
+        display: block;
+        width: 68%;
+        border-top: 2px dotted $color-dark;
+        content: " ";
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .process-v2-border {
+        &:after {
+            display: none;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Process v3]
+----------------------------------------------------*/
+
+.process-v3 {
+    text-align: center;
+
+    .process-v3-element {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        @include size(130px);
+        border: 5px solid $color-tint-light;
+        box-shadow: 0 0 0 12px $color-white;
+        margin-bottom: 20px;
+    }
+
+    .process-v3-title {
+        @include font($size: $font-size-22);
+        margin: 0 0 10px;
+    }
+}
+
+/* Proccess v3 Border */
+.process-v3-border {
+    position: relative;
+
+    &:after {
+        @include position(absolute, $top: 65px, $left: 150px);
+        display: block;
+        width: 75%;
+        border-top: 2px dotted $color-tint-light;
+        content: " ";
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-sm-max) {
+    .process-v3-border {
+        &:after {
+            display: none;
+        }
+    }
+}
+
+

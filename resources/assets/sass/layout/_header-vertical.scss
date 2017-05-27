@@ -1,0 +1,429 @@
+/*------------------------------------------------------------------
+    [Header Vertical]
+------------------------------------------------------------------*/
+
+.header-vertical {
+    background: $color-white;
+}
+
+/* Navbar */
+.header-vertical {
+    .navbar {
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* Navbar Toggle */
+.header-vertical {
+    .navbar-toggle {
+        @include size(25px);
+        float: left;
+        border: none;
+        padding: 0;
+        margin: 29px 0;
+
+        .toggle-icon {
+            position: relative;
+            @include size(15px, 1px);
+            display: inline-block;
+            background: $color-dark;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            &:before,
+            &:after {
+                @include position(absolute, $left: 0);
+                @include size(15px, 1px);
+                background: $color-dark;
+                content: " ";
+            }
+            &:before {
+                bottom: 10px;
+                @include rotate(0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+            &:after {
+                top: -5px;
+                @include rotate(0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+
+            &.is-clicked {
+                @include bg-opacity($color-dark, 0);
+
+                &:before,
+                &:after {
+                    background: $color-dark;
+                }
+                &:before {
+                    bottom: 5px;
+                    @include rotate(45deg);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+                &:after {
+                    top: -5px;
+                    @include rotate(-45deg);
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+        }
+
+        &:hover {
+            .toggle-icon {
+                background: $color-base;
+
+                &:before,
+                &:after {
+                    background: $color-base;
+                }
+
+                &.is-clicked {
+                    @include bg-opacity($color-dark, 0);
+                }
+            }
+        }
+    }
+}
+
+/* Navbar Logo */
+.header-vertical {
+    .navbar-logo {
+        @include size(auto, 100%);
+        display: block;
+        float: none;
+        text-align: center;
+        margin: 50px 25px 0;
+
+        .navbar-logo-wrap {
+            display: inline-block;
+            padding: 20px 0;
+
+            &:focus,
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .navbar-logo-img {
+            display: inline-block;
+            @include size(85px, auto);
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+    }
+}
+
+/* Navbar Nav */
+.header-vertical {
+    .header-vertical-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .nav-main-item {
+            display: block;
+            @include font($size: $font-size-13, $weight: $font-weight-400);
+            color: $color-dark;
+            border-top: 1px dashed lighten($color-subtitle, 30%);
+            letter-spacing: $letter-spacing-1;
+
+            &:first-child {
+                border-top: none;
+            }
+        }
+
+        .nav-main-item-child,
+        .nav-submenu-item-child {
+            display: block;
+            @include font($weight: $font-weight-400);
+            color: $color-dark;
+            text-decoration: none;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            &.nav-main-item-child-hover {
+                &.active,
+                &:hover {
+                    color: $color-base;
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            &.nav-main-item-child-dropdown,
+            &.nav-submenu-item-child-dropdown {
+                position: relative;
+
+                &:after {
+                    @include position(absolute, $right: 0);
+                    display: inline-block;
+                    @include font($size: $font-size-12, $family: $font-family-font-awesome);
+                    content: "\f105";
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+
+                &.nav-item-open {
+                    &:after {
+                        @include rotate(90deg);
+                        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                    }
+                }
+
+                &.active,
+                &:hover {
+                    color: $color-base;
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                    
+                    &:before,
+                    &:after {
+                        color: $color-base;
+                        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                    }
+                }
+            }
+        }
+        
+        .nav-main-item-child {
+            @include font($size: $font-size-13);
+            text-transform: uppercase;
+            padding: 10px 0;
+
+            &.nav-main-item-child-dropdown {
+                &:after {
+                    top: 10px;
+                }
+            }
+        }
+
+        .nav-submenu-item-child {
+            @include font($size: $font-size-12);
+            text-transform: uppercase;
+            padding: 5px 0;
+
+            &.nav-submenu-item-child-dropdown {
+                &:after {
+                    top: 5px;
+                }
+            }
+        }
+
+        .nav-dropdown-menu {
+            display: none;
+            list-style: none;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            padding: 0;
+            margin: 0 0 15px 10px;
+
+            .nav-dropdown-menu {
+                margin-bottom: 0;
+            }
+
+            .nav-dropdown-menu-item,
+            .nav-dropdown-menu-child {
+                display: block;
+                @include font($size: $font-size-13, $weight: $font-weight-400);
+                color: $color-subtitle;
+            }
+            
+            .nav-dropdown-menu-item {
+                padding: 5px 0;
+            }
+
+            .nav-dropdown-menu-link {
+                display: block;
+                @include font($size: $font-size-12, $weight: $font-weight-400);
+                color: $color-dark;
+                text-transform: uppercase;
+                text-decoration: none;
+
+                &:hover {
+                    color: $color-base;
+                }
+            }
+
+            .nav-dropdown-menu-child {
+                text-decoration: none;
+
+                &.active {
+                    color: $color-base;
+                }
+
+                &:hover {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+}
+
+/* Copyright */
+.header-vertical {
+    .header-vertical-copyright {
+        @include font($size: $font-size-12);
+        text-align: center;
+    }
+}
+
+/* Media Queries below 991px */
+@media (max-width: $screen-sm-max) {
+    /* Bootstrap collapse of navigation with a maximum width: 991px
+    (Change it to any breakpoint you want to be collapsed) */
+    .header-vertical {
+        .navbar-toggle {
+            display: block;
+        }
+
+        .navbar-collapse {
+            &.collapse {
+                display: none !important;
+
+                &.in {
+                    display: block !important;
+                    overflow-y: auto !important;
+                }
+            }
+        }
+    }
+
+    /* Navbar Logo */
+    .header-vertical {
+        .navbar-logo {
+            margin-top: 0;
+        }
+    }
+
+    /* Copyright */
+    .header-vertical {
+        .header-vertical-copyright {
+            display: none;
+        }
+    }
+}
+
+/* Media Queries above 768px */
+@media (min-width: $screen-sm-min) {
+    /* Navbar Collapse */
+    .header-vertical {
+        .navbar-collapse {
+            padding: 0;
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Header v2 */
+    .header-vertical {
+        @include position(fixed, $top: 0, $left: 0);
+        @include size(260px, 100%);
+        z-index: 999;
+        float: left;
+        border-right: 2px solid $color-tint-light;
+
+        .container {
+            width: auto;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .menu-container {
+            padding: 10px 30px;
+        }
+    }
+
+    /* Navbar Collapse */
+    .header-vertical {
+        .navbar-collapse {
+            height: auto;
+            max-height: none;
+            border-top: 0;
+            box-shadow: none;
+            padding: 10px 0;
+            
+            &.collapse {
+                width: auto !important;
+                display: block !important;
+                overflow: visible !important;
+            }
+            
+            &.in {
+                overflow-x: visible;
+            }
+        }
+
+        .navbar-nav,
+        .navbar-left,
+        .navbar-right,
+        .navbar-header,
+        .nav-item {
+            float: none !important;
+        }
+    }
+
+    /* Header v2 Container */
+    .header-vertical-container {
+        margin-left: 260px;
+
+        .container {
+            width: 100%;  
+        }
+    }
+}
+
+/* Media Queries above 1200px */
+@media (min-width: $screen-lg-min) {
+    /* Header v2 Container */
+    .header-vertical-container {
+        > .container {
+            width: auto;
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Header v2 Right]
+------------------------------------------------------------------*/
+
+/* Navbar Toggle */
+.header-vertical {
+    &.header-vertical-right {
+        .navbar-toggle {
+            float: right;
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Header v2 Right */
+    .header-vertical {
+        &.header-vertical-right {
+            @include position(fixed, $top: 0, $left: auto, $right: 0);
+            float: none;
+            border-left: 2px solid $color-tint-light;
+            border-right: none;
+        }
+    }
+
+    /* Header v2 Container Right*/
+    .header-vertical-container-right {
+        margin-right: 260px;
+
+        .container {
+            width: auto;
+        }
+    }
+}
+
+/* Media Queries above 1200px */
+@media (min-width: $screen-lg-min) {
+    /* Header v2 Container Right */
+    .header-vertical-container-right {
+        .container {
+            width: auto;
+        }
+    }
+}

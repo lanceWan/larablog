@@ -1,0 +1,109 @@
+/*------------------------------------------------------------------
+    [Footer v5]
+------------------------------------------------------------------*/
+
+.footer-v5 {
+    overflow: hidden;
+
+    .footer-v5-subtitle {
+        display: block;
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        color: $color-white;
+        margin-bottom: 5px;
+    }
+
+    .footer-v5-title {
+        @include font($size: $font-size-26);
+        color: $color-white;
+        margin-bottom: 30px;
+    }
+
+    .footer-v5-form {
+        @include font($style: italic);
+        color: $color-white;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255,255,255,.5);
+        border-radius: 0;
+        padding: 0;
+        @include placeholder ($color-white);
+
+        &:focus {
+            color: $color-white;
+            @include placeholder ($color-white);
+        }
+    }
+
+    .footer-v5-content-subtitle {
+        display: block;
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        color: $color-base;
+    }
+
+    .footer-v5-content-title {
+        @include font($size: $font-size-26);
+        margin-bottom: 20px;
+    }
+
+    .footer-v5-content-text {
+        margin-bottom: 20px;
+    }
+
+    .footer-v5-list {
+        margin-bottom: 0;
+
+        .footer-v5-list-item {
+            padding: 12px 0;
+
+            .footer-v5-list-icon {
+                @include position(relative, $top: -1px);
+                min-width: 25px;
+                @include font($size: $font-size-18);
+                color: $color-dark;
+                text-align: center;
+                vertical-align: middle;
+                margin-right: 7px;
+            }
+
+            .footer-v5-list-link {
+                color: $color-subtitle;
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/* Copyright */
+.footer-v5-copyright {
+    background: $color-dark;
+
+    .footer-v5-copyright-logo {
+        @include size(85px, auto);
+    }
+
+    .footer-v5-copright-socials {
+        .footer-v5-copright-socials-item {
+            padding: 0 10px;
+
+            .footer-v5-copright-socials-link {
+                color: $color-white;
+                text-decoration: none;
+
+                &:hover {
+                    color: $color-base;
+                }
+            }
+        }
+    }
+
+    .footer-v5-copright-text {
+        @include font($size: $font-size-14);
+        color: darken($color-white, 20%);
+        text-align: center;
+        margin-bottom: 0;
+    }
+}

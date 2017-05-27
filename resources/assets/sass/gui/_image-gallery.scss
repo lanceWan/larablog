@@ -1,0 +1,164 @@
+/*--------------------------------------------------
+    [Image Gallery]
+----------------------------------------------------*/
+
+.image-gallery {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+    .image-gallery-effect {
+        @include transform-scale(1, 1);
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    .image-gallery-overlay {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        @include bg-opacity($color-base, .6);
+        opacity: 0;
+        content: " ";
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    .image-gallery-overlay-content {
+        padding: 20px;
+        @include position(absolute, $top: 50%, $left: 0, $right: 0);
+        @include translate3d(0,-50%,0);
+
+        .image-gallery-title {
+            @include font($size: $font-size-26);
+            color: $color-white;
+            margin-bottom: 3px;
+            @include translate3d(0,50%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        .image-gallery-subtitle {
+            @include font($style: italic);
+            color: $color-white;
+            @include translate3d(0,-10px,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+
+    &:hover {
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        .image-gallery-effect {
+            @include transform-scale(1.07, 1.07);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        .image-gallery-overlay {
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        .image-gallery-overlay-content {
+            .image-gallery-title {
+                @include translate3d(0,0,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+
+            .image-gallery-subtitle {
+                @include translate3d(0,0,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Image Gallery v2]
+----------------------------------------------------*/
+
+.image-gallery-v2 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+    .image-gallery-v2-overlay {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        @include bg-opacity($color-base, .6);
+        opacity: 0;
+        content: " ";
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    .image-gallery-v2-overlay-content {
+        @include position(absolute, $top: 50%, $left: 0, $right: 0);
+        padding: 20px;
+        @include translate3d(0,-50%,0);
+    }
+
+    &:hover {
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        .image-gallery-v2-overlay {
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Image Gallery Video]
+----------------------------------------------------*/
+
+.image-gallery-video {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    overflow: hidden;
+
+    .image-gallery-video-center-align {
+        @include position(absolute, $top: 50%, $left: 0, $right: 0);
+        display: block;
+        @include translate3d(0,-50%,0);
+    }
+
+    .image-gallery-video-player {
+        display: inline-block;
+        @include size(50px);
+        @include translate3d(0,0,0);
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+
+    .image-gallery-video-title {
+        @include position(absolute, $top: 50%, $left: 50%);
+        @include size(auto);
+        display: inline-block;
+        z-index: 1;
+        overflow: hidden;
+        @include font($size: $font-size-16);
+        color: $color-white;
+        text-align: right;
+        text-decoration: none;
+        opacity: 0;
+        margin-top: -8px;
+        @include translate3d(-50px,0,0);
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+
+    &:hover {
+        .image-gallery-video-player {
+            @include size(40px);
+            @include translate3d(-50px,0,0);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+
+        .image-gallery-video-title {
+            opacity: 1;
+            @include translate3d(0,0,0);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+}

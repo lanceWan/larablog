@@ -1,0 +1,1372 @@
+/*------------------------------------------------------------------
+    [Colors]
+------------------------------------------------------------------*/
+
+// .color-base { color: $color-base !important; }
+// .color-white { color: $color-white !important; }
+// .color-subtitle { color: $color-subtitle !important; }
+// .color-sky-light { color: $color-sky-light !important; }
+// .color-floral-light { color: $color-floral-light !important; }
+// .color-floral-white { color: $color-floral-white !important; }
+// .color-tint-light { color: $color-tint-light !important; }
+// .color-dark { color: $color-dark !important; }
+// .color-dark-light { color: $color-dark-light !important; }
+// .color-black { color: $color-black !important; }
+// .color-blue { color: $color-blue !important; }
+// .color-blue-grey { color: $color-blue-grey !important; }
+// .color-grey { color: $color-grey !important; }
+// .color-teal { color: $color-teal !important; }
+// .color-green { color: $color-green !important; }
+// .color-red { color: $color-red !important; }
+// .color-pink { color: $color-pink !important; }
+// .color-purple { color: $color-purple !important; }
+// .color-gold { color: $color-gold !important; }
+
+/* Social Colors */
+// .color-fb { color: $color-fb !important; }
+// .color-tw { color: $color-tw !important; }
+// .color-dr { color: $color-dr !important; }
+// .color-yt { color: $color-yt !important; }
+// .color-ig { color: $color-ig !important; }
+// .color-vm { color: $color-vm !important; }
+
+/* Light Options */
+// .color-base-light { color: $color-base-light !important; }
+// .color-blue-grey-light { color: $color-blue-grey-light !important; }
+// .color-grey-light { color: $color-grey-light !important; }
+// .color-blue-light { color: $color-blue-light !important; }
+// .color-teal-light { color: $color-teal-light !important; }
+// .color-green-light { color: $color-green-light !important; }
+// .color-red-light { color: $color-red-light !important; }
+// .color-pink-light { color: $color-pink-light !important; }
+// .color-purple-light { color: $color-purple-light !important; }
+// .color-gold-light { color: $color-gold-light !important; }
+
+// /* Boostrap Colors */
+// .color-bt-primary { color: $color-bt-primary !important; }
+// .color-bt-info { color: $color-bt-info !important; }
+// .color-bt-warning { color: $color-bt-warning !important; }
+// .color-bt-danger { color: $color-bt-danger !important; }
+// .color-bt-success { color: $color-bt-success !important; }
+// .color-bt-default { color: $color-bt-default !important; }
+
+
+/*------------------------------------------------------------------
+    [Background Colors]
+------------------------------------------------------------------*/
+
+// .bg-color-base { background: $color-base !important; }
+.bg-color-white { background: $color-white !important; }
+// .bg-color-subtitle { background: $color-subtitle !important; }
+.bg-color-sky-light { background: $color-sky-light !important; }
+// .bg-color-floral-light { background: $color-floral-light !important; }
+// .bg-color-floral-white { background: $color-floral-white !important; }
+// .bg-color-tint-light { background: $color-tint-light !important; }
+// .bg-color-dark { background: $color-dark !important; }
+// .bg-color-dark-light { background: $color-dark-light !important; }
+// .bg-color-blue-grey { background: $color-blue-grey !important; }
+// .bg-color-black { background: $color-black !important; }
+// .bg-color-grey { background: $color-grey !important; }
+// .bg-color-blue { background: $color-blue !important; }
+// .bg-color-teal { background: $color-teal !important; }
+// .bg-color-green { background: $color-green !important; }
+// .bg-color-red { background: $color-red !important; }
+// .bg-color-pink { background: $color-pink !important; }
+// .bg-color-purple { background: $color-purple !important; }
+// .bg-color-gold { background: $color-gold !important; }
+
+// /* Social Colors */
+// .bg-color-fb { background: $color-fb !important; }
+// .bg-color-tw { background: $color-tw !important; }
+// .bg-color-dr { background: $color-dr !important; }
+// .bg-color-yt { background: $color-yt !important; }
+// .bg-color-ig { background: $color-ig !important; }
+// .bg-color-vm { background: $color-vm !important; }
+
+/* Light Options */
+// .bg-color-base-light { background: $color-base-light !important; }
+// .bg-color-blue-grey-light { background: $color-blue-grey-light !important; }
+.bg-color-grey-light { background: $color-grey-light !important; }
+// .bg-color-blue-light { background: $color-blue-light !important; }
+// .bg-color-teal-light { background: $color-teal-light !important; }
+// .bg-color-green-light { background: $color-green-light !important; }
+// .bg-color-red-light { background: $color-red-light !important; }
+// .bg-color-pink-light { background: $color-pink-light !important; }
+// .bg-color-purple-light { background: $color-purple-light !important; }
+// .bg-color-gold-light { background: $color-gold-light !important; }
+
+/* Boostrap Colors */
+// .bg-color-bt-primary { background: $color-bt-primary !important; }
+// .bg-color-bt-info { background: $color-bt-info !important; }
+// .bg-color-bt-warning { background: $color-bt-warning !important; }
+// .bg-color-bt-danger { background: $color-bt-danger !important; }
+// .bg-color-bt-success { background: $color-bt-success !important; }
+// .bg-color-bt-default { background: $color-bt-default !important; }
+
+
+/*------------------------------------------------------------------
+    [Border Colors]
+------------------------------------------------------------------*/
+
+// .brd-color-base { border-color: $color-base !important; }
+// .brd-color-white { border-color: $color-white !important; }
+// .brd-color-subtitle { border-color: $color-subtitle !important; }
+// .brd-color-sky-light { border-color: $color-sky-light !important; }
+// .brd-color-floral-light { border-color: $color-floral-light !important; }
+// .brd-color-floral-white { border-color: $color-floral-white !important; }
+// .brd-color-tint-light { border-color: $color-tint-light !important; }
+// .brd-color-dark { border-color: $color-dark !important; }
+// .brd-color-dark-light { border-color: $color-dark-light !important; }
+// .brd-color-blue-grey { border-color: $color-blue-grey !important; }
+// .brd-color-grey { border-color: $color-grey !important; }
+// .brd-color-blue { border-color: $color-blue !important; }
+// .brd-color-teal { border-color: $color-teal !important; }
+// .brd-color-green { border-color: $color-green !important; }
+// .brd-color-red { border-color: $color-red !important; }
+// .brd-color-pink { border-color: $color-pink !important; }
+// .brd-color-purple { border-color: $color-purple !important; }
+// .brd-color-gold { border-color: $color-gold !important; }
+
+// /* Social Colors */
+// .brd-color-fb { border-color: $color-fb !important; }
+// .brd-color-tw { border-color: $color-tw !important; }
+// .brd-color-dr { border-color: $color-dr !important; }
+// .brd-color-yt { border-color: $color-yt !important; }
+// .brd-color-ig { border-color: $color-ig !important; }
+
+/* Light Options */
+// .brd-color-base-light { border-color: $color-base-light !important; }
+// .brd-color-blue-grey-light { border-color: $color-blue-grey-light !important; }
+// .brd-color-grey-light { border-color: $color-grey-light !important; }
+// .brd-color-blue-light { border-color: $color-blue-light !important; }
+// .brd-color-teal-light { border-color: $color-teal-light !important; }
+// .brd-color-green-light { border-color: $color-green-light !important; }
+// .brd-color-red-light { border-color: $color-red-light !important; }
+// .brd-color-pink-light { border-color: $color-pink-light !important; }
+// .brd-color-purple-light { border-color: $color-purple-light !important; }
+// .brd-color-gold-light { border-color: $color-gold-light !important; }
+
+/* Boostrap Colors */
+// .brd-color-primary { border-color: $color-bt-primary !important; }
+// .brd-color-info { border-color: $color-bt-info !important; }
+// .brd-color-warning { border-color: $color-bt-warning !important; }
+// .brd-color-danger { border-color: $color-bt-danger !important; }
+// .brd-color-success { border-color: $color-bt-success !important; }
+// .brd-color-default { border-color: $color-bt-default !important; }
+
+
+/*------------------------------------------------------------------
+    [Background Colors Hover]
+------------------------------------------------------------------*/
+
+// .bg-color-base-hover {
+//     &:hover {
+//         background: $color-base !important;
+//     }
+// }
+
+// .bg-color-white-hover {
+//     &:hover {
+//         background: $color-white !important;
+//     }
+// }
+
+// .bg-color-subtitle-hover {
+//     &:hover {
+//         background: $color-subtitle !important;
+//     }
+// }
+
+// .bg-color-sky-light-hover {
+//     &:hover {
+//         background: $color-sky-light !important;
+//     }
+// }
+
+// .bg-color-floral-white-hover {
+//     &:hover {
+//         background: $color-floral-white !important;
+//     }
+// }
+
+// .bg-color-tint-light-hover {
+//     &:hover {
+//         background: $color-tint-light !important;
+//     }
+// }
+
+// .bg-color-dark-hover {
+//     &:hover {
+//         background: $color-dark !important;
+//     }
+// }
+
+// .bg-color-dark-light-hover {
+//     &:hover {
+//         background: $color-dark-light !important;
+//     }
+// }
+
+// .bg-color-blue-grey-hover {
+//     &:hover {
+//         background: $color-blue-grey !important;
+//     }
+// }
+
+// .bg-color-grey-hover {
+//     &:hover {
+//         background: $color-grey !important;
+//     }
+// }
+
+// .bg-color-blue-hover {
+//     &:hover {
+//         background: $color-blue !important;
+//     }
+// }
+
+// .bg-color-teal-hover {
+//     &:hover {
+//         background: $color-teal !important;
+//     }
+// }
+
+// .bg-color-green-hover {
+//     &:hover {
+//         background: $color-green !important;
+//     }
+// }
+
+// .bg-color-red-hover {
+//     &:hover {
+//         background: $color-red !important;
+//     }
+// }
+
+// .bg-color-pink-hover {
+//     &:hover {
+//         background: $color-pink !important;
+//     }
+// }
+
+// .bg-color-purple-hover {
+//     &:hover {
+//         background: $color-purple !important;
+//     }
+// }
+
+// .bg-color-gold-hover {
+//     &:hover {
+//         background: $color-gold !important;
+//     }
+// }
+
+// .bg-color-fb-hover {
+//     &:hover {
+//         background: $color-fb !important;
+//     }
+// }
+
+// .bg-color-tw-hover {
+//     &:hover {
+//         background: $color-tw !important;
+//     }
+// }
+
+// .bg-color-dr-hover {
+//     &:hover {
+//         background: $color-dr !important;
+//     }
+// }
+
+// .bg-color-yt-hover {
+//     &:hover {
+//         background: $color-yt !important;
+//     }
+// }
+
+// .bg-color-ig-hover {
+//     &:hover {
+//         background: $color-ig !important;
+//     }
+// }
+
+// .bg-color-base-light-hover {
+//     &:hover {
+//         background: $color-base-light !important;
+//     }
+// }
+
+// .bg-color-blue-grey-light-hover {
+//     &:hover {
+//         background: $color-blue-grey-light !important;
+//     }
+// }
+
+// .bg-color-grey-light-hover {
+//     &:hover {
+//         background: $color-grey-light !important;
+//     }
+// }
+
+// .bg-color-blue-light-hover {
+//     &:hover {
+//         background: $color-blue-light !important;
+//     }
+// }
+
+// .bg-color-teal-light-hover {
+//     &:hover {
+//         background: $color-teal-light !important;
+//     }
+// }
+
+// .bg-color-green-light-hover {
+//     &:hover {
+//         background: $color-green-light !important;
+//     }
+// }
+
+// .bg-color-red-light-hover {
+//     &:hover {
+//         background: $color-red-light !important;
+//     }
+// }
+
+// .bg-color-pink-light-hover {
+//     &:hover {
+//         background: $color-pink-light !important;
+//     }
+// }
+
+// .bg-color-purple-light-hover {
+//     &:hover {
+//         background: $color-purple-light !important;
+//     }
+// }
+
+// .bg-color-gold-light-hover {
+//     &:hover {
+//         background: $color-gold-light !important;
+//     }
+// }
+
+// .bg-color-primary-hover {
+//     &:hover {
+//         background: $color-bt-primary !important;
+//     }
+// }
+
+// .bg-color-info-hover {
+//     &:hover {
+//         background: $color-bt-info !important;
+//     }
+// }
+
+// .bg-color-warning-hover {
+//     &:hover {
+//         background: $color-bt-warning !important;
+//     }
+// }
+
+// .bg-color-danger-hover {
+//     &:hover {
+//         background: $color-bt-danger !important;
+//     }
+// }
+
+// .bg-color-success-hover {
+//     &:hover {
+//         background: $color-bt-success !important;
+//     }
+// }
+
+// .bg-color-default-hover {
+//     &:hover {
+//         background: $color-bt-default !important;
+//     }
+// }
+
+
+// /*------------------------------------------------------------------
+//     [Animate Transition Icons Colors On Hover]
+// ------------------------------------------------------------------*/
+
+// .icon-color-base-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-base !important;
+//         }
+//     }
+// }
+
+// .icon-color-white-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-white !important;
+//         }
+//     }
+// }
+
+// .icon-color-subtitle-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-subtitle !important;
+//         }
+//     }
+// }
+
+// .icon-color-sky-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-sky-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-tint-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-tint-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-dark-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-dark !important;
+//         }
+//     }
+// }
+
+// .icon-color-dark-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-dark-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-blue-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-blue !important;
+//         }
+//     }
+// }
+
+// .icon-color-blue-grey-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-blue-grey !important;
+//         }
+//     }
+// }
+
+// .icon-color-grey-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-grey !important;
+//         }
+//     }
+// }
+
+// .icon-color-teal-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-teal !important;
+//         }
+//     }
+// }
+
+// .icon-color-green-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-green !important;
+//         }
+//     }
+// }
+
+// .icon-color-red-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-red !important;
+//         }
+//     }
+// }
+
+// .icon-color-pink-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-pink !important;
+//         }
+//     }
+// }
+
+// .icon-color-purple-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-purple !important;
+//         }
+//     }
+// }
+
+// .icon-color-gold-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-gold !important;
+//         }
+//     }
+// }
+
+// .icon-color-fb-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-fb !important;
+//         }
+//     }
+// }
+
+// .icon-color-tw-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-tw !important;
+//         }
+//     }
+// }
+
+// .icon-color-dr-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-dr !important;
+//         }
+//     }
+// }
+
+// .icon-color-yt-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-yt !important;
+//         }
+//     }
+// }
+
+// .icon-color-ig-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-ig !important;
+//         }
+//     }
+// }
+
+
+// .icon-color-base-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-base-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-blue-grey-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-blue-grey-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-grey-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-grey-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-blue-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-blue-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-teal-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-teal-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-green-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-green-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-red-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-red-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-pink-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-pink-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-purple-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-purple-light !important;
+//         }
+//     }
+// }
+
+// .icon-color-gold-light-hover {
+//     &:hover {
+//         .animate-icon-item:last-child {
+//             color: $color-gold-light !important;
+//         }
+//     }
+// }
+
+
+// /*------------------------------------------------------------------
+//     [Pseudo :before Background Colors]
+// —----------------------------------------------------------------*/
+
+// .before-bg-base {
+//     &:before {
+//         background: $color-base !important;
+//     }
+// }
+
+// .before-bg-subtitle {
+//     &:before {
+//         background: $color-subtitle !important;
+//     }
+// }
+
+// .before-bg-sky-light {
+//     &:before {
+//         background: $color-sky-light !important;
+//     }
+// }
+
+// .before-bg-tint-light {
+//     &:before {
+//         background: $color-tint-light !important;
+//     }
+// }
+
+// .before-bg-white {
+//     &:before {
+//         background: $color-white !important;
+//     }
+// }
+
+// .before-bg-dark {
+//     &:before {
+//         background: $color-dark !important;
+//     }
+// }
+
+// .before-bg-black {
+//     &:before {
+//         background: $color-black !important;
+//     }
+// }
+
+// .before-bg-blue {
+//     &:before {
+//         background: $color-blue !important;
+//     }
+// }
+
+// .before-bg-grey {
+//     &:before {
+//         background: $color-grey !important;
+//     }
+// }
+
+// .before-bg-teal {
+//     &:before {
+//         background: $color-teal !important;
+//     }
+// }
+
+// .before-bg-green {
+//     &:before {
+//         background: $color-green !important;
+//     }
+// }
+
+// .before-bg-red {
+//     &:before {
+//         background: $color-red !important;
+//     }
+// }
+
+// .before-bg-pink {
+//     &:before {
+//         background: $color-pink !important;
+//     }
+// }
+
+// .before-bg-purple {
+//     &:before {
+//         background: $color-purple !important;
+//     }
+// }
+
+// .before-bg-gold {
+//     &:before {
+//         background: $color-gold !important;
+//     }
+// }
+
+// .before-bg-base-light {
+//     &:before {
+//         background: $color-base-light !important;
+//     }
+// }
+
+// .before-bg-dark-light {
+//     &:before {
+//         background: $color-dark-light !important;
+//     }
+// }
+
+// .before-bg-blue-grey-light {
+//     &:before {
+//         background: $color-blue-grey-light !important;
+//     }
+// }
+
+// .before-bg-grey-light {
+//     &:before {
+//         background: $color-grey-light !important;
+//     }
+// }
+
+// .before-bg-blue-light {
+//     &:before {
+//         background: $color-blue-light !important;
+//     }
+// }
+
+// .before-bg-teal-light {
+//     &:before {
+//         background: $color-teal-light !important;
+//     }
+// }
+
+// .before-bg-green-light {
+//     &:before {
+//         background: $color-green-light !important;
+//     }
+// }
+
+// .before-bg-red-light {
+//     &:before {
+//         background: $color-red-light !important;
+//     }
+// }
+
+// .before-bg-pink-light {
+//     &:before {
+//         background: $color-pink-light !important;
+//     }
+// }
+
+// .before-bg-purple-light {
+//     &:before {
+//         background: $color-purple-light !important;
+//     }
+// }
+
+// .before-bg-gold-light {
+//     &:before {
+//         background: $color-gold-light !important;
+//     }
+// }
+
+// .before-bg-fb {
+//     &:before {
+//         background: $color-fb !important;
+//     }
+// }
+
+// .before-bg-tw {
+//     &:before {
+//         background: $color-tw !important;
+//     }
+// }
+
+// .before-bg-dr {
+//     &:before {
+//         background: $color-dr !important;
+//     }
+// }
+
+// .before-bg-yt {
+//     &:before {
+//         background: $color-yt !important;
+//     }
+// }
+
+// .before-bg-ig {
+//     &:before {
+//         background: $color-ig !important;
+//     }
+// }
+
+// .before-bg-primary {
+//     &:before {
+//         background: $color-bt-primary !important;
+//     }
+// }
+
+// .before-bg-info {
+//     &:before {
+//         background: $color-bt-info !important;
+//     }
+// }
+
+// .before-bg-warning {
+//     &:before {
+//         background: $color-bt-warning !important;
+//     }
+// }
+
+// .before-bg-danger {
+//     &:before {
+//         background: $color-bt-danger !important;
+//     }
+// }
+
+// .before-bg-success {
+//     &:before {
+//         background: $color-bt-success !important;
+//     }
+// }
+
+// .before-bg-default {
+//     &:before {
+//         background: $color-bt-default !important;
+//     }
+// }
+
+
+// /*------------------------------------------------------------------
+//     [Pseudo :after Background Colors]
+// —----------------------------------------------------------------*/
+
+// .after-bg-base {
+//     &:after {
+//         background: $color-base !important;
+//     }
+// }
+
+// .after-bg-subtitle {
+//     &:after {
+//         background: $color-subtitle !important;
+//     }
+// }
+
+// .after-bg-sky-light {
+//     &:after {
+//         background: $color-sky-light !important;
+//     }
+// }
+
+// .after-bg-tint-light {
+//     &:after {
+//         background: $color-tint-light !important;
+//     }
+// }
+
+// .after-bg-white {
+//     &:after {
+//         background: $color-white !important;
+//     }
+// }
+
+// .after-bg-dark {
+//     &:after {
+//         background: $color-dark !important;
+//     }
+// }
+
+// .after-bg-black {
+//     &:after {
+//         background: $color-black !important;
+//     }
+// }
+
+// .after-bg-blue {
+//     &:after {
+//         background: $color-blue !important;
+//     }
+// }
+
+// .after-bg-blue-grey {
+//     &:after {
+//         background: $color-blue-grey !important;
+//     }
+// }
+
+// .after-bg-grey {
+//     &:after {
+//         background: $color-grey !important;
+//     }
+// }
+
+// .after-bg-teal {
+//     &:after {
+//         background: $color-teal !important;
+//     }
+// }
+
+// .after-bg-green {
+//     &:after {
+//         background: $color-green !important;
+//     }
+// }
+
+// .after-bg-red {
+//     &:after {
+//         background: $color-red !important;
+//     }
+// }
+
+// .after-bg-pink {
+//     &:after {
+//         background: $color-pink !important;
+//     }
+// }
+
+// .after-bg-purple {
+//     &:after {
+//         background: $color-purple !important;
+//     }
+// }
+
+// .after-bg-gold {
+//     &:after {
+//         background: $color-gold !important;
+//     }
+// }
+
+// .after-bg-base-light {
+//     &:after {
+//         background: $color-base-light !important;
+//     }
+// }
+
+// .after-bg-dark-light {
+//     &:after {
+//         background: $color-dark-light !important;
+//     }
+// }
+
+// .after-bg-blue-grey-light {
+//     &:after {
+//         background: $color-blue-grey-light !important;
+//     }
+// }
+
+// .after-bg-grey-light {
+//     &:after {
+//         background: $color-grey-light !important;
+//     }
+// }
+
+// .after-bg-blue-light {
+//     &:after {
+//         background: $color-blue-light !important;
+//     }
+// }
+
+// .after-bg-teal-light {
+//     &:after {
+//         background: $color-teal-light !important;
+//     }
+// }
+// .after-bg-green-light {
+//     &:after {
+//         background: $color-green-light !important;
+//     }
+// }
+
+// .after-bg-red-light {
+//     &:after {
+//         background: $color-red-light !important;
+//     }
+// }
+
+// .after-bg-pink-light {
+//     &:after {
+//         background: $color-pink-light !important;
+//     }
+// }
+
+// .after-bg-purple-light {
+//     &:after {
+//         background: $color-purple-light !important;
+//     }
+// }
+
+// .after-bg-gold-light {
+//     &:after {
+//         background: $color-gold-light !important;
+//     }
+// }
+
+// .after-bg-fb {
+//     &:after {
+//         background: $color-fb !important;
+//     }
+// }
+
+// .after-bg-tw {
+//     &:after {
+//         background: $color-tw !important;
+//     }
+// }
+
+// .after-bg-dr {
+//     &:after {
+//         background: $color-dr !important;
+//     }
+// }
+
+// .after-bg-yt {
+//     &:after {
+//         background: $color-yt !important;
+//     }
+// }
+
+// .after-bg-ig {
+//     &:after {
+//         background: $color-ig !important;
+//     }
+// }
+
+// .after-bg-primary {
+//     &:after {
+//         background: $color-bt-primary !important;
+//     }
+// }
+
+// .after-bg-info {
+//     &:after {
+//         background: $color-bt-info !important;
+//     }
+// }
+
+// .after-bg-warning {
+//     &:after {
+//         background: $color-bt-warning !important;
+//     }
+// }
+
+// .after-bg-danger {
+//     &:after {
+//         background: $color-bt-danger !important;
+//     }
+// }
+
+// .after-bg-success {
+//     &:after {
+//         background: $color-bt-success !important;
+//     }
+// }
+
+// .after-bg-default {
+//     &:after {
+//         background: $color-bt-default !important;
+//     }
+// }
+
+
+// /*------------------------------------------------------------------
+//     [Pseudo :before, :after Background Colors]
+// —----------------------------------------------------------------*/
+
+// .before-after-bg-base {
+//     &:before,
+//     &:after {
+//         background: $color-base !important;
+//     }
+// }
+
+// .before-after-bg-subtitle {
+//     &:before,
+//     &:after {
+//         background: $color-subtitle !important;
+//     }
+// }
+
+// .before-after-bg-sky-light {
+//     &:before,
+//     &:after {
+//         background: $color-sky-light !important;
+//     }
+// }
+
+// .before-after-bg-tint-light {
+//     &:before,
+//     &:after {
+//         background: $color-tint-light !important;
+//     }
+// }
+
+// .before-after-bg-white {
+//     &:before,
+//     &:after {
+//         background: $color-white !important;
+//     }
+// }
+
+// .before-after-bg-black {
+//     &:before,
+//     &:after {
+//         background: $color-black !important;
+//     }
+// }
+
+// .before-after-bg-dark {
+//     &:before,
+//     &:after {
+//         background: $color-dark !important;
+//     }
+// }
+
+// .before-after-bg-blue {
+//     &:before,
+//     &:after {
+//         background: $color-blue !important;
+//     }
+// }
+
+// .before-after-bg-blue-grey {
+//     &:before,
+//     &:after {
+//         background: $color-blue-grey !important;
+//     }
+// }
+
+// .before-after-bg-grey {
+//     &:before,
+//     &:after {
+//         background: $color-grey !important;
+//     }
+// }
+
+// .before-after-bg-teal {
+//     &:before,
+//     &:after {
+//         background: $color-teal !important;
+//     }
+// }
+
+// .before-after-bg-green {
+//     &:before,
+//     &:after {
+//         background: $color-green !important;
+//     }
+// }
+
+// .before-after-bg-red {
+//     &:before,
+//     &:after {
+//         background: $color-red !important;
+//     }
+// }
+
+// .before-after-bg-pink {
+//     &:before,
+//     &:after {
+//         background: $color-pink !important;
+//     }
+// }
+
+// .before-after-bg-purple {
+//     &:before,
+//     &:after {
+//         background: $color-purple !important;
+//     }
+// }
+
+// .before-after-bg-gold {
+//     &:before,
+//     &:after {
+//         background: $color-gold !important;
+//     }
+// }
+
+// .before-after-bg-base-light {
+//     &:before,
+//     &:after {
+//         background: $color-base-light !important;
+//     }
+// }
+
+// .before-after-bg-dark-light {
+//     &:before,
+//     &:after {
+//         background: $color-dark-light !important;
+//     }
+// }
+
+// .before-after-bg-blue-grey-light {
+//     &:before,
+//     &:after {
+//         background: $color-blue-grey-light !important;
+//     }
+// }
+
+// .before-after-bg-grey-light {
+//     &:before,
+//     &:after {
+//         background: $color-grey-light !important;
+//     }
+// }
+
+// .before-after-bg-blue-light {
+//     &:before,
+//     &:after {
+//         background: $color-blue-light !important;
+//     }
+// }
+
+// .before-after-bg-teal-light {
+//     &:before,
+//     &:after {
+//         background: $color-teal-light !important;
+//     }
+// }
+
+// .before-after-bg-green-light {
+//     &:before,
+//     &:after {
+//         background: $color-green-light !important;
+//     }
+// }
+
+// .before-after-bg-red-light {
+//     &:before,
+//     &:after {
+//         background: $color-red-light !important;
+//     }
+// }
+
+// .before-after-bg-pink-light {
+//     &:before,
+//     &:after {
+//         background: $color-pink-light !important;
+//     }
+// }
+
+// .before-after-bg-purple-light {
+//     &:before,
+//     &:after {
+//         background: $color-purple-light !important;
+//     }
+// }
+
+// .before-after-bg-gold-light {
+//     &:before,
+//     &:after {
+//         background: $color-gold-light !important;
+//     }
+// }
+
+// .before-after-bg-fb {
+//     &:before,
+//     &:after {
+//         background: $color-fb !important;
+//     }
+// }
+
+// .before-after-bg-tw {
+//     &:before,
+//     &:after {
+//         background: $color-tw !important;
+//     }
+// }
+
+// .before-after-bg-dr {
+//     &:before,
+//     &:after {
+//         background: $color-dr !important;
+//     }
+// }
+
+// .before-after-bg-yt {
+//     &:before,
+//     &:after {
+//         background: $color-yt !important;
+//     }
+// }
+
+// .before-after-bg-ig {
+//     &:before,
+//     &:after {
+//         background: $color-ig !important;
+//     }
+// }
+
+// .before-after-bg-primary {
+//     &:before,
+//     &:after {
+//         background: $color-bt-primary !important;
+//     }
+// }
+
+// .before-after-bg-info {
+//     &:before,
+//     &:after {
+//         background: $color-bt-info !important;
+//     }
+// }
+
+// .before-after-bg-warning {
+//     &:before,
+//     &:after {
+//         background: $color-bt-warning !important;
+//     }
+// }
+
+// .before-after-bg-danger {
+//     &:before,
+//     &:after {
+//         background: $color-bt-danger !important;
+//     }
+// }
+
+// .before-after-bg-success {
+//     &:before,
+//     &:after {
+//         background: $color-bt-success !important;
+//     }
+// }
+
+// .before-after-bg-default {
+//     &:before,
+//     &:after {
+//         background: $color-bt-default !important;
+//     }
+// }

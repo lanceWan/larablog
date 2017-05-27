@@ -1,0 +1,197 @@
+/*------------------------------------------------------------------
+    [Footer v4]
+------------------------------------------------------------------*/
+
+.footer-v4 {
+    position: relative;
+    z-index: 1;
+    background: url(../img/1920x1080/18.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 50px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity ($color-dark, .85);
+        content: " ";
+    }
+
+    .footer-v4-logo {
+        @include size(85px, auto);
+        margin-bottom: 10px;
+    }
+
+    .footer-v4-content {
+        border-bottom: 1px solid rgba(255,255,255,.3);
+        padding: 40px 0;
+
+        .footer-v4-title {
+            @include font($size: $font-size-26);
+            color: $color-white;
+            margin: 0 0 25px;
+        }
+    }
+
+    .footer-v4-service {
+        margin-bottom: 0;
+
+        .footer-v4-service-item {
+            padding-top: 15px;
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            .footer-v4-service-icon {
+                @include font($size: $font-size-15);
+                color: $color-base;
+                margin-right: 7px;
+            }
+
+            .footer-v4-service-link {
+                @include font($size: $font-size-15);
+                color: darken($color-white, 10%);
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .footer-v4-news {
+        margin-bottom: 0;
+
+        .footer-v4-news-item {
+            padding: 7px 0;
+            @include clearfix;
+
+            .footer-v4-news-media {
+                float: left;
+                margin: 12px 15px 0 0;
+            }
+
+            .footer-v4-news-img {
+                @include size(40px);
+                box-shadow: 0 0 0 3px rgba(255,255,255,.3);
+            }
+
+            .footer-v4-news-content {
+                border-top: 1px solid rgba(255,255,255,.3);
+                overflow: hidden;
+                padding-top: 10px;
+            }
+
+            .footer-v4-news-link {
+                display: inline-block;
+                @include font($size: $font-size-15);
+                color: darken($color-white, 10%);
+                margin-bottom: 5px;
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+
+            .footer-v4-news-date {
+                display: block;
+                @include font($size: $font-size-12);
+                color: darken($color-white, 25%);
+            }
+
+            &:first-child {
+                padding-top: 0;
+
+                .footer-v4-news-media {
+                    margin-top: 0;
+                }
+
+                .footer-v4-news-content {
+                    border-top: none;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+
+    .footer-v4-text {
+        @include font($size: $font-size-15);
+        color: darken($color-white, 10%);
+        margin-bottom: 0;
+    }
+
+    .footer-v4-link {
+        display: inline-block;
+        @include font($size: $font-size-15, $weight: $font-weight-300);
+        color: darken($color-white, 10%);
+
+        &:hover {
+            color: $color-base;
+            text-decoration: none;
+        }
+    }
+
+    .footer-v4-copyright {
+        padding: 20px 0;
+
+        .footer-v4-copyright-text {
+            @include font($size: $font-size-15);
+            color: darken($color-white, 20%);
+            margin-bottom: 0;
+        }
+
+        .footer-v4-terms-list {
+            text-align: right;
+            margin-bottom: 0;
+
+            .footer-v4-terms-item {
+                position: relative;
+                padding: 0 9px;
+
+                &:after {
+                    @include position(absolute, $top: 5px, $left: 0);
+                    @include size(1px, 10px);
+                    background: rgba(255,255,255,.5);
+                    content: " ";
+                }
+
+                &:first-child {
+                    padding-left: 0;
+                    padding-right: 4px;
+
+                    &:after {
+                        display: none;
+                        content: " ";
+                    }
+                }
+            }
+
+            .footer-v4-terms-link {
+                display: inline-block;
+                @include font($size: $font-size-13);
+                color: darken($color-white, 20%);
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .footer-v4 {
+        .footer-v4-copyright {
+            .footer-v4-copyright-text,
+            .footer-v4-terms-list {
+                text-align: center;
+            }
+        }
+    }
+}

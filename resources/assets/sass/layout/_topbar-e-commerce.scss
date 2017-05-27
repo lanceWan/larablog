@@ -1,0 +1,365 @@
+/*------------------------------------------------------------------
+    [Topbar e-Commerce]
+------------------------------------------------------------------*/
+
+.topbar-e {
+    background: $color-sky-light;
+    border-bottom: 1px solid $color-tint-light;
+    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+}
+
+/* Topbar v2 List */
+.topbar-e {
+    .topbar-e-list {
+        margin-bottom: 0;
+
+        .topbar-e-list-item {
+            position: relative;
+            min-width: 45px;
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            text-align: center;
+            border-right: 1px solid $color-tint-light;
+            padding: 0;
+            margin-left: -4px;
+
+            &:first-child {
+                border-left: 1px solid $color-tint-light;
+            }
+
+            .topbar-e-list-dropdown {
+                display: block;
+                @include font($size: $font-size-13);
+                color: $color-dark;
+                padding: 11px 15px;
+
+                &:focus {
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .topbar-e-list-dropdown-menu {
+            @include position(absolute, $top: 100%, $left: 0);
+            min-width: 130px;
+            display: none;
+            z-index: 1;
+            text-align: left;
+            background: $color-white;
+            border: 1px solid $color-tint-light;
+            list-style: none;
+            margin: 1px 0 0 0;
+            padding: 10px 0;
+
+            .topbar-e-list-dropdown-menu-item {
+                display: block;
+                @include font($size: $font-size-13);
+                color: $color-dark;
+            }
+
+            .topbar-e-list-dropdown-menu-link {
+                display: block;
+                @include font($size: $font-size-13);
+                color: $color-dark;
+                padding: 5px 15px;
+
+                &:focus,
+                &:hover {
+                    text-decoration: none;
+                }
+
+                &:hover {
+                    color: $color-white;
+                    background: $color-dark;
+                }
+            }
+
+            .topbar-e-list-dropdown-menu-icon {
+                @include font($size: $font-size-13);
+                padding-right: 5px;
+            }
+        }
+    }
+}
+
+/* Topbar v2 Actions */
+.topbar-e {
+    .topbar-e-actions {
+        float: right;
+        margin-bottom: 0;
+
+        .topbar-e-actions-item {
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            border-left: 1px solid $color-tint-light;
+            padding: 11px 15px;
+            margin-left: -4px;
+        }
+
+        .topbar-e-actions-item-last {
+            padding-right: 0;
+        }
+
+        .topbar-e-actions-link {
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            line-height: 1.5;
+
+            &:focus {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+
+        .topbar-e-actions-wishlist-badge {
+            @include position(relative, $top: -1px);
+            @include size(16px);
+            display: inline-block;
+            @include font($size: $font-size-10, $weight: $font-weight-600);
+            color: $color-dark;
+            line-height: 1.6;
+            text-align: center;
+            border: 1px solid $color-dark;
+            margin-left: 5px;
+        }
+    }
+}
+
+/* Topbar v2 Shopping Cart */
+.topbar-e {
+    .topbar-e-sh-cart {
+        position: relative;
+        border-left: 1px solid $color-tint-light;
+        border-right: 1px solid $color-tint-light;
+        padding: 10px 15px;
+
+        .topbar-e-sh-cart-link {
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            line-height: 1.5;
+
+            &:focus {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+
+        .topbar-e-sh-cart-badge {
+            @include position(relative, $top: -1px);
+            @include size(16px);
+            display: inline-block;
+            @include font($size: $font-size-10);
+            color: $color-white;
+            line-height: 1.6;
+            text-align: center;
+            background: $color-dark;
+            margin-left: 5px;
+        }
+
+        .topbar-e-sh-cart-menu {
+            @include position(absolute, $top: 100%, $right: 0);
+            width: 270px;
+            display: none;
+            z-index: 1;
+            background: $color-white;
+            border: 1px solid $color-tint-light;
+            border-top: 2px solid $color-dark;
+        }
+
+        .topbar-e-sh-cart-menu-title {
+            display: block;
+            @include font($size: $font-size-18);
+            color: $color-dark;
+            border-bottom: 1px solid $color-tint-light;
+            padding: 15px;
+        }
+
+        .topbar-e-sh-cart-menu-content {
+            display: block;
+            padding: 15px;
+            @include clearfix;
+            border-bottom: 1px solid $color-tint-light;
+        }
+
+        .topbar-e-sh-cart-menu-product-media {
+            float: left;
+            margin-right: 15px;
+
+            .topbar-e-sh-cart-menu-product-img {
+                @include size(60px, auto);
+            }
+        }
+
+        .topbar-e-sh-cart-menu-product-wrap {
+            float: left;
+            margin-right: 15px;
+            @include clearfix;
+        }
+
+        .topbar-e-sh-cart-menu-product-name {
+            display: block;
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            margin-bottom: -2px;
+
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+
+        .topbar-e-sh-cart-menu-product-price {
+            display: block;
+            @include font($size: $font-size-12);
+            color: darken($color-subtitle, 5%);
+            margin-top: 5px;
+        }
+
+        .topbar-e-sh-cart-close {
+            float: right;
+            @include font($size: $font-size-16);
+            color: darken($color-subtitle, 5%);
+            @include clearfix;
+
+            &:hover {
+                color: $color-base;
+                text-decoration: none;
+            }
+        }
+
+        .topbar-e-sh-cart-subtotal {
+            padding: 15px;
+        }
+
+        .topbar-e-sh-cart-subtotal-content {
+            display: block;
+            margin-bottom: 10px;
+            @include clearfix;
+        }
+
+        .topbar-e-sh-cart-subtotal-title {
+            @include font($size: $font-size-14);
+            color: $color-dark;
+        }
+
+        .topbar-e-sh-cart-subtotal-price {
+            @include font($size: $font-size-13);
+            color: $color-base;
+            float: right;
+        }
+
+        .topbar-e-sh-cart-subtotal-view {
+            @include font($size: $font-size-12);
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .topbar-e-sh-cart-subtotal-view-link {
+            @include font($size: $font-size-12);
+            color: $color-dark;
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    /* Topbar v2 List */
+    .topbar-e {
+        .topbar-e-list {
+            .topbar-e-list-item {
+                display: block;
+                border-right: none;
+                text-align: left;
+                border-top: 1px solid $color-tint-light;
+
+                &:first-child {
+                    border: none;
+
+                    .topbar-e-list-dropdown {
+                        display: inline-block;
+                        padding: 10px 5px;
+                    }
+                }
+
+                .topbar-e-list-dropdown {
+                    padding: 10px 5px;
+                }
+            }
+
+            .topbar-e-list-dropdown-menu {
+                @include position(relative, $top: 0, $left: 0);
+            }
+        }
+    }
+
+    /* Topbar v2 Actions */
+    .topbar-e {
+        .topbar-e-actions {
+            float: none;
+
+            .topbar-e-actions-item {
+                display: block;
+                border-left: none;
+                border-top: 1px solid $color-tint-light;
+                padding: 10px 5px;
+
+                &:last-child {
+                    padding-right: 15px;
+                }
+            }
+
+            .topbar-e-actions-item-last {
+                display: block;
+                padding: 0;
+                margin-left: -4px;
+            }
+        }
+    }
+
+    /* Topbar v2 Shopping Cart */
+    .topbar-e {
+        .topbar-e-sh-cart {
+            border-top: 1px solid $color-tint-light;
+            border-left: none;
+            border-right: none;
+            padding: 0;
+
+            .topbar-e-sh-cart-link {
+                display: inline-block;
+                padding: 10px 0 10px 5px;
+            }
+
+            .topbar-e-sh-cart-menu {
+                @include position(relative, $top: 0, $left: 0);
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    .header-shrink {
+        .topbar-e {
+            margin-top: -40px;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+}

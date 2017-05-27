@@ -175,6 +175,7 @@ return [
         zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class, //七牛
         Vinkla\Hashids\HashidsServiceProvider::class,//加密
         Krucas\Settings\Providers\SettingsServiceProvider::class,//setting
+        Baum\Providers\BaumServiceProvider::class,//无限分类扩展
 
 
         /*

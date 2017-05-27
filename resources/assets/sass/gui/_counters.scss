@@ -1,0 +1,283 @@
+/*--------------------------------------------------
+    [Counters v1]
+----------------------------------------------------*/
+
+.counters-v1 {
+    .counters-v1-border {
+        border-left: 1px solid $color-tint-light;
+
+        &.counters-v1-border-first {
+            border-left: none;
+        }
+    }
+
+    .counters-v1-body {
+        text-align: center;
+
+        .counters-v1-subtitle {
+            @include font($size: $font-size-18);
+            color: $color-dark;
+            text-transform: uppercase;
+            padding-right: 10px;
+        }
+
+        .counters-v1-number {
+            display: inline-block;
+            @include font($size: $font-size-36, $weight: $font-weight-500);
+            color: $color-base;
+        }
+
+        .counters-v1-title {
+            display: block;
+            @include font($size: $font-size-16);
+            margin: 0;
+        }
+    }
+}
+
+/* Media Queries above 768px */
+@media (max-width: $screen-sm-min) {
+    .counters-v1 {
+        .counters-v1-border {
+            border-left: none;
+        }
+
+        .counters-v1-border-first,
+        .counters-v1-border-second {
+            margin-bottom: 20px;
+        }
+
+        .counters-v1-border-third,
+        .counters-v1-border-fourth {
+            .counters-v1-body {
+                border-top: 1px solid lighten($color-grey, 25%);
+                padding-top: 10px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+/* Media Queries above 480px */
+@media (max-width: $screen-xs-min) {
+    .counters-v1 {
+        .counters-v1-border-second {
+            .counters-v1-body {
+                border-top: 1px solid lighten($color-grey, 25%);
+                padding-top: 10px;
+                margin-top: 10px;
+            }
+        }
+
+        .counters-v1-border-third,
+        .counters-v1-border-fourth {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Counters v2]
+----------------------------------------------------*/
+
+.counters-v2 {
+    text-align: center;
+    padding: 60px 50px;
+
+    .counters-v2-center-aligned {
+        @include position(absolute, $top: 50%, $left: 50%);
+        @include translate3d(-50%,-50%,0);
+    }
+
+    .counters-v2-icon {
+        display: block;
+        @include font($size: $font-size-36);
+        color: $color-dark;
+        margin-bottom: 15px;
+    }
+
+    .counters-v2-no {
+        display: block;
+        @include font($size: $font-size-34, $weight: $font-weight-500);
+        margin-bottom: 10px;
+    }
+
+    .counters-v2-title {
+        @include font($size: $font-size-20);
+        margin-bottom: 3px;
+    }
+
+    .counters-v2-subtitle {
+        display: block;
+        @include font($style: italic, $family: $font-family-droid);
+        color: $color-subtitle;
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .counters-v2 {
+        .counters-v2-center-aligned {
+            @include position(static, $top: 0, $left: 0);
+            @include translate3d(0,0,0);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Counters v3
+----------------------------------------------------*/
+
+.counters-v3 {
+    text-align: center;
+    background: $color-white;
+    box-shadow: 0 2px 5px 3px lighten($color-tint-light, 1%);
+    padding: 50px 20px;
+
+    .counters-v3-icon {
+        @include size(90px);
+        @include font($size: $font-size-36);
+        color: $color-base;
+        text-align: center;
+        box-shadow: 0 5px 10px 0 lighten($color-tint-light, 3%);
+        padding: 25px;
+        margin-bottom: 20px;
+    }
+
+    .counters-v3-number {
+        @include font($size: 45px, $weight: $font-weight-400);
+        color: $color-dark;
+        margin-bottom: 5px;
+    }
+
+    .counters-v3-title {
+        @include font($size: $font-size-20);
+        margin: 0;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Counters v4]
+----------------------------------------------------*/
+
+.counters-v4 {
+    padding: 20px;
+    text-align: center;
+
+    .counters-v4-icon {
+        @include font($size: $font-size-32);
+        color: $color-white;
+    }
+
+    .counters-v4-number {
+        position: relative;
+        display: block;
+        @include font($size: $font-size-36, $weight: $font-weight-400);
+        color: $color-white;
+        margin-bottom: 20px;
+
+        &:after {
+            @include position(absolute, $bottom: -9px, $left: 50%);
+            @include size(30px, 1px);
+            background: $color-white;
+            content: " ";
+            margin-left: -15px;
+        }
+    }
+
+    .counters-v4-title {
+        @include font($size: $font-size-20);
+        color: $color-white;
+        margin: 0;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Counters v5]
+----------------------------------------------------*/
+
+.counters-v5 {
+    .counters-v5-step-one {
+        background: $color-dark;
+    }
+    .counters-v5-step-two {
+        background: darken($color-dark, 1%);
+    }
+    .counters-v5-step-three {
+        background: darken($color-dark, 2%);
+    }
+    .counters-v5-step-four {
+        background: darken($color-dark, 2.5%);
+    }
+
+    .counters-v5-body {
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 80px;
+
+        .counters-v5-number {
+            @include font($size: $font-size-50);
+            color: $color-white;
+            margin-bottom: 30px;
+        }
+
+        .counters-v5-element {
+            @include position(relative, $top: -12px, $left: 50%);
+            display: block;
+            @include size(40px, 0);
+            color: $color-white;
+            border-bottom: 1.5px solid lighten($color-white, 20%);
+            margin-left: -20px;
+            content: " ";
+
+            &:before,
+            &:after {
+                border-bottom: 1.5px solid lighten($color-white, 20%);
+                content: " ";
+            }
+
+            &:before {
+                @include position(absolute, $bottom: 9px, $left: 50%);
+                @include size(40px, 0);
+                margin-left: -20px;
+            }
+
+            &:after {
+                @include position(absolute, $top: -5px, $left: 50%);
+                @include size(20px, 0);
+                margin-left: -10px;
+            }
+        }
+
+        .counters-v5-title {
+            position: relative;
+            @include font($size: $font-size-20);
+            color: $color-white;
+            margin: 0;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Counters v6]
+----------------------------------------------------*/
+
+.counters-v6 {
+    .counters-v6-number {
+        display: block;
+        @include font($size: $font-size-50, $weight: $font-weight-400);
+        color: $color-white;
+        margin-bottom: 10px;
+    }
+
+    .counters-v6-title {
+        @include font($size: $font-size-20);
+        color: $color-white;
+        margin: 0;
+    }
+}

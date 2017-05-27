@@ -1,0 +1,418 @@
+/*--------------------------------------------------
+    [Testimonials v1]
+----------------------------------------------------*/
+
+.testimonials-v1 {
+    position: relative;
+    box-shadow: 0 4px 8px -3px darken($color-tint-light, 15%);
+    margin: 15px 0 10px;
+
+    &:before {
+        @include position(absolute, $top: -10px, $left: 9px);
+        @include size(95%, 20%);
+        z-index: 1;
+        background: #fdfdfd;
+        box-shadow: inset 0 10px 10px 0 lighten($color-sky-light, 2%);
+        content: " ";
+    }
+
+    .testimonials-v1-body {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        background: $color-white;
+        padding: 20px;
+    }
+
+    .testimonials-v1-user-picture {
+        @include size(60px);
+        border: 3px solid $color-tint-light;
+        margin-bottom: 15px;
+    }
+
+    .testimonials-v1-quote {
+        @include font($size: $font-size-14);
+    }
+
+    .testimonials-v1-author {
+        @include font($size: $font-size-18);
+        color: $color-base;
+        margin: 0 0 3px;
+    }
+
+    .testimonials-v1-author-position {
+        display: block;
+        @include font($size: $font-size-15, $style: italic, $family: $font-family-droid);
+        color: $color-dark-light;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Testimonials v2]
+----------------------------------------------------*/
+
+.testimonials-v2 {
+    position: relative;
+    z-index: 1;
+    padding: 0 10px;
+
+    &.testimonials-v2-icon-one,
+    &.testimonials-v2-icon-two,
+    &.testimonials-v2-icon-three {
+        &:before {
+            @include position(absolute, $top: -45px, $right: -10px);
+            display: inline-block;
+            @include font($size: $font-size-100, $family: $font-family-et-line);
+            color: $color-white;
+            opacity: .2;
+        }
+    }
+
+    &.testimonials-v2-icon-one {
+        &:before {
+            content: "\e02b";
+        }
+    }
+    &.testimonials-v2-icon-two {
+        &:before {
+            content: "\e016";
+        }
+    }
+    &.testimonials-v2-icon-three {
+        &:before {
+            content: "\e03c";
+        }
+    }
+
+    .testimonials-v2-title,
+    .testimonials-v2-quote,
+    .testimonials-v2-author {
+        color: $color-white;
+    }
+
+    .testimonials-v2-title {
+        @include font($size: $font-size-24);
+    }
+
+    .testimonials-v2-quote {
+        opacity: .8;
+        margin-bottom: 25px;
+    }
+
+    .testimonials-v2-author {
+        display: block;
+        @include font($size: $font-size-16);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Testimonials v3]
+----------------------------------------------------*/
+
+.testimonials-v3 {
+    text-align: center;
+    background: $color-white;
+    box-shadow: 0 2px 5px 3px lighten($color-tint-light, 1%);
+    padding: 30px;
+    margin: 5px;
+
+    .testimonials-v3-subtitle {
+        position: relative;
+        display: block;
+        @include font($size: $font-size-16, $style: italic);
+        margin: 50px 0 20px;
+
+        &:before {
+            @include position(absolute, $top: -60px, $left: 50%);
+            @include font($size: $font-size-70, $family: $font-family-droid);
+            color: $color-dark;
+            content: "“";
+            @include translate3d(-50%,0,0);
+        }
+    }
+    
+    .testimonials-v3-title {
+        @include font($size: $font-size-26);
+    }
+
+    .testimonials-v3-quote {
+        margin-bottom: 10px;
+    }
+
+    .testimonials-v3-user-img {
+        display: block;
+        @include size(50px);
+        margin: 0 auto 10px;
+    }
+
+    .testimonials-v3-author {
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        color: $color-dark-light;
+        margin-bottom: 0;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Testimonials v4]
+----------------------------------------------------*/
+
+.testimonials-v4 {
+    text-align: center;
+    padding: 20px 0;
+
+    .testimonials-v4-header {
+        padding: 0 50px;
+
+        .testimonials-v4-subtitle {
+            display: block;
+            @include font($size: $font-size-18, $style: italic);
+            color: $color-dark-light;
+            margin-bottom: 5px;
+        }
+
+        .testimonials-v4-title {
+            @include font($size: $font-size-26);
+        }
+    }
+
+    .testimonials-v4-img {
+        @include size(100px, auto);
+        display: block;
+        text-align: center;
+        border: 5px solid rgba(255,255,255,.3);
+        margin: 0 auto 20px;
+    }
+
+    .testimonials-v4-quote {
+        @include font($style: italic);
+    }
+    
+    .testimonials-v4-rating-list {
+        > li {
+            padding: 0;
+        }
+    }
+
+    .testimonials-v4-author {
+        @include font($size: $font-size-18);
+        color: $color-base;
+        margin-bottom: 10px;
+    }
+
+    .testimonials-v4-author-position {
+        @include font($size: $font-size-15, $style: italic);
+        color: $color-subtitle;
+    }
+}
+
+/* Testimonials v4 White Version */
+.testimonials-v4-white {
+    .testimonials-v4-header {
+        .testimonials-v4-subtitle {
+            color: $color-white;
+        }
+
+        .testimonials-v4-title {
+            color: $color-white;
+
+            &:before,
+            &:after {
+                background: $color-white;
+            }
+        }
+    }
+
+    .testimonials-v4-quote {
+        color: $color-white;
+    }
+
+    .testimonials-v4-author-position {
+        color: $color-grey-light;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Testimonials v5]
+----------------------------------------------------*/
+
+.testimonials-v5 {
+    text-align: center;
+
+    .testimonials-v5-quote {
+        position: relative;
+        margin-bottom: 30px;
+
+        &:before {
+            @include position(absolute, $top: -25px, $left: 50%);
+            @include size(40px, 1px);
+            background: $color-white;
+            content: " ";
+            margin-left: -20px;
+        }
+    }
+    
+    .testimonials-v5-img {
+        @include size(100px, auto);
+        display: block;
+        text-align: center;
+        border: 5px solid $color-white;
+        margin: 0 auto 20px;
+    }
+
+    .testimonials-v5-author {
+        @include font($size: $font-size-26);
+        color: $color-base;
+    }
+
+    .testimonials-v5-quote-text {
+        @include font($size: $font-size-24, $style: italic, $family: $font-family-droid);
+        color: $color-white;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Testimonials v6]
+----------------------------------------------------*/
+
+.testimonials-v6 {
+    background: $color-sky-light;
+    padding: 60px 0;
+
+    .testimonials-v6-quote {
+        position: relative;
+        background: $color-white;
+        box-shadow: 3px 3px 3px 0 rgba(182,193,222,.3);
+        padding: 15px;
+        margin-bottom: 25px;
+
+        &:after {
+            @include position(absolute, $bottom: -18px, $left: 40px);
+            @include size(0);
+            border-style: solid;
+            border-width: 20px 20px 0 0;
+            border-color: $color-white transparent transparent;
+            filter: drop-shadow(2px 2px 1px rgba(182,193,222,.3));
+            -moz-filter: drop-shadow(2px 2px 1px rgba(182,193,222,.3));
+            -webkit-filter: drop-shadow(2px 2px 1px rgba(182,193,222,.3));
+            content: " ";
+        }
+    }
+
+    .testimonials-v6-author {
+        overflow: hidden;
+
+        .testimonials-v6-user-picture {
+            @include size(55px);
+            float: left;
+            border: 2px solid $color-white;
+            margin-right: 15px;
+        }
+    }
+
+    .testimonials-v6-element {
+        overflow: hidden;
+        margin-top: 3px;
+
+        .testimonials-v6-author {
+            @include font($size: $font-size-18);
+            color: $color-base;
+            margin: 0 0 2px;
+        }
+
+        .testimonials-v6-position {
+            display: block;
+            @include font($style: italic, $family: $font-family-droid);
+            color: $color-subtitle;
+        }
+    }
+
+    .testimonials-v6-quote-text {
+        @include font($size: $font-size-16, $style: italic, $family: $font-family-droid);
+        color: $color-dark-light;
+    }
+}
+
+/* Testimonials v6 White Version */
+.testimonials-v6-white {
+    .testimonials-v6-quote {
+        color: $color-white;
+        background: darken($color-grey-light, 5%);
+
+        &:after {
+            border-color: darken($color-grey-light, 5%) transparent transparent;
+        }
+    }
+
+    .testimonials-v6-element {
+        .testimonials-v6-author-position {
+            color: $color-grey-light;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Testimonials v7]
+----------------------------------------------------*/
+
+.testimonials-v7 {
+    position: relative;
+    z-index: 1;
+    background: url(../../assets/img/1920x1080/08.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 0%;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .8);
+        content: " ";
+    }
+
+    .testimonials-v7-title {
+        position: relative;
+        @include font($size: $font-size-36, $weight: $font-weight-300);
+        color: $color-white;
+        line-height: 1.2;
+        text-align: right;
+        padding-left: 50px;
+        margin-bottom: 0;
+
+        &:before {
+            @include position(absolute, $top: -25px, $left: 0);
+            display: inline-block;
+            @include font($size: $font-size-100, $family: $font-family-droid);
+            color: $color-white;
+            content: "“";
+        }
+    }
+
+    .testimonials-v7-author {
+        position: relative;
+        display: block;
+        @include font($size: $font-size-18, $weight: $font-weight-300, $style: italic, $family: $font-family-droid);
+        color: $color-base;
+        padding-left: 30px;
+
+        &:before {
+            @include position(absolute, $top: 13px, $left: 0);
+            @include size(20px, 1px);
+            display: inline-block;
+            background: $color-base;
+            content: " ";
+        }
+    }
+
+    .testimonials-v7-text {
+        @include font($size: $font-size-16, $style: italic);
+        color: $color-white;
+        line-height: 1.6;
+        opacity: .95;
+    }
+}

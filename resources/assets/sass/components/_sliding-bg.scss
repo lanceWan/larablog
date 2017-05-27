@@ -1,0 +1,151 @@
+/*--------------------------------------------------
+    [Sliding Background]
+----------------------------------------------------*/
+
+.sliding-bg {
+    position: relative;
+    overflow: hidden;
+
+    &.sliding-bg-semi-dark {
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-dark, .9);
+            content: " ";
+        }
+    }
+
+    &.sliding-bg-semi-white {
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-white, .9);
+            content: " ";
+        }
+    }
+    
+    .sliding-bg-img {
+        @include size(100%, 500px);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .sliding-bg-title {
+        @include font($size: $font-size-100, $style: italic, $weight: $font-weight-400, $family: $font-family-droid);
+        letter-spacing: 10px;
+        line-height: $line-height-1;
+        margin-bottom: 10px;
+    }
+
+    .sliding-bg-subtitle {
+        display: block;
+        @include font($size: $font-size-36, $style: italic, $weight: $font-weight-300);
+        margin-bottom: 10px;
+    }
+
+    .sliding-bg-text {
+        @include font($size: $font-size-20);
+    }
+}
+
+/* Sliding Background Left */
+.sliding-bg {
+    .sliding-bg-left {
+        @include animation-name(sliding-bg-left);
+        @include animation-duration(200s);
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(infinite);
+    }
+}
+
+/* Keyframes - Sliding Left */
+@include keyframes(sliding-bg-left) {
+    100% {
+        background-position: -3840px 0;
+    }
+}
+
+/* Sliding Background Right */
+.sliding-bg {
+    .sliding-bg-right {
+        @include animation-name(sliding-bg-right);
+        @include animation-duration(200s);
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(infinite);
+    }
+}
+
+/* Keyframes - Sliding Right */
+@include keyframes(sliding-bg-right) {
+    100% {
+        background-position: 3840px 0;
+    }
+}
+
+/* Sliding Background Top */
+.sliding-bg {
+    .sliding-bg-top {
+        @include animation-name(sliding-bg-top);
+        @include animation-duration(200s);
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(infinite);
+    }
+}
+
+/* Keyframes - Sliding Top */
+@include keyframes(sliding-bg-top) {
+    100% {
+        background-position: 0 -1000px;
+    }
+}
+
+/* Sliding Background Bottom */
+.sliding-bg {
+    .sliding-bg-bottom {
+        @include animation-name(sliding-bg-bottom);
+        @include animation-duration(200s);
+        @include animation-timing-function(linear);
+        @include animation-iteration-count(infinite);
+    }
+}
+
+/* Keyframes - Sliding Bottom */
+@include keyframes(sliding-bg-bottom) {
+    100% {
+        background-position: 0 1000px;
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+	.sliding-bg {
+	    .sliding-bg-title {
+	        @include font($size: $font-size-70);
+	    }
+
+	    .sliding-bg-subtitle {
+	        @include font($size: $font-size-30);
+	    }
+
+	    .sliding-bg-text {
+	        @include font($size: $font-size-18);
+	    }
+	}
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+	.sliding-bg {
+	    .sliding-bg-title {
+	        @include font($size: $font-size-50);
+	    }
+
+	    .sliding-bg-subtitle {
+	        @include font($size: $font-size-26);
+	    }
+
+	    .sliding-bg-text {
+	        @include font($size: $font-size-16);
+	    }
+	}
+}

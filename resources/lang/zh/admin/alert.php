@@ -69,4 +69,12 @@ return [
 	'setting' => [
 		'update_success' 	=> '保存配置成功',
 	],
+	'link' => [
+		'create_success' 	=> '添加友情链接成功',
+		'create_error' 		=> '添加友情链接失败',
+		'edit_success' 		=> '修改友情链接成功',
+		'edit_error' 		=> '修改友情链接失败',
+		'destroy_success' 	=> '删除友情链接成功',
+		'destroy_error' 	=> '删除友情链接失败',
+	],
 ];

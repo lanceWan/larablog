@@ -154,6 +154,13 @@
               </div>
               <div class="hr-line-dashed"></div>
               <div class="form-group">
+                <label class="col-sm-1 control-label">{{trans('admin/setting.share')}}</label>
+                <div class="col-sm-10">
+                  <textarea name="share" class="form-control" placeholder="{{trans('admin/setting.share')}}">{{$setting['share']}}</textarea>
+                </div>
+              </div>
+              <div class="hr-line-dashed"></div>
+              <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-2">
                     <a class="btn btn-white" href="{{url()->previous()}}">{!!trans('admin/action.actionButton.cancel')!!}</a>
                     <button class="btn btn-primary submit-article" type="submit">{!!trans('admin/action.actionButton.submit')!!}</button>

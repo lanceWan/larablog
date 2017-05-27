@@ -1,0 +1,712 @@
+/*--------------------------------------------------
+    [Team v1]
+----------------------------------------------------*/
+
+.team-v1 {
+    position: relative;
+    overflow: hidden;
+    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+    .team-v1-content {
+        z-index: 1;
+        background: $color-white;
+        text-align: center;
+        padding: 15px;
+
+        .team-v1-member {
+            @include font($size: $font-size-18);
+            margin: 0 0 15px;
+            @include translate3d(0,100%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        .team-v1-socials {
+            opacity: 0;
+            margin-bottom: 0;
+            @include translate3d(0,120%,0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            .team-v1-socials-link {
+                @include font($size: $font-size-14);
+                color: $color-dark;
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 40px -6px darken($color-sky-light, 10%);
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+        .team-v1-content {
+            .team-v1-member {
+                @include translate3d(0,0,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+
+            .team-v1-socials {
+                opacity: 1;
+                @include translate3d(0,0,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v2]
+----------------------------------------------------*/
+
+.team-v2 {
+    position: relative;
+
+    .team-v2-img-gradient {
+        position: relative;
+
+        &:after {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-white, 0);
+            content: " ";
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+
+    .team-v2-content {
+        @include position(absolute, $top: 50%, $left: 50%);
+        @include translate3d(-50%,-50%,0);
+        text-align: center;
+    }
+
+    .team-v2-center-align {
+        @include size(100%, auto);
+        opacity: 0;
+        @include transform-scale(0, 0);
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+    
+    .team-v2-member {
+        @include font($size: $font-size-20);
+        margin: 0 0 5px;
+    }
+
+    .team-v2-member-position {
+        display: block;
+        @include font($size: $font-size-14);
+        color: $color-base;
+    }
+
+    .team-v2-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 3;
+        text-decoration: none;
+    }
+
+    &:hover {
+        .team-v2-img-gradient {
+            &:after {
+                @include bg-opacity($color-white, .9);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+
+        .team-v2-center-align {
+            opacity: 1;
+            @include transform-scale(1, 1);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v3]
+----------------------------------------------------*/
+
+.team-v3 {
+    background: $color-white;
+    padding: 20px;
+
+    .team-v3-img-wrap {
+        position: relative;
+        overflow: hidden;
+
+        .team-v3-overlay-content {
+            @include position(absolute, $left: 0, $right: 0, $bottom: 0);
+            text-align: center;
+            opacity: 0;
+            margin-bottom: 0;
+            @include translate3d(0, 0, 0);
+            @include transition(all, .5s ease);
+        }
+    }
+
+    .team-v3-header {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $color-grey-light;
+
+        .team-v3-member {
+            @include font($size: $font-size-20);
+            margin: 0 0 5px;
+        }
+
+        .team-v3-member-position {
+            display: block;
+            @include font($size: $font-size-14, $weight: $font-weight-300, $style: italic, $family: $font-family-droid);
+            color: $color-base;
+        }
+    }
+
+    .team-v3-paragraph {
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .team-v3-member-contact {
+        @include font($size: $font-size-13);
+    }
+
+    &:hover {
+        .team-v3-overlay-content {
+            opacity: 1;
+            @include translate3d(0, -5px, 0);
+            @include transition(all, .5 ease);
+        }
+    }
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+    .team-v3 {
+        text-align: center;
+
+        .team-v3-img-wrap {
+            margin-right: 0;
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v4]
+----------------------------------------------------*/
+
+.team-v4 {
+    text-align: center;
+    overflow: hidden;
+
+    .team-v4-img-wrap {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .team-v4-overlay-content {
+        @include position(absolute, $left: 0, $right: 0, $bottom: -20%);
+        text-align: center;
+        margin-bottom: 0;
+        opacity: 0;
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    .team-v4-content {
+        padding: 20px;
+
+        .team-v4-member {
+            @include font($size: $font-size-20);
+            color: $color-dark-light;
+            margin: 0;
+        }
+
+        .team-v4-member-position {
+            display: block;
+            @include font($size: $font-size-14, $style: italic, $family: $font-family-droid);
+            color: $color-subtitle;
+        }
+    }
+
+    &:hover {
+        .team-v4-overlay-content {
+            bottom: 10px;
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v5]
+----------------------------------------------------*/
+
+.team-v5 {
+    .team-v5-header {
+        position: relative;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-dark, .3);
+            content: " ";
+        }
+    }
+
+    .team-v5-gradient {
+        @include position(absolute, $left: 0, $right: 0, $bottom: 0);
+        text-align: center;
+        padding: 10px;
+
+        .team-v5-member {
+            @include font($size: $font-size-20);
+            color: $color-white;
+            margin: 0;
+        }
+
+        .team-v5-member-position {
+            display: block;
+            @include font($size: $font-size-14);
+            color: $color-white;
+        }
+    }
+
+    .team-v5-content {
+        background: $color-white;
+        text-align: center;
+        padding: 20px;
+
+        .team-v5-author-contact {
+            @include font($style: italic);
+            color: $color-dark-light;
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+
+        .progress-title {
+            @include font($size: $font-size-13);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v6]
+----------------------------------------------------*/
+
+.team-v6 {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    .team-v6-img-gradient {
+        position: relative;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-dark, .3);
+            content: " ";
+        }
+    }
+
+    .team-v6-info {
+        @include position(absolute, $bottom: 0, $left: 0);
+        @include size(100%, auto);
+        padding: 20px;
+    }
+
+    .team-v6-member {
+        @include font($size: $font-size-24);
+        color: $color-white;
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 0;
+        @include blur(0);
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    .team-v6-socials {
+        opacity: 0;
+        visibility: hidden;
+        margin: -40px 0 0;
+        @include blur(7px);
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    &:hover {
+        .team-v6-member {
+            @include blur(7px);
+            opacity: 0;
+            visibility: hidden;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        .team-v6-socials {
+            opacity: 1;
+            visibility: visible;
+            @include blur(0);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v7]
+----------------------------------------------------*/
+
+.team-v7 {
+    background: $color-white;
+    box-shadow: 0 2px 5px 2px lighten($color-tint-light, 2%);
+    padding: 30px 20px;
+
+    .team-v7-img {
+        box-shadow: 0 2px 5px 2px lighten($color-tint-light, 1%);
+    }
+
+    .team-v7-name {
+        @include font($size: $font-size-18, $weight: $font-weight-400);
+        margin-bottom: 0;
+    }
+
+    .team-v7-position {
+        @include font($size: $font-size-14, $weight: $font-weight-300);
+    }
+
+    .team-v7-trigger {
+        position: relative;
+        display: inline-block;
+        @include size(27px);
+        background: $color-dark;
+        cursor: pointer;
+
+        &:before {
+            @include position(absolute, $top: 7px, $left: 50%);
+            @include size(1px, 13px);
+            background: $color-white;
+            content: " ";
+            margin-left: -0.5px;
+            @include transform-scale(1,1);
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        &:after {
+            @include position(absolute, $top: 50%, $left: 7px);
+            @include size(13px, 1px);
+            background: $color-white;
+            content: " ";
+            margin-top: -0.5px;
+        }
+
+        &.is-clicked {
+            &:before {
+                @include transform-scale(0,0);
+                @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            }
+        }
+    }
+
+    .team-v7-collapse {
+        padding-top: 15px;
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v8]
+----------------------------------------------------*/
+
+.team-v8 {
+    position: relative;
+    overflow: hidden;
+
+    .team-v8-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 3;
+        text-decoration: none;
+    }
+
+    .team-v8-img {
+        position: relative;
+        @include transform-scale(1,1);
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-dark, 0);
+            content: " ";
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+    }
+
+    .team-v8-info {
+        @include position(absolute, $bottom: 0, $left: 0);
+        @include size(100%, auto);
+        text-align: center;
+        padding: 40px;
+        opacity: 0;
+        @include transform-scale(0.9,0.9);
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+    }
+
+    .team-v8-name {
+        @include font($size: $font-size-20, $weight: $font-weight-400);
+        color: $color-white;
+        margin-bottom: 2px;
+    }
+
+    .team-v8-position {
+        position: relative;
+        display: inline-block;
+        @include font($size: $font-size-14, $weight: $font-weight-300);
+        color: $color-white;
+
+        &:after {
+            @include position(absolute, $bottom: -8px, $left: 0);
+            @include size(100%, 1px);
+            background: $color-white;
+            content: " ";
+        }
+    }
+
+    &:hover {
+        .team-v8-img {
+            @include transform-scale(1.1,1.1);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+            
+            &:before {
+                @include bg-opacity($color-dark, .7);
+                @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+            }   
+        }
+
+        .team-v8-info {
+            opacity: 1;
+            @include transform-scale(1,1);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v9]
+----------------------------------------------------*/
+
+.team-v9 {
+    text-align: center;
+    overflow: hidden;
+    
+    .team-v9-img-wrap {
+        position: relative;
+        background: $color-white;
+        box-shadow: 0 2px 5px 2px lighten($color-tint-light, 2%);
+        @include size(210px);
+        padding: 12px;
+        margin: 0 auto;
+
+        &:hover {
+            .team-v9-img-effect {
+                &:before {
+                    @include bg-opacity($color-dark, .5);
+                    @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+                }
+            }
+
+            .team-v9-socials {
+                opacity: 1;
+                @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+            }
+        }
+    }
+
+    .team-v9-img-effect {
+        position: relative;
+
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            @include size(100%);
+            @include bg-opacity($color-dark, 0);
+            content: " ";
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+    }
+
+    .team-v9-img {
+        @include size(185px);
+        box-shadow: 0 2px 5px 2px lighten($color-tint-light, 1%);
+    }
+
+    .team-v9-socials {
+        @include position(absolute, $top: 50%, $left: 50%);
+        opacity: 0;
+        @include translate3d(-50%,-50%,0);
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+    }
+
+    .team-v9-name {
+        @include font($size: $font-size-18, $weight: $font-weight-400);
+        margin-bottom: 0;
+    }
+
+    .team-v9-position {
+        @include font($size: $font-size-14, $weight: $font-weight-300);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v10]
+----------------------------------------------------*/
+
+.team-v10 {
+    .team-v10-img-effect {
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+
+        &:hover {
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+    }
+
+    .team-v10-img-effect-one {
+        &:hover {
+            @include grayscale(100%);
+        }
+    }
+
+    .team-v10-img-effect-two {
+        @include grayscale(100%);
+
+        &:hover {
+            @include grayscale(0);
+        }
+    }
+
+    .team-v10-img-effect-three {
+        @include grayscale(40%);
+        
+        &:hover {
+            @include grayscale(0);
+        }
+    }
+
+    .team-v10-name {
+        @include font($size: $font-size-22, $weight: $font-weight-400);
+        margin-bottom: 0;
+    }
+
+    .team-v10-position {
+        @include font($size: $font-size-16, $style: italic, $weight: $font-weight-300);
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v11]
+----------------------------------------------------*/
+
+.team-v11 {
+    position: relative;
+
+    .team-v11-name {
+        @include font($size: $font-size-28, $weight: $font-weight-400);
+        margin-bottom: 0;
+    }
+
+    .team-v11-position {
+        @include font($size: $font-size-16, $style: italic, $weight: $font-weight-300);
+    }
+}
+
+/* Media Queries below 992px */
+@media (min-width: $screen-md-min) {
+    .team-v11 {
+        .team-v11-img-wrap {
+            position: relative;
+            height: 277px;
+        }
+        
+        .team-v11-img {
+            @include position(absolute, $bottom: 0, $left: 0);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Team v12]
+----------------------------------------------------*/
+
+.team-v12 {
+    position: relative;
+    overflow: hidden;
+
+    .team-v12-info {
+        @include position(absolute, $top: 0, $left: 0);
+        padding: 20px;
+    }
+
+    .team-v12-name,
+    .team-v12-position,
+    .team-v12-text,
+    .team-v12-socials {
+        color: $color-white;
+        opacity: 0;
+        visibility: hidden;
+        margin-bottom: 0;
+        @include translate3d(-50px,0,0);
+        @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+    }
+
+    .team-v12-name {
+        @include font($size: $font-size-32);
+    }
+
+    .team-v12-position {
+        @include font($size: $font-size-20);
+        opacity: .9;
+    }
+
+    .team-v12-text {
+        opacity: .7;
+    }
+
+    &:hover {
+        .team-v12-name,
+        .team-v12-position,
+        .team-v12-text,
+        .team-v12-socials {
+            opacity: 1;
+            visibility: visible;
+            @include translate3d(0,0,0);
+        }
+
+        .team-v12-name {
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+        }
+
+        .team-v12-position {
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+
+        .team-v12-text {
+            @include cubic-transition($delay: 0, $duration: 600ms, $property: (all));
+        }
+
+        .team-v12-socials {
+            @include cubic-transition($delay: 0, $duration: 700ms, $property: (all));
+        }
+    }
+}

@@ -1,0 +1,358 @@
+/*--------------------------------------------------
+    [Breadcrumbs v1]
+----------------------------------------------------*/
+
+.breadcrumbs-v1 {
+    background: darken($color-sky-light, 3%);
+    border-top: 1px solid $color-tint-light;
+    border-bottom: 1px solid $color-tint-light;
+    padding: 50px 0;
+
+    .breadcrumbs-v1-title {
+        display: inline-block;
+        @include font($size: $font-size-20);
+        margin: 0;
+    }
+
+    .breadcrumbs-v1-links {
+        list-style: none;
+        float: right;
+        margin: 3px 0 0;
+
+        > li {
+            display: inline-block;
+
+            > a {
+                color: lighten($color-dark-light, 25%);
+
+                &:hover {
+                    color: $color-base;
+                    text-decoration: none;
+                }
+            }
+
+            &.active {
+                color: $color-base;
+            }
+
+            + li {
+                &:before {
+                    color: lighten($color-dark-light, 25%);
+                    content: "/\00a0";
+                    padding: 0 5px;
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .breadcrumbs-v1 {
+        .breadcrumbs-v1-title {
+            float: none;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumbs-v1-links {
+            text-align: left;
+            padding-left: 0;
+        }
+    }
+}
+
+
+// /*--------------------------------------------------
+//     [Breadcrumbs v2]
+// ----------------------------------------------------*/
+
+// .breadcrumbs-v2 {
+//     background: darken($color-sky-light, 3%);
+//     border-top: 1px solid $color-tint-light;
+//     border-bottom: 1px solid $color-tint-light;
+//     overflow: hidden;
+//     padding: 50px 0;
+
+//     .breadcrumbs-v2-title {
+//         @include font($size: $font-size-20);
+//         margin: 0;
+//     }
+
+//     .breadcrumbs-v2-links {
+//         list-style: none;
+//         padding-left: 0;
+
+//         > li {
+//             display: inline-block;
+
+//             > a {
+//                 color: lighten($color-dark-light, 25%);
+
+//                 &:hover {
+//                     color: $color-base;
+//                     text-decoration: none;
+//                 }
+//             }
+
+//             &.active {
+//                 color: $color-base;
+//             }
+
+//             + li {
+//                 &:before {
+//                     color: lighten($color-dark-light, 25%);
+//                     content: "/\00a0";
+//                     padding: 0 5px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// /*--------------------------------------------------
+//     [Breadcrumbs v3]
+// ----------------------------------------------------*/
+
+// .breadcrumbs-v3 {
+//     position: relative;
+//     z-index: 1;
+//     background: url(../../assets/img/1920x1080/10.jpg) no-repeat;
+//     background-size: cover;
+//     background-position: center center;
+//     overflow: hidden;
+//     padding: 80px 0;
+
+//     &:before {
+//         @include position(absolute, $top: 0, $left: 0);
+//         z-index: -1;
+//         @include size(100%);
+//         @include bg-opacity($color-dark, .6);
+//         content: " ";
+//     }
+
+//     .breadcrumbs-v3-left-wing {
+//         float: left;
+//         margin-right: 15px;
+
+//         .breadcrumbs-v3-title {
+//             @include font($size: $font-size-26);
+//             color: $color-white;
+//             margin: 0;
+//         }
+//     }
+
+//     .breadcrumbs-v3-links {
+//         list-style: none;
+//         text-align: right;
+//         overflow: hidden;
+//         margin-top: 6px;
+
+//         > li {
+//             display: inline-block;
+//             @include font($size: $font-size-15);
+
+//             > a {
+//                 color: $color-white;
+
+//                 &:hover {
+//                     color: $color-base;
+//                     text-decoration: none;
+//                 }
+//             }
+
+//             &.active {
+//                 color: $color-base;
+//             }
+
+//             + li {
+//                 &:before {
+//                     color: $color-white;
+//                     content: "/\00a0";
+//                     padding: 0 5px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// /* Media Queries below 480px */
+// @media (max-width: $screen-xs-min) {
+//     .breadcrumbs-v3 {
+//         .breadcrumbs-v3-title {
+//             float: none;
+//             margin-bottom: 10px;
+//         }
+
+//         .breadcrumbs-v3-links {
+//             text-align: left;
+//             padding-left: 0;
+//         }
+//     }
+// }
+
+
+// /*--------------------------------------------------
+//     [Breadcrumbs v4]
+// ----------------------------------------------------*/
+
+// .breadcrumbs-v4 {
+//     position: relative;
+//     z-index: 1;
+//     text-align: center;
+//     background: url(../../assets/img/1920x1080/07.jpg) no-repeat;
+//     background-size: cover;
+//     background-position: center center;
+//     padding: 170px 0 100px;
+
+//     &:before {
+//         @include position(absolute, $top: 0, $left: 0);
+//         z-index: -1;
+//         @include size(100%);
+//         @include bg-opacity($color-dark, .7);
+//         content: " ";
+//     }
+
+//     .breadcrumbs-v4-title {
+//         @include font($size: $font-size-50);
+//         color: $color-white;
+//         margin: 0 0 10px;
+//     }
+
+//     .breadcrumbs-v4-subtitle {
+//         display: block;
+//         @include font($size: $font-size-22, $style: italic, $family: $font-family-droid);
+//         color: $color-white;
+//     }
+
+//     .breadcrumbs-v4-arrows-left,
+//     .breadcrumbs-v4-arrows-right {
+//         @include position(absolute, $top: 50%);
+//         margin-top: -15px;
+
+//         .disabled {
+//             pointer-events: none;
+//         }
+//     }
+
+//     .breadcrumbs-v4-arrows-left {
+//         left: 20%;
+//     }
+//     .breadcrumbs-v4-arrows-right {
+//         right: 20%;
+//     }
+// }
+
+// /* Media Queries below 768px */
+// @media (max-width: $screen-sm-min) {
+//     .breadcrumbs-v4 {
+//         .breadcrumbs-v4-arrows-left {
+//             left: 5%;
+//         }
+//         .breadcrumbs-v4-arrows-right {
+//             right: 5%;
+//         }
+//     }
+// }
+
+// /* Media Queries below 480px */
+// @media (max-width: $screen-xs-min) {
+//     .breadcrumbs-v4 {
+//         .breadcrumbs-v4-title {
+//             font-size: $font-size-22;
+//         }
+//     }
+// }
+
+
+/*--------------------------------------------------
+    [Breadcrumbs v5]
+----------------------------------------------------*/
+
+.breadcrumbs-v5 {
+    position: relative;
+    z-index: 1;
+    background: url('http://cache.iwanli.me/iwanli/imagebg.jpg?imageslim') no-repeat;
+    background-size: cover;
+    background-position: 50% 20%;
+    padding: 170px 0 100px;
+
+    &:before {
+        @include position(absolute, $top: 0, $left: 0);
+        z-index: -1;
+        @include size(100%);
+        @include bg-opacity($color-dark, .5);
+        content: " ";
+    }
+
+    .breadcrumbs-v5-title {
+        display: block;
+        @include font($size: $font-size-70, $weight: $font-weight-300);
+        color: $color-white;
+        line-height: 1.1;
+        margin-bottom: 10px;
+    }
+
+    .breadcrumbs-v5-post {
+        display: block;
+        @include font($size: 36px, $weight: $font-weight-700);
+        color: $color-white;
+        line-height: 1.1;
+        margin-bottom: 10px;
+    }
+
+    .breadcrumbs-v5-subtitle {
+        display: block;
+        @include font($size: $font-size-18, $style: italic, $family: $font-family-droid);
+        color: $color-white;
+        opacity: .8;
+    }
+
+    .breadcrumbs-v5-divider {
+        @include font($size: $font-size-18,$family: $font-family-droid);
+        color: $color-white;
+        opacity: .8;
+        padding: 0 10px;
+    }
+}
+
+/* Media Queries below 480px */
+@media (max-width: $screen-xs-min) {
+    .breadcrumbs-v5 {
+        .breadcrumbs-v5-title {
+            @include font($size: $font-size-50);
+        }
+    }
+}
+
+
+/*--------------------------------------------------
+    [Breadcrumbs v6]
+----------------------------------------------------*/
+
+// .breadcrumbs-v6 {
+//     padding: 150px 0;
+
+//     .breadcrumbs-v6-title {
+//         @include font($size: $font-size-70, $weight: $font-weight-700);
+//         margin: 0;
+//         line-height: 1.1;
+//     }
+
+//     .breadcrumbs-v6-title-child {
+//         @include font($size: $font-size-100, $style: italic, $family: $font-family-lora);
+//     }
+// }
+
+// /* Media Queries below 480px */
+// @media (max-width: $screen-xs-min) {
+//     .breadcrumbs-v6 {
+//         .breadcrumbs-v6-title {
+//             @include font($size: $font-size-50);
+//         }
+
+//         .breadcrumbs-v6-title-child {
+//             @include font($size: $font-size-70);
+//         }
+//     }
+// }

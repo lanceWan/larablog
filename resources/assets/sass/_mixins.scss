@@ -1,0 +1,539 @@
+/*--------------------------------------------------
+  [Clearfix]
+----------------------------------------------------*/
+
+/* eg: @include clearfix; */
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+
+/*--------------------------------------------------
+  [Font]
+----------------------------------------------------*/
+
+/* eg: @include font($size: 14px, $style: italic, $weight: 400, $variant: normal, $family: $font-family-base); */
+@mixin font($size: null, $style: null, $weight: null, $variant: null, $family: null) {
+    font-size: $size;
+    font-style: $style;
+    font-weight: $weight;
+    font-variant: $variant;
+    font-family: $family;
+}
+
+
+/*--------------------------------------------------
+  [Positioning]
+----------------------------------------------------*/
+
+/* eg: @include position(absolute, $top: 5px, $left: 5px); */
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+}
+
+
+/*--------------------------------------------------
+  [Sizing]
+----------------------------------------------------*/
+
+/* eg: @include size(100%);
+   @include size(100%, 1px); */
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+
+/*--------------------------------------------------
+  [Border Radius]
+----------------------------------------------------*/
+
+/* eg: @include border-radius(3px); */
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+
+/*--------------------------------------------------
+  [Theme Icons]
+----------------------------------------------------*/
+
+/* eg: @include theme-icons($color-dark-light, $color-grey, 0, transparent); */
+@mixin theme-icons($theme-icons-color, $theme-icons-background, $theme-icons-border-width, $theme-icons-border-color) {
+    display: inline-block;
+    color: $theme-icons-color;
+    background: $theme-icons-background;
+    border-width: $theme-icons-border-width;
+    border-style: solid;
+    border-color: $theme-icons-border-color;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* eg: @include theme-icons-size(35px, 35px, $font-size-16, 6px); */
+@mixin theme-icons-size($theme-icons-width, $theme-icons-height, $theme-icons-font-size, $theme-icons-line-height, $theme-icons-padding) {
+    width: $theme-icons-width;
+    height: $theme-icons-height;
+    font-size: $theme-icons-font-size;
+    line-height: $theme-icons-line-height;
+    padding: $theme-icons-padding;
+}
+
+
+/*--------------------------------------------------
+  [Theme Buttons]
+----------------------------------------------------*/
+
+/* eg: @include buttons($color-base, $color-white, transparent, $color-base, 1px, $color-base, $color-base, $color-base); */
+@mixin buttons($btn-color, $btn-color-hover, $btn-bg-color, $btn-bg-hover-color, $btn-border-width, $btn-border-color, $btn-border-hover-color, $btn-bg-after-before-color) {
+    position: relative;
+    display: inline-block;
+    line-height: $line-height-base;
+    color: $btn-color;
+    text-align: center;
+    background: $btn-bg-color;
+    background-image: none;
+    border-width: $btn-border-width;
+    border-style: solid;
+    border-color: $btn-border-color;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    cursor: pointer;
+    @include user-select(none);
+
+    &:focus,
+    &:active:focus,
+    &.active:focus,
+    &.focus,
+    &:active.focus,
+    &.active.focus {
+        outline: none;
+    }
+
+    &:hover {
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+    }
+
+    &:hover,
+    &:focus,
+    &.focus {
+        color: $btn-color-hover;
+        background: $btn-bg-hover-color;
+        border-color: $btn-border-hover-color;
+        text-decoration: none;
+    }
+
+    &:after,
+    &:before {
+        background: $btn-bg-after-before-color;
+    }
+
+    &:active,
+    &.active {
+        background-image: none;
+        outline: 0;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: not-allowed;
+        box-shadow: none;
+        opacity: .65;
+        pointer-events: none;
+    }
+}
+
+/* eg: @include button-size($font-size-14, $font-weight-400, 6px 12px); */
+@mixin buttons-size($btn-font-size, $btn-fweight, $btn-padding) {
+    font-size: $btn-font-size;
+    font-weight: $btn-fweight;
+    padding: $btn-padding;
+}
+
+/* eg: @include @include buttons-animate(darken($color-gold, 4%), 10px 15px); */
+@mixin buttons-element($btn-element-bg-color, $btn-element-brd-color, $btn-element-padding) {
+    @include position(absolute, $top: 0, $right: 0);
+    background: $btn-element-bg-color;
+    border-left: 1px solid $btn-element-brd-color;
+    padding: $btn-element-padding;
+}
+
+
+/*--------------------------------------------------
+  [Placeholder]
+----------------------------------------------------*/
+
+/* eg: @include placeholder($color-base); */
+@mixin placeholder($color: $input-color-placeholder) {
+    &::-moz-placeholder           { color: $color; } // Firefox 19+
+    &:-ms-input-placeholder       { color: $color; } // Internet Egplorer 10+
+    &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+
+/*--------------------------------------------------
+  [Box Shadow]
+----------------------------------------------------*/
+
+/* eg: @include box-shadow(0, 2px, 2px, #000, $inset: false); */
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow:inset $top $left $blur $color;
+        -moz-box-shadow:inset $top $left $blur $color;
+        box-shadow:inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}
+
+
+/*--------------------------------------------------
+    [RGBA Background Opacity]
+----------------------------------------------------*/
+
+/* eg: @include bg-opacity($color-dark, .2); */
+@mixin bg-opacity($color, $opacity: 0.3) {
+    background: rgba($color, $opacity);
+}
+
+
+/*--------------------------------------------------
+  [Visibility]
+----------------------------------------------------*/
+
+/* eg: @include visibility-backface(hidden); */
+@mixin visibility-backface($visibility) {
+    -webkit-backface-visibility: $visibility;
+    backface-visibility: $visibility;
+}
+
+
+/*--------------------------------------------------
+  [Transition]
+----------------------------------------------------*/
+
+/* eg: @include transition(all, .3s ease); */
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    transition: $transition;
+}
+
+
+/*--------------------------------------------------
+  [Perspective]
+----------------------------------------------------*/
+
+/* eg: @include perspective(800px); */
+@mixin perspective($perspective) {
+    -webkit-perspective: $perspective;
+    -moz-perspective: $perspective;
+    perspective: $perspective;
+}
+
+
+/*--------------------------------------------------
+  [Cubic Bezier Transition]
+----------------------------------------------------*/
+
+/* eg: @include cubic-transition($delay: 0, $duration: 200ms, $property: (all)); */
+@mixin cubic-transition($delay, $duration, $property) {
+    transition: {
+        duration: $duration;
+        property: $property;
+        timing-function: cubic-bezier(.7,1,.7,1);
+    }
+}
+
+
+/*--------------------------------------------------
+  [Transition]
+----------------------------------------------------*/
+
+/* eg: @include transition(opacity, .3s); */
+@mixin transition($transition-property, $transition-time) {
+    -webkit-transition: $transition-property $transition-time;
+    -moz-transition: $transition-property $transition-time;
+    transition: $transition-property $transition-time;
+}
+
+
+/*--------------------------------------------------
+  [Translate 3D Transition]
+----------------------------------------------------*/
+
+/* eg: @include translate3d(0,0,0); */
+@mixin translate3d($x, $y, $z) {
+    -webkit-transform: translate3d($x, $y, $z);
+    -moz-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
+}
+
+
+/*--------------------------------------------------
+  [Preserve 3D]
+----------------------------------------------------*/
+
+/* eg: @include preserve3d(preserve-3d); */
+@mixin preserve3d($preserve3d) {
+    -webkit-transform-style: $preserve3d;
+    -moz-transform-style: $preserve3d;
+    transform-style: $preserve3d;
+}
+
+
+/*--------------------------------------------------
+  [Rotate]
+----------------------------------------------------*/
+
+/* eg: @include rotate(45deg); */
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+
+
+/*--------------------------------------------------
+  [RotateY]
+----------------------------------------------------*/
+
+/* eg: @include rotateY(45deg); */
+@mixin rotateY($degrees) {
+    -webkit-transform: rotateY($degrees);
+    -moz-transform: rotateY($degrees);
+    transform: rotateY($degrees);
+}
+
+
+/*--------------------------------------------------
+  [RotateX]
+----------------------------------------------------*/
+
+/* eg: @include rotateX(45deg); */
+@mixin rotateX($degrees) {
+    -webkit-transform: rotateX($degrees);
+    -moz-transform: rotateX($degrees);
+    transform: rotateX($degrees);
+}
+
+
+/*--------------------------------------------------
+  [Transform Scale]
+----------------------------------------------------*/
+
+/* eg: @include transform-scale(1,1); */
+@mixin transform-scale($x:1, $y:1) {
+    -webkit-transform: scale($x, $y);
+    -moz-transform: scale($x, $y);
+    transform: scale($x, $y);
+}
+
+
+/*--------------------------------------------------
+  [Animation Duration]
+----------------------------------------------------*/
+
+/* eg: @include animation-duration(.3s); */
+@mixin animation-duration($animation-duration) {
+    -webkit-animation-duration: $animation-duration;
+    -moz-animation-duration: $animation-duration;
+    animation-duration: $animation-duration;
+}
+
+
+/*--------------------------------------------------
+  [Animation Delay]
+----------------------------------------------------*/
+
+/* eg: @include animation-delay(.3s); */
+@mixin animation-delay($animation-delay) {
+    -webkit-animation-delay: $animation-delay;
+    -moz-animation-delay: $animation-delay;
+    animation-delay: $animation-delay;
+}
+
+
+/*--------------------------------------------------
+  [Animation Timing Function]
+----------------------------------------------------*/
+
+/* eg: @include animation-timing-function(ease); */
+@mixin animation-timing-function($animation-timing-function) {
+    -webkit-animation-timing-function: $animation-timing-function;
+    -moz-animation-timing-function: $animation-timing-function;
+    animation-timing-function: $animation-timing-function;
+}
+
+
+/*--------------------------------------------------
+  [Transform Origin]
+----------------------------------------------------*/
+
+/* eg: @include transform-origin(left center); */
+@mixin transform-origin($val) {
+    -webkit-transform-origin: $val;
+    -moz-transform-origin: $val;
+    -ms-transform-origin: $val;
+    transform-origin: $val;
+}
+
+
+/*--------------------------------------------------
+  [Animation Iteraction Count]
+----------------------------------------------------*/
+
+/* eg: @include animation-iteration-count(infinite); */
+@mixin animation-iteration-count($animation-iteration-count) {
+    -webkit-animation-iteration-count: $animation-iteration-count;
+    -moz-animation-iteration-count: $animation-iteration-count;
+    -ms-animation-iteration-count: $animation-iteration-count;
+    animation-iteration-count: $animation-iteration-count;
+}
+
+
+/*--------------------------------------------------
+  [Animation]
+----------------------------------------------------*/
+
+/* eg: @include animation(toTopFromBottom .3s forwards); */
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    animation: $animation;
+}
+
+
+/*--------------------------------------------------
+  [Animation Name]
+----------------------------------------------------*/
+
+/* eg: @include animation-name(egample); */
+@mixin animation-name($animation-name) {
+    -webkit-animation-name: $animation-name;
+    -moz-animation-name: $animation-name;
+    animation-name: $animation-name;
+}
+
+
+/*--------------------------------------------------
+  [Animation Direction]
+----------------------------------------------------*/
+
+/* eg: @include animation-direction(reverse); */
+@mixin animation-direction($animation-direction) {
+    -webkit-animation-direction: $animation-direction;
+    -moz-animation-direction: $animation-direction;
+    animation-direction: $animation-direction;
+}
+
+
+/*--------------------------------------------------
+  [Keyframes]
+----------------------------------------------------*/
+
+/* eg: @include keyframes($keyframes); { @content; } */
+@mixin keyframes($keyframes) {
+    @-webkit-keyframes #{$keyframes} {
+        @content;
+    }
+    @-moz-keyframes #{$keyframes} {
+        @content;
+    }
+    @keyframes #{$keyframes} {
+        @content;
+    }
+}
+
+
+/*--------------------------------------------------
+  [Grayscale]
+----------------------------------------------------*/
+
+/* eg: @include grayscale(100%); */
+@mixin grayscale($gray) {
+    -webkit-filter: grayscale($gray);
+    -moz-filter: grayscale($gray);
+    filter: grayscale($gray);
+}
+
+
+/*--------------------------------------------------
+  [Blur]
+----------------------------------------------------*/
+
+/* eg: @include blur(5px); */
+@mixin blur($gray) {
+    -webkit-filter: blur($gray);
+    -moz-filter: blur($gray);
+    filter: blur($gray);
+}
+
+
+/*--------------------------------------------------
+  [Linear Gradient]
+----------------------------------------------------*/
+
+/* eg: @include gradient(rgba(255,255,255,0), rgba(255,255,255,.9)); */
+@mixin gradient($start-colour, $end-colour) {
+    background-color: $start-colour;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour));
+    background-image: -webkit-linear-gradient(top, $start-colour, $end-colour);
+    background-image:    -moz-linear-gradient(top, $start-colour, $end-colour);
+    background-image:     -ms-linear-gradient(top, $start-colour, $end-colour);
+    background-image:      -o-linear-gradient(top, $start-colour, $end-colour);
+    background-image:         linear-gradient(top, $start-colour, $end-colour);
+}
+
+
+/*--------------------------------------------------
+  [User Select]
+----------------------------------------------------*/
+
+/* eg: @include user-select(none); */
+@mixin user-select($user-select) {
+    -webkit-user-select: ($user-select);
+    -moz-user-select: ($user-select);
+    -ms-user-select: ($user-select);
+    user-select: ($user-select);
+}
+
+
+/*--------------------------------------------------
+  [Box Sizing]
+----------------------------------------------------*/
+
+/* eg: @include box-sizing(border-box); */
+@mixin box-sizing($box-sizing) {
+    -webkit-box-sizing: ($box-sizing);
+    -moz-box-sizing: ($box-sizing);
+    box-sizing: ($box-sizing);
+}
+
+
+/*--------------------------------------------------
+  [If, For, Each, While]
+----------------------------------------------------*/
+
+$control-count: 6 !default;
+
+@for $i from 1 through $control-count {
+    .#{$control-count}-#{$i} {}
+}

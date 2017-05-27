@@ -1,0 +1,38 @@
+/*------------------------------------------------------------------
+    [Responsive]
+------------------------------------------------------------------*/
+
+/* Full Width class below 480px */
+@media (max-width: $screen-xs-min) {
+    .xs-full-width {
+        width: 100%;
+    }
+}
+
+/* Full Width 0 Offset class below 480px */
+@media (max-width: $screen-xs-min) {
+    .xs-full-width-offset-0 {
+        margin-left: 0;
+    }
+}
+
+/* Hidden class below 480px */
+@media (max-width: $screen-xs-min) {
+    .xs-hidden {
+        display: none !important;
+    }
+}
+
+/* Hidden class below 768px */
+@media (max-width: $screen-sm-min) {
+    .sm-hidden {
+        display: none !important;
+    }
+}
+
+/* Hidden class below 992px */
+@media (max-width: $screen-md-min) {
+    .md-hidden {
+        display: none !important;
+    }
+}

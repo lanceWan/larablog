@@ -1,0 +1,248 @@
+/*--------------------------------------------------
+    [Owl Carousel]
+--------------------------------------------------*/
+
+.owl-carousel {
+    position: relative;
+}
+
+/* Genereal Changes */
+.owl-btn,
+.owl-dot {
+    cursor: pointer;
+}
+
+/* Owl Dots */
+.owl-dots {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.owl-dot {
+    display: inline-block;
+    padding: 0 3px;
+}
+
+.owl-dot,
+.owl-dots {
+    span {
+        position: relative;
+        display: inline-block;
+        @include size(8px);
+        text-indent: -999px;
+        background: transparent;
+        border: 1px solid $color-base;
+        @include border-radius(50%);
+        @include transform-scale(1,1);
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+    }
+    
+    &.active {
+        span {
+            background: $color-base;
+            @include transform-scale(1.2,1.2);
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+    }
+}
+
+/* Owl Dots Color Picker */
+.owl-dots-color-picker {
+    .owl-dot,
+    .owl-dots {
+        &.active {
+            span {
+                @include transform-scale(1,1);
+            }
+        }
+    }
+
+    .owl-dot {
+        display: inline-block;
+        padding: 0 5px;
+        @include transform-scale(1,1);
+        
+        .owl-dots-color-silver,
+        .owl-dots-color-white,
+        .owl-dots-color-dark {
+            position: relative;
+            display: inline-block;
+            @include size(40px);
+            text-indent: -999px;
+            border: 1px solid transparent;
+            @include border-radius(50%);
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+            &.owl-dots-color-silver {
+                background: $color-gold;
+            }
+            &.owl-dots-color-white {
+                background: $color-white;
+                border-color: $color-tint-light;
+            }
+            &.owl-dots-color-dark {
+                background: $color-dark;
+            }
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+        
+        &.active {
+            @include transform-scale(1,1);
+
+            .owl-dots-color-silver,
+            .owl-dots-color-white,
+            .owl-dots-color-dark {
+                position: relative;
+
+                &:before {
+                    @include position(absolute, $top: 0);
+                    z-index: 10;
+                    display: inline-block;
+                    @include size(40px);
+                    @include font($size: $font-size-20, $family: $font-family-font-awesome);
+                    color: $color-white;
+                    text-align: center;
+                    vertical-align: middle;
+                    padding: 6px;
+                    text-indent: 0;
+                    content: "\f00c";
+                }
+            }
+            
+            .owl-dots-color-white {
+                &:before {
+                    color: $color-dark;
+                }
+            }
+        }
+    }
+}
+
+/* Testimonials v4 Arrows */
+.testimonials-v4-arrows {
+    .arrow-next,
+    .arrow-prev {
+        @include position(absolute, $top: 50%);
+        @include size(35px);
+        @include font($size: $font-size-20);
+        color: $color-dark;
+        @include bg-opacity($color-white, .9);
+        cursor: pointer;
+        padding: 7px;
+        margin-top: -17.5px;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+        &:hover {
+            color: $color-white;
+            @include bg-opacity($color-base, 1);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+
+    .arrow-prev {
+        left: 0;
+        margin-left: -50px;
+    }
+    .arrow-next {
+        right: 0;
+        margin-right: -50px;
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    .testimonials-v4-arrows {
+        .arrow-prev {
+            left: 0;
+            margin-left: 0;
+        }
+        .arrow-next {
+            right: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+/* Owl Control Arrows v1 */
+.owl-control-arrows-v1 {
+    .owl-arrow {
+        display: inline-block;
+        @include size(35px);
+        @include font($size: $font-size-20);
+        color: $color-dark;
+        text-align: center;
+        background: $color-white;
+        vertical-align: middle;
+        cursor: pointer;
+        padding: 7px;
+        margin: 0 3px;
+        @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+
+        &.arrow-left,
+        &.arrow-right {
+            @include position(absolute, $top: 50%);
+            z-index: 1;
+            margin-top: -17.5px;
+        }
+
+        &.arrow-left {
+            left: 0;
+        }
+        &.arrow-right {
+            right: 0;
+        }
+
+        &:hover {
+            color: $color-white;
+            background: $color-base;
+            @include cubic-transition($delay: 0, $duration: 200ms, $property: (all));
+        }
+    }
+}
+
+/* Testimonials v2 Arrows */
+.testimonials-v2-arrows {
+    .arrow-next,
+    .arrow-prev {
+        @include position(absolute, $top: 50%);
+        z-index: 1;
+        @include size(35px);
+        @include font($size: $font-size-20);
+        color: $color-dark;
+        @include bg-opacity($color-white, .9);
+        cursor: pointer;
+        padding: 8px 14px;
+        margin-top: -17.5px;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+        &:hover {
+            color: $color-white;
+            @include bg-opacity($color-base, 1);
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+
+    .arrow-prev {
+        left: 0;
+        margin-left: -40px;
+    }
+    .arrow-next {
+        right: 0;
+        margin-right: -40px;
+    }
+}
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    .testimonials-v2-arrows {
+        .arrow-prev {
+            margin-left: 0;
+        }
+        .arrow-next {
+            margin-right: 0;
+        }
+    }
+}

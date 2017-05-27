@@ -1,0 +1,207 @@
+/*------------------------------------------------------------------
+    [Blog Teaser]
+------------------------------------------------------------------*/
+
+.blog-teaser {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    
+    .blog-teaser-overlay {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        @include bg-opacity($color-dark, .5);
+        content: " ";
+        padding: 30px;
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+    }
+
+    .blog-teaser-center-align {
+        @include position(relative, $top: 50%);
+        @include translate3d(0,-50%,0);
+    }
+
+    .blog-teaser-title {
+        position: relative;
+        @include font($size: $font-size-50);
+        color: $color-white;
+        margin-bottom: 20px;
+        
+        &:after {
+            @include position(absolute, $left: 50%, $bottom: -10px);
+            @include size(50px, 2px);
+            background: $color-white;
+            content: " ";
+            margin-left: -25px;
+            @include transform-scale(1, 1);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+    }
+
+    .blog-teaser-text {
+        @include font($size: $font-size-18);
+        color: $color-white;   
+    }
+
+    .blog-teaser-category {
+        @include position(absolute, $left: 50%, $bottom: 20px);
+        margin-bottom: 0;
+        @include translate3d(-50%,0,0);
+
+        .blog-teaser-category-title {
+            position: relative;
+            @include font($size: $font-size-15, $family: $font-family-droid);
+            color: $color-white;
+            text-transform: uppercase;
+            letter-spacing: $letter-spacing-1;
+            opacity: 0;
+            padding: 0 15px 0 0;
+            @include transition(all, .3s ease-out);
+
+            &:before {
+                @include position(absolute, $top: 3px, $left: -9px);
+                @include size(1px, 12px);
+                @include rotate(30deg);
+                @include bg-opacity($color-white, .8);
+                content: " ";
+            }
+
+            &:first-child {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .blog-teaser-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 2;
+        text-decoration: none;
+    }
+
+    &:hover {
+        .blog-teaser-overlay {
+            @include bg-opacity($color-base, .8);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+
+        .blog-teaser-title {
+            &:after {
+                @include transform-scale(3, 1);
+                @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+            }
+        }
+
+        .blog-teaser-category {
+            .blog-teaser-category-title {
+                &:nth-child(1) {
+                    opacity: 1;
+                    @include transition(all, .5s ease-in);
+                }
+                &:nth-child(2) {
+                    opacity: 1;
+                    @include transition(all, .8s ease-in);
+                }
+                &:nth-child(3) {
+                    opacity: 1;
+                    @include transition(all, 1s ease-in);
+                }
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Blog Teaser v2]
+------------------------------------------------------------------*/
+
+.blog-teaser-v2 {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    
+    .blog-teaser-v2-img {
+        @include transform-scale(1,1);
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+    }
+    
+    .blog-teaser-v2-overlay {
+        @include position(absolute, $top: 0, $left: 0);
+        @include size(100%);
+        @include bg-opacity($color-dark, .4);
+        content: " ";
+        @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+    }
+
+    .blog-teaser-v2-content {
+        @include position(absolute, $left: 0, $right: 0, $bottom: 0);
+        padding: 20px;
+    }
+
+    .blog-teaser-v2-subtitle {
+        @include font($size: $font-size-14);
+        color: $color-white;
+        margin-bottom: 5px;
+    }
+
+    .blog-teaser-v2-title {
+        position: relative;
+        @include font($size: $font-size-28);
+        color: $color-white;
+        margin-bottom: 20px;
+        
+        &:after {
+            @include position(absolute, $left: 0, $bottom: -10px);
+            @include size(100%, 2px);
+            background: $color-white;
+            content: " ";
+        }
+
+        &.blog-teaser-v2-title-sm {
+            @include font($size: $font-size-22);
+        }
+    }
+
+    .blog-teaser-v2-media {
+        overflow: hidden;
+
+        .blog-teaser-v2-author-img {
+            @include size(35px);
+            float: left;
+            margin-right: 10px;
+        }
+    }
+
+    .blog-teaser-v2-media-content {
+        overflow: hidden;
+        margin-top: 10px;
+        
+        .blog-teaser-v2-author-name {
+            @include font($size: $font-size-13, $weight: $font-weight-400);
+            color: $color-white;
+            letter-spacing: 0;
+        }
+    }
+
+    .blog-teaser-v2-link {
+        @include position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
+        display: block;
+        z-index: 2;
+        text-decoration: none;
+    }
+
+    &:hover {
+        .blog-teaser-v2-img {
+            @include transform-scale(1.1,1.1);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+
+        .blog-teaser-v2-overlay {
+            @include bg-opacity($color-base, .7);
+            @include cubic-transition($delay: 0, $duration: 500ms, $property: (all));
+        }
+    }
+}

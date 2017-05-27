@@ -5,7 +5,14 @@ use App\Http\Controllers\Controller;
 use App\Traits\QiniuTrait;
 class MediaController extends Controller
 {
+
     use QiniuTrait;
+
+    public function __construct()
+    {
+        // 自定义权限中间件
+        $this->middleware('check.permission:media');
+    }
     /**
      * 七牛资源图片
      * @author 晚黎
@@ -29,8 +36,9 @@ class MediaController extends Controller
      * @param  [type]                   $id [description]
      * @return [type]                       [description]
      */
-    public function destroy($id)
+    public function destroy($img)
     {
-        
+        $isDelete = $this->deleteFile(config('admin.global.imagePath').$img);
+        return response()->json(['status' => $isDelete]);
     }
 }

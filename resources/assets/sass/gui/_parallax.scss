@@ -1,0 +1,39 @@
+/*--------------------------------------------------
+    [DZSParallaxer]
+----------------------------------------------------*/
+
+/* Settings */
+.divimage {
+	background-size: cover !important;
+}
+
+
+/*--------------------------------------------------
+    [Parallax Content v1]
+----------------------------------------------------*/
+
+.parallax-content-v1 {
+	.parallax-content-v1-title {
+		@include font($size: $font-size-50);
+		color: $color-white;
+		line-height: 1;
+	}
+
+	.parallax-content-v1-subtitle {
+		@include font($size: $font-size-22, $style: italic);
+		color: $color-white;
+	}
+}
+
+/* Media Queries below 768px */
+@media (max-width: $screen-sm-min) {
+	.parallax-content-v1 {
+		.parallax-content-v1-title {
+			@include font($size: $font-size-36);
+		}
+
+		.parallax-content-v1-subtitle {
+			@include font($size: $font-size-15);
+		}
+	}
+}

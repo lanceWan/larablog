@@ -1,0 +1,139 @@
+/*------------------------------------------------------------------
+    [Search Push]
+------------------------------------------------------------------*/
+
+.search-push {
+    text-align: center;
+
+    .search-push-btn {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+
+        .search-push-btn-default,
+        .search-push-btn-active {
+            position: relative;
+            @include size(30px, 0);
+            display: block;
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+            
+            &:hover {
+                color: $color-base;
+            }
+        }
+        
+        .search-push-btn-default {
+            top: 0;
+            opacity: 1;
+        }
+
+        .search-push-btn-active {
+            top: 12px;
+            @include font($size: $font-size-15);
+            opacity: 0;
+        }
+
+        &.is-clicked {
+            .search-push-btn-default {
+                top: -13px;
+                opacity: 0;
+            }
+
+            .search-push-btn-active {
+                top: 0;
+                opacity: 1;
+            }
+        }
+
+    }
+}
+
+/* Search Open */
+.search-push-open {
+    @include size(100%);
+    display: none;
+    z-index: 1;
+    background: $color-sky-light;
+
+    .search-push-container {
+        position: relative;
+    }
+
+    .search-push-input {
+        @include size(100%, 70px);
+        @include font($size: $font-size-20);
+        background: transparent;
+        border: none;
+        padding: 0 40px 0 0;
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Search Push White]
+------------------------------------------------------------------*/
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    /* Search Push */
+    .search-push {
+        &.search-push-white {
+            .search-push-btn {
+                .search-push-btn-default,
+                .search-push-btn-active {
+                    color: $color-dark;
+                    
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Search Push */
+    .search-push {
+        &.search-push-white {
+            .search-push-btn {
+                .search-push-btn-default,
+                .search-push-btn-active {
+                    color: $color-white;
+                    
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Header Shrink */
+    .header-shrink {
+        .search-push {
+            .search-push-btn {
+                .search-push-btn-default,
+                .search-push-btn-active {
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            &.search-push-white {
+                .search-push-btn {
+                    .search-push-btn-default,
+                    .search-push-btn-active {
+                        color: $color-dark;
+                        
+                        &:hover {
+                            color: $color-base;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

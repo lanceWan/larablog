@@ -14,5 +14,6 @@ return [
 	'copyright' => '版权',
 	'statistics' => '统计代码',
 	'comment' => '第三方评论代码',
+	'share' => '分享代码',
 	'info' => '第三方评论代码为空时启用博客自带评论',
 ];

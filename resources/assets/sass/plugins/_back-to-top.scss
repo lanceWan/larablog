@@ -1,0 +1,64 @@
+/*--------------------------------------------------
+    [Back To Top Theme Button]
+----------------------------------------------------*/
+
+.back-to-top-theme {
+    @include position(fixed, $bottom: 10px, $right: 10px);
+    display: inline-block;
+    z-index: 9;
+    @include size(35px);
+    @include font($size: $font-size-22);
+    color: $color-white;
+    line-height: .5;
+    background: $color-base;
+    @include border-radius(3px);
+    visibility: hidden;
+    opacity: 0;
+    padding: 10.5px;
+    @include translate3d(0,50px,0);
+    @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+    &:after {
+        @include font($family: $font-family-font-awesome);
+        color: $color-white;
+        text-align: center;
+        content: "\f106";
+    }
+
+    &:hover {
+        background: $color-base;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+    }
+
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* The Button Becomes Visible */
+.back-to-top-theme {
+    &.back-to-top-is-visible {
+        visibility: visible;
+        opacity: .6;
+        @include translate3d(0,0,0);
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+        &:hover {
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+}
+
+/* If the user keeps scrolling down, the button is out of focus and becomes less visible */
+.back-to-top-theme {
+    &.back-to-top-fade-out {
+        opacity: .4;
+
+        &:hover {
+            opacity: 1;
+            @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+        }
+    }
+}

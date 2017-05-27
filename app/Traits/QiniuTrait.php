@@ -34,4 +34,16 @@ trait QiniuTrait{
 		$disk = QiniuStorage::disk('qiniu');
 		return $disk->files($directory);
 	}
+	/**
+	 * 删除七牛图片
+	 * @author 晚黎
+	 * @date   2016-12-19T11:24:13+0800
+	 * @param  [type]                   $img [description]
+	 * @return [type]                        [description]
+	 */
+	public function deleteFile($img)
+	{
+		$disk = QiniuStorage::disk('qiniu');
+		return $disk->delete($img);
+	}
 }

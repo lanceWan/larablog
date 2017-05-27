@@ -1,0 +1,76 @@
+/*------------------------------------------------------------------
+    [Scroll To Section Click Button v1]
+------------------------------------------------------------------*/
+
+.scroll-to-section-v1 {
+	@include position(absolute, $bottom: 40px, $left: 90%);
+
+	.scroll-to-section-click-icon {
+		@include position(absolute, $left: 0, $right: 0);
+		@include size(20px);
+		@include font($size: $font-size-30);
+		color: $color-white;
+		margin-left: -10px;
+		@include animation-name(scroll-to-section-v1);
+		@include animation-duration(2s);
+		@include animation-timing-function(linear);
+		@include animation-iteration-count(infinite);
+		@include animation-direction(alternate);
+	}
+}
+
+@include keyframes(scroll-to-section-v1) {
+	0% { top: 0; bottom: 0; }
+	25% { top: -20px; bottom: 25px; }
+	50% { top: -20px; bottom: 50px; }
+	75% { top: -20px; bottom: 75px; }
+	100% { top: 0; bottom: 100px; }
+}
+
+.scroll-to-section {
+	@include position(absolute, $bottom: 40px, $left: 50%);
+
+	.scroll-to-section-click-icon {
+		@include position(absolute, $left: 0, $right: 0);
+		@include size(20px);
+		@include font($size: $font-size-30);
+		color: $color-white;
+		margin-left: -10px;
+		@include animation-name(scroll-to-section-v1);
+		@include animation-duration(2s);
+		@include animation-timing-function(linear);
+		@include animation-iteration-count(infinite);
+		@include animation-direction(alternate);
+	}
+}
+
+@include keyframes(scroll-to-section) {
+	0% { top: 0; bottom: 0; }
+	25% { top: -20px; bottom: 25px; }
+	50% { top: -20px; bottom: 50px; }
+	75% { top: -20px; bottom: 75px; }
+	100% { top: 0; bottom: 100px; }
+}
+
+
+/*------------------------------------------------------------------
+    [Scroll To Section Click Button v2]
+------------------------------------------------------------------*/
+
+// .scroll-to-section-v2 {
+// 	display: inline-block;
+
+// 	.scroll-to-section-v2-text {
+// 		display: table-cell;
+// 		@include font($size: $font-size-18);
+// 		vertical-align: middle;
+// 		padding-right: 5px;
+// 	}
+
+// 	.scroll-to-section-v2-icon {
+// 		display: table-cell;
+// 		@include font($size: $font-size-26);
+// 		color: $color-white;
+// 		vertical-align: middle;
+// 	}
+// }

@@ -3,15 +3,16 @@ namespace App\Service\Admin;
 use App\Repositories\Eloquent\ArticleRepositoryEloquent;
 use App\Repositories\Eloquent\CategoryRepositoryEloquent;
 use App\Repositories\Eloquent\TagRepositoryEloquent;
-use App\Traits\SendSystemErrorTrait;
 use App\Traits\QiniuTrait;
+use App\Traits\RedisOperationTrait;
+use App\Traits\SendSystemErrorTrait;
 use Exception;
 /**
 * 角色service
 */
 class ArticleService{
 
-	use SendSystemErrorTrait,QiniuTrait;
+	use SendSystemErrorTrait,QiniuTrait, RedisOperationTrait;
 	protected $article;
 	protected $category;
 	protected $tag;
@@ -47,7 +48,6 @@ class ArticleService{
 		$result = $this->article->getArticleList($start,$length,$search,$order);
 
 		$articles = [];
-
 		if ($result['articles']) {
 			foreach ($result['articles'] as &$v) {
 				$v->actionButton = $v->getArticleActionButton();
@@ -87,8 +87,12 @@ class ArticleService{
 		try {
 			$attributes = $request->all();
 			// 文章banner
-			if ($request->hasFile('banner')) {
-				$attributes['banner'] = $this->upload($request->file('banner'));
+			if ($attributes['edit_banner']) {
+				$attributes['banner'] = $attributes['edit_banner'];
+			}else{
+				if ($request->hasFile('banner')) {
+					$attributes['banner'] = $this->upload($request->file('banner'));
+				}
 			}
 
 			$attributes['content_html'] = $attributes['editor-html-code'];
@@ -150,16 +154,19 @@ class ArticleService{
 		}
 		try {
 			// 文章banner
-			if ($request->hasFile('banner')) {
-				$attributes['banner'] = $this->upload($request->file('banner'));
+			if ($attributes['edit_banner']) {
+				$attributes['banner'] = $attributes['edit_banner'];
+			}else{
+				if ($request->hasFile('banner')) {
+					$attributes['banner'] = $this->upload($request->file('banner'));
+				}
 			}
 
 			$attributes['content_html'] = $attributes['editor-html-code'];
 
-			$id = $this->article->decodeId($id);
-			$attributes['id'] = $this->article->decodeId($attributes['id']);
+			$attributes['id'] = $id = $this->article->decodeId($attributes['id']);
 
-			$result = $this->article->update($attributes,$id);
+			$result = $this->article->skipPresenter()->update($attributes,$id);
 			if ($result) {
 				// 添加标签关系
 				$tagIds = [];
@@ -171,13 +178,15 @@ class ArticleService{
 					}
 				}
 				$tagIds = array_unique(array_merge($tagIds,$attributes['tags']));
-				$article->tag()->sync($tagIds);
 
-				$article->category()->sync($attributes['cid']);
+				$result->tag()->sync($tagIds);
+
+				$result->category()->sync($attributes['cid']);
 			}
 			flash_info($result,trans('admin/alert.article.edit_success'),trans('admin/alert.article.edit_error'));
 			return $result;
 		} catch (Exception $e) {
+			dd($e);
 			// 错误信息发送邮件
 			$this->sendSystemErrorMail(env('MAIL_SYSTEMERROR',''),$e);
 			return false;
@@ -193,7 +202,11 @@ class ArticleService{
 	public function destroyArticle($id)
 	{
 		try {
-			$result = $this->article->delete($this->article->decodeId($id));
+			$id = $this->article->decodeId($id);
+			// 删除文章在redis中的信息
+			$this->zrem($this->article->skipPresenter()->find($id,['id', 'title', 'created_at']));
+			$this->delKey(config('admin.global.redis.hashi').$d);
+			$result = $this->article->delete($id);
 			flash_info($result,trans('admin/alert.article.destroy_success'),trans('admin/alert.article.destroy_error'));
 			return $result;
 		} catch (Exception $e) {

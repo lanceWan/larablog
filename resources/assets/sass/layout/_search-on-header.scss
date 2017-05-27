@@ -1,0 +1,168 @@
+/*------------------------------------------------------------------
+    [Search On Header]
+------------------------------------------------------------------*/
+
+.search-on-header {
+    text-align: center;
+
+    .search-on-header-btn {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+
+        .search-on-header-btn-default,
+        .search-on-header-btn-active {
+            position: relative;
+            @include size(30px, 0);
+            display: block;
+            @include font($size: $font-size-13);
+            color: $color-dark;
+            @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+
+            &:hover {
+                color: $color-base;
+            }
+        }
+        
+        .search-on-header-btn-default {
+            top: 0;
+            opacity: 1;
+        }
+
+        .search-on-header-btn-active {
+            top: 12px;
+            @include font($size: $font-size-15);
+            opacity: 0;
+        }
+
+        &.is-clicked {
+            .search-on-header-btn-default {
+                top: -13px;
+                opacity: 0;
+            }
+
+            .search-on-header-btn-active {
+                top: 0;
+                z-index: 9;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* Search Field */
+.search-on-header-field {
+    @include position(absolute, $top: 0, $left: 0);
+    display: none;
+    z-index: 9;
+    width: 100%;
+    background: $color-white;
+    border-top: 1px solid $color-tint-light;
+    border-bottom: 1px solid $color-tint-light;
+
+    .search-on-header-input {
+        @include size(100%, 88px);
+        @include font($size: $font-size-20);
+        color: $color-dark;
+        @include placeholder($color-dark);
+        background: $color-white;
+        border: none;
+        box-shadow: none;
+        padding: 0 40px 0 0;
+        @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+
+        &:focus {
+            color: $color-dark;
+            @include placeholder($color-dark);
+        }
+    }
+}
+
+/* Media Queries below 991px */
+@media (max-width: $screen-sm-max) {
+    .search-on-header-field {
+        .search-on-header-input {
+            padding: 0 80px 0 0;
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    .header-shrink .header {
+        .search-on-header-field {
+            .search-on-header-input {
+                height: 68px;
+                @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+            }
+        }
+    }
+}
+
+
+/*------------------------------------------------------------------
+    [Search On Header btn White]
+------------------------------------------------------------------*/
+
+/* Media Queries below 992px */
+@media (max-width: $screen-md-min) {
+    /* Search On Header */
+    .search-on-header {
+        &.search-on-header-white {
+            .search-on-header-btn {
+                .search-on-header-btn-default,
+                .search-on-header-btn-active {
+                    color: $color-dark;
+                    
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Media Queries above 992px */
+@media (min-width: $screen-md-min) {
+    /* Search On Header */
+    .search-on-header {
+        &.search-on-header-white {
+            .search-on-header-btn {
+                .search-on-header-btn-default,
+                .search-on-header-btn-active {
+                    color: $color-white;
+                    
+                    &:hover {
+                        color: $color-base;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Header Shrink */
+    .header-shrink {
+        .search-on-header {
+            .search-on-header-btn {
+                .search-on-header-btn-default,
+                .search-on-header-btn-active {
+                    @include cubic-transition($delay: 0, $duration: 400ms, $property: (all));
+                }
+            }
+
+            &.search-on-header-white {
+                .search-on-header-btn {
+                    .search-on-header-btn-default,
+                    .search-on-header-btn-active {
+                        color: $color-dark;
+                        
+                        &:hover {
+                            color: $color-base;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
