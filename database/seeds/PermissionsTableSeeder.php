@@ -205,7 +205,7 @@ class PermissionsTableSeeder extends Seeder
         ////////
         Permission::create([
             'name' => '日志管理',
-            'slug' => 'log.list',
+            'slug' => 'log.index',
             'description' => '日志管理'
         ]);
 
