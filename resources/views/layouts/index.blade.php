@@ -50,8 +50,8 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-item-child radius-3" href="javascript:void(0);">
-                                    学院(Comming)
+                                <a class="nav-item-child radius-3" href="http://coding.iwanli.me">
+                                    学院
                                 </a>
                             </li>
 
@@ -91,9 +91,9 @@
                     </a>
                 </li>
                 <li class="promo-block-v11-category-item wow bounceIn" data-wow-duration=".2" data-wow-delay=".6s">
-                    <a class="promo-block-v11-category-link radius-3" href="#">
+                    <a class="promo-block-v11-category-link radius-3" href="http://coding.iwanli.me">
                         <i class="promo-block-v11-category-icon fa fa-free-code-camp"></i>
-                        LaraU
+                        Laravel
                     </a>
                 </li>
                 <li class="promo-block-v11-category-item wow bounceIn" data-wow-duration=".2" data-wow-delay=".8s">
