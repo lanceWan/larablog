@@ -27,7 +27,6 @@
             <div class="heading-v1 text-center margin-b-30" style="padding: 0 15px">
                 <h2 class="heading-v1-title">Leave a comment</h2>
                 {!! $settings['comment'] !!}
-                <div class="ds-thread" data-thread-key="{{$article->id}}" data-title="{{$article->title}}" data-url="{{request()->fullUrl()}}"></div>
             </div>
         </div>
     </div>

@@ -55,6 +55,8 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin','middleware' => ['auth'
 	require(__DIR__ . '/admin/setting.php');
 	// 七牛图片
 	require(__DIR__ . '/admin/media.php');
+	// 评论
+	require(__DIR__ . '/admin/comment.php');
 
 });
 
