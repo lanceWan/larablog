@@ -252,7 +252,7 @@ class ArticleService{
         url     : "图片地址"        // 上传成功时才返回
      }
 	 */
-	public function upload($request)
+	public function markdownImageUpload($request)
 	{
 		if ($request->hasFile('editormd-image-file')) {
 			$path = $this->upload($request->file('editormd-image-file'));

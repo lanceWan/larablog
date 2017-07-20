@@ -141,9 +141,9 @@ class ArticleController extends Controller
      * @date   2016-12-16T12:34:19+0800
      * @return [type]                   [description]
      */
-    public function upload(Request $request)
+    public function markdownImageUpload(Request $request)
     {
-        $responseData = $this->article->upload($request);
+        $responseData = $this->article->markdownImageUpload($request);
         return response()->json($responseData);
     }
 }
